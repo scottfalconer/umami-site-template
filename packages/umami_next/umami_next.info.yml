@@ -1,0 +1,10 @@
+name: Umami Next
+type: module
+description: 'Editorial routes and helpers for the Umami Next site.'
+core_version_requirement: ^11
+package: Custom
+dependencies:
+  - drupal:canvas
+  - drupal:image
+  - drupal:pathauto
+  - drupal:webform

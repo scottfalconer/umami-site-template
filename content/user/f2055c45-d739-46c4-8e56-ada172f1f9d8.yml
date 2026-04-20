@@ -1,0 +1,31 @@
+_meta:
+  version: '1.0'
+  entity_type: user
+  uuid: f2055c45-d739-46c4-8e56-ada172f1f9d8
+  default_langcode: en
+  depends:
+    966a3279-01d1-4bd5-8a74-34c5916941e0: file
+default:
+  preferred_langcode:
+  - value: en
+  name:
+  - value: Inès Moreau
+  mail:
+  - value: ines.moreau@example.com
+  timezone:
+  - value: America/Costa_Rica
+  status:
+  - value: true
+  path:
+  - langcode: en
+    alias: null
+  field_bio:
+  - value: Former line cook turned cookbook author. Ines writes about the quiet kind of cooking — one pot, one pan, one lazy Sunday.
+  field_role:
+  - value: Recipes Editor
+  user_picture:
+  - alt: Inès Moreau
+    title: ''
+    width: 200
+    height: 200
+    entity: 966a3279-01d1-4bd5-8a74-34c5916941e0

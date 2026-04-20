@@ -1,0 +1,24 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: 898289be-bb99-4f21-bae1-5b8b8be135b2
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 0
+  filename:
+    -
+      value: miso-glazed-salmon-bowls.jpg
+  uri:
+    -
+      value: 'public://umami-next/miso-glazed-salmon-bowls.jpg'
+  filemime:
+    -
+      value: image/jpeg
+  filesize:
+    -
+      value: 240643
+  status:
+    -
+      value: true

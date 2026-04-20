@@ -1,0 +1,31 @@
+_meta:
+  version: '1.0'
+  entity_type: user
+  uuid: 9e4380df-afcd-4bc0-99a1-4cb137d83972
+  default_langcode: en
+  depends:
+    67d194eb-92d6-43c2-aa88-416c7472c368: file
+default:
+  preferred_langcode:
+  - value: en
+  name:
+  - value: amara-okafor
+  mail:
+  - value: amara@example.com
+  timezone:
+  - value: America/Costa_Rica
+  status:
+  - value: true
+  path:
+  - langcode: en
+    alias: null
+  field_bio:
+  - value: Develops every recipe at least four times and keeps a notebook of failures.
+  field_role:
+  - value: Test Kitchen Lead
+  user_picture:
+  - alt: Amara Okafor
+    title: ''
+    width: 200
+    height: 200
+    entity: 67d194eb-92d6-43c2-aa88-416c7472c368

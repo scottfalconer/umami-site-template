@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - umami_next
+active_version: 570b073bfc746998
+versioned_properties:
+  active:
+    settings:
+      default_settings:
+        id: umami_next_featured_recipes
+        label: 'Umami Next featured recipes'
+        label_display: '0'
+        provider: umami_next
+    fallback_metadata:
+      slot_definitions: null
+label: 'Umami Next featured recipes'
+id: block.umami_next_featured_recipes
+provider: umami_next
+source: block
+source_local_id: umami_next_featured_recipes

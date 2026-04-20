@@ -1,0 +1,99 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 553198ce-abe4-448e-89f8-70cca32c43db
+  bundle: recipe
+  default_langcode: en
+  depends:
+    b3ec0ba2-c460-4d0c-9841-82b1d105a505: user
+    18931610-20d6-41c7-9a05-3e25201bf501: taxonomy_term
+    3ce6cd35-e603-4716-8056-28c655260f25: taxonomy_term
+    9e7771fb-6acb-45f9-87f0-72ddf70eb4b1: taxonomy_term
+    aa028afd-ec78-4502-8040-02411e43502d: media
+    c338f17b-b1ef-490e-abb6-88f1280c0e4c: taxonomy_term
+    45d0c897-71de-4f57-95b3-4bec3818917d: node
+    fd7a4f69-f783-4ead-9e08-dd9d899fddb2: node
+    83f730da-4588-4834-bcf6-6aa4142d8a62: node
+    2eeac9a1-779b-4c68-af7b-7b86cdf74d78: taxonomy_term
+    a27aab93-f454-4cb1-882a-306d7af5eee6: taxonomy_term
+    6aaee7b7-099a-4ea0-85b8-bbf33fed76d1: taxonomy_term
+default:
+  revision_uid:
+  - entity: b3ec0ba2-c460-4d0c-9841-82b1d105a505
+  status:
+  - value: true
+  uid:
+  - entity: b3ec0ba2-c460-4d0c-9841-82b1d105a505
+  title:
+  - value: Saffron Chickpea Stew
+  promote:
+  - value: false
+  sticky:
+  - value: false
+  revision_translation_affected:
+  - value: true
+  path:
+  - alias: /recipe/saffron-chickpea-stew
+    langcode: en
+    pathauto: 0
+  field_cook_minutes:
+  - value: 60
+  field_cuisine:
+  - entity: 18931610-20d6-41c7-9a05-3e25201bf501
+  field_description:
+  - value: 'A stew that leans on the good stuff in the pantry: saffron, preserved lemon, and a generous pour of olive oil.'
+  field_dietary:
+  - entity: 3ce6cd35-e603-4716-8056-28c655260f25
+  - entity: 9e7771fb-6acb-45f9-87f0-72ddf70eb4b1
+  field_difficulty:
+  - value: Medium
+  field_featured_image:
+  - entity: aa028afd-ec78-4502-8040-02411e43502d
+  field_ingredients:
+  - value: '2 × 400 g|tins chickpeas, drained
+
+      1|large onion, diced
+
+      4 cloves|garlic, sliced
+
+      1|preserved lemon, rind only, chopped
+
+      1 pinch|saffron threads
+
+      1 tsp|smoked paprika
+
+      1 × 400 g|tin tomatoes
+
+      500 ml|vegetable stock
+
+      to serve|yogurt, dill, flatbread'
+  field_method:
+  - value: 'Soften|Sweat the onion in olive oil with salt until deeply soft, 12 min. Add garlic and paprika for 1 min.
+
+      Bloom|Crumble in saffron with a splash of warm water. Add tomatoes and stock and simmer 10 min.
+
+      Simmer|Add chickpeas and preserved lemon. Cook gently 30–40 min until the liquid reduces to a glossy sauce.
+
+      Finish|Taste. Serve with yogurt, dill, and warm flatbread.'
+  field_notes:
+  - value: Better the next day. Freezes well.
+  field_prep_minutes:
+  - value: 15
+  field_recipe_category:
+  - entity: c338f17b-b1ef-490e-abb6-88f1280c0e4c
+  field_related_recipes:
+  - entity: 45d0c897-71de-4f57-95b3-4bec3818917d
+  - entity: fd7a4f69-f783-4ead-9e08-dd9d899fddb2
+  - entity: 83f730da-4588-4834-bcf6-6aa4142d8a62
+  field_servings:
+  - value: 4
+  field_topics:
+  - entity: 2eeac9a1-779b-4c68-af7b-7b86cdf74d78
+  - entity: a27aab93-f454-4cb1-882a-306d7af5eee6
+  - entity: 6aaee7b7-099a-4ea0-85b8-bbf33fed76d1
+  field_total_minutes:
+  - value: 75
+  created:
+  - value: 1772798400
+  changed:
+  - value: 1776631111

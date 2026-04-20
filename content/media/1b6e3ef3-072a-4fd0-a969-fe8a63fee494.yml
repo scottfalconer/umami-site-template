@@ -1,0 +1,32 @@
+_meta:
+  version: '1.0'
+  entity_type: media
+  uuid: 1b6e3ef3-072a-4fd0-a969-fe8a63fee494
+  bundle: image
+  default_langcode: en
+  depends:
+    aebdb5a3-e68e-4e3e-aa99-fb1e5345bac5: file
+default:
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 0
+  name:
+    -
+      value: on-salt-the-short-version
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      langcode: en
+      alias: null
+  field_media_image:
+    -
+      alt: 'On Salt, the Short Version'
+      title: ''
+      width: 1600
+      height: 1100
+      entity: aebdb5a3-e68e-4e3e-aa99-fb1e5345bac5

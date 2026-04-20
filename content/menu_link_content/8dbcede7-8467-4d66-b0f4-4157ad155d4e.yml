@@ -1,0 +1,36 @@
+_meta:
+  version: '1.0'
+  entity_type: menu_link_content
+  uuid: 8dbcede7-8467-4d66-b0f4-4157ad155d4e
+  bundle: menu_link_content
+  default_langcode: en
+default:
+  enabled:
+    -
+      value: true
+  title:
+    -
+      value: Technique
+  menu_name:
+    -
+      value: footer_cook
+  link:
+    -
+      uri: 'internal:/topic/technique'
+      title: null
+      options: {  }
+  external:
+    -
+      value: false
+  rediscover:
+    -
+      value: true
+  weight:
+    -
+      value: 3
+  expanded:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true

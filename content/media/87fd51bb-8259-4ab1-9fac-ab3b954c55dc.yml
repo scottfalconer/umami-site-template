@@ -1,0 +1,32 @@
+_meta:
+  version: '1.0'
+  entity_type: media
+  uuid: 87fd51bb-8259-4ab1-9fac-ab3b954c55dc
+  bundle: image
+  default_langcode: en
+  depends:
+    5d125eca-2350-4e86-9f21-1ef6a6f02936: file
+default:
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 0
+  name:
+    -
+      value: the-quiet-dessert
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      langcode: en
+      alias: null
+  field_media_image:
+    -
+      alt: 'The Quiet Dessert'
+      title: ''
+      width: 1600
+      height: 1100
+      entity: 5d125eca-2350-4e86-9f21-1ef6a6f02936

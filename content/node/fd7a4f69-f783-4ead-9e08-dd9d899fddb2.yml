@@ -1,0 +1,84 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: fd7a4f69-f783-4ead-9e08-dd9d899fddb2
+  bundle: recipe
+  default_langcode: en
+  depends:
+    f2055c45-d739-46c4-8e56-ada172f1f9d8: user
+    581004c8-63fb-48a5-9532-cadb0bb421b6: taxonomy_term
+    d89e63b8-2e59-4a10-9bf1-7def54e1922d: taxonomy_term
+    9e7771fb-6acb-45f9-87f0-72ddf70eb4b1: taxonomy_term
+    6f91f7df-fec0-4ee9-be66-8a557bbce26a: taxonomy_term
+    a9d319bf-864a-4496-8dba-82dc1652f2aa: node
+    553198ce-abe4-448e-89f8-70cca32c43db: node
+    e832f942-2282-4dd3-b804-1d85255a0f99: node
+    32021bd1-adb6-43e3-be1b-62671c2ffac6: taxonomy_term
+    57651b5c-628a-4b5b-bd93-68b3d97c0f4c: taxonomy_term
+default:
+  revision_uid:
+  - entity: f2055c45-d739-46c4-8e56-ada172f1f9d8
+  status:
+  - value: true
+  uid:
+  - entity: f2055c45-d739-46c4-8e56-ada172f1f9d8
+  title:
+  - value: Braised Leeks Vinaigrette
+  promote:
+  - value: false
+  sticky:
+  - value: false
+  revision_translation_affected:
+  - value: true
+  path:
+  - alias: /recipe/braised-leeks-vinaigrette
+    langcode: en
+    pathauto: 0
+  field_cook_minutes:
+  - value: 25
+  field_cuisine:
+  - entity: 581004c8-63fb-48a5-9532-cadb0bb421b6
+  field_description:
+  - value: The leeks go in pale, come out silky, and sit in a sharp dressing until you're ready.
+  field_dietary:
+  - entity: d89e63b8-2e59-4a10-9bf1-7def54e1922d
+  - entity: 9e7771fb-6acb-45f9-87f0-72ddf70eb4b1
+  field_difficulty:
+  - value: Easy
+  field_ingredients:
+  - value: '6|medium leeks, white and pale green
+
+      4 tbsp|olive oil
+
+      2 tbsp|sherry vinegar
+
+      1 tsp|Dijon mustard
+
+      1 tbsp|capers, chopped
+
+      1|soft-boiled egg, grated (optional)'
+  field_method:
+  - value: 'Braise|Halve leeks lengthwise. Lay in a pan, add 1 cm water and salt. Cover and cook 20 min until tender.
+
+      Dress|Whisk oil, vinegar, mustard, capers. Spoon over leeks while still warm.
+
+      Serve|Room temp is best. Grate egg over just before serving.'
+  field_prep_minutes:
+  - value: 10
+  field_recipe_category:
+  - entity: 6f91f7df-fec0-4ee9-be66-8a557bbce26a
+  field_related_recipes:
+  - entity: a9d319bf-864a-4496-8dba-82dc1652f2aa
+  - entity: 553198ce-abe4-448e-89f8-70cca32c43db
+  - entity: e832f942-2282-4dd3-b804-1d85255a0f99
+  field_servings:
+  - value: 4
+  field_topics:
+  - entity: 32021bd1-adb6-43e3-be1b-62671c2ffac6
+  - entity: 57651b5c-628a-4b5b-bd93-68b3d97c0f4c
+  field_total_minutes:
+  - value: 35
+  created:
+  - value: 1768824000
+  changed:
+  - value: 1776631111

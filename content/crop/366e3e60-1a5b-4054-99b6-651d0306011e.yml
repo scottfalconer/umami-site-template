@@ -1,0 +1,30 @@
+_meta:
+  version: '1.0'
+  entity_type: crop
+  uuid: 366e3e60-1a5b-4054-99b6-651d0306011e
+  bundle: focal_point
+  default_langcode: en
+  depends:
+    057f3bde-fc2c-4ae7-8c7a-62649150a38a: file
+default:
+  entity_id:
+    -
+      uuid: 057f3bde-fc2c-4ae7-8c7a-62649150a38a
+  entity_type:
+    -
+      value: file
+  uri:
+    -
+      value: 'public://authors/ines-moreau.jpg'
+  x:
+    -
+      value: 100
+  'y':
+    -
+      value: 100
+  revision_uid:
+    -
+      target_id: 0
+  revision_translation_affected:
+    -
+      value: true

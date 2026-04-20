@@ -1,0 +1,44 @@
+block.settings.umami_next_home_hero:
+  type: block_settings
+  label: 'Umami Next home hero settings'
+
+block.settings.umami_next_featured_recipes:
+  type: block_settings
+  label: 'Umami Next featured recipes settings'
+
+block.settings.umami_next_spotlight_collection:
+  type: block_settings
+  label: 'Umami Next spotlight collection settings'
+
+block.settings.umami_next_topic_browse:
+  type: block_settings
+  label: 'Umami Next topic browse settings'
+
+block.settings.umami_next_latest_stories:
+  type: block_settings
+  label: 'Umami Next latest stories settings'
+
+block.settings.umami_next_newsletter:
+  type: block_settings
+  label: 'Umami Next newsletter settings'
+
+block.settings.umami_next_not_found:
+  type: block_settings
+  label: 'Umami Next not found settings'
+
+umami_next.default_content_references:
+  type: config_object
+  label: 'Umami Next default content references'
+  mapping:
+    node_references:
+      type: sequence
+      label: 'Node references by source UUID'
+      sequence:
+        type: sequence
+        label: 'Reference fields'
+        sequence:
+          type: sequence
+          label: 'Referenced node UUIDs'
+          sequence:
+            type: string
+            label: 'Referenced node UUID'

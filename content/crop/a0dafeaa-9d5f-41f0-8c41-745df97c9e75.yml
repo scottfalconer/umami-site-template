@@ -1,0 +1,30 @@
+_meta:
+  version: '1.0'
+  entity_type: crop
+  uuid: a0dafeaa-9d5f-41f0-8c41-745df97c9e75
+  bundle: focal_point
+  default_langcode: en
+  depends:
+    ab847ef9-502e-43bc-8fec-cebf529f4d21: file
+default:
+  entity_id:
+    -
+      uuid: ab847ef9-502e-43bc-8fec-cebf529f4d21
+  entity_type:
+    -
+      value: file
+  uri:
+    -
+      value: 'public://umami-next/ribollita.jpg'
+  x:
+    -
+      value: 800
+  'y':
+    -
+      value: 550
+  revision_uid:
+    -
+      target_id: 0
+  revision_translation_affected:
+    -
+      value: true

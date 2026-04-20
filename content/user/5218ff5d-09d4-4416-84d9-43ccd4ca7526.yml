@@ -1,0 +1,31 @@
+_meta:
+  version: '1.0'
+  entity_type: user
+  uuid: 5218ff5d-09d4-4416-84d9-43ccd4ca7526
+  default_langcode: en
+  depends:
+    7a26bb20-d985-4fae-a0d1-504289289f11: file
+default:
+  preferred_langcode:
+  - value: en
+  name:
+  - value: Jun Watanabe
+  mail:
+  - value: jun.watanabe@example.com
+  timezone:
+  - value: America/Costa_Rica
+  status:
+  - value: true
+  path:
+  - langcode: en
+    alias: null
+  field_bio:
+  - value: Shoots with north-facing window light whenever possible. Believes in the dignity of a small plate.
+  field_role:
+  - value: Photography Director
+  user_picture:
+  - alt: Jun Watanabe
+    title: ''
+    width: 200
+    height: 200
+    entity: 7a26bb20-d985-4fae-a0d1-504289289f11

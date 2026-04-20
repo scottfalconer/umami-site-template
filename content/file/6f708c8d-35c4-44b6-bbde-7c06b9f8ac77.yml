@@ -1,0 +1,24 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: 6f708c8d-35c4-44b6-bbde-7c06b9f8ac77
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 0
+  filename:
+    -
+      value: the-week-in-the-pantry.jpg
+  uri:
+    -
+      value: 'public://umami-next/the-week-in-the-pantry.jpg'
+  filemime:
+    -
+      value: image/jpeg
+  filesize:
+    -
+      value: 430911
+  status:
+    -
+      value: true

@@ -1,0 +1,24 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: 1a142c16-d4b7-48a9-b136-65cfdb01d60d
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 0
+  filename:
+    -
+      value: fire-and-grill.jpg
+  uri:
+    -
+      value: 'public://umami-next/fire-and-grill.jpg'
+  filemime:
+    -
+      value: image/jpeg
+  filesize:
+    -
+      value: 538163
+  status:
+    -
+      value: true

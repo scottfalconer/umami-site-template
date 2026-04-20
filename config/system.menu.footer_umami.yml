@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: footer_umami
+label: Umami
+description: null
+locked: false

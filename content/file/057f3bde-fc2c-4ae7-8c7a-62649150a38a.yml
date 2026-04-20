@@ -1,0 +1,24 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: 057f3bde-fc2c-4ae7-8c7a-62649150a38a
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 0
+  filename:
+    -
+      value: ines-moreau.jpg
+  uri:
+    -
+      value: 'public://authors/ines-moreau.jpg'
+  filemime:
+    -
+      value: image/jpeg
+  filesize:
+    -
+      value: 12449
+  status:
+    -
+      value: true

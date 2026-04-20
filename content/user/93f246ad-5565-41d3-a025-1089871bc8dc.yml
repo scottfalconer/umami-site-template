@@ -1,0 +1,31 @@
+_meta:
+  version: '1.0'
+  entity_type: user
+  uuid: 93f246ad-5565-41d3-a025-1089871bc8dc
+  default_langcode: en
+  depends:
+    0f55abc9-2e9d-4ab4-a810-ed9d470fa083: file
+default:
+  preferred_langcode:
+  - value: en
+  name:
+  - value: tomas-herrera
+  mail:
+  - value: tomas@example.com
+  timezone:
+  - value: America/Costa_Rica
+  status:
+  - value: true
+  path:
+  - langcode: en
+    alias: null
+  field_bio:
+  - value: A journalist who follows produce from farm to kitchen.
+  field_role:
+  - value: Contributing Writer
+  user_picture:
+  - alt: Tomas Herrera
+    title: ''
+    width: 200
+    height: 200
+    entity: 0f55abc9-2e9d-4ab4-a810-ed9d470fa083

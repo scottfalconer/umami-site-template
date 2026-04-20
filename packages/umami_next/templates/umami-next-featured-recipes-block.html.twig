@@ -1,0 +1,29 @@
+<section class="container section-space">
+  <div class="section-heading">
+    <div>
+      <div class="eyebrow">{{ 'From the test kitchen'|t }}</div>
+      <h2 class="section-heading__title">{{ "Recipes we're cooking this week"|t }}</h2>
+    </div>
+    <div class="section-heading__right"><a href="{{ path('umami_next.recipes') }}">{{ 'All recipes'|t }} &rarr;</a></div>
+  </div>
+  <div class="grid-4">
+    {% for card in featured_recipes %}
+      <a href="{{ card.url }}" class="card">
+        {% if card.image.url %}
+          <div class="card-media"><img src="{{ card.image.url }}" alt="{{ card.image.alt }}"></div>
+        {% else %}
+          <div class="card-media card-media--placeholder" aria-hidden="true"></div>
+        {% endif %}
+        <div class="card__meta">
+          <span>{{ card.category }}</span>
+          {% if card.cuisine %}
+            <span class="dot">&middot;</span><span>{{ card.cuisine }}</span>
+          {% endif %}
+        </div>
+        <h3 class="card__title">{{ card.title }}</h3>
+        <p class="card__deck">{{ card.summary }}</p>
+        <div class="card__meta"><span>{{ card.total }} min</span><span class="dot">&middot;</span><span>{{ card.difficulty }}</span></div>
+      </a>
+    {% endfor %}
+  </div>
+</section>

@@ -1,0 +1,24 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: 22150285-86c1-46a2-82f4-ea50f78529e6
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 0
+  filename:
+    -
+      value: jollof-rice.jpg
+  uri:
+    -
+      value: 'public://umami-next/jollof-rice.jpg'
+  filemime:
+    -
+      value: image/jpeg
+  filesize:
+    -
+      value: 484782
+  status:
+    -
+      value: true

@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - umami_next
+active_version: b18bef3d3b266efc
+versioned_properties:
+  active:
+    settings:
+      default_settings:
+        id: umami_next_latest_stories
+        label: 'Umami Next latest stories'
+        label_display: '0'
+        provider: umami_next
+    fallback_metadata:
+      slot_definitions: null
+label: 'Umami Next latest stories'
+id: block.umami_next_latest_stories
+provider: umami_next
+source: block
+source_local_id: umami_next_latest_stories

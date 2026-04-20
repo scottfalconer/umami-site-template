@@ -1,0 +1,30 @@
+<section class="container hero">
+  <div class="hero-grid">
+    <div>
+      <div class="hero-eyebrow with-rule">{{ 'Issue No. 14 - April 2026'|t }}</div>
+      <h1 class="hero-title">A letter from the <em>spring</em> market.</h1>
+      {% if hero %}
+        <p class="hero-deck">{{ hero.summary }}</p>
+      {% endif %}
+      <div class="hero-meta">
+        {% if hero_author %}
+          <div class="byline">
+            {% if hero_author.image %}
+              <div class="byline__avatar"><img src="{{ hero_author.image }}" alt="{{ hero_author.name }}"></div>
+            {% endif %}
+            <span>{{ 'By'|t }} <span class="name">{{ hero_author.name }}</span></span>
+          </div>
+        {% endif %}
+        {% if hero %}
+          <a class="btn btn--ghost" href="{{ hero.url }}">{{ 'Read the letter'|t }}</a>
+        {% endif %}
+      </div>
+    </div>
+    {% if hero and hero.image.url %}
+      <div>
+        <div class="hero-media"><img src="{{ hero.image.url }}" alt="{{ hero.image.alt }}"></div>
+        <div class="hero-caption">{{ 'Photographed by Jun Watanabe, Saturday market, 04.2026'|t }}</div>
+      </div>
+    {% endif %}
+  </div>
+</section>

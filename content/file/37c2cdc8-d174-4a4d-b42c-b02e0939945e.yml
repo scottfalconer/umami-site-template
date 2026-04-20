@@ -1,0 +1,24 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: 37c2cdc8-d174-4a4d-b42c-b02e0939945e
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 0
+  filename:
+    -
+      value: sticky-sesame-aubergine.jpg
+  uri:
+    -
+      value: 'public://umami-next/sticky-sesame-aubergine.jpg'
+  filemime:
+    -
+      value: image/jpeg
+  filesize:
+    -
+      value: 555215
+  status:
+    -
+      value: true

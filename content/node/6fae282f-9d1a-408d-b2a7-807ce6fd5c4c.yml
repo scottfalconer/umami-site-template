@@ -1,0 +1,69 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 6fae282f-9d1a-408d-b2a7-807ce6fd5c4c
+  bundle: collection
+  default_langcode: en
+  depends:
+    93f246ad-5565-41d3-a025-1089871bc8dc: user
+    5546aa05-f2e6-4d2f-a71f-7ef234eec0c6: user
+    aa16dc27-a2de-4624-98e1-afcb5e4c086d: node
+    68244c0b-ae29-47ea-bc05-ede96255ef93: media
+    9f35ef4f-80d6-4b46-92ee-17610b4960ae: node
+    fd7a4f69-f783-4ead-9e08-dd9d899fddb2: node
+    45d0c897-71de-4f57-95b3-4bec3818917d: node
+    4f99b676-b43c-47ce-b19b-2ad32e34307e: node
+    36a35a55-76f6-4e39-baf8-31798f2db0aa: node
+    300908fc-4fe2-4a0b-b3d3-834a1b57fa43: node
+    f0a5cac7-c43b-47cf-b278-0f22d7514808: node
+    57651b5c-628a-4b5b-bd93-68b3d97c0f4c: taxonomy_term
+default:
+  revision_uid:
+  - entity: 93f246ad-5565-41d3-a025-1089871bc8dc
+  status:
+  - value: true
+  uid:
+  - entity: 5546aa05-f2e6-4d2f-a71f-7ef234eec0c6
+  title:
+  - value: The Spring Market
+  promote:
+  - value: true
+  sticky:
+  - value: false
+  revision_translation_affected:
+  - value: true
+  path:
+  - alias: /collections/spring-market
+    langcode: en
+    pathauto: 0
+  field_content:
+  - value: '<p>Spring is a vocabulary problem: there are suddenly too many green things to name. This guide is our short answer — the six ingredients we reach for first, and the dishes that make the most of them before they go.</p>'
+    format: content_format
+  field_cta_links:
+  - uri: internal:/topic/seasonal
+    title: Browse spring recipes
+    options: {}
+  - title: Read the letter
+    options: {}
+    target_uuid: aa16dc27-a2de-4624-98e1-afcb5e4c086d
+  field_description:
+  - value: Eighteen recipes, one short guide, and a small plan for what to cook when the produce starts speaking again.
+  field_featured_image:
+  - entity: 68244c0b-ae29-47ea-bc05-ede96255ef93
+  field_featured_recipes:
+  - entity: 9f35ef4f-80d6-4b46-92ee-17610b4960ae
+  - entity: fd7a4f69-f783-4ead-9e08-dd9d899fddb2
+  - entity: 45d0c897-71de-4f57-95b3-4bec3818917d
+  field_related_articles:
+  - entity: aa16dc27-a2de-4624-98e1-afcb5e4c086d
+  - entity: 4f99b676-b43c-47ce-b19b-2ad32e34307e
+  field_secondary_recipes:
+  - entity: 36a35a55-76f6-4e39-baf8-31798f2db0aa
+  - entity: 300908fc-4fe2-4a0b-b3d3-834a1b57fa43
+  - entity: f0a5cac7-c43b-47cf-b278-0f22d7514808
+  field_topics:
+  - entity: 57651b5c-628a-4b5b-bd93-68b3d97c0f4c
+  created:
+  - value: 1776628618
+  changed:
+  - value: 1776631111

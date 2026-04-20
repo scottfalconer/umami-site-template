@@ -1,0 +1,31 @@
+_meta:
+  version: '1.0'
+  entity_type: user
+  uuid: e911ca70-b016-40d5-af23-7e5b1d82007e
+  default_langcode: en
+  depends:
+    f00b4b51-cf17-4bfe-9a06-1ed16a8801aa: file
+default:
+  preferred_langcode:
+  - value: en
+  name:
+  - value: Priya Ramanathan
+  mail:
+  - value: priya.ramanathan@example.com
+  timezone:
+  - value: America/Costa_Rica
+  status:
+  - value: true
+  path:
+  - langcode: en
+    alias: null
+  field_bio:
+  - value: Loves a good spice cabinet diagram. Writes about technique, heat, and the geometry of a good meal.
+  field_role:
+  - value: Senior Editor
+  user_picture:
+  - alt: Priya Ramanathan
+    title: ''
+    width: 200
+    height: 200
+    entity: f00b4b51-cf17-4bfe-9a06-1ed16a8801aa

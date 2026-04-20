@@ -1,0 +1,83 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 300908fc-4fe2-4a0b-b3d3-834a1b57fa43
+  bundle: recipe
+  default_langcode: en
+  depends:
+    5546aa05-f2e6-4d2f-a71f-7ef234eec0c6: user
+    599ebf46-e71a-4216-bae3-3032c4038120: taxonomy_term
+    d89e63b8-2e59-4a10-9bf1-7def54e1922d: taxonomy_term
+    9e7771fb-6acb-45f9-87f0-72ddf70eb4b1: taxonomy_term
+    1cbaf4ec-13e2-483c-b03c-2ac54273cb9f: media
+    4c4f90c3-8086-4fd4-9c31-fc3e824fc60e: taxonomy_term
+    a9d319bf-864a-4496-8dba-82dc1652f2aa: node
+    57d27c70-1991-4b54-8ba3-2a64f2d92ad7: node
+    be17db54-41fe-481a-8e2b-88673f537aa3: node
+    26735ffd-6e41-4263-b276-f9ce28e7bb5c: taxonomy_term
+    e745ac5c-96c1-405c-8a27-b55ebc9054a0: taxonomy_term
+default:
+  revision_uid:
+  - entity: 5546aa05-f2e6-4d2f-a71f-7ef234eec0c6
+  status:
+  - value: true
+  uid:
+  - entity: 5546aa05-f2e6-4d2f-a71f-7ef234eec0c6
+  title:
+  - value: Blistered Peppers with Honey and Vinegar
+  promote:
+  - value: false
+  sticky:
+  - value: false
+  revision_translation_affected:
+  - value: true
+  path:
+  - alias: /recipe/blistered-peppers-with-honey
+    langcode: en
+    pathauto: 0
+  field_cook_minutes:
+  - value: 15
+  field_cuisine:
+  - entity: 599ebf46-e71a-4216-bae3-3032c4038120
+  field_description:
+  - value: Sweet peppers blistered hard, then dressed in the pan with honey and sherry vinegar.
+  field_dietary:
+  - entity: d89e63b8-2e59-4a10-9bf1-7def54e1922d
+  - entity: 9e7771fb-6acb-45f9-87f0-72ddf70eb4b1
+  field_difficulty:
+  - value: Easy
+  field_featured_image:
+  - entity: 1cbaf4ec-13e2-483c-b03c-2ac54273cb9f
+  field_ingredients:
+  - value: '500 g|shishito or padron peppers
+
+      2 tbsp|neutral oil
+
+      1 tbsp|honey
+
+      1 tbsp|sherry vinegar
+
+      to taste|flaky salt'
+  field_method:
+  - value: 'Blister|Heat oil in a cast iron until shimmering. Add peppers and leave undisturbed for 2 min. Toss and cook until charred in patches.
+
+      Dress|Off heat, add honey and vinegar. Swirl to glaze. Salt heavily.'
+  field_prep_minutes:
+  - value: 5
+  field_recipe_category:
+  - entity: 4c4f90c3-8086-4fd4-9c31-fc3e824fc60e
+  field_related_recipes:
+  - entity: a9d319bf-864a-4496-8dba-82dc1652f2aa
+  - entity: 57d27c70-1991-4b54-8ba3-2a64f2d92ad7
+  - entity: be17db54-41fe-481a-8e2b-88673f537aa3
+  field_servings:
+  - value: 4
+  field_topics:
+  - entity: 26735ffd-6e41-4263-b276-f9ce28e7bb5c
+  - entity: e745ac5c-96c1-405c-8a27-b55ebc9054a0
+  field_total_minutes:
+  - value: 20
+  created:
+  - value: 1772280000
+  changed:
+  - value: 1776631111

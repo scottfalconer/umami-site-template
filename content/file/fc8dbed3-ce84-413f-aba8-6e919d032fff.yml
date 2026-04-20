@@ -1,0 +1,24 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: fc8dbed3-ce84-413f-aba8-6e919d032fff
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 0
+  filename:
+    -
+      value: slow-sundays.jpg
+  uri:
+    -
+      value: 'public://umami-next/slow-sundays.jpg'
+  filemime:
+    -
+      value: image/jpeg
+  filesize:
+    -
+      value: 492945
+  status:
+    -
+      value: true

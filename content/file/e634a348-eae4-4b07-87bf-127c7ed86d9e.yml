@@ -1,0 +1,24 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: e634a348-eae4-4b07-87bf-127c7ed86d9e
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 0
+  filename:
+    -
+      value: weeknight-table.jpg
+  uri:
+    -
+      value: 'public://umami-next/weeknight-table.jpg'
+  filemime:
+    -
+      value: image/jpeg
+  filesize:
+    -
+      value: 566828
+  status:
+    -
+      value: true

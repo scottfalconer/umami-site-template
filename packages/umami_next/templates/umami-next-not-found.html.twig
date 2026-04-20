@@ -1,0 +1,25 @@
+<section class="container not-found">
+  <div class="not-found__code">404</div>
+  <h1>{{ 'This page has gone to the market.'|t }}</h1>
+  <p>{{ "It will be back Sunday with basil. In the meantime, here are a few recipes to stand in."|t }}</p>
+  <div class="not-found__actions">
+    <a href="{{ path('<front>') }}" class="btn">{{ 'Home'|t }}</a>
+    <a href="{{ path('umami_next.recipes') }}" class="btn btn--ghost">{{ 'Browse recipes'|t }}</a>
+  </div>
+</section>
+
+<section class="container">
+  <div class="grid-3">
+    {% for card in recipe_cards %}
+      <a href="{{ card.url }}" class="card">
+        {% if card.image.url %}
+          <div class="card-media"><img src="{{ card.image.url }}" alt="{{ card.image.alt }}"></div>
+        {% else %}
+          <div class="card-media card-media--placeholder" aria-hidden="true"></div>
+        {% endif %}
+        <h3 class="card__title">{{ card.title }}</h3>
+        <p class="card__deck">{{ card.summary }}</p>
+      </a>
+    {% endfor %}
+  </div>
+</section>

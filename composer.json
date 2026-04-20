@@ -1,0 +1,38 @@
+{
+    "name": "drupal/umami",
+    "description": "A Drupal CMS site template that brings the Umami food magazine demo into Drupal 11, Canvas, and modern editorial workflows.",
+    "type": "drupal-recipe",
+    "license": "GPL-2.0-or-later",
+    "require": {
+        "drupal/core": "^11.3",
+        "drupal/drupal_cms_admin_ui": "^2.1",
+        "drupal/drupal_cms_anti_spam": "^2.1",
+        "drupal/drupal_cms_authentication": "^2.1",
+        "drupal/drupal_cms_forms": "^2.1",
+        "drupal/drupal_cms_helper": "^2.1",
+        "drupal/drupal_cms_media": "^2.1",
+        "drupal/drupal_cms_privacy_basic": "^2.1",
+        "drupal/drupal_cms_search": "^2.1",
+        "drupal/drupal_cms_seo_basic": "^2.1",
+        "drupal/easy_email_express": "^1",
+        "drupal/mercury": "^1",
+        "drupal/site_template_helper": "^1.0",
+        "drupal/umami_next": "^1@dev",
+        "drupal/umami_next_theme": "^1@dev"
+    },
+    "config": {
+        "allow-plugins": {
+            "drupal/site_template_helper": true
+        }
+    },
+    "extra": {
+        "drupal-scaffold": {
+            "file-mapping": {
+                "[project-root]/AGENTS.md": "AGENTS.md"
+            }
+        },
+        "branch-alias": {
+            "dev-main": "1.x-dev"
+        }
+    }
+}

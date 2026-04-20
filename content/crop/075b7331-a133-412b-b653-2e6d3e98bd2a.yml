@@ -1,0 +1,30 @@
+_meta:
+  version: '1.0'
+  entity_type: crop
+  uuid: 075b7331-a133-412b-b653-2e6d3e98bd2a
+  bundle: focal_point
+  default_langcode: en
+  depends:
+    66eb7c50-657b-4b9c-a98e-a9d7a819f618: file
+default:
+  entity_id:
+    -
+      uuid: 66eb7c50-657b-4b9c-a98e-a9d7a819f618
+  entity_type:
+    -
+      value: file
+  uri:
+    -
+      value: 'public://umami-next/heritage-the-long-pot.jpg'
+  x:
+    -
+      value: 800
+  'y':
+    -
+      value: 550
+  revision_uid:
+    -
+      target_id: 0
+  revision_translation_affected:
+    -
+      value: true

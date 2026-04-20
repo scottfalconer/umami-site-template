@@ -1,0 +1,32 @@
+_meta:
+  version: '1.0'
+  entity_type: media
+  uuid: 2c2229b8-c0e2-490f-b52c-0aec7ef603ad
+  bundle: image
+  default_langcode: en
+  depends:
+    1a142c16-d4b7-48a9-b136-65cfdb01d60d: file
+default:
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 0
+  name:
+    -
+      value: fire-and-grill
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      langcode: en
+      alias: null
+  field_media_image:
+    -
+      alt: 'Fire & Grill'
+      title: ''
+      width: 1600
+      height: 1100
+      entity: 1a142c16-d4b7-48a9-b136-65cfdb01d60d

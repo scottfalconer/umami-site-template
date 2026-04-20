@@ -1,0 +1,58 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 46e797cb-5267-42f3-9e2e-56d781193a4e
+  bundle: article
+  default_langcode: en
+  depends:
+    9cae18b2-ab0d-48f1-bd9d-137efac5fd4b: user
+    f2055c45-d739-46c4-8e56-ada172f1f9d8: user
+    ba8ad3d0-1086-4a7a-98a9-64e6841b9d45: media
+    a9d319bf-864a-4496-8dba-82dc1652f2aa: node
+    571994c9-f7dd-432c-8762-bb5ab5c94506: node
+    45d0c897-71de-4f57-95b3-4bec3818917d: node
+    26735ffd-6e41-4263-b276-f9ce28e7bb5c: taxonomy_term
+    dc165a3e-671b-4068-a4f1-bc093d205713: taxonomy_term
+    a27aab93-f454-4cb1-882a-306d7af5eee6: taxonomy_term
+default:
+  revision_uid:
+  - entity: 9cae18b2-ab0d-48f1-bd9d-137efac5fd4b
+  status:
+  - value: true
+  uid:
+  - entity: f2055c45-d739-46c4-8e56-ada172f1f9d8
+  title:
+  - value: The Case for One Pan
+  promote:
+  - value: false
+  sticky:
+  - value: false
+  revision_translation_affected:
+  - value: true
+  path:
+  - alias: /article/the-case-for-one-pan
+    langcode: en
+    pathauto: 0
+  field_content:
+  - value: '<p>There is a particular dignity in cooking that fits inside a single pan. It is not minimalism, exactly — minimalism aspires to nothing, and a good one-pan dinner aspires to everything, just with tighter means.</p><p>A pan is a territory. It draws a line around the dinner and says: this much heat, this much surface, this much space. The cook is forced to sequence. Aromatics first, while the oil learns your kitchen. Then the thing that needs color. Then the thing that needs to soften. Finally the bright, green, late addition that keeps the whole endeavor from feeling brown.</p><h3>A short list of non-rules</h3><p>Choose a pan with some weight to it. Season in layers. Taste before the last step, not after. Serve straight from the pan whenever you can; the pleasure of a shared surface is an underrated one.</p><p>If you want a few places to start, consider our charred cabbage with anchovy butter, or the dal that pretends to take effort and doesn&#039;t. They share a common language.</p>'
+    format: content_format
+  field_description:
+  - value: In praise of the single cast-iron, the short list of ingredients, and the kind of dinner that asks almost nothing of you.
+  field_featured_image:
+  - entity: ba8ad3d0-1086-4a7a-98a9-64e6841b9d45
+  field_pull_quote:
+  - value: The best weeknight cooking is not economical; it is generous on a small budget of time.
+  field_read_minutes:
+  - value: 6
+  field_related_recipes:
+  - entity: a9d319bf-864a-4496-8dba-82dc1652f2aa
+  - entity: 571994c9-f7dd-432c-8762-bb5ab5c94506
+  - entity: 45d0c897-71de-4f57-95b3-4bec3818917d
+  field_topics:
+  - entity: 26735ffd-6e41-4263-b276-f9ce28e7bb5c
+  - entity: dc165a3e-671b-4068-a4f1-bc093d205713
+  - entity: a27aab93-f454-4cb1-882a-306d7af5eee6
+  created:
+  - value: 1775995200
+  changed:
+  - value: 1776631111

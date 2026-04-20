@@ -1,0 +1,30 @@
+_meta:
+  version: '1.0'
+  entity_type: crop
+  uuid: dcebe237-3d42-4bb7-9ff2-f67cc13a5d24
+  bundle: focal_point
+  default_langcode: en
+  depends:
+    aebdb5a3-e68e-4e3e-aa99-fb1e5345bac5: file
+default:
+  entity_id:
+    -
+      uuid: aebdb5a3-e68e-4e3e-aa99-fb1e5345bac5
+  entity_type:
+    -
+      value: file
+  uri:
+    -
+      value: 'public://umami-next/on-salt-the-short-version.jpg'
+  x:
+    -
+      value: 800
+  'y':
+    -
+      value: 550
+  revision_uid:
+    -
+      target_id: 0
+  revision_translation_affected:
+    -
+      value: true

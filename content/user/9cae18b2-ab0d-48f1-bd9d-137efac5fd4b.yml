@@ -1,0 +1,31 @@
+_meta:
+  version: '1.0'
+  entity_type: user
+  uuid: 9cae18b2-ab0d-48f1-bd9d-137efac5fd4b
+  default_langcode: en
+  depends:
+    057f3bde-fc2c-4ae7-8c7a-62649150a38a: file
+default:
+  preferred_langcode:
+  - value: en
+  name:
+  - value: ines-moreau
+  mail:
+  - value: ines@example.com
+  timezone:
+  - value: America/Costa_Rica
+  status:
+  - value: true
+  path:
+  - langcode: en
+    alias: null
+  field_bio:
+  - value: Former line cook turned cookbook author. Writes about the quiet kind of cooking.
+  field_role:
+  - value: Recipes Editor
+  user_picture:
+  - alt: Ines Moreau
+    title: ''
+    width: 200
+    height: 200
+    entity: 057f3bde-fc2c-4ae7-8c7a-62649150a38a

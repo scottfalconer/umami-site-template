@@ -1,0 +1,104 @@
+<article{{ attributes.addClass('article-layout', 'container') }}>
+  <header class="detail-hero">
+    <div>
+      {% if umami_article.topics|length %}
+        <div class="eyebrow with-rule">{{ umami_article.topics[0].label }}</div>
+      {% endif %}
+      <h1 class="detail-title">{{ label }}</h1>
+      {% if node.field_description.value %}
+        <p class="detail-deck">{{ node.field_description.value }}</p>
+      {% endif %}
+      <div class="hero-meta">
+        {% if umami_author %}
+          <div class="byline">
+            {% if umami_author.image %}
+              <div class="byline__avatar"><img src="{{ umami_author.image }}" alt="{{ umami_author.name }}"></div>
+            {% endif %}
+            <span>{{ 'By'|t }} <span class="name">{{ umami_author.name }}</span></span>
+            {% if umami_author.role %}
+              <span class="dot">&middot;</span><span>{{ umami_author.role }}</span>
+            {% endif %}
+            {% if umami_article.read_minutes %}
+              <span class="dot">&middot;</span><span>{{ umami_article.read_minutes }} {{ 'min read'|t }}</span>
+            {% endif %}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+    {% if content.field_featured_image %}
+      <div class="detail-hero__image">{{ content.field_featured_image }}</div>
+    {% endif %}
+  </header>
+
+  <div class="article-body">
+    {{ content.field_content }}
+    {% if umami_article.pull_quote %}
+      <blockquote class="pull-quote">{{ umami_article.pull_quote }}</blockquote>
+    {% endif %}
+  </div>
+
+  {% if umami_article.related_recipes %}
+    <section class="section-space">
+      <div class="section-heading">
+        <div>
+          <div class="eyebrow">{{ 'Cook this next'|t }}</div>
+          <h2 class="section-heading__title">{{ 'Recipes mentioned in the story'|t }}</h2>
+        </div>
+      </div>
+      <div class="grid-3">
+        {% for card in umami_article.related_recipes %}
+          <a href="{{ card.url }}" class="card">
+            {% if card.image.url %}
+          <div class="card-media"><img src="{{ card.image.url }}" alt="{{ card.image.alt }}"></div>
+        {% else %}
+          <div class="card-media card-media--placeholder" aria-hidden="true"></div>
+        {% endif %}
+            <div class="card__meta"><span>{{ card.category }}</span>{% if card.cuisine %}<span class="dot">&middot;</span><span>{{ card.cuisine }}</span>{% endif %}</div>
+            <h3 class="card__title">{{ card.title }}</h3>
+            <p class="card__deck">{{ card.summary }}</p>
+          </a>
+        {% endfor %}
+      </div>
+    </section>
+  {% endif %}
+
+  {% if umami_article.related_articles %}
+    <section class="section-space">
+      <div class="section-heading">
+        <div>
+          <div class="eyebrow">{{ 'More essays'|t }}</div>
+          <h2 class="section-heading__title">{{ 'More essays'|t }}</h2>
+        </div>
+      </div>
+      <div class="grid-3">
+        {% for card in umami_article.related_articles %}
+          <a href="{{ card.url }}" class="card">
+            {% if card.image.url %}
+          <div class="card-media"><img src="{{ card.image.url }}" alt="{{ card.image.alt }}"></div>
+        {% else %}
+          <div class="card-media card-media--placeholder" aria-hidden="true"></div>
+        {% endif %}
+            <div class="card__meta"><span>{{ card.topic ?: 'Essay'|t }}</span></div>
+            <h3 class="card__title">{{ card.title }}</h3>
+            <p class="card__deck">{{ card.summary }}</p>
+          </a>
+        {% endfor %}
+      </div>
+    </section>
+  {% endif %}
+
+  {% if umami_article.newsletter_form %}
+    <section class="newsletter-block section-space">
+      <div class="newsletter-block__inner">
+        <div>
+          <div class="eyebrow with-rule">{{ 'The weekly dispatch'|t }}</div>
+          <h2>{{ 'A small, useful letter on cooking and the season.'|t }}</h2>
+          <p>{{ 'Sent Sunday mornings. One recipe, one short essay, and a few things we have been eating. No noise.'|t }}</p>
+        </div>
+        <div class="newsletter-block__form">
+          {{ umami_article.newsletter_form }}
+        </div>
+      </div>
+    </section>
+  {% endif %}
+</article>

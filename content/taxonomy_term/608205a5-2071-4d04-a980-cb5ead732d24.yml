@@ -1,0 +1,26 @@
+_meta:
+  version: '1.0'
+  entity_type: taxonomy_term
+  uuid: 608205a5-2071-4d04-a980-cb5ead732d24
+  bundle: cuisine
+  default_langcode: en
+default:
+  status:
+    -
+      value: true
+  name:
+    -
+      value: 'West African'
+  weight:
+    -
+      value: 0
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      langcode: en
+      alias: null
+  field_slug:
+    -
+      value: west-african

@@ -1,0 +1,92 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 45d0c897-71de-4f57-95b3-4bec3818917d
+  bundle: recipe
+  default_langcode: en
+  depends:
+    9cae18b2-ab0d-48f1-bd9d-137efac5fd4b: user
+    f2055c45-d739-46c4-8e56-ada172f1f9d8: user
+    dad86604-0666-486c-a6c6-dbbb22882482: taxonomy_term
+    d89e63b8-2e59-4a10-9bf1-7def54e1922d: taxonomy_term
+    9e7771fb-6acb-45f9-87f0-72ddf70eb4b1: taxonomy_term
+    e06fb558-3109-4975-b2a2-9b05b776fa53: media
+    c338f17b-b1ef-490e-abb6-88f1280c0e4c: taxonomy_term
+    36a35a55-76f6-4e39-baf8-31798f2db0aa: node
+    097ae30f-fce3-45f6-9959-d7cc88b6c81d: node
+    e832f942-2282-4dd3-b804-1d85255a0f99: node
+    6aaee7b7-099a-4ea0-85b8-bbf33fed76d1: taxonomy_term
+    26735ffd-6e41-4263-b276-f9ce28e7bb5c: taxonomy_term
+    a27aab93-f454-4cb1-882a-306d7af5eee6: taxonomy_term
+default:
+  revision_uid:
+  - entity: 9cae18b2-ab0d-48f1-bd9d-137efac5fd4b
+  status:
+  - value: true
+  uid:
+  - entity: f2055c45-d739-46c4-8e56-ada172f1f9d8
+  title:
+  - value: White Beans with Celery and Lemon
+  promote:
+  - value: false
+  sticky:
+  - value: false
+  revision_translation_affected:
+  - value: true
+  path:
+  - alias: /recipe/white-beans-with-celery-and-lemon
+    langcode: en
+    pathauto: 0
+  field_cook_minutes:
+  - value: 15
+  field_cuisine:
+  - entity: dad86604-0666-486c-a6c6-dbbb22882482
+  field_description:
+  - value: 'A pantry lunch that dresses up in under twenty minutes: creamy beans, a rain of celery leaves, and a slap of lemon.'
+  field_dietary:
+  - entity: d89e63b8-2e59-4a10-9bf1-7def54e1922d
+  - entity: 9e7771fb-6acb-45f9-87f0-72ddf70eb4b1
+  field_difficulty:
+  - value: Easy
+  field_featured_image:
+  - entity: e06fb558-3109-4975-b2a2-9b05b776fa53
+  field_ingredients:
+  - value: '2 × 400 g|tins cannellini or butter beans, with their liquid
+
+      3 stalks|celery, thinly sliced (leaves reserved)
+
+      3 tbsp|good olive oil
+
+      1|lemon (zest and juice)
+
+      1 tsp|fennel seeds
+
+      to taste|flaky salt, black pepper'
+  field_method:
+  - value: 'Warm|Warm the beans and their liquid gently with the oil, fennel, and a pinch of salt.
+
+      Dress|Off heat, stir in celery and lemon juice. Taste for salt.
+
+      Finish|Spoon into bowls. Top with celery leaves, zest, more oil, and a crack of pepper.'
+  field_notes:
+  - value: Good over thick toast, or with a poached egg.
+  field_prep_minutes:
+  - value: 10
+  field_recipe_category:
+  - entity: c338f17b-b1ef-490e-abb6-88f1280c0e4c
+  field_related_recipes:
+  - entity: 36a35a55-76f6-4e39-baf8-31798f2db0aa
+  - entity: 097ae30f-fce3-45f6-9959-d7cc88b6c81d
+  - entity: e832f942-2282-4dd3-b804-1d85255a0f99
+  field_servings:
+  - value: 2
+  field_topics:
+  - entity: 6aaee7b7-099a-4ea0-85b8-bbf33fed76d1
+  - entity: 26735ffd-6e41-4263-b276-f9ce28e7bb5c
+  - entity: a27aab93-f454-4cb1-882a-306d7af5eee6
+  field_total_minutes:
+  - value: 25
+  created:
+  - value: 1774094400
+  changed:
+  - value: 1776631111

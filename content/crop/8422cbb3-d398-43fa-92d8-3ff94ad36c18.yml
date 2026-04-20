@@ -1,0 +1,30 @@
+_meta:
+  version: '1.0'
+  entity_type: crop
+  uuid: 8422cbb3-d398-43fa-92d8-3ff94ad36c18
+  bundle: focal_point
+  default_langcode: en
+  depends:
+    1336ee81-514a-48ba-ad66-5ff5270404b1: file
+default:
+  entity_id:
+    -
+      uuid: 1336ee81-514a-48ba-ad66-5ff5270404b1
+  entity_type:
+    -
+      value: file
+  uri:
+    -
+      value: 'public://umami-next/olive-oil-citrus-cake.jpg'
+  x:
+    -
+      value: 800
+  'y':
+    -
+      value: 550
+  revision_uid:
+    -
+      target_id: 0
+  revision_translation_affected:
+    -
+      value: true

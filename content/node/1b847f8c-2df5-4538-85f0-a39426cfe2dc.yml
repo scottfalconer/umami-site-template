@@ -1,0 +1,52 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 1b847f8c-2df5-4538-85f0-a39426cfe2dc
+  bundle: article
+  default_langcode: en
+  depends:
+    5ea1013c-2709-4c23-84e8-19e9789b1dd2: user
+    e911ca70-b016-40d5-af23-7e5b1d82007e: user
+    1b6e3ef3-072a-4fd0-a969-fe8a63fee494: media
+    a9d319bf-864a-4496-8dba-82dc1652f2aa: node
+    300908fc-4fe2-4a0b-b3d3-834a1b57fa43: node
+    e832f942-2282-4dd3-b804-1d85255a0f99: node
+    dc165a3e-671b-4068-a4f1-bc093d205713: taxonomy_term
+default:
+  revision_uid:
+  - entity: 5ea1013c-2709-4c23-84e8-19e9789b1dd2
+  status:
+  - value: true
+  uid:
+  - entity: e911ca70-b016-40d5-af23-7e5b1d82007e
+  title:
+  - value: On Salt, the Short Version
+  promote:
+  - value: false
+  sticky:
+  - value: false
+  revision_translation_affected:
+  - value: true
+  path:
+  - alias: /article/on-salt-the-short-version
+    langcode: en
+    pathauto: 0
+  field_content:
+  - value: '<p>A cook only needs three salts: a fine one for the pasta water, a kosher one for everything else, and a flake for the last second. The rest is theater.</p><p>What matters is not the brand but the habit: salting at three moments — the seasoning of raw ingredients, the seasoning mid-cook, and the finishing. Skip any one and the dish will be flat in a way that sometimes reads as &#039;missing something&#039;. It isn&#039;t missing something. It is missing salt, twice.</p>'
+    format: content_format
+  field_description:
+  - value: Three kinds, three moments, and a small promise about the difference it will make.
+  field_featured_image:
+  - entity: 1b6e3ef3-072a-4fd0-a969-fe8a63fee494
+  field_read_minutes:
+  - value: 3
+  field_related_recipes:
+  - entity: a9d319bf-864a-4496-8dba-82dc1652f2aa
+  - entity: 300908fc-4fe2-4a0b-b3d3-834a1b57fa43
+  - entity: e832f942-2282-4dd3-b804-1d85255a0f99
+  field_topics:
+  - entity: dc165a3e-671b-4068-a4f1-bc093d205713
+  created:
+  - value: 1774353600
+  changed:
+  - value: 1776631111

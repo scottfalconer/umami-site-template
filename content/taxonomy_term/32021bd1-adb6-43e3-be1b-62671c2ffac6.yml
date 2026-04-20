@@ -1,0 +1,26 @@
+_meta:
+  version: '1.0'
+  entity_type: taxonomy_term
+  uuid: 32021bd1-adb6-43e3-be1b-62671c2ffac6
+  bundle: topic
+  default_langcode: en
+default:
+  status:
+    -
+      value: true
+  name:
+    -
+      value: Gatherings
+  weight:
+    -
+      value: 0
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      langcode: en
+      alias: null
+  field_slug:
+    -
+      value: gathering

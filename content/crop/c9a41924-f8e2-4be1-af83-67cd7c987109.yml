@@ -1,0 +1,30 @@
+_meta:
+  version: '1.0'
+  entity_type: crop
+  uuid: c9a41924-f8e2-4be1-af83-67cd7c987109
+  bundle: focal_point
+  default_langcode: en
+  depends:
+    41309816-6675-4ece-8a6f-0d7b68dfd382: file
+default:
+  entity_id:
+    -
+      uuid: 41309816-6675-4ece-8a6f-0d7b68dfd382
+  entity_type:
+    -
+      value: file
+  uri:
+    -
+      value: 'public://umami-next/preserving-what-you-love.jpg'
+  x:
+    -
+      value: 800
+  'y':
+    -
+      value: 550
+  revision_uid:
+    -
+      target_id: 0
+  revision_translation_affected:
+    -
+      value: true

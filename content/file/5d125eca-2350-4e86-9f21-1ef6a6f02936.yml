@@ -1,0 +1,24 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: 5d125eca-2350-4e86-9f21-1ef6a6f02936
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 0
+  filename:
+    -
+      value: the-quiet-dessert.jpg
+  uri:
+    -
+      value: 'public://umami-next/the-quiet-dessert.jpg'
+  filemime:
+    -
+      value: image/jpeg
+  filesize:
+    -
+      value: 297112
+  status:
+    -
+      value: true

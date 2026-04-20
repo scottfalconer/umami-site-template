@@ -1,0 +1,26 @@
+langcode: en
+status: false
+dependencies:
+  config:
+    - system.menu.footer_cook
+  module:
+    - system
+active_version: 803ea1bb0be2dc0a
+versioned_properties:
+  active:
+    settings:
+      default_settings:
+        id: 'system_menu_block:footer_cook'
+        label: Cook
+        label_display: '0'
+        provider: system
+        level: 1
+        depth: null
+        expand_all_items: false
+    fallback_metadata:
+      slot_definitions: null
+label: Cook
+id: block.system_menu_block.footer_cook
+provider: system
+source: block
+source_local_id: 'system_menu_block:footer_cook'

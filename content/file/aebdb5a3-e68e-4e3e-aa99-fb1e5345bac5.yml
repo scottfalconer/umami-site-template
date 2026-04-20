@@ -1,0 +1,24 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: aebdb5a3-e68e-4e3e-aa99-fb1e5345bac5
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 0
+  filename:
+    -
+      value: on-salt-the-short-version.jpg
+  uri:
+    -
+      value: 'public://umami-next/on-salt-the-short-version.jpg'
+  filemime:
+    -
+      value: image/jpeg
+  filesize:
+    -
+      value: 426736
+  status:
+    -
+      value: true

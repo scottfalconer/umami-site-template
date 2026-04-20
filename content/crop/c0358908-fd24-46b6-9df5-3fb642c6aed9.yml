@@ -1,0 +1,30 @@
+_meta:
+  version: '1.0'
+  entity_type: crop
+  uuid: c0358908-fd24-46b6-9df5-3fb642c6aed9
+  bundle: focal_point
+  default_langcode: en
+  depends:
+    96eff0db-554a-4881-ac50-8459762235ba: file
+default:
+  entity_id:
+    -
+      uuid: 96eff0db-554a-4881-ac50-8459762235ba
+  entity_type:
+    -
+      value: file
+  uri:
+    -
+      value: 'public://umami-next/yogurt-flatbread.jpg'
+  x:
+    -
+      value: 800
+  'y':
+    -
+      value: 550
+  revision_uid:
+    -
+      target_id: 0
+  revision_translation_affected:
+    -
+      value: true

@@ -1,0 +1,32 @@
+_meta:
+  version: '1.0'
+  entity_type: media
+  uuid: 21b47df2-13d8-41dd-bb95-c8877142b514
+  bundle: image
+  default_langcode: en
+  depends:
+    716ae7c3-579f-4b31-9cc7-dda0da67be79: file
+default:
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 0
+  name:
+    -
+      value: spring-market-letter
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      langcode: en
+      alias: null
+  field_media_image:
+    -
+      alt: 'A Letter from the Spring Market'
+      title: ''
+      width: 1600
+      height: 1100
+      entity: 716ae7c3-579f-4b31-9cc7-dda0da67be79

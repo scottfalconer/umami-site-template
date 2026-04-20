@@ -1,0 +1,30 @@
+_meta:
+  version: '1.0'
+  entity_type: crop
+  uuid: 86d6eedb-1770-4bec-9687-f8364f6699d9
+  bundle: focal_point
+  default_langcode: en
+  depends:
+    67d194eb-92d6-43c2-aa88-416c7472c368: file
+default:
+  entity_id:
+    -
+      uuid: 67d194eb-92d6-43c2-aa88-416c7472c368
+  entity_type:
+    -
+      value: file
+  uri:
+    -
+      value: 'public://authors/amara-okafor.jpg'
+  x:
+    -
+      value: 100
+  'y':
+    -
+      value: 100
+  revision_uid:
+    -
+      target_id: 0
+  revision_translation_affected:
+    -
+      value: true

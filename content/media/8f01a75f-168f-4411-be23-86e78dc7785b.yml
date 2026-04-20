@@ -1,0 +1,32 @@
+_meta:
+  version: '1.0'
+  entity_type: media
+  uuid: 8f01a75f-168f-4411-be23-86e78dc7785b
+  bundle: image
+  default_langcode: en
+  depends:
+    66eb7c50-657b-4b9c-a98e-a9d7a819f618: file
+default:
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 0
+  name:
+    -
+      value: heritage-the-long-pot
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      langcode: en
+      alias: null
+  field_media_image:
+    -
+      alt: 'Heritage: The Long Pot'
+      title: ''
+      width: 1600
+      height: 1100
+      entity: 66eb7c50-657b-4b9c-a98e-a9d7a819f618

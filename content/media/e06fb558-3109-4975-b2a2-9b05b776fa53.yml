@@ -1,0 +1,32 @@
+_meta:
+  version: '1.0'
+  entity_type: media
+  uuid: e06fb558-3109-4975-b2a2-9b05b776fa53
+  bundle: image
+  default_langcode: en
+  depends:
+    f51ffee1-c8b4-4ea0-a843-fa87edbbb9e7: file
+default:
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 0
+  name:
+    -
+      value: white-beans-with-celery-and-lemon
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      langcode: en
+      alias: null
+  field_media_image:
+    -
+      alt: 'White Beans with Celery and Lemon'
+      title: ''
+      width: 1600
+      height: 1100
+      entity: f51ffee1-c8b4-4ea0-a843-fa87edbbb9e7

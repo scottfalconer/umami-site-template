@@ -1,0 +1,222 @@
+<?php
+
+/**
+ * @file
+ * Theme hooks for Umami Next routes.
+ */
+
+declare(strict_types=1);
+
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\node\NodeInterface;
+
+/**
+ * Implements hook_theme().
+ */
+function umami_next_theme(): array {
+  return [
+    'umami_next_home' => [
+      'variables' => [
+        'hero' => NULL,
+        'hero_author' => NULL,
+        'featured_recipes' => [],
+        'spotlight' => NULL,
+        'latest_stories' => [],
+        'topics' => [],
+        'newsletter' => NULL,
+      ],
+      'template' => 'umami-next-home',
+    ],
+    'umami_next_recipe_archive' => [
+      'variables' => [
+        'cards' => [],
+        'filters' => [],
+        'active_filters' => [],
+        'pager' => [],
+        'total' => 0,
+      ],
+      'template' => 'umami-next-recipe-archive',
+    ],
+    'umami_next_story_archive' => [
+      'variables' => [
+        'cards' => [],
+        'topics' => [],
+        'active_topic' => '',
+        'pager' => [],
+        'total' => 0,
+      ],
+      'template' => 'umami-next-story-archive',
+    ],
+    'umami_next_topic_archive' => [
+      'variables' => [
+        'topic' => NULL,
+        'recipe_cards' => [],
+        'article_cards' => [],
+        'recipe_count' => 0,
+        'article_count' => 0,
+        'newsletter_form' => [],
+      ],
+      'template' => 'umami-next-topic-archive',
+    ],
+    'umami_next_search' => [
+      'variables' => [
+        'query' => '',
+        'type' => '',
+        'results' => [],
+        'result_count' => 0,
+        'pager' => [],
+      ],
+      'template' => 'umami-next-search',
+    ],
+    'umami_next_contact' => [
+      'variables' => [
+        'contact_form' => [],
+        'newsletter_form' => [],
+        'social_links' => [],
+      ],
+      'template' => 'umami-next-contact',
+    ],
+    'umami_next_not_found' => [
+      'variables' => [
+        'recipe_cards' => [],
+      ],
+      'template' => 'umami-next-not-found',
+    ],
+    'umami_next_home_hero_block' => [
+      'variables' => [
+        'hero' => NULL,
+        'hero_author' => NULL,
+      ],
+      'template' => 'umami-next-home-hero-block',
+    ],
+    'umami_next_featured_recipes_block' => [
+      'variables' => [
+        'featured_recipes' => [],
+      ],
+      'template' => 'umami-next-featured-recipes-block',
+    ],
+    'umami_next_spotlight_collection_block' => [
+      'variables' => [
+        'spotlight' => NULL,
+      ],
+      'template' => 'umami-next-spotlight-collection-block',
+    ],
+    'umami_next_topic_browse_block' => [
+      'variables' => [
+        'topics' => [],
+      ],
+      'template' => 'umami-next-topic-browse-block',
+    ],
+    'umami_next_latest_stories_block' => [
+      'variables' => [
+        'latest_stories' => [],
+        'editors_picks' => [],
+      ],
+      'template' => 'umami-next-latest-stories-block',
+    ],
+    'umami_next_newsletter_block' => [
+      'variables' => [
+        'newsletter' => NULL,
+      ],
+      'template' => 'umami-next-newsletter-block',
+    ],
+    'umami_next_promo_strip_block' => [
+      'variables' => [
+        'promo' => NULL,
+      ],
+      'template' => 'umami-next-promo-strip-block',
+    ],
+  ];
+}
+
+/**
+ * Implements hook_entity_insert().
+ */
+function umami_next_entity_insert(EntityInterface $entity): void {
+  if ($entity->getEntityTypeId() === 'node') {
+    _umami_next_backfill_default_content_node_references();
+  }
+}
+
+/**
+ * Restores circular node references after default content import.
+ *
+ * Drupal core's default content importer resolves entity reference fields only
+ * when the referenced entity is already available in the current dependency
+ * graph. Umami recipes intentionally cross-reference one another, so this keeps
+ * those exported relationships deterministic on clean installs.
+ */
+function _umami_next_backfill_default_content_node_references(): void {
+  static $running = FALSE;
+
+  if ($running || \Drupal::state()->get('umami_next.default_content_references_backfilled')) {
+    return;
+  }
+
+  $running = TRUE;
+  try {
+    $reference_map = \Drupal::config('umami_next.default_content_references')->get('node_references') ?? [];
+    if (!$reference_map) {
+      return;
+    }
+
+    $repository = \Drupal::service('entity.repository');
+    $required_uuids = array_keys($reference_map);
+    foreach ($reference_map as $fields) {
+      foreach ($fields as $target_uuids) {
+        array_push($required_uuids, ...$target_uuids);
+      }
+    }
+
+    foreach (array_unique($required_uuids) as $uuid) {
+      if (!$repository->loadEntityByUuid('node', $uuid) instanceof NodeInterface) {
+        return;
+      }
+    }
+
+    foreach ($reference_map as $source_uuid => $fields) {
+      $source = $repository->loadEntityByUuid('node', $source_uuid);
+      if (!$source instanceof NodeInterface) {
+        continue;
+      }
+
+      $changed = FALSE;
+      foreach ($fields as $field_name => $target_uuids) {
+        if (!$source->hasField($field_name)) {
+          continue;
+        }
+
+        $target_ids = [];
+        foreach ($target_uuids as $target_uuid) {
+          $target = $repository->loadEntityByUuid('node', $target_uuid);
+          if (!$target instanceof NodeInterface) {
+            continue 2;
+          }
+          $target_ids[] = (int) $target->id();
+        }
+
+        $current_ids = array_map(
+          static fn (array $item): int => (int) ($item['target_id'] ?? 0),
+          $source->get($field_name)->getValue(),
+        );
+        if ($current_ids !== $target_ids) {
+          $source->set($field_name, array_map(
+            static fn (int $target_id): array => ['target_id' => $target_id],
+            $target_ids,
+          ));
+          $changed = TRUE;
+        }
+      }
+
+      if ($changed) {
+        $source->setSyncing(TRUE);
+        $source->save();
+      }
+    }
+
+    \Drupal::state()->set('umami_next.default_content_references_backfilled', TRUE);
+  }
+  finally {
+    $running = FALSE;
+  }
+}

@@ -1,0 +1,12 @@
+uuid: 3b0c29b8-0fb4-48f7-9220-3c14952d8510
+langcode: en
+status: true
+dependencies: {  }
+name: Editoria11y
+configEntityTypeId: component
+weight: 0
+items:
+  - block.views_block.editoria11y_dismissals-recent_dismissals
+  - block.views_block.editoria11y_results-block_recent_issues
+  - block.views_block.editoria11y_results-block_top_issues
+  - block.views_block.editoria11y_results-block_top_results

@@ -1,0 +1,24 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: ac48ac44-99ba-4e88-908c-57c4f9a38fb4
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 0
+  filename:
+    -
+      value: about.jpg
+  uri:
+    -
+      value: 'public://umami-next/about.jpg'
+  filemime:
+    -
+      value: image/jpeg
+  filesize:
+    -
+      value: 271525
+  status:
+    -
+      value: true

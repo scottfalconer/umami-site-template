@@ -1,0 +1,24 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: 1336ee81-514a-48ba-ad66-5ff5270404b1
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 0
+  filename:
+    -
+      value: olive-oil-citrus-cake.jpg
+  uri:
+    -
+      value: 'public://umami-next/olive-oil-citrus-cake.jpg'
+  filemime:
+    -
+      value: image/jpeg
+  filesize:
+    -
+      value: 215595
+  status:
+    -
+      value: true

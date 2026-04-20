@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - umami_next
+active_version: dcd30eadb7d96d8d
+versioned_properties:
+  active:
+    settings:
+      default_settings:
+        id: umami_next_topic_browse
+        label: 'Umami Next topic browse'
+        label_display: '0'
+        provider: umami_next
+    fallback_metadata:
+      slot_definitions: null
+label: 'Umami Next topic browse'
+id: block.umami_next_topic_browse
+provider: umami_next
+source: block
+source_local_id: umami_next_topic_browse

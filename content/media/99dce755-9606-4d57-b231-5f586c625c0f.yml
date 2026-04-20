@@ -1,0 +1,32 @@
+_meta:
+  version: '1.0'
+  entity_type: media
+  uuid: 99dce755-9606-4d57-b231-5f586c625c0f
+  bundle: image
+  default_langcode: en
+  depends:
+    954ddd0c-14a0-488a-a420-aff13e1d3356: file
+default:
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 0
+  name:
+    -
+      value: charred-cabbage-with-anchovy-butter
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      langcode: en
+      alias: null
+  field_media_image:
+    -
+      alt: 'Charred Cabbage with Anchovy Butter'
+      title: ''
+      width: 1600
+      height: 1100
+      entity: 954ddd0c-14a0-488a-a420-aff13e1d3356

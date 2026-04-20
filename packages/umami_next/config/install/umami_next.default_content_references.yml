@@ -1,0 +1,174 @@
+node_references:
+  04a71594-0b52-45ea-b8a2-9a6d6ed94672:
+    field_related_recipes:
+      - 553198ce-abe4-448e-89f8-70cca32c43db
+      - be17db54-41fe-481a-8e2b-88673f537aa3
+  0579a795-8571-4fe0-ace0-662540e61d11:
+    field_featured_recipes:
+      - 571994c9-f7dd-432c-8762-bb5ab5c94506
+      - ac36ac60-a124-4153-a2b9-671173cac6fb
+      - f4abb3f5-2aab-44cb-8a86-2ef144bbd68a
+    field_related_articles:
+      - 46e797cb-5267-42f3-9e2e-56d781193a4e
+      - 35f659a4-b3d9-432d-8d17-163e57cc9d88
+    field_secondary_recipes:
+      - 45d0c897-71de-4f57-95b3-4bec3818917d
+      - a9d319bf-864a-4496-8dba-82dc1652f2aa
+      - 57d27c70-1991-4b54-8ba3-2a64f2d92ad7
+  097ae30f-fce3-45f6-9959-d7cc88b6c81d:
+    field_related_recipes:
+      - ecf6d4f5-edac-42f5-a438-14ee88210f36
+      - e832f942-2282-4dd3-b804-1d85255a0f99
+      - be17db54-41fe-481a-8e2b-88673f537aa3
+  1b847f8c-2df5-4538-85f0-a39426cfe2dc:
+    field_related_recipes:
+      - a9d319bf-864a-4496-8dba-82dc1652f2aa
+      - 300908fc-4fe2-4a0b-b3d3-834a1b57fa43
+      - e832f942-2282-4dd3-b804-1d85255a0f99
+  300908fc-4fe2-4a0b-b3d3-834a1b57fa43:
+    field_related_recipes:
+      - a9d319bf-864a-4496-8dba-82dc1652f2aa
+      - 57d27c70-1991-4b54-8ba3-2a64f2d92ad7
+      - be17db54-41fe-481a-8e2b-88673f537aa3
+  35f659a4-b3d9-432d-8d17-163e57cc9d88:
+    field_related_recipes:
+      - 45d0c897-71de-4f57-95b3-4bec3818917d
+      - 571994c9-f7dd-432c-8762-bb5ab5c94506
+      - e832f942-2282-4dd3-b804-1d85255a0f99
+  36a35a55-76f6-4e39-baf8-31798f2db0aa:
+    field_related_recipes:
+      - 45d0c897-71de-4f57-95b3-4bec3818917d
+      - ecf6d4f5-edac-42f5-a438-14ee88210f36
+      - 83f730da-4588-4834-bcf6-6aa4142d8a62
+  45d0c897-71de-4f57-95b3-4bec3818917d:
+    field_related_recipes:
+      - 36a35a55-76f6-4e39-baf8-31798f2db0aa
+      - 097ae30f-fce3-45f6-9959-d7cc88b6c81d
+      - e832f942-2282-4dd3-b804-1d85255a0f99
+  46e797cb-5267-42f3-9e2e-56d781193a4e:
+    field_related_recipes:
+      - a9d319bf-864a-4496-8dba-82dc1652f2aa
+      - 571994c9-f7dd-432c-8762-bb5ab5c94506
+      - 45d0c897-71de-4f57-95b3-4bec3818917d
+  4f99b676-b43c-47ce-b19b-2ad32e34307e:
+    field_related_recipes:
+      - f0a5cac7-c43b-47cf-b278-0f22d7514808
+      - be17db54-41fe-481a-8e2b-88673f537aa3
+  553198ce-abe4-448e-89f8-70cca32c43db:
+    field_related_recipes:
+      - 45d0c897-71de-4f57-95b3-4bec3818917d
+      - fd7a4f69-f783-4ead-9e08-dd9d899fddb2
+      - 83f730da-4588-4834-bcf6-6aa4142d8a62
+  571994c9-f7dd-432c-8762-bb5ab5c94506:
+    field_related_recipes:
+      - ac36ac60-a124-4153-a2b9-671173cac6fb
+      - 553198ce-abe4-448e-89f8-70cca32c43db
+      - e832f942-2282-4dd3-b804-1d85255a0f99
+  57d27c70-1991-4b54-8ba3-2a64f2d92ad7:
+    field_related_recipes:
+      - a9d319bf-864a-4496-8dba-82dc1652f2aa
+      - 300908fc-4fe2-4a0b-b3d3-834a1b57fa43
+      - be17db54-41fe-481a-8e2b-88673f537aa3
+  5fc34da7-137d-4427-98c5-3befc955d679:
+    field_featured_recipes:
+      - 300908fc-4fe2-4a0b-b3d3-834a1b57fa43
+      - 57d27c70-1991-4b54-8ba3-2a64f2d92ad7
+      - f4abb3f5-2aab-44cb-8a86-2ef144bbd68a
+    field_related_articles:
+      - d0727fd3-e008-4573-9db8-a8437f1aadbb
+    field_secondary_recipes:
+      - a9d319bf-864a-4496-8dba-82dc1652f2aa
+      - ac36ac60-a124-4153-a2b9-671173cac6fb
+  6fae282f-9d1a-408d-b2a7-807ce6fd5c4c:
+    field_featured_recipes:
+      - 9f35ef4f-80d6-4b46-92ee-17610b4960ae
+      - fd7a4f69-f783-4ead-9e08-dd9d899fddb2
+      - 45d0c897-71de-4f57-95b3-4bec3818917d
+    field_related_articles:
+      - aa16dc27-a2de-4624-98e1-afcb5e4c086d
+      - 4f99b676-b43c-47ce-b19b-2ad32e34307e
+    field_secondary_recipes:
+      - 36a35a55-76f6-4e39-baf8-31798f2db0aa
+      - 300908fc-4fe2-4a0b-b3d3-834a1b57fa43
+      - f0a5cac7-c43b-47cf-b278-0f22d7514808
+  81362193-aaff-4d61-af95-9a158a3ab8de:
+    field_related_recipes:
+      - e832f942-2282-4dd3-b804-1d85255a0f99
+      - 553198ce-abe4-448e-89f8-70cca32c43db
+      - 45d0c897-71de-4f57-95b3-4bec3818917d
+  83f730da-4588-4834-bcf6-6aa4142d8a62:
+    field_related_recipes:
+      - 571994c9-f7dd-432c-8762-bb5ab5c94506
+      - 553198ce-abe4-448e-89f8-70cca32c43db
+      - 300908fc-4fe2-4a0b-b3d3-834a1b57fa43
+  9f35ef4f-80d6-4b46-92ee-17610b4960ae:
+    field_related_recipes:
+      - 300908fc-4fe2-4a0b-b3d3-834a1b57fa43
+      - f0a5cac7-c43b-47cf-b278-0f22d7514808
+      - a8efb448-5642-4a8b-ac31-1d8c484a498c
+  a8efb448-5642-4a8b-ac31-1d8c484a498c:
+    field_related_recipes:
+      - 9f35ef4f-80d6-4b46-92ee-17610b4960ae
+      - 553198ce-abe4-448e-89f8-70cca32c43db
+      - ecf6d4f5-edac-42f5-a438-14ee88210f36
+  a9d319bf-864a-4496-8dba-82dc1652f2aa:
+    field_related_recipes:
+      - 553198ce-abe4-448e-89f8-70cca32c43db
+      - fd7a4f69-f783-4ead-9e08-dd9d899fddb2
+      - 57d27c70-1991-4b54-8ba3-2a64f2d92ad7
+  aa16dc27-a2de-4624-98e1-afcb5e4c086d:
+    field_related_recipes:
+      - 9f35ef4f-80d6-4b46-92ee-17610b4960ae
+      - fd7a4f69-f783-4ead-9e08-dd9d899fddb2
+      - 45d0c897-71de-4f57-95b3-4bec3818917d
+  ac36ac60-a124-4153-a2b9-671173cac6fb:
+    field_related_recipes:
+      - 571994c9-f7dd-432c-8762-bb5ab5c94506
+      - f4abb3f5-2aab-44cb-8a86-2ef144bbd68a
+      - a9d319bf-864a-4496-8dba-82dc1652f2aa
+  be17db54-41fe-481a-8e2b-88673f537aa3:
+    field_related_recipes:
+      - f0a5cac7-c43b-47cf-b278-0f22d7514808
+      - 097ae30f-fce3-45f6-9959-d7cc88b6c81d
+      - ecf6d4f5-edac-42f5-a438-14ee88210f36
+  d0727fd3-e008-4573-9db8-a8437f1aadbb:
+    field_related_recipes:
+      - 300908fc-4fe2-4a0b-b3d3-834a1b57fa43
+      - 57d27c70-1991-4b54-8ba3-2a64f2d92ad7
+      - a9d319bf-864a-4496-8dba-82dc1652f2aa
+  e832f942-2282-4dd3-b804-1d85255a0f99:
+    field_related_recipes:
+      - 45d0c897-71de-4f57-95b3-4bec3818917d
+      - 553198ce-abe4-448e-89f8-70cca32c43db
+      - 36a35a55-76f6-4e39-baf8-31798f2db0aa
+  ecf6d4f5-edac-42f5-a438-14ee88210f36:
+    field_related_recipes:
+      - 097ae30f-fce3-45f6-9959-d7cc88b6c81d
+      - f0a5cac7-c43b-47cf-b278-0f22d7514808
+      - be17db54-41fe-481a-8e2b-88673f537aa3
+  f0a5cac7-c43b-47cf-b278-0f22d7514808:
+    field_related_recipes:
+      - ecf6d4f5-edac-42f5-a438-14ee88210f36
+      - 83f730da-4588-4834-bcf6-6aa4142d8a62
+      - be17db54-41fe-481a-8e2b-88673f537aa3
+  f4abb3f5-2aab-44cb-8a86-2ef144bbd68a:
+    field_related_recipes:
+      - ac36ac60-a124-4153-a2b9-671173cac6fb
+      - 571994c9-f7dd-432c-8762-bb5ab5c94506
+      - 83f730da-4588-4834-bcf6-6aa4142d8a62
+  fc725251-74a2-48b0-854a-00391f04a23e:
+    field_featured_recipes:
+      - e832f942-2282-4dd3-b804-1d85255a0f99
+      - ecf6d4f5-edac-42f5-a438-14ee88210f36
+      - 553198ce-abe4-448e-89f8-70cca32c43db
+    field_related_articles:
+      - 81362193-aaff-4d61-af95-9a158a3ab8de
+      - 04a71594-0b52-45ea-b8a2-9a6d6ed94672
+    field_secondary_recipes:
+      - be17db54-41fe-481a-8e2b-88673f537aa3
+      - 83f730da-4588-4834-bcf6-6aa4142d8a62
+  fd7a4f69-f783-4ead-9e08-dd9d899fddb2:
+    field_related_recipes:
+      - a9d319bf-864a-4496-8dba-82dc1652f2aa
+      - 553198ce-abe4-448e-89f8-70cca32c43db
+      - e832f942-2282-4dd3-b804-1d85255a0f99

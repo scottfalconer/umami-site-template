@@ -1,0 +1,39 @@
+umami_next.recipes:
+  path: '/recipes'
+  defaults:
+    _controller: '\Drupal\umami_next\Controller\EditorialController::recipes'
+    _title: 'Recipes'
+  requirements:
+    _permission: 'access content'
+
+umami_next.stories:
+  path: '/stories'
+  defaults:
+    _controller: '\Drupal\umami_next\Controller\EditorialController::stories'
+    _title: 'Stories'
+  requirements:
+    _permission: 'access content'
+
+umami_next.topic:
+  path: '/topic/{slug}'
+  defaults:
+    _controller: '\Drupal\umami_next\Controller\EditorialController::topic'
+    _title: 'Topic'
+  requirements:
+    _permission: 'access content'
+
+umami_next.search:
+  path: '/search'
+  defaults:
+    _controller: '\Drupal\umami_next\Controller\EditorialController::search'
+    _title: 'Search'
+  requirements:
+    _permission: 'access content'
+
+umami_next.contact:
+  path: '/contact'
+  defaults:
+    _controller: '\Drupal\umami_next\Controller\EditorialController::contact'
+    _title: 'Contact'
+  requirements:
+    _permission: 'access content'

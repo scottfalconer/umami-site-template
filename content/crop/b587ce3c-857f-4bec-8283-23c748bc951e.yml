@@ -1,0 +1,30 @@
+_meta:
+  version: '1.0'
+  entity_type: crop
+  uuid: b587ce3c-857f-4bec-8283-23c748bc951e
+  bundle: focal_point
+  default_langcode: en
+  depends:
+    7769c152-0c53-4648-9b87-e06a4a1d851c: file
+default:
+  entity_id:
+    -
+      uuid: 7769c152-0c53-4648-9b87-e06a4a1d851c
+  entity_type:
+    -
+      value: file
+  uri:
+    -
+      value: 'public://umami-next/rye-buttermilk-loaf.jpg'
+  x:
+    -
+      value: 800
+  'y':
+    -
+      value: 550
+  revision_uid:
+    -
+      target_id: 0
+  revision_translation_affected:
+    -
+      value: true

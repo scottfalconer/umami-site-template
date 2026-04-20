@@ -1,0 +1,24 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: 716ae7c3-579f-4b31-9cc7-dda0da67be79
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 0
+  filename:
+    -
+      value: spring-market-letter.jpg
+  uri:
+    -
+      value: 'public://umami-next/spring-market-letter.jpg'
+  filemime:
+    -
+      value: image/jpeg
+  filesize:
+    -
+      value: 530393
+  status:
+    -
+      value: true

@@ -1,0 +1,71 @@
+<article{{ attributes.addClass('container', 'page-layout') }}>
+  <header class="page-hero">
+    <div class="eyebrow with-rule">{{ 'About'|t }}</div>
+    <h1>{{ label }}</h1>
+    {% if node.field_description.value %}
+      <p>{{ node.field_description.value }}</p>
+    {% endif %}
+  </header>
+
+  <div class="page-split">
+    <div class="article-body page-body page-body--about">
+      {{ content.field_content }}
+    </div>
+    {% if umami_page.sidebar_title %}
+      <aside class="page-sidebar">
+        {% if umami_page.sidebar_eyebrow %}
+          <div class="eyebrow">{{ umami_page.sidebar_eyebrow }}</div>
+        {% endif %}
+        <h3>{{ umami_page.sidebar_title }}</h3>
+        {% if umami_page.sidebar_body %}
+          <p>{{ umami_page.sidebar_body }}</p>
+        {% endif %}
+        {% if umami_page.sidebar_link %}
+          <a href="{{ umami_page.sidebar_link.url }}" class="btn btn--ghost">{{ umami_page.sidebar_link.title }} &rarr;</a>
+        {% endif %}
+      </aside>
+    {% endif %}
+  </div>
+
+  {% if umami_page.show_authors and umami_page.authors %}
+    <section class="section-space" id="authors">
+      <div class="section-heading">
+        <div>
+          <div class="eyebrow">{{ 'Masthead'|t }}</div>
+          <h2 class="section-heading__title">{{ 'Writers & cooks'|t }}</h2>
+        </div>
+      </div>
+      <div class="grid-3 author-grid">
+        {% for author in umami_page.authors %}
+          <div class="card author-card">
+            {% if author.image %}
+              <div class="card-media author-card__media"><img src="{{ author.image }}" alt="{{ author.name }}"></div>
+            {% endif %}
+            {% if author.role %}
+              <div class="card__meta"><span>{{ author.role }}</span></div>
+            {% endif %}
+            <h3 class="card__title author-card__title">{{ author.name }}</h3>
+            {% if author.bio %}
+              <p class="card__deck">{{ author.bio }}</p>
+            {% endif %}
+          </div>
+        {% endfor %}
+      </div>
+    </section>
+  {% endif %}
+
+  {% if umami_page.newsletter_form %}
+    <section class="newsletter-block section-space">
+      <div class="newsletter-block__inner">
+        <div>
+          <div class="eyebrow with-rule">{{ 'The weekly dispatch'|t }}</div>
+          <h2>{{ 'A small, useful letter on cooking and the season.'|t }}</h2>
+          <p>{{ 'Sent Sunday mornings. One recipe, one short essay, and a few things we have been eating. No noise.'|t }}</p>
+        </div>
+        <div class="newsletter-block__form">
+          {{ umami_page.newsletter_form }}
+        </div>
+      </div>
+    </section>
+  {% endif %}
+</article>

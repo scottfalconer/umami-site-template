@@ -1,0 +1,26 @@
+_meta:
+  version: '1.0'
+  entity_type: taxonomy_term
+  uuid: f74b68fe-08d9-43e6-9a60-3478edcf7cb1
+  bundle: cuisine
+  default_langcode: en
+default:
+  status:
+    -
+      value: true
+  name:
+    -
+      value: Nordic
+  weight:
+    -
+      value: 0
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      langcode: en
+      alias: null
+  field_slug:
+    -
+      value: nordic

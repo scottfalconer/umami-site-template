@@ -1,0 +1,26 @@
+_meta:
+  version: '1.0'
+  entity_type: taxonomy_term
+  uuid: 26735ffd-6e41-4263-b276-f9ce28e7bb5c
+  bundle: topic
+  default_langcode: en
+default:
+  status:
+    -
+      value: true
+  name:
+    -
+      value: Weeknight
+  weight:
+    -
+      value: 0
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      langcode: en
+      alias: null
+  field_slug:
+    -
+      value: weeknight

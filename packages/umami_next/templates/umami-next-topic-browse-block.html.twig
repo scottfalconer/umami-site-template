@@ -1,0 +1,19 @@
+<section class="container section-space">
+  <div class="section-heading">
+    <div>
+      <div class="eyebrow">{{ 'Browse'|t }}</div>
+      <h2 class="section-heading__title">{{ 'By way of the kitchen'|t }}</h2>
+    </div>
+  </div>
+  <div class="topic-grid">
+    {% for topic in topics %}
+      <a href="{{ topic.url }}" class="topic-tile">
+        <div class="topic-tile__num">{{ '%02d'|format(loop.index) }} / 06</div>
+        <div>
+          <div class="topic-tile__name">{{ topic.label }}</div>
+          <div class="topic-tile__count">{{ topic.count }} {{ 'pieces'|t }}</div>
+        </div>
+      </a>
+    {% endfor %}
+  </div>
+</section>

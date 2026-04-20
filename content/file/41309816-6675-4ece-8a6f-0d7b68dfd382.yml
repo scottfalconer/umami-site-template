@@ -1,0 +1,24 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: 41309816-6675-4ece-8a6f-0d7b68dfd382
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 0
+  filename:
+    -
+      value: preserving-what-you-love.jpg
+  uri:
+    -
+      value: 'public://umami-next/preserving-what-you-love.jpg'
+  filemime:
+    -
+      value: image/jpeg
+  filesize:
+    -
+      value: 315473
+  status:
+    -
+      value: true

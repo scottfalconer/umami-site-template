@@ -1,0 +1,30 @@
+_meta:
+  version: '1.0'
+  entity_type: crop
+  uuid: 61a9f116-6c6d-47df-a964-d37bc02bf4bc
+  bundle: focal_point
+  default_langcode: en
+  depends:
+    898289be-bb99-4f21-bae1-5b8b8be135b2: file
+default:
+  entity_id:
+    -
+      uuid: 898289be-bb99-4f21-bae1-5b8b8be135b2
+  entity_type:
+    -
+      value: file
+  uri:
+    -
+      value: 'public://umami-next/miso-glazed-salmon-bowls.jpg'
+  x:
+    -
+      value: 800
+  'y':
+    -
+      value: 550
+  revision_uid:
+    -
+      target_id: 0
+  revision_translation_affected:
+    -
+      value: true

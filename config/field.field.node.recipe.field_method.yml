@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_method
+    - node.type.recipe
+id: node.recipe.field_method
+field_name: field_method
+entity_type: node
+bundle: recipe
+label: Method
+description: 'Use one step per line in the format title|body.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

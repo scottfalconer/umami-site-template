@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: collection_content
+label: 'Collection content'
+type: 'canonical_entities:node'
+pattern: '/collections/[node:title]'
+selection_criteria:
+  bc28fbbe-be3a-4206-b7c5-303cc7226665:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: a2c1e314-5a64-46ad-ad33-704265e81592
+    context_mapping:
+      node: node
+    bundles:
+      collection: collection
+selection_logic: and
+weight: 0
+relationships: {  }

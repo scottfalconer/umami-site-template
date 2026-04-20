@@ -1,0 +1,24 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: 966a3279-01d1-4bd5-8a74-34c5916941e0
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 0
+  filename:
+    -
+      value: a1.jpg
+  uri:
+    -
+      value: 'public://authors/a1.jpg'
+  filemime:
+    -
+      value: image/jpeg
+  filesize:
+    -
+      value: 12449
+  status:
+    -
+      value: true

@@ -1,0 +1,100 @@
+<article{{ attributes.addClass('collection-layout', 'container') }}>
+  <header class="detail-hero">
+    <div>
+      <div class="eyebrow with-rule">{{ 'Collection'|t }}</div>
+      <h1 class="detail-title">{{ label }}</h1>
+      {% if node.field_description.value %}
+        <p class="detail-deck">{{ node.field_description.value }}</p>
+      {% endif %}
+      {% if umami_collection.cta_links %}
+        <div class="hero-meta">
+          {% for link in umami_collection.cta_links %}
+            <a href="{{ link.url }}" class="btn btn--ghost">{{ link.title }}</a>
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+    {% if content.field_featured_image %}
+      <div class="detail-hero__image">{{ content.field_featured_image }}</div>
+    {% endif %}
+  </header>
+
+  <div class="page-body">
+    {{ umami_collection.intro }}
+  </div>
+
+  {% if umami_collection.featured_recipes %}
+    <section class="section-space">
+      <div class="section-heading">
+        <div>
+          <div class="eyebrow">{{ 'Featured'|t }}</div>
+          <h2 class="section-heading__title">{{ 'The three to start with'|t }}</h2>
+        </div>
+      </div>
+      <div class="grid-3">
+        {% for card in umami_collection.featured_recipes %}
+          <a href="{{ card.url }}" class="card">
+            {% if card.image.url %}
+          <div class="card-media"><img src="{{ card.image.url }}" alt="{{ card.image.alt }}"></div>
+        {% else %}
+          <div class="card-media card-media--placeholder" aria-hidden="true"></div>
+        {% endif %}
+            <div class="card__meta"><span>{{ card.category }}</span>{% if card.cuisine %}<span class="dot">&middot;</span><span>{{ card.cuisine }}</span>{% endif %}</div>
+            <h3 class="card__title">{{ card.title }}</h3>
+            <p class="card__deck">{{ card.summary }}</p>
+          </a>
+        {% endfor %}
+      </div>
+    </section>
+  {% endif %}
+
+  {% if umami_collection.secondary_recipes %}
+    <section class="section-space">
+      <div class="section-heading">
+        <div>
+          <div class="eyebrow">{{ 'Also in this collection'|t }}</div>
+          <h2 class="section-heading__title">{{ 'And a few more'|t }}</h2>
+        </div>
+      </div>
+      <div class="grid-4">
+        {% for card in umami_collection.secondary_recipes %}
+          <a href="{{ card.url }}" class="card">
+            {% if card.image.url %}
+          <div class="card-media"><img src="{{ card.image.url }}" alt="{{ card.image.alt }}"></div>
+        {% else %}
+          <div class="card-media card-media--placeholder" aria-hidden="true"></div>
+        {% endif %}
+            <div class="card__meta"><span>{{ card.category }}</span>{% if card.cuisine %}<span class="dot">&middot;</span><span>{{ card.cuisine }}</span>{% endif %}</div>
+            <h3 class="card__title">{{ card.title }}</h3>
+            <p class="card__deck">{{ card.summary }}</p>
+          </a>
+        {% endfor %}
+      </div>
+    </section>
+  {% endif %}
+
+  {% if umami_collection.related_articles %}
+    <section class="section-space">
+      <div class="section-heading">
+        <div>
+          <div class="eyebrow">{{ 'From the journal'|t }}</div>
+          <h2 class="section-heading__title">{{ 'Stories for this collection'|t }}</h2>
+        </div>
+      </div>
+      <div class="grid-3">
+        {% for card in umami_collection.related_articles %}
+          <a href="{{ card.url }}" class="card">
+            {% if card.image.url %}
+          <div class="card-media"><img src="{{ card.image.url }}" alt="{{ card.image.alt }}"></div>
+        {% else %}
+          <div class="card-media card-media--placeholder" aria-hidden="true"></div>
+        {% endif %}
+            <div class="card__meta"><span>{{ card.topic ?: 'Essay'|t }}</span></div>
+            <h3 class="card__title">{{ card.title }}</h3>
+            <p class="card__deck">{{ card.summary }}</p>
+          </a>
+        {% endfor %}
+      </div>
+    </section>
+  {% endif %}
+</article>

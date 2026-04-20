@@ -1,0 +1,32 @@
+_meta:
+  version: '1.0'
+  entity_type: media
+  uuid: 80c45d4b-7ee0-4449-8e43-d467b912f9be
+  bundle: image
+  default_langcode: en
+  depends:
+    1336ee81-514a-48ba-ad66-5ff5270404b1: file
+default:
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 0
+  name:
+    -
+      value: olive-oil-citrus-cake
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      langcode: en
+      alias: null
+  field_media_image:
+    -
+      alt: 'Olive Oil Citrus Cake'
+      title: ''
+      width: 1600
+      height: 1100
+      entity: 1336ee81-514a-48ba-ad66-5ff5270404b1

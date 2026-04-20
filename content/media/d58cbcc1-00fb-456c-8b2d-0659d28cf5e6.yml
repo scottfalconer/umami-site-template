@@ -1,0 +1,32 @@
+_meta:
+  version: '1.0'
+  entity_type: media
+  uuid: d58cbcc1-00fb-456c-8b2d-0659d28cf5e6
+  bundle: image
+  default_langcode: en
+  depends:
+    7769c152-0c53-4648-9b87-e06a4a1d851c: file
+default:
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 0
+  name:
+    -
+      value: rye-buttermilk-loaf
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      langcode: en
+      alias: null
+  field_media_image:
+    -
+      alt: 'Rye Buttermilk Loaf'
+      title: ''
+      width: 1600
+      height: 1100
+      entity: 7769c152-0c53-4648-9b87-e06a4a1d851c

@@ -1,0 +1,36 @@
+_meta:
+  version: '1.0'
+  entity_type: menu_link_content
+  uuid: b899b1e1-0f42-4c4d-b242-7305c4589b0f
+  bundle: menu_link_content
+  default_langcode: en
+default:
+  enabled:
+    -
+      value: true
+  title:
+    -
+      value: Substack
+  menu_name:
+    -
+      value: social
+  link:
+    -
+      uri: 'https://substack.com'
+      title: null
+      options: {  }
+  external:
+    -
+      value: false
+  rediscover:
+    -
+      value: false
+  weight:
+    -
+      value: 1
+  expanded:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true

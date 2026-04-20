@@ -1,0 +1,30 @@
+_meta:
+  version: '1.0'
+  entity_type: crop
+  uuid: 135796e2-f673-4def-98e4-4c4d3ff19d79
+  bundle: focal_point
+  default_langcode: en
+  depends:
+    954ddd0c-14a0-488a-a420-aff13e1d3356: file
+default:
+  entity_id:
+    -
+      uuid: 954ddd0c-14a0-488a-a420-aff13e1d3356
+  entity_type:
+    -
+      value: file
+  uri:
+    -
+      value: 'public://umami-next/charred-cabbage-with-anchovy-butter.jpg'
+  x:
+    -
+      value: 800
+  'y':
+    -
+      value: 550
+  revision_uid:
+    -
+      target_id: 0
+  revision_translation_affected:
+    -
+      value: true

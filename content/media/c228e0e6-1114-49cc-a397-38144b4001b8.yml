@@ -1,0 +1,32 @@
+_meta:
+  version: '1.0'
+  entity_type: media
+  uuid: c228e0e6-1114-49cc-a397-38144b4001b8
+  bundle: image
+  default_langcode: en
+  depends:
+    95e68f07-5d44-40e9-831c-bc3b9aea3ee8: file
+default:
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 0
+  name:
+    -
+      value: fire-and-patience
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      langcode: en
+      alias: null
+  field_media_image:
+    -
+      alt: 'Fire and Patience'
+      title: ''
+      width: 1600
+      height: 1100
+      entity: 95e68f07-5d44-40e9-831c-bc3b9aea3ee8

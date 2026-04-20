@@ -1,0 +1,237 @@
+<?php
+
+/**
+ * @file
+ * Theme hooks for Umami Next.
+ */
+
+declare(strict_types=1);
+
+use Drupal\Core\Cache\Cache;
+use Drupal\Core\Url;
+use Drupal\node\NodeInterface;
+use Drupal\taxonomy\TermInterface;
+use Drupal\umami_next\EditorialDataBuilder;
+
+/**
+ * Implements hook_preprocess_page().
+ */
+function umami_next_theme_preprocess_page(array &$variables): void {
+  $site_config = \Drupal::config('system.site');
+  $front_path = (string) $site_config->get('page.front');
+
+  $variables['site_name'] = $site_config->get('name');
+  $variables['site_slogan'] = $site_config->get('slogan');
+  $variables['umami_search_url'] = Url::fromRoute('umami_next.search')->toString();
+  $variables['umami_contact_url'] = Url::fromRoute('umami_next.contact')->toString();
+  $variables['umami_front_path'] = $front_path;
+  $variables['#cache']['tags'] = Cache::mergeTags($variables['#cache']['tags'] ?? [], [
+    'config:system.site',
+    'node_list',
+  ]);
+  $variables['#cache']['contexts'] = Cache::mergeContexts($variables['#cache']['contexts'] ?? [], [
+    'route',
+    'user.node_grants:view',
+    'user.permissions',
+  ]);
+
+  $path_matcher = \Drupal::service('path.matcher');
+  $request_path = \Drupal::request()->getPathInfo();
+  if (!$path_matcher->isFrontPage() && $request_path !== $front_path) {
+    $breadcrumb = \Drupal::service('breadcrumb')->build(\Drupal::routeMatch());
+    $links = $breadcrumb->getLinks();
+    if ($links) {
+      $links[0]->setText($variables['site_name']);
+    }
+    $variables['umami_breadcrumb'] = $breadcrumb->toRenderable();
+  }
+}
+
+/**
+ * Implements hook_preprocess_node().
+ */
+function umami_next_theme_preprocess_node(array &$variables): void {
+  $node = $variables['node'] ?? NULL;
+  if (!$node instanceof NodeInterface) {
+    return;
+  }
+
+  $builder = \Drupal::service('umami_next.editorial_data');
+  assert($builder instanceof EditorialDataBuilder);
+
+  $variables['umami_author'] = $builder->buildAuthor($node->getOwner());
+  $cache_tags = ["user:{$node->getOwnerId()}"];
+
+  if ($node->bundle() === 'recipe') {
+    $variables['umami_recipe'] = [
+      'category' => _umami_next_term_label($node, 'field_recipe_category'),
+      'cuisine' => _umami_next_term_label($node, 'field_cuisine'),
+      'topics' => _umami_next_term_links($node, 'field_topics', 'umami_next.topic'),
+      'ingredients' => _umami_next_parse_groups((string) $node->get('field_ingredients')->value),
+      'steps' => _umami_next_parse_steps((string) $node->get('field_method')->value),
+      'prep' => (int) $node->get('field_prep_minutes')->value,
+      'cook' => (int) $node->get('field_cook_minutes')->value,
+      'total' => (int) $node->get('field_total_minutes')->value,
+      'servings' => (int) $node->get('field_servings')->value,
+      'difficulty' => (string) $node->get('field_difficulty')->value,
+      'notes' => (string) $node->get('field_notes')->value,
+      'credit' => (string) $node->get('field_media_credit')->value,
+      'related_recipes' => $builder->buildReferencedRecipeCards($node, 'field_related_recipes'),
+      'newsletter_form' => $builder->buildWebform('newsletter_signup'),
+    ];
+    $cache_tags = Cache::mergeTags($cache_tags, ['config:webform_list', 'node_list', 'taxonomy_term_list']);
+  }
+
+  if ($node->bundle() === 'article') {
+    $variables['umami_article'] = [
+      'topics' => _umami_next_term_links($node, 'field_topics', 'umami_next.topic'),
+      'read_minutes' => (int) $node->get('field_read_minutes')->value,
+      'pull_quote' => (string) $node->get('field_pull_quote')->value,
+      'related_recipes' => $builder->buildReferencedRecipeCards($node, 'field_related_recipes'),
+      'related_articles' => $builder->buildRelatedArticleCards($node),
+      'newsletter_form' => $builder->buildWebform('newsletter_signup'),
+    ];
+    $cache_tags = Cache::mergeTags($cache_tags, ['config:webform_list', 'node_list', 'taxonomy_term_list']);
+  }
+
+  if ($node->bundle() === 'collection') {
+    $variables['umami_collection'] = [
+      'topics' => _umami_next_term_links($node, 'field_topics', 'umami_next.topic'),
+      'cta_links' => _umami_next_link_items($node, 'field_cta_links'),
+      'intro' => $node->get('field_content')->view(['label' => 'hidden']),
+      'featured_recipes' => $builder->buildReferencedRecipeCards($node, 'field_featured_recipes'),
+      'secondary_recipes' => $builder->buildReferencedRecipeCards($node, 'field_secondary_recipes'),
+      'related_articles' => $builder->buildReferencedArticleCards($node, 'field_related_articles'),
+    ];
+    $cache_tags = Cache::mergeTags($cache_tags, ['node_list', 'taxonomy_term_list']);
+  }
+
+  if ($node->bundle() === 'page') {
+    $sidebar_link = NULL;
+    if ($node->hasField('field_sidebar_link') && !$node->get('field_sidebar_link')->isEmpty()) {
+      $item = $node->get('field_sidebar_link')->first();
+      $sidebar_link = [
+        'title' => $item?->title ?? '',
+        'url' => $item?->getUrl()?->toString() ?? '',
+      ];
+      if ($sidebar_link['url'] === '/about') {
+        $sidebar_link['url'] .= '#authors';
+      }
+    }
+
+    $variables['umami_page'] = [
+      'sidebar_eyebrow' => $node->hasField('field_sidebar_eyebrow') ? (string) $node->get('field_sidebar_eyebrow')->value : '',
+      'sidebar_title' => $node->hasField('field_sidebar_title') ? (string) $node->get('field_sidebar_title')->value : '',
+      'sidebar_body' => $node->hasField('field_sidebar_body') ? (string) $node->get('field_sidebar_body')->value : '',
+      'sidebar_link' => $sidebar_link,
+      'show_authors' => $node->hasField('field_show_authors') && (bool) $node->get('field_show_authors')->value,
+      'authors' => $builder->buildAuthorCards(),
+      'newsletter_form' => $builder->buildWebform('newsletter_signup'),
+    ];
+    $cache_tags = Cache::mergeTags($cache_tags, ['config:webform_list', 'user_list']);
+  }
+
+  $variables['#cache']['tags'] = Cache::mergeTags($variables['#cache']['tags'] ?? [], $cache_tags);
+  $variables['#cache']['contexts'] = Cache::mergeContexts($variables['#cache']['contexts'] ?? [], [
+    'user.node_grants:view',
+    'user.permissions',
+  ]);
+}
+
+/**
+ * Parses grouped recipe ingredient text.
+ *
+ * Format:
+ *   ## Group title
+ *   qty|ingredient.
+ */
+function _umami_next_parse_groups(string $raw): array {
+  $groups = [];
+  $current = ['label' => '', 'items' => []];
+
+  foreach (preg_split('/\R/', trim($raw)) ?: [] as $line) {
+    $line = trim($line);
+    if ($line === '') {
+      continue;
+    }
+    if (str_starts_with($line, '## ')) {
+      if ($current['items']) {
+        $groups[] = $current;
+      }
+      $current = ['label' => substr($line, 3), 'items' => []];
+      continue;
+    }
+    [$qty, $name] = array_pad(array_map('trim', explode('|', $line, 2)), 2, '');
+    $current['items'][] = ['qty' => $qty, 'name' => $name];
+  }
+
+  if ($current['items']) {
+    $groups[] = $current;
+  }
+
+  return $groups;
+}
+
+/**
+ * Parses recipe steps in title|body format.
+ */
+function _umami_next_parse_steps(string $raw): array {
+  $steps = [];
+  foreach (preg_split('/\R/', trim($raw)) ?: [] as $line) {
+    $line = trim($line);
+    if ($line === '') {
+      continue;
+    }
+    [$title, $body] = array_pad(array_map('trim', explode('|', $line, 2)), 2, '');
+    $steps[] = ['title' => $title, 'body' => $body];
+  }
+  return $steps;
+}
+
+/**
+ * Returns the first referenced taxonomy term label for a field.
+ */
+function _umami_next_term_label(NodeInterface $node, string $field_name): string {
+  $entity = $node->get($field_name)->entity;
+  return $entity instanceof TermInterface ? $entity->label() : '';
+}
+
+/**
+ * Returns linked term items.
+ *
+ * @return array<int, array<string, string>>
+ *   Linked term data.
+ */
+function _umami_next_term_links(NodeInterface $node, string $field_name, string $route_name): array {
+  $items = [];
+  foreach ($node->get($field_name)->referencedEntities() as $term) {
+    if (!$term instanceof TermInterface) {
+      continue;
+    }
+    $items[] = [
+      'label' => $term->label(),
+      'url' => Url::fromRoute($route_name, ['slug' => $term->get('field_slug')->value ?: $term->id()])->toString(),
+    ];
+  }
+  return $items;
+}
+
+/**
+ * Returns link field values.
+ *
+ * @return array<int, array<string, string>>
+ *   Link items.
+ */
+function _umami_next_link_items(NodeInterface $node, string $field_name): array {
+  $items = [];
+  foreach ($node->get($field_name) as $item) {
+    if (!$item->uri) {
+      continue;
+    }
+    $items[] = [
+      'title' => $item->title ?: (string) t('Read more'),
+      'url' => Url::fromUri($item->uri)->toString(),
+    ];
+  }
+  return $items;
+}

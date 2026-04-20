@@ -1,0 +1,15 @@
+uuid: c0701793-39fb-4232-a836-4d96cca53442
+langcode: en
+status: true
+dependencies: {  }
+name: 'Umami Next'
+configEntityTypeId: component
+weight: 0
+items:
+  - block.umami_next_featured_recipes
+  - block.umami_next_home_hero
+  - block.umami_next_latest_stories
+  - block.umami_next_newsletter
+  - block.umami_next_not_found
+  - block.umami_next_spotlight_collection
+  - block.umami_next_topic_browse

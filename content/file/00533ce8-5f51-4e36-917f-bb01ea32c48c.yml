@@ -1,0 +1,24 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: 00533ce8-5f51-4e36-917f-bb01ea32c48c
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 0
+  filename:
+    -
+      value: a5.jpg
+  uri:
+    -
+      value: 'public://authors/a5.jpg'
+  filemime:
+    -
+      value: image/jpeg
+  filesize:
+    -
+      value: 12189
+  status:
+    -
+      value: true

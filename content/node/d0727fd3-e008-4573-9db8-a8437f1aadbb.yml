@@ -1,0 +1,53 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: d0727fd3-e008-4573-9db8-a8437f1aadbb
+  bundle: article
+  default_langcode: en
+  depends:
+    5546aa05-f2e6-4d2f-a71f-7ef234eec0c6: user
+    c228e0e6-1114-49cc-a397-38144b4001b8: media
+    300908fc-4fe2-4a0b-b3d3-834a1b57fa43: node
+    57d27c70-1991-4b54-8ba3-2a64f2d92ad7: node
+    a9d319bf-864a-4496-8dba-82dc1652f2aa: node
+    e745ac5c-96c1-405c-8a27-b55ebc9054a0: taxonomy_term
+    dc165a3e-671b-4068-a4f1-bc093d205713: taxonomy_term
+default:
+  revision_uid:
+  - entity: 5546aa05-f2e6-4d2f-a71f-7ef234eec0c6
+  status:
+  - value: true
+  uid:
+  - entity: 5546aa05-f2e6-4d2f-a71f-7ef234eec0c6
+  title:
+  - value: Fire and Patience
+  promote:
+  - value: false
+  sticky:
+  - value: false
+  revision_translation_affected:
+  - value: true
+  path:
+  - alias: /article/fire-and-patience
+    langcode: en
+    pathauto: 0
+  field_content:
+  - value: <p>The grill flatters a steak. It transforms a vegetable. The vegetable costs less, needs more, and rewards attention in a way that repays the time you spend at the fire.</p><p>Start with heat management, not heat. Make two zones. Cook over the quiet side. Finish over the loud side. Do not, under any circumstances, try to do both at once.</p>
+    format: content_format
+  field_description:
+  - value: How to cook vegetables over live flame without burning them, or yourself.
+  field_featured_image:
+  - entity: c228e0e6-1114-49cc-a397-38144b4001b8
+  field_read_minutes:
+  - value: 6
+  field_related_recipes:
+  - entity: 300908fc-4fe2-4a0b-b3d3-834a1b57fa43
+  - entity: 57d27c70-1991-4b54-8ba3-2a64f2d92ad7
+  - entity: a9d319bf-864a-4496-8dba-82dc1652f2aa
+  field_topics:
+  - entity: e745ac5c-96c1-405c-8a27-b55ebc9054a0
+  - entity: dc165a3e-671b-4068-a4f1-bc093d205713
+  created:
+  - value: 1771588800
+  changed:
+  - value: 1776631111

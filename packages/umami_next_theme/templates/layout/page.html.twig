@@ -1,0 +1,47 @@
+<div class="layout-container">
+  <header class="site-header">
+    {% if page.pre_header %}
+      <div class="announce-strip">
+        <div class="container">
+          {{ page.pre_header }}
+        </div>
+      </div>
+    {% endif %}
+    <div class="container site-header__inner">
+      {{ page.header }}
+      <a href="{{ umami_search_url }}" class="icon-btn site-header__search" aria-label="{{ 'Search'|t }}">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>
+        {{ 'Search'|t }}
+      </a>
+    </div>
+  </header>
+
+  <main>
+    {% if umami_breadcrumb %}
+      <div class="container breadcrumb-trail">
+        {{ umami_breadcrumb }}
+      </div>
+    {% endif %}
+    {{ page.content }}
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__top">
+        <div class="site-footer__brand">
+          <h3>{{ site_name }}<span class="site-footer__mark">.</span></h3>
+          {% if site_slogan %}
+            <p>{{ site_slogan }}</p>
+          {% endif %}
+        </div>
+        <div class="site-footer__groups">
+          {{ page.footer }}
+        </div>
+      </div>
+      <div class="site-footer__bottom">
+        <span>&copy; {{ 'now'|date('Y') }} {{ site_name }}</span>
+        <span><a href="{{ umami_contact_url }}">{{ 'Contact'|t }}</a></span>
+      </div>
+    </div>
+  </footer>
+</div>

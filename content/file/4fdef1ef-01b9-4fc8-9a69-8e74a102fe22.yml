@@ -1,0 +1,24 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: 4fdef1ef-01b9-4fc8-9a69-8e74a102fe22
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 0
+  filename:
+    -
+      value: priya-ramanathan.jpg
+  uri:
+    -
+      value: 'public://authors/priya-ramanathan.jpg'
+  filemime:
+    -
+      value: image/jpeg
+  filesize:
+    -
+      value: 10438
+  status:
+    -
+      value: true

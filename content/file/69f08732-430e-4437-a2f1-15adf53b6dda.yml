@@ -1,0 +1,24 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: 69f08732-430e-4437-a2f1-15adf53b6dda
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 0
+  filename:
+    -
+      value: saffron-chickpea-stew.jpg
+  uri:
+    -
+      value: 'public://umami-next/saffron-chickpea-stew.jpg'
+  filemime:
+    -
+      value: image/jpeg
+  filesize:
+    -
+      value: 492945
+  status:
+    -
+      value: true

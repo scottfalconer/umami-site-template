@@ -1,0 +1,87 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 097ae30f-fce3-45f6-9959-d7cc88b6c81d
+  bundle: recipe
+  default_langcode: en
+  depends:
+    f2055c45-d739-46c4-8e56-ada172f1f9d8: user
+    88a592a1-fb19-4228-824a-62fa4d5af21f: taxonomy_term
+    3ce6cd35-e603-4716-8056-28c655260f25: taxonomy_term
+    9a2496f4-f887-4ec7-b688-77677b931157: media
+    f95ac209-6c14-4455-a776-aad51e9f6b85: taxonomy_term
+    ecf6d4f5-edac-42f5-a438-14ee88210f36: node
+    e832f942-2282-4dd3-b804-1d85255a0f99: node
+    be17db54-41fe-481a-8e2b-88673f537aa3: node
+    32021bd1-adb6-43e3-be1b-62671c2ffac6: taxonomy_term
+default:
+  revision_uid:
+  - entity: f2055c45-d739-46c4-8e56-ada172f1f9d8
+  status:
+  - value: true
+  uid:
+  - entity: f2055c45-d739-46c4-8e56-ada172f1f9d8
+  title:
+  - value: Buckwheat Buttermilk Pancakes
+  promote:
+  - value: false
+  sticky:
+  - value: false
+  revision_translation_affected:
+  - value: true
+  path:
+  - alias: /recipe/buckwheat-buttermilk-pancakes
+    langcode: en
+    pathauto: 0
+  field_cook_minutes:
+  - value: 15
+  field_cuisine:
+  - entity: 88a592a1-fb19-4228-824a-62fa4d5af21f
+  field_description:
+  - value: Nutty, lacy-edged, not too sweet. A good Saturday.
+  field_dietary:
+  - entity: 3ce6cd35-e603-4716-8056-28c655260f25
+  field_difficulty:
+  - value: Easy
+  field_featured_image:
+  - entity: 9a2496f4-f887-4ec7-b688-77677b931157
+  field_ingredients:
+  - value: '120 g|buckwheat flour
+
+      80 g|plain flour
+
+      1 tsp|baking soda
+
+      1 tsp|salt
+
+      2 tbsp|sugar
+
+      2|eggs
+
+      400 ml|buttermilk
+
+      40 g|melted butter
+
+      to serve|maple, yogurt, fruit'
+  field_method:
+  - value: 'Mix|Whisk dry. Whisk wet. Fold together just until combined; a few lumps are fine.
+
+      Cook|Ladle onto a medium cast iron. Flip when the top bubbles and the edges look set.'
+  field_prep_minutes:
+  - value: 10
+  field_recipe_category:
+  - entity: f95ac209-6c14-4455-a776-aad51e9f6b85
+  field_related_recipes:
+  - entity: ecf6d4f5-edac-42f5-a438-14ee88210f36
+  - entity: e832f942-2282-4dd3-b804-1d85255a0f99
+  - entity: be17db54-41fe-481a-8e2b-88673f537aa3
+  field_servings:
+  - value: 3
+  field_topics:
+  - entity: 32021bd1-adb6-43e3-be1b-62671c2ffac6
+  field_total_minutes:
+  - value: 25
+  created:
+  - value: 1770724800
+  changed:
+  - value: 1776631111

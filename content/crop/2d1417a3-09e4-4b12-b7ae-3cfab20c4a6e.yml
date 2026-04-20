@@ -1,0 +1,30 @@
+_meta:
+  version: '1.0'
+  entity_type: crop
+  uuid: 2d1417a3-09e4-4b12-b7ae-3cfab20c4a6e
+  bundle: focal_point
+  default_langcode: en
+  depends:
+    fc8dbed3-ce84-413f-aba8-6e919d032fff: file
+default:
+  entity_id:
+    -
+      uuid: fc8dbed3-ce84-413f-aba8-6e919d032fff
+  entity_type:
+    -
+      value: file
+  uri:
+    -
+      value: 'public://umami-next/slow-sundays.jpg'
+  x:
+    -
+      value: 800
+  'y':
+    -
+      value: 550
+  revision_uid:
+    -
+      target_id: 0
+  revision_translation_affected:
+    -
+      value: true

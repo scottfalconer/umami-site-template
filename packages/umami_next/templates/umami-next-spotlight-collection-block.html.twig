@@ -1,0 +1,17 @@
+{% if spotlight %}
+  <section class="container section-space">
+    <div class="split">
+      {% if spotlight.image.url %}
+      <div class="split__media"><img src="{{ spotlight.image.url }}" alt="{{ spotlight.image.alt }}"></div>
+    {% else %}
+      <div class="split__media card-media--placeholder" aria-hidden="true"></div>
+    {% endif %}
+      <div class="split__body">
+        <div class="eyebrow with-rule">{{ 'Collection'|t }}</div>
+        <h2>{{ spotlight.title }}</h2>
+        <p>{{ spotlight.intro }}</p>
+        <div class="split__actions"><a href="{{ spotlight.url }}" class="btn">{{ 'Open the collection'|t }}</a></div>
+      </div>
+    </div>
+  </section>
+{% endif %}

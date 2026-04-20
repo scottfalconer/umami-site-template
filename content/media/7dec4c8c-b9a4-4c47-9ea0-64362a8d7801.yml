@@ -1,0 +1,32 @@
+_meta:
+  version: '1.0'
+  entity_type: media
+  uuid: 7dec4c8c-b9a4-4c47-9ea0-64362a8d7801
+  bundle: image
+  default_langcode: en
+  depends:
+    41309816-6675-4ece-8a6f-0d7b68dfd382: file
+default:
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 0
+  name:
+    -
+      value: preserving-what-you-love
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      langcode: en
+      alias: null
+  field_media_image:
+    -
+      alt: 'Preserving What You Love'
+      title: ''
+      width: 1600
+      height: 1100
+      entity: 41309816-6675-4ece-8a6f-0d7b68dfd382

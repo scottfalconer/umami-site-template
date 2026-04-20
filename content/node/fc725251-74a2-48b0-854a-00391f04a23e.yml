@@ -1,0 +1,65 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: fc725251-74a2-48b0-854a-00391f04a23e
+  bundle: collection
+  default_langcode: en
+  depends:
+    f2055c45-d739-46c4-8e56-ada172f1f9d8: user
+    81362193-aaff-4d61-af95-9a158a3ab8de: node
+    54d86bda-7c52-4974-91c5-bc0e16fcaee5: media
+    e832f942-2282-4dd3-b804-1d85255a0f99: node
+    ecf6d4f5-edac-42f5-a438-14ee88210f36: node
+    553198ce-abe4-448e-89f8-70cca32c43db: node
+    04a71594-0b52-45ea-b8a2-9a6d6ed94672: node
+    be17db54-41fe-481a-8e2b-88673f537aa3: node
+    83f730da-4588-4834-bcf6-6aa4142d8a62: node
+    2eeac9a1-779b-4c68-af7b-7b86cdf74d78: taxonomy_term
+    32021bd1-adb6-43e3-be1b-62671c2ffac6: taxonomy_term
+default:
+  revision_uid:
+  - entity: f2055c45-d739-46c4-8e56-ada172f1f9d8
+  status:
+  - value: true
+  uid:
+  - entity: f2055c45-d739-46c4-8e56-ada172f1f9d8
+  title:
+  - value: Slow Sundays
+  promote:
+  - value: false
+  sticky:
+  - value: false
+  revision_translation_affected:
+  - value: true
+  path:
+  - alias: /collections/slow-sundays
+    langcode: en
+    pathauto: 0
+  field_content:
+  - value: <p>The recipes that reward a morning. Bread you start before coffee, stews you finish well after lunch, desserts you leave on the counter until someone asks.</p>
+    format: content_format
+  field_cta_links:
+  - title: 'Read: the long pot'
+    options: {}
+    target_uuid: 81362193-aaff-4d61-af95-9a158a3ab8de
+  field_description:
+  - value: A small library of long recipes — the kind that fill the kitchen with steam and the house with quiet.
+  field_featured_image:
+  - entity: 54d86bda-7c52-4974-91c5-bc0e16fcaee5
+  field_featured_recipes:
+  - entity: e832f942-2282-4dd3-b804-1d85255a0f99
+  - entity: ecf6d4f5-edac-42f5-a438-14ee88210f36
+  - entity: 553198ce-abe4-448e-89f8-70cca32c43db
+  field_related_articles:
+  - entity: 81362193-aaff-4d61-af95-9a158a3ab8de
+  - entity: 04a71594-0b52-45ea-b8a2-9a6d6ed94672
+  field_secondary_recipes:
+  - entity: be17db54-41fe-481a-8e2b-88673f537aa3
+  - entity: 83f730da-4588-4834-bcf6-6aa4142d8a62
+  field_topics:
+  - entity: 2eeac9a1-779b-4c68-af7b-7b86cdf74d78
+  - entity: 32021bd1-adb6-43e3-be1b-62671c2ffac6
+  created:
+  - value: 1776631111
+  changed:
+  - value: 1776631111

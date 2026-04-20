@@ -1,0 +1,30 @@
+_meta:
+  version: '1.0'
+  entity_type: crop
+  uuid: d1fa4426-68dc-4c69-8416-547a6bbca9c4
+  bundle: focal_point
+  default_langcode: en
+  depends:
+    5d125eca-2350-4e86-9f21-1ef6a6f02936: file
+default:
+  entity_id:
+    -
+      uuid: 5d125eca-2350-4e86-9f21-1ef6a6f02936
+  entity_type:
+    -
+      value: file
+  uri:
+    -
+      value: 'public://umami-next/the-quiet-dessert.jpg'
+  x:
+    -
+      value: 800
+  'y':
+    -
+      value: 550
+  revision_uid:
+    -
+      target_id: 0
+  revision_translation_affected:
+    -
+      value: true

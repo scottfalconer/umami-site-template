@@ -1,0 +1,26 @@
+_meta:
+  version: '1.0'
+  entity_type: taxonomy_term
+  uuid: d89e63b8-2e59-4a10-9bf1-7def54e1922d
+  bundle: dietary
+  default_langcode: en
+default:
+  status:
+    -
+      value: true
+  name:
+    -
+      value: Vegan
+  weight:
+    -
+      value: 0
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      langcode: en
+      alias: null
+  field_slug:
+    -
+      value: vegan

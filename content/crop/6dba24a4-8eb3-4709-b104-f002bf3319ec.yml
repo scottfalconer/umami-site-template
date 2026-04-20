@@ -1,0 +1,30 @@
+_meta:
+  version: '1.0'
+  entity_type: crop
+  uuid: 6dba24a4-8eb3-4709-b104-f002bf3319ec
+  bundle: focal_point
+  default_langcode: en
+  depends:
+    7155522d-3322-4cdd-a5c6-00575591e8ea: file
+default:
+  entity_id:
+    -
+      uuid: 7155522d-3322-4cdd-a5c6-00575591e8ea
+  entity_type:
+    -
+      value: file
+  uri:
+    -
+      value: 'public://umami-next/the-case-for-one-pan.jpg'
+  x:
+    -
+      value: 800
+  'y':
+    -
+      value: 550
+  revision_uid:
+    -
+      target_id: 0
+  revision_translation_affected:
+    -
+      value: true

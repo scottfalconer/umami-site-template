@@ -1,0 +1,24 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: 7155522d-3322-4cdd-a5c6-00575591e8ea
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 0
+  filename:
+    -
+      value: the-case-for-one-pan.jpg
+  uri:
+    -
+      value: 'public://umami-next/the-case-for-one-pan.jpg'
+  filemime:
+    -
+      value: image/jpeg
+  filesize:
+    -
+      value: 566828
+  status:
+    -
+      value: true

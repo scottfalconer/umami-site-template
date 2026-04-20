@@ -1,0 +1,31 @@
+_meta:
+  version: '1.0'
+  entity_type: user
+  uuid: 5ea1013c-2709-4c23-84e8-19e9789b1dd2
+  default_langcode: en
+  depends:
+    4fdef1ef-01b9-4fc8-9a69-8e74a102fe22: file
+default:
+  preferred_langcode:
+  - value: en
+  name:
+  - value: priya-ramanathan
+  mail:
+  - value: priya@example.com
+  timezone:
+  - value: America/Costa_Rica
+  status:
+  - value: true
+  path:
+  - langcode: en
+    alias: null
+  field_bio:
+  - value: Writes about technique, heat, and the geometry of a good meal.
+  field_role:
+  - value: Senior Editor
+  user_picture:
+  - alt: Priya Ramanathan
+    title: ''
+    width: 200
+    height: 200
+    entity: 4fdef1ef-01b9-4fc8-9a69-8e74a102fe22

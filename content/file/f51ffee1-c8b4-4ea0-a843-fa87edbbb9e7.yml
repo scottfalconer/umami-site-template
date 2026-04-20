@@ -1,0 +1,24 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: f51ffee1-c8b4-4ea0-a843-fa87edbbb9e7
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 0
+  filename:
+    -
+      value: white-beans-with-celery-and-lemon.jpg
+  uri:
+    -
+      value: 'public://umami-next/white-beans-with-celery-and-lemon.jpg'
+  filemime:
+    -
+      value: image/jpeg
+  filesize:
+    -
+      value: 151835
+  status:
+    -
+      value: true

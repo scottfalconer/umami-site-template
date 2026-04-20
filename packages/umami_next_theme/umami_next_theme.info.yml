@@ -1,0 +1,12 @@
+name: Umami Next
+type: theme
+description: 'Editorial food publication theme for Drupal CMS.'
+core_version_requirement: ^11
+base theme: false
+libraries:
+  - umami_next_theme/global
+regions:
+  pre_header: Pre-header
+  header: Header
+  content: Content
+  footer: Footer

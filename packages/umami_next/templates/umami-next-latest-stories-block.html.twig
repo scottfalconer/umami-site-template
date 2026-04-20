@@ -1,0 +1,64 @@
+<section class="container section-space">
+  <div class="section-heading">
+    <div>
+      <div class="eyebrow">{{ 'Stories'|t }}</div>
+      <h2 class="section-heading__title">{{ 'Essays from the kitchen'|t }}</h2>
+    </div>
+    <div class="section-heading__right"><a href="{{ path('umami_next.stories') }}">{{ 'All stories'|t }} &rarr;</a></div>
+  </div>
+
+  {% if latest_stories %}
+    <div class="story-showcase">
+      <a href="{{ latest_stories[0].url }}" class="card card--featured story-showcase__lead">
+        {% if latest_stories[0].image.url %}
+        <div class="card-media"><img src="{{ latest_stories[0].image.url }}" alt="{{ latest_stories[0].image.alt }}"></div>
+      {% else %}
+        <div class="card-media card-media--placeholder" aria-hidden="true"></div>
+      {% endif %}
+        <div class="card__meta"><span>{{ latest_stories[0].topic ?: 'Essay'|t }}</span></div>
+        <h3 class="card__title">{{ latest_stories[0].title }}</h3>
+        <p class="card__deck">{{ latest_stories[0].summary }}</p>
+      </a>
+
+      <div class="story-showcase__rail">
+        {% for card in latest_stories|slice(1) %}
+          <a href="{{ card.url }}" class="card card--compact">
+            {% if card.image.url %}
+          <div class="card-media"><img src="{{ card.image.url }}" alt="{{ card.image.alt }}"></div>
+        {% else %}
+          <div class="card-media card-media--placeholder" aria-hidden="true"></div>
+        {% endif %}
+            <div class="card__meta"><span>{{ card.topic ?: 'Essay'|t }}</span></div>
+            <h3 class="card__title">{{ card.title }}</h3>
+            <p class="card__deck">{{ card.summary }}</p>
+          </a>
+        {% endfor %}
+      </div>
+    </div>
+  {% endif %}
+</section>
+
+{% if editors_picks %}
+  <section class="container section-space">
+    <div class="section-heading">
+      <div>
+        <div class="eyebrow">{{ "Editor's picks"|t }}</div>
+        <h2 class="section-heading__title">{{ 'Three we keep coming back to'|t }}</h2>
+      </div>
+    </div>
+    <div class="grid-3">
+      {% for card in editors_picks %}
+        <a href="{{ card.url }}" class="card">
+          {% if card.image.url %}
+          <div class="card-media"><img src="{{ card.image.url }}" alt="{{ card.image.alt }}"></div>
+        {% else %}
+          <div class="card-media card-media--placeholder" aria-hidden="true"></div>
+        {% endif %}
+          <div class="card__meta"><span>{{ 'No.'|t }} {{ '%02d'|format(loop.index) }}</span></div>
+          <h3 class="card__title">{{ card.title }}</h3>
+          <p class="card__deck">{{ card.summary }}</p>
+        </a>
+      {% endfor %}
+    </div>
+  </section>
+{% endif %}

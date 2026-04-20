@@ -1,0 +1,36 @@
+_meta:
+  version: '1.0'
+  entity_type: menu_link_content
+  uuid: b3501d02-256c-4661-b3d1-2d775bed740b
+  bundle: menu_link_content
+  default_langcode: en
+default:
+  enabled:
+    -
+      value: true
+  title:
+    -
+      value: Weeknight
+  menu_name:
+    -
+      value: footer
+  link:
+    -
+      uri: 'internal:/topic/weeknight'
+      title: null
+      options: {  }
+  external:
+    -
+      value: false
+  rediscover:
+    -
+      value: true
+  weight:
+    -
+      value: 2
+  expanded:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true

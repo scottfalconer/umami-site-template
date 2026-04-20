@@ -1,0 +1,30 @@
+_meta:
+  version: '1.0'
+  entity_type: crop
+  uuid: eef6584c-4de5-44ad-8a3b-e8eca64188ca
+  bundle: focal_point
+  default_langcode: en
+  depends:
+    4fdef1ef-01b9-4fc8-9a69-8e74a102fe22: file
+default:
+  entity_id:
+    -
+      uuid: 4fdef1ef-01b9-4fc8-9a69-8e74a102fe22
+  entity_type:
+    -
+      value: file
+  uri:
+    -
+      value: 'public://authors/priya-ramanathan.jpg'
+  x:
+    -
+      value: 100
+  'y':
+    -
+      value: 100
+  revision_uid:
+    -
+      target_id: 0
+  revision_translation_affected:
+    -
+      value: true

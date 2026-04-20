@@ -1,0 +1,26 @@
+_meta:
+  version: '1.0'
+  entity_type: taxonomy_term
+  uuid: f95ac209-6c14-4455-a776-aad51e9f6b85
+  bundle: recipe_category
+  default_langcode: en
+default:
+  status:
+    -
+      value: true
+  name:
+    -
+      value: Breakfast
+  weight:
+    -
+      value: 0
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      langcode: en
+      alias: null
+  field_slug:
+    -
+      value: breakfast

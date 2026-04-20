@@ -1,0 +1,36 @@
+_meta:
+  version: '1.0'
+  entity_type: menu_link_content
+  uuid: 0cd0f3a6-e48a-4b85-a879-d72399016d31
+  bundle: menu_link_content
+  default_langcode: en
+default:
+  enabled:
+    -
+      value: true
+  title:
+    -
+      value: Topics
+  menu_name:
+    -
+      value: main
+  link:
+    -
+      uri: 'internal:/topic/seasonal'
+      title: null
+      options: {  }
+  external:
+    -
+      value: false
+  rediscover:
+    -
+      value: true
+  weight:
+    -
+      value: 3
+  expanded:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true

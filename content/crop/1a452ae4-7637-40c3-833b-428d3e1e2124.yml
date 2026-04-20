@@ -1,0 +1,30 @@
+_meta:
+  version: '1.0'
+  entity_type: crop
+  uuid: 1a452ae4-7637-40c3-833b-428d3e1e2124
+  bundle: focal_point
+  default_langcode: en
+  depends:
+    6f708c8d-35c4-44b6-bbde-7c06b9f8ac77: file
+default:
+  entity_id:
+    -
+      uuid: 6f708c8d-35c4-44b6-bbde-7c06b9f8ac77
+  entity_type:
+    -
+      value: file
+  uri:
+    -
+      value: 'public://umami-next/the-week-in-the-pantry.jpg'
+  x:
+    -
+      value: 800
+  'y':
+    -
+      value: 550
+  revision_uid:
+    -
+      target_id: 0
+  revision_translation_affected:
+    -
+      value: true

@@ -1,0 +1,19 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - umami_next
+  theme:
+    - umami_next_theme
+id: umami_next_theme_promo_strip
+theme: umami_next_theme
+region: pre_header
+weight: 0
+provider: null
+plugin: umami_next_promo_strip
+settings:
+  id: umami_next_promo_strip
+  label: 'Promo strip'
+  label_display: '0'
+  provider: umami_next
+visibility: {  }

@@ -1,0 +1,53 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 04a71594-0b52-45ea-b8a2-9a6d6ed94672
+  bundle: article
+  default_langcode: en
+  depends:
+    e911ca70-b016-40d5-af23-7e5b1d82007e: user
+    7dec4c8c-b9a4-4c47-9ea0-64362a8d7801: media
+    553198ce-abe4-448e-89f8-70cca32c43db: node
+    be17db54-41fe-481a-8e2b-88673f537aa3: node
+    21cdb39c-e55d-4d81-848f-49fad9a1d8b0: taxonomy_term
+    57651b5c-628a-4b5b-bd93-68b3d97c0f4c: taxonomy_term
+default:
+  revision_uid:
+  - entity: e911ca70-b016-40d5-af23-7e5b1d82007e
+  status:
+  - value: true
+  uid:
+  - entity: e911ca70-b016-40d5-af23-7e5b1d82007e
+  title:
+  - value: Preserving What You Love
+  promote:
+  - value: false
+  sticky:
+  - value: false
+  revision_translation_affected:
+  - value: true
+  path:
+  - alias: /article/preserving-what-you-love
+    langcode: en
+    pathauto: 0
+  field_content:
+  - value: '<p>The first rule of preserving is to do less than you think. A kilo of anything is enough for the household. Two kilos is a project. Five kilos is a phase you&#039;ll regret in July.</p><p>Start with the obvious: lemons, because they keep, and then something stone-fruited that won&#039;t. Keep the jars visible on the counter for the first month. You will open them more, which is the entire point.</p>'
+    format: content_format
+  field_description:
+  - value: On making small jars of the season so the season does not leave you when it leaves.
+  field_featured_image:
+  - entity: 7dec4c8c-b9a4-4c47-9ea0-64362a8d7801
+  field_pull_quote:
+  - value: Preserving is not nostalgia. It is a kind of honesty about time.
+  field_read_minutes:
+  - value: 8
+  field_related_recipes:
+  - entity: 553198ce-abe4-448e-89f8-70cca32c43db
+  - entity: be17db54-41fe-481a-8e2b-88673f537aa3
+  field_topics:
+  - entity: 21cdb39c-e55d-4d81-848f-49fad9a1d8b0
+  - entity: 57651b5c-628a-4b5b-bd93-68b3d97c0f4c
+  created:
+  - value: 1769083200
+  changed:
+  - value: 1776631111

@@ -1,0 +1,24 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: d32c1246-97d4-43b4-86c8-3d4d1ac6c71e
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 0
+  filename:
+    -
+      value: spring-market.jpg
+  uri:
+    -
+      value: 'public://umami-next/spring-market.jpg'
+  filemime:
+    -
+      value: image/jpeg
+  filesize:
+    -
+      value: 530393
+  status:
+    -
+      value: true

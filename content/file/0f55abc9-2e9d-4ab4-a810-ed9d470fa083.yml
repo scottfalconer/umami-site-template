@@ -1,0 +1,24 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: 0f55abc9-2e9d-4ab4-a810-ed9d470fa083
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 0
+  filename:
+    -
+      value: tomas-herrera.jpg
+  uri:
+    -
+      value: 'public://authors/tomas-herrera.jpg'
+  filemime:
+    -
+      value: image/jpeg
+  filesize:
+    -
+      value: 11403
+  status:
+    -
+      value: true

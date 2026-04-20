@@ -1,0 +1,30 @@
+_meta:
+  version: '1.0'
+  entity_type: crop
+  uuid: 60fb47d9-a53c-44bd-b234-2a4acd67f709
+  bundle: focal_point
+  default_langcode: en
+  depends:
+    0f55abc9-2e9d-4ab4-a810-ed9d470fa083: file
+default:
+  entity_id:
+    -
+      uuid: 0f55abc9-2e9d-4ab4-a810-ed9d470fa083
+  entity_type:
+    -
+      value: file
+  uri:
+    -
+      value: 'public://authors/tomas-herrera.jpg'
+  x:
+    -
+      value: 100
+  'y':
+    -
+      value: 100
+  revision_uid:
+    -
+      target_id: 0
+  revision_translation_affected:
+    -
+      value: true

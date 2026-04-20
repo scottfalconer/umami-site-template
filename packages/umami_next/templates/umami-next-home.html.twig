@@ -1,0 +1,140 @@
+<section class="container hero">
+  <div class="hero-grid">
+    <div>
+      <div class="hero-eyebrow with-rule">{{ 'Issue No. 14 - April 2026'|t }}</div>
+      <h1 class="hero-title">A letter from the <em>spring</em> market.</h1>
+      {% if hero %}
+        <p class="hero-deck">{{ hero.summary }}</p>
+      {% endif %}
+      <div class="hero-meta">
+        {% if hero_author %}
+          <div class="byline">
+            {% if hero_author.image %}
+              <div class="byline__avatar"><img src="{{ hero_author.image }}" alt="{{ hero_author.name }}"></div>
+            {% endif %}
+            <span>{{ 'By'|t }} <span class="name">{{ hero_author.name }}</span></span>
+          </div>
+        {% endif %}
+        {% if hero %}
+          <a class="btn btn--ghost" href="{{ hero.url }}">{{ 'Read the letter'|t }}</a>
+        {% endif %}
+      </div>
+    </div>
+    {% if hero and hero.image.url %}
+      <div>
+        <div class="hero-media"><img src="{{ hero.image.url }}" alt="{{ hero.image.alt }}"></div>
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+<section class="container section-space">
+  <div class="section-heading">
+    <div>
+      <div class="eyebrow">{{ 'From the test kitchen'|t }}</div>
+      <h2 class="section-heading__title">{{ "Recipes we're cooking this week"|t }}</h2>
+    </div>
+    <div class="section-heading__right"><a href="{{ path('umami_next.recipes') }}">{{ 'All recipes'|t }} &rarr;</a></div>
+  </div>
+  <div class="grid-4">
+    {% for card in featured_recipes %}
+      <a href="{{ card.url }}" class="card">
+        {% if card.image.url %}
+          <div class="card-media"><img src="{{ card.image.url }}" alt="{{ card.image.alt }}"></div>
+        {% else %}
+          <div class="card-media card-media--placeholder" aria-hidden="true"></div>
+        {% endif %}
+        <div class="card__meta">
+          <span>{{ card.category }}</span>
+          {% if card.cuisine %}
+            <span class="dot">&middot;</span><span>{{ card.cuisine }}</span>
+          {% endif %}
+        </div>
+        <h3 class="card__title">{{ card.title }}</h3>
+        <p class="card__deck">{{ card.summary }}</p>
+        <div class="card__meta"><span>{{ card.total }} min</span><span class="dot">&middot;</span><span>{{ card.difficulty }}</span></div>
+      </a>
+    {% endfor %}
+  </div>
+</section>
+
+{% if spotlight %}
+  <section class="container section-space">
+    <div class="split">
+      {% if spotlight.image.url %}
+      <div class="split__media"><img src="{{ spotlight.image.url }}" alt="{{ spotlight.image.alt }}"></div>
+    {% else %}
+      <div class="split__media card-media--placeholder" aria-hidden="true"></div>
+    {% endif %}
+      <div class="split__body">
+        <div class="eyebrow with-rule">{{ 'Collection'|t }}</div>
+        <h2>{{ spotlight.title }}</h2>
+        <p>{{ spotlight.intro }}</p>
+        <div class="split__actions"><a href="{{ spotlight.url }}" class="btn">{{ 'Open the collection'|t }}</a></div>
+      </div>
+    </div>
+  </section>
+{% endif %}
+
+<section class="container section-space">
+  <div class="section-heading">
+    <div>
+      <div class="eyebrow">{{ 'Browse'|t }}</div>
+      <h2 class="section-heading__title">{{ 'By way of the kitchen'|t }}</h2>
+    </div>
+  </div>
+  <div class="topic-grid">
+    {% for topic in topics %}
+      <a href="{{ topic.url }}" class="topic-tile">
+        <div class="topic-tile__num">{{ '%02d'|format(loop.index) }} / 06</div>
+        <div>
+          <div class="topic-tile__name">{{ topic.label }}</div>
+          <div class="topic-tile__count">{{ topic.count }} {{ 'pieces'|t }}</div>
+        </div>
+      </a>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="container section-space">
+  <div class="section-heading">
+    <div>
+      <div class="eyebrow">{{ 'Stories'|t }}</div>
+      <h2 class="section-heading__title">{{ 'Essays from the kitchen'|t }}</h2>
+    </div>
+    <div class="section-heading__right"><a href="{{ path('umami_next.stories') }}">{{ 'All stories'|t }} &rarr;</a></div>
+  </div>
+  <div class="grid-3">
+    {% for card in latest_stories %}
+      <a href="{{ card.url }}" class="card {{ loop.first ? 'card--featured' : '' }}">
+        {% if card.image.url %}
+          <div class="card-media"><img src="{{ card.image.url }}" alt="{{ card.image.alt }}"></div>
+        {% else %}
+          <div class="card-media card-media--placeholder" aria-hidden="true"></div>
+        {% endif %}
+        <div class="card__meta">
+          <span>{{ 'Essay'|t }}</span>
+          {% if card.topic %}
+            <span class="dot">&middot;</span><span>{{ card.topic }}</span>
+          {% endif %}
+        </div>
+        <h3 class="card__title">{{ card.title }}</h3>
+        <p class="card__deck">{{ card.summary }}</p>
+        <div class="card__meta"><span>{{ card.author.name }}</span><span class="dot">&middot;</span><span>{{ card.date }}</span></div>
+      </a>
+    {% endfor %}
+  </div>
+</section>
+
+{% if newsletter %}
+  <section class="newsletter-block">
+    <div class="container newsletter-block__inner">
+      <div>
+        <div class="eyebrow with-rule">{{ 'The weekly dispatch'|t }}</div>
+        <h2>{{ 'A small, useful letter on cooking and the season.'|t }}</h2>
+        <p>{{ 'Sent Sunday mornings. One recipe, one short essay, and a few things we have been eating.'|t }}</p>
+      </div>
+      <div>{{ newsletter }}</div>
+    </div>
+  </section>
+{% endif %}

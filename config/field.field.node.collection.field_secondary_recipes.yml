@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_secondary_recipes
+    - node.type.collection
+id: node.collection.field_secondary_recipes
+field_name: field_secondary_recipes
+entity_type: node
+bundle: collection
+label: 'Secondary Recipes'
+description: 'Choose up to 6 additional recipes in the collection.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      recipe: recipe
+    sort:
+      field: title
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

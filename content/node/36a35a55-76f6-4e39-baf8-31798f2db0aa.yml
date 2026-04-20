@@ -1,0 +1,102 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 36a35a55-76f6-4e39-baf8-31798f2db0aa
+  bundle: recipe
+  default_langcode: en
+  depends:
+    9cae18b2-ab0d-48f1-bd9d-137efac5fd4b: user
+    f2055c45-d739-46c4-8e56-ada172f1f9d8: user
+    dad86604-0666-486c-a6c6-dbbb22882482: taxonomy_term
+    3ce6cd35-e603-4716-8056-28c655260f25: taxonomy_term
+    e72a825a-6b52-449b-900a-109b1bfdeec0: media
+    975bf823-bd8d-4605-9a04-7c92a68c1932: taxonomy_term
+    45d0c897-71de-4f57-95b3-4bec3818917d: node
+    ecf6d4f5-edac-42f5-a438-14ee88210f36: node
+    83f730da-4588-4834-bcf6-6aa4142d8a62: node
+    26735ffd-6e41-4263-b276-f9ce28e7bb5c: taxonomy_term
+    57651b5c-628a-4b5b-bd93-68b3d97c0f4c: taxonomy_term
+default:
+  revision_uid:
+  - entity: 9cae18b2-ab0d-48f1-bd9d-137efac5fd4b
+  status:
+  - value: true
+  uid:
+  - entity: f2055c45-d739-46c4-8e56-ada172f1f9d8
+  title:
+  - value: Slow-Roasted Tomato Pappardelle
+  promote:
+  - value: true
+  sticky:
+  - value: false
+  revision_translation_affected:
+  - value: true
+  path:
+  - alias: /recipe/slow-roasted-tomato-pappardelle
+    langcode: en
+    pathauto: 0
+  field_cook_minutes:
+  - value: 90
+  field_cuisine:
+  - entity: dad86604-0666-486c-a6c6-dbbb22882482
+  field_description:
+  - value: Tomatoes held in a low oven until they sweeten and slump, tossed with wide ribbons of pasta and torn basil.
+  field_dietary:
+  - entity: 3ce6cd35-e603-4716-8056-28c655260f25
+  field_difficulty:
+  - value: Easy
+  field_featured_image:
+  - entity: e72a825a-6b52-449b-900a-109b1bfdeec0
+  field_ingredients:
+  - value: '## For the tomatoes
+
+      1.2 kg|mixed ripe tomatoes, halved
+
+      4 tbsp|olive oil
+
+      6|garlic cloves, smashed
+
+      1 tsp|flaky salt
+
+      a pinch|chili flakes
+
+      ## To serve
+
+      400 g|pappardelle
+
+      1 large|bunch basil
+
+      80 g|aged pecorino, grated
+
+      to taste|black pepper'
+  field_media_credit:
+  - value: Jun Watanabe
+  field_method:
+  - value: 'Slump the tomatoes|Heat the oven to 140°C. Lay the tomatoes cut-side up on a tray with the oil, garlic, salt, and chili. Roast for 75–90 minutes until slumped and jammy.
+
+      Cook the pasta|Bring a wide pot of salted water to a boil. Cook the pappardelle until just shy of al dente. Reserve a cup of pasta water before draining.
+
+      Bring it together|Tip the tomatoes and their oil into a wide pan over low heat. Add the pasta and a splash of the water, and toss gently until the sauce clings.
+
+      Finish|Tear in the basil, shower with pecorino, crack over pepper, and serve straight from the pan.'
+  field_notes:
+  - value: The tomatoes improve overnight. Keep half back for tomorrow's toast.
+  field_prep_minutes:
+  - value: 15
+  field_recipe_category:
+  - entity: 975bf823-bd8d-4605-9a04-7c92a68c1932
+  field_related_recipes:
+  - entity: 45d0c897-71de-4f57-95b3-4bec3818917d
+  - entity: ecf6d4f5-edac-42f5-a438-14ee88210f36
+  - entity: 83f730da-4588-4834-bcf6-6aa4142d8a62
+  field_servings:
+  - value: 4
+  field_topics:
+  - entity: 26735ffd-6e41-4263-b276-f9ce28e7bb5c
+  - entity: 57651b5c-628a-4b5b-bd93-68b3d97c0f4c
+  field_total_minutes:
+  - value: 105
+  created:
+  - value: 1775736000
+  changed:
+  - value: 1776631111

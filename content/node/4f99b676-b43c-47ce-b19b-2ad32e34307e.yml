@@ -1,0 +1,49 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 4f99b676-b43c-47ce-b19b-2ad32e34307e
+  bundle: article
+  default_langcode: en
+  depends:
+    b3ec0ba2-c460-4d0c-9841-82b1d105a505: user
+    87fd51bb-8259-4ab1-9fac-ab3b954c55dc: media
+    f0a5cac7-c43b-47cf-b278-0f22d7514808: node
+    be17db54-41fe-481a-8e2b-88673f537aa3: node
+    32021bd1-adb6-43e3-be1b-62671c2ffac6: taxonomy_term
+default:
+  revision_uid:
+  - entity: b3ec0ba2-c460-4d0c-9841-82b1d105a505
+  status:
+  - value: true
+  uid:
+  - entity: b3ec0ba2-c460-4d0c-9841-82b1d105a505
+  title:
+  - value: The Quiet Dessert
+  promote:
+  - value: false
+  sticky:
+  - value: false
+  revision_translation_affected:
+  - value: true
+  path:
+  - alias: /article/the-quiet-dessert
+    langcode: en
+    pathauto: 0
+  field_content:
+  - value: '<p>Loud desserts are a trap. The meringue towers, the sauces that arrive with their own geography — they are showing off, which is to say, they are announcing that the rest of the dinner was not quite enough on its own.</p><p>A quiet dessert is a vote of confidence in the dinner. A plain olive oil cake after a pasta is a way of saying: that was a full meal, you can sit with it, and here is a little something to sit with it.</p>'
+    format: content_format
+  field_description:
+  - value: An argument for olive oil cake, and other desserts that do not shout.
+  field_featured_image:
+  - entity: 87fd51bb-8259-4ab1-9fac-ab3b954c55dc
+  field_read_minutes:
+  - value: 5
+  field_related_recipes:
+  - entity: f0a5cac7-c43b-47cf-b278-0f22d7514808
+  - entity: be17db54-41fe-481a-8e2b-88673f537aa3
+  field_topics:
+  - entity: 32021bd1-adb6-43e3-be1b-62671c2ffac6
+  created:
+  - value: 1772366400
+  changed:
+  - value: 1776631111

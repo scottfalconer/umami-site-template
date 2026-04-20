@@ -1,0 +1,30 @@
+_meta:
+  version: '1.0'
+  entity_type: crop
+  uuid: b9318d73-accc-4f31-9c9a-b932cd24f46c
+  bundle: focal_point
+  default_langcode: en
+  depends:
+    37c2cdc8-d174-4a4d-b42c-b02e0939945e: file
+default:
+  entity_id:
+    -
+      uuid: 37c2cdc8-d174-4a4d-b42c-b02e0939945e
+  entity_type:
+    -
+      value: file
+  uri:
+    -
+      value: 'public://umami-next/sticky-sesame-aubergine.jpg'
+  x:
+    -
+      value: 800
+  'y':
+    -
+      value: 550
+  revision_uid:
+    -
+      target_id: 0
+  revision_translation_affected:
+    -
+      value: true

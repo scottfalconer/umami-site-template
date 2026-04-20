@@ -1,0 +1,24 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.footer_read
+  module:
+    - system
+  theme:
+    - umami_next_theme
+id: umami_next_theme_footer_read
+theme: umami_next_theme
+region: footer
+weight: 1
+provider: null
+plugin: 'system_menu_block:footer_read'
+settings:
+  id: 'system_menu_block:footer_read'
+  label: Read
+  label_display: visible
+  provider: system
+  level: 1
+  depth: 1
+  expand_all_items: false
+visibility: {  }

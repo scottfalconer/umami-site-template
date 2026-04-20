@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_sidebar_title
+    - node.type.page
+id: node.page.field_sidebar_title
+field_name: field_sidebar_title
+entity_type: node
+bundle: page
+label: 'Sidebar Title'
+description: 'Headline for the page sidebar callout.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

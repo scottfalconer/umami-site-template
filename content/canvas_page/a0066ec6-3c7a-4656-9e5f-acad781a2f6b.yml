@@ -1,0 +1,32 @@
+_meta:
+  version: '1.0'
+  entity_type: canvas_page
+  uuid: a0066ec6-3c7a-4656-9e5f-acad781a2f6b
+  default_langcode: en
+default:
+  status:
+    -
+      value: true
+  owner:
+    -
+      target_id: 1
+  title:
+    -
+      value: 'Not Found'
+  description:
+    -
+      value: 'Canvas-composed 404 recovery page.'
+  components:
+    -
+      uuid: 46453773-8c83-4207-8116-0118ac4c64a6
+      component_id: block.umami_next_not_found
+      inputs:
+        label: ''
+        label_display: '0'
+  path:
+    -
+      alias: /404
+      langcode: en
+  revision_translation_affected:
+    -
+      value: true

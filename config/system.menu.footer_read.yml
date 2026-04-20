@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: footer_read
+label: Read
+description: null
+locked: false

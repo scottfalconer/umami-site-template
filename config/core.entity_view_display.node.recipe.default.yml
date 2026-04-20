@@ -1,0 +1,92 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.recipe.field_cook_minutes
+    - field.field.node.recipe.field_cuisine
+    - field.field.node.recipe.field_description
+    - field.field.node.recipe.field_dietary
+    - field.field.node.recipe.field_difficulty
+    - field.field.node.recipe.field_featured_image
+    - field.field.node.recipe.field_ingredients
+    - field.field.node.recipe.field_media_credit
+    - field.field.node.recipe.field_method
+    - field.field.node.recipe.field_notes
+    - field.field.node.recipe.field_prep_minutes
+    - field.field.node.recipe.field_recipe_category
+    - field.field.node.recipe.field_related_recipes
+    - field.field.node.recipe.field_servings
+    - field.field.node.recipe.field_topics
+    - field.field.node.recipe.field_total_minutes
+    - node.type.recipe
+  module:
+    - user
+id: node.recipe.default
+targetEntityType: node
+bundle: recipe
+mode: default
+content:
+  field_description:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_featured_image:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_ingredients:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_method:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_recipe_category:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_topics:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_cook_minutes: true
+  field_cuisine: true
+  field_dietary: true
+  field_difficulty: true
+  field_media_credit: true
+  field_notes: true
+  field_prep_minutes: true
+  field_related_recipes: true
+  field_servings: true
+  field_total_minutes: true
+  search_api_excerpt: true

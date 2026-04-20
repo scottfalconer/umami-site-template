@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: recipe_content
+label: 'Recipe content'
+type: 'canonical_entities:node'
+pattern: '/recipe/[node:title]'
+selection_criteria:
+  75898fe5-279c-4ad9-b44e-f6d437c5bcab:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: 2be26fdc-c6cb-4396-a478-a90f31d22e9f
+    context_mapping:
+      node: node
+    bundles:
+      recipe: recipe
+selection_logic: and
+weight: 0
+relationships: {  }

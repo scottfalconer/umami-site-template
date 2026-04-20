@@ -1,0 +1,26 @@
+_meta:
+  version: '1.0'
+  entity_type: taxonomy_term
+  uuid: 59494b59-d9d1-418c-80ce-b6c14ab0f5e0
+  bundle: cuisine
+  default_langcode: en
+default:
+  status:
+    -
+      value: true
+  name:
+    -
+      value: Indian
+  weight:
+    -
+      value: 0
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      langcode: en
+      alias: null
+  field_slug:
+    -
+      value: indian

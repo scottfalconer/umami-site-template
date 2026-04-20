@@ -1,0 +1,30 @@
+_meta:
+  version: '1.0'
+  entity_type: crop
+  uuid: 37ca9bde-7404-49df-813f-17db29afd333
+  bundle: focal_point
+  default_langcode: en
+  depends:
+    0e172613-3ccd-4f16-9030-28a0b250cb3d: file
+default:
+  entity_id:
+    -
+      uuid: 0e172613-3ccd-4f16-9030-28a0b250cb3d
+  entity_type:
+    -
+      value: file
+  uri:
+    -
+      value: 'public://umami-next/slow-roasted-tomato-pappardelle.jpg'
+  x:
+    -
+      value: 800
+  'y':
+    -
+      value: 550
+  revision_uid:
+    -
+      target_id: 0
+  revision_translation_affected:
+    -
+      value: true

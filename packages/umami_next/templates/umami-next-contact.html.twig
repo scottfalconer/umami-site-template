@@ -1,0 +1,29 @@
+<section class="container page-hero">
+  <div class="eyebrow with-rule">{{ 'Write to us'|t }}</div>
+  <h1>{{ 'Keep in touch.'|t }}</h1>
+  <p>{{ 'Questions about a recipe, a note on technique, or a tip from your own kitchen are all welcome.'|t }}</p>
+</section>
+
+<section class="container contact-layout">
+  <div class="contact-form-panel">
+    {{ contact_form }}
+  </div>
+  <aside class="contact-sidebar" id="newsletter">
+    <div class="eyebrow with-rule">{{ 'Also helpful'|t }}</div>
+    <h3>{{ 'The Sunday dispatch'|t }}</h3>
+    <p>{{ 'One recipe, one short essay. Sent Sundays. Unsubscribe in one click.'|t }}</p>
+    {% if newsletter_form %}
+      {{ newsletter_form }}
+    {% endif %}
+    {% if social_links %}
+      <div class="contact-sidebar__links">
+        <div class="eyebrow">{{ 'Elsewhere'|t }}</div>
+        <ul>
+          {% for link in social_links %}
+            <li><a href="{{ link.url }}">{{ link.title }} &rarr;</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+    {% endif %}
+  </aside>
+</section>

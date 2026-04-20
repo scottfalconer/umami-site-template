@@ -1,0 +1,24 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: 66eb7c50-657b-4b9c-a98e-a9d7a819f618
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 0
+  filename:
+    -
+      value: heritage-the-long-pot.jpg
+  uri:
+    -
+      value: 'public://umami-next/heritage-the-long-pot.jpg'
+  filemime:
+    -
+      value: image/jpeg
+  filesize:
+    -
+      value: 492945
+  status:
+    -
+      value: true

@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_cuisine
+    - node.type.recipe
+id: node.recipe.field_cuisine
+field_name: field_cuisine
+entity_type: node
+bundle: recipe
+label: Cuisine
+description: 'Cuisine taxonomy for recipe filtering.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings: {  }
+field_type: entity_reference

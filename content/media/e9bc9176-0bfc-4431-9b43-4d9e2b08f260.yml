@@ -1,0 +1,32 @@
+_meta:
+  version: '1.0'
+  entity_type: media
+  uuid: e9bc9176-0bfc-4431-9b43-4d9e2b08f260
+  bundle: image
+  default_langcode: en
+  depends:
+    721ab37c-c423-4354-82f9-cae518fac75c: file
+default:
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 0
+  name:
+    -
+      value: weeknight-dal-with-burnt-butter
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      langcode: en
+      alias: null
+  field_media_image:
+    -
+      alt: 'Weeknight Dal with Burnt Butter'
+      title: ''
+      width: 1600
+      height: 1100
+      entity: 721ab37c-c423-4354-82f9-cae518fac75c

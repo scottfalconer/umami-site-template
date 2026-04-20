@@ -1,0 +1,36 @@
+_meta:
+  version: '1.0'
+  entity_type: menu_link_content
+  uuid: 9d67e45a-b463-4187-a33c-e3f8b494b32a
+  bundle: menu_link_content
+  default_langcode: en
+default:
+  enabled:
+    -
+      value: true
+  title:
+    -
+      value: RSS
+  menu_name:
+    -
+      value: social
+  link:
+    -
+      uri: 'internal:/feed'
+      title: null
+      options: {  }
+  external:
+    -
+      value: false
+  rediscover:
+    -
+      value: true
+  weight:
+    -
+      value: 2
+  expanded:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true

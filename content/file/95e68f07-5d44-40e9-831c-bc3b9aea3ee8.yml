@@ -1,0 +1,24 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: 95e68f07-5d44-40e9-831c-bc3b9aea3ee8
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 0
+  filename:
+    -
+      value: fire-and-patience.jpg
+  uri:
+    -
+      value: 'public://umami-next/fire-and-patience.jpg'
+  filemime:
+    -
+      value: image/jpeg
+  filesize:
+    -
+      value: 538163
+  status:
+    -
+      value: true

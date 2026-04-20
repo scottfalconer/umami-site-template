@@ -1,0 +1,24 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: 7769c152-0c53-4648-9b87-e06a4a1d851c
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 0
+  filename:
+    -
+      value: rye-buttermilk-loaf.jpg
+  uri:
+    -
+      value: 'public://umami-next/rye-buttermilk-loaf.jpg'
+  filemime:
+    -
+      value: image/jpeg
+  filesize:
+    -
+      value: 645075
+  status:
+    -
+      value: true

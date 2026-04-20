@@ -1,0 +1,24 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: 67d194eb-92d6-43c2-aa88-416c7472c368
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 0
+  filename:
+    -
+      value: amara-okafor.jpg
+  uri:
+    -
+      value: 'public://authors/amara-okafor.jpg'
+  filemime:
+    -
+      value: image/jpeg
+  filesize:
+    -
+      value: 12189
+  status:
+    -
+      value: true

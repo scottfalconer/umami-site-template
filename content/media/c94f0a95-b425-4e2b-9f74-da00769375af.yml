@@ -1,0 +1,32 @@
+_meta:
+  version: '1.0'
+  entity_type: media
+  uuid: c94f0a95-b425-4e2b-9f74-da00769375af
+  bundle: image
+  default_langcode: en
+  depends:
+    898289be-bb99-4f21-bae1-5b8b8be135b2: file
+default:
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 0
+  name:
+    -
+      value: miso-glazed-salmon-bowls
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      langcode: en
+      alias: null
+  field_media_image:
+    -
+      alt: 'Miso-Glazed Salmon Bowls'
+      title: ''
+      width: 1600
+      height: 1100
+      entity: 898289be-bb99-4f21-bae1-5b8b8be135b2

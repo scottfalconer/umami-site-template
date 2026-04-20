@@ -1,0 +1,24 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: 0e172613-3ccd-4f16-9030-28a0b250cb3d
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 0
+  filename:
+    -
+      value: slow-roasted-tomato-pappardelle.jpg
+  uri:
+    -
+      value: 'public://umami-next/slow-roasted-tomato-pappardelle.jpg'
+  filemime:
+    -
+      value: image/jpeg
+  filesize:
+    -
+      value: 454836
+  status:
+    -
+      value: true

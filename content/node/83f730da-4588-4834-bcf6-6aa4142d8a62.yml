@@ -1,0 +1,97 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 83f730da-4588-4834-bcf6-6aa4142d8a62
+  bundle: recipe
+  default_langcode: en
+  depends:
+    5546aa05-f2e6-4d2f-a71f-7ef234eec0c6: user
+    608205a5-2071-4d04-a980-cb5ead732d24: taxonomy_term
+    d89e63b8-2e59-4a10-9bf1-7def54e1922d: taxonomy_term
+    9e7771fb-6acb-45f9-87f0-72ddf70eb4b1: taxonomy_term
+    9daf3ddd-caff-41cc-8193-e1c58116e750: media
+    c338f17b-b1ef-490e-abb6-88f1280c0e4c: taxonomy_term
+    571994c9-f7dd-432c-8762-bb5ab5c94506: node
+    553198ce-abe4-448e-89f8-70cca32c43db: node
+    300908fc-4fe2-4a0b-b3d3-834a1b57fa43: node
+    598caa2a-4022-4978-abff-996ea50ba66d: taxonomy_term
+    32021bd1-adb6-43e3-be1b-62671c2ffac6: taxonomy_term
+default:
+  revision_uid:
+  - entity: 5546aa05-f2e6-4d2f-a71f-7ef234eec0c6
+  status:
+  - value: true
+  uid:
+  - entity: 5546aa05-f2e6-4d2f-a71f-7ef234eec0c6
+  title:
+  - value: Jollof Rice with Smoked Paprika
+  promote:
+  - value: false
+  sticky:
+  - value: false
+  revision_translation_affected:
+  - value: true
+  path:
+  - alias: /recipe/jollof-rice
+    langcode: en
+    pathauto: 0
+  field_cook_minutes:
+  - value: 50
+  field_cuisine:
+  - entity: 608205a5-2071-4d04-a980-cb5ead732d24
+  field_description:
+  - value: Tomato, pepper, onion cooked to a paste, rice steamed over it until the bottom crackles.
+  field_dietary:
+  - entity: d89e63b8-2e59-4a10-9bf1-7def54e1922d
+  - entity: 9e7771fb-6acb-45f9-87f0-72ddf70eb4b1
+  field_difficulty:
+  - value: Medium
+  field_featured_image:
+  - entity: 9daf3ddd-caff-41cc-8193-e1c58116e750
+  field_ingredients:
+  - value: '500 g|long-grain rice, rinsed
+
+      3|red peppers
+
+      2|onions
+
+      4|tomatoes
+
+      2 tbsp|tomato purée
+
+      2 tsp|smoked paprika
+
+      1 tsp|thyme
+
+      2|bay leaves
+
+      500 ml|stock
+
+      60 ml|neutral oil'
+  field_method:
+  - value: 'Blend|Blend peppers, one onion, tomatoes until smooth.
+
+      Fry base|Dice the other onion, fry in oil. Add purée and spices, cook 2 min. Add blended mix, reduce 15 min.
+
+      Steam|Stir in rice and stock. Cover and cook on low 25 min without lifting the lid.
+
+      Rest|Off heat, rest 10 min. Fluff gently.'
+  field_prep_minutes:
+  - value: 20
+  field_recipe_category:
+  - entity: c338f17b-b1ef-490e-abb6-88f1280c0e4c
+  field_related_recipes:
+  - entity: 571994c9-f7dd-432c-8762-bb5ab5c94506
+  - entity: 553198ce-abe4-448e-89f8-70cca32c43db
+  - entity: 300908fc-4fe2-4a0b-b3d3-834a1b57fa43
+  field_servings:
+  - value: 6
+  field_topics:
+  - entity: 598caa2a-4022-4978-abff-996ea50ba66d
+  - entity: 32021bd1-adb6-43e3-be1b-62671c2ffac6
+  field_total_minutes:
+  - value: 70
+  created:
+  - value: 1763121600
+  changed:
+  - value: 1776631111

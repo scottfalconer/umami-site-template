@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_description
+    - node.type.recipe
+id: node.recipe.field_description
+field_name: field_description
+entity_type: node
+bundle: recipe
+label: Summary
+description: 'One or two sentences used on recipe cards and at the top of the recipe page.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

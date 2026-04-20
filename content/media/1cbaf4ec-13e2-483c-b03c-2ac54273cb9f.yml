@@ -1,0 +1,32 @@
+_meta:
+  version: '1.0'
+  entity_type: media
+  uuid: 1cbaf4ec-13e2-483c-b03c-2ac54273cb9f
+  bundle: image
+  default_langcode: en
+  depends:
+    3709cfaa-bef6-4ca5-b097-f4a6ce36b376: file
+default:
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 0
+  name:
+    -
+      value: blistered-peppers-with-honey
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      langcode: en
+      alias: null
+  field_media_image:
+    -
+      alt: 'Blistered Peppers with Honey and Vinegar'
+      title: ''
+      width: 1600
+      height: 1100
+      entity: 3709cfaa-bef6-4ca5-b097-f4a6ce36b376

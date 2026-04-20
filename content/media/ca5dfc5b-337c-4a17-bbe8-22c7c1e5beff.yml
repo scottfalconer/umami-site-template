@@ -1,0 +1,32 @@
+_meta:
+  version: '1.0'
+  entity_type: media
+  uuid: ca5dfc5b-337c-4a17-bbe8-22c7c1e5beff
+  bundle: image
+  default_langcode: en
+  depends:
+    ab847ef9-502e-43bc-8fec-cebf529f4d21: file
+default:
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 0
+  name:
+    -
+      value: ribollita
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      langcode: en
+      alias: null
+  field_media_image:
+    -
+      alt: 'Ribollita, in an Honest Mood'
+      title: ''
+      width: 1600
+      height: 1100
+      entity: ab847ef9-502e-43bc-8fec-cebf529f4d21

@@ -1,0 +1,30 @@
+_meta:
+  version: '1.0'
+  entity_type: crop
+  uuid: e67894b0-e8ca-4c89-b6e5-8feebff7accc
+  bundle: focal_point
+  default_langcode: en
+  depends:
+    1a142c16-d4b7-48a9-b136-65cfdb01d60d: file
+default:
+  entity_id:
+    -
+      uuid: 1a142c16-d4b7-48a9-b136-65cfdb01d60d
+  entity_type:
+    -
+      value: file
+  uri:
+    -
+      value: 'public://umami-next/fire-and-grill.jpg'
+  x:
+    -
+      value: 800
+  'y':
+    -
+      value: 550
+  revision_uid:
+    -
+      target_id: 0
+  revision_translation_affected:
+    -
+      value: true

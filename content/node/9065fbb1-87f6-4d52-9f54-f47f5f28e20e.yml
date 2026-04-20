@@ -1,0 +1,50 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 9065fbb1-87f6-4d52-9f54-f47f5f28e20e
+  bundle: page
+  default_langcode: en
+  depends:
+    e4e82805-b5bd-41b9-99a7-b1d232677d27: media
+default:
+  revision_uid:
+  - target_id: 1
+  revision_log:
+  - value: Remove self-referential sidebar link for recipe export.
+  status:
+  - value: true
+  uid:
+  - target_id: 1
+  title:
+  - value: About Umami
+  promote:
+  - value: false
+  sticky:
+  - value: false
+  revision_translation_affected:
+  - value: true
+  moderation_state:
+  - value: published
+  path:
+  - alias: /about
+    langcode: en
+    pathauto: 0
+  field_content:
+  - value: <p>Umami is a kitchen journal. We cook every recipe we publish, usually more than once, in small home kitchens that look like yours. We write in plain language. We photograph in daylight. We are not interested in novelty for its own sake.</p><h3>What you&#039;ll find here</h3><p>Recipes, grouped by category and by the kind of night they fit into. Stories — short essays on technique, ingredient, and the small politics of a home kitchen. Collections — seasonal guides that pull a dozen related things into one place.</p><h3>How we work</h3><p>Each recipe is developed by a single tester and checked by at least one other. Ingredients are listed by weight where it matters. Instructions are structured so that the recipe can be read, scanned, or stepped through on a tired Wednesday.</p><p>Imagery is ours unless credited. Sample copy on this site is illustrative. We are happy to hear from you — find us on the contact page.</p>
+    format: content_format
+  field_description:
+  - value: We are a small editorial kitchen publishing recipes, essays, and the occasional opinion about salt.
+  field_featured_image:
+  - entity: e4e82805-b5bd-41b9-99a7-b1d232677d27
+  field_show_authors:
+  - value: true
+  field_sidebar_body:
+  - value: Four writers, one photographer, a rotating test kitchen, and a collection of cats who contribute mostly by watching.
+  field_sidebar_eyebrow:
+  - value: Masthead
+  field_sidebar_title:
+  - value: A small staff
+  created:
+  - value: 1776628618
+  changed:
+  - value: 1776651131

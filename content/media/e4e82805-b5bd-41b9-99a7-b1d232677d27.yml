@@ -1,0 +1,32 @@
+_meta:
+  version: '1.0'
+  entity_type: media
+  uuid: e4e82805-b5bd-41b9-99a7-b1d232677d27
+  bundle: image
+  default_langcode: en
+  depends:
+    ac48ac44-99ba-4e88-908c-57c4f9a38fb4: file
+default:
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 0
+  name:
+    -
+      value: about
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      langcode: en
+      alias: null
+  field_media_image:
+    -
+      alt: 'About Umami'
+      title: ''
+      width: 1600
+      height: 1100
+      entity: ac48ac44-99ba-4e88-908c-57c4f9a38fb4
