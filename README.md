@@ -108,7 +108,8 @@ This is the first raw `drush site:export` baseline from the working Drupal CMS
 site. The next cleanup passes should:
 
 - Reduce the flattened recipe export toward Drupal CMS recipe dependencies where possible.
-- Replace custom routed listing/search/contact behavior with Drupal-native Views, Search API, and Webform configuration.
+- Replace the remaining custom routed listing behavior with Drupal-native Views.
+- Keep search and contact on Drupal-native foundations: Search API/View from `drupal_cms_search`, Webform, and editable menus.
 - Keep the custom module limited to code that cannot be expressed as recipe/config/theme.
 - Move editorial structure into fields, Views, menus, media, and Canvas templates instead of Twig/PHP hardcoding.
 - Preserve installability evidence for every cleanup pass.

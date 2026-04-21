@@ -58,16 +58,6 @@ function umami_next_theme(): array {
       ],
       'template' => 'umami-next-topic-archive',
     ],
-    'umami_next_search' => [
-      'variables' => [
-        'query' => '',
-        'type' => '',
-        'results' => [],
-        'result_count' => 0,
-        'pager' => [],
-      ],
-      'template' => 'umami-next-search',
-    ],
     'umami_next_contact' => [
       'variables' => [
         'contact_form' => [],

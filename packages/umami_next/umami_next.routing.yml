@@ -22,14 +22,6 @@ umami_next.topic:
   requirements:
     _permission: 'access content'
 
-umami_next.search:
-  path: '/search'
-  defaults:
-    _controller: '\Drupal\umami_next\Controller\EditorialController::search'
-    _title: 'Search'
-  requirements:
-    _permission: 'access content'
-
 umami_next.contact:
   path: '/contact'
   defaults:

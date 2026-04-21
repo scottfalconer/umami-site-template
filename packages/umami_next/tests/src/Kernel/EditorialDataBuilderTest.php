@@ -8,8 +8,6 @@ use Drupal\field\Entity\FieldConfig;
 use Drupal\field\Entity\FieldStorageConfig;
 use Drupal\KernelTests\KernelTestBase;
 use Drupal\menu_link_content\Entity\MenuLinkContent;
-use Drupal\node\Entity\Node;
-use Drupal\node\Entity\NodeType;
 use Drupal\system\Entity\Menu;
 use Drupal\umami_next\EditorialDataBuilder;
 use Drupal\user\Entity\User;
@@ -34,7 +32,6 @@ final class EditorialDataBuilderTest extends KernelTestBase {
     'link',
     'media',
     'menu_link_content',
-    'node',
     'options',
     'system',
     'text',
@@ -56,30 +53,10 @@ final class EditorialDataBuilderTest extends KernelTestBase {
     $this->installEntitySchema('file');
     $this->installEntitySchema('menu_link_content');
     $this->installEntitySchema('media');
-    $this->installEntitySchema('node');
-    $this->installSchema('node', ['node_access']);
     $this->installConfig(['filter']);
-
-    NodeType::create([
-      'type' => 'recipe',
-      'name' => 'Recipe',
-    ])->save();
-    NodeType::create([
-      'type' => 'article',
-      'name' => 'Article',
-    ])->save();
-    NodeType::create([
-      'type' => 'collection',
-      'name' => 'Collection',
-    ])->save();
 
     $this->createUserField('field_role', 'string');
     $this->createUserField('field_bio', 'string_long');
-    $this->createNodeField('recipe', 'field_description', 'string_long');
-    $this->createNodeField('article', 'field_description', 'string_long');
-    $this->createNodeField('collection', 'field_description', 'string_long');
-    $this->createNodeField('article', 'field_content', 'text_long');
-    $this->createNodeField('collection', 'field_content', 'text_long');
 
     $this->builder = new EditorialDataBuilder(
       $this->container->get('entity_type.manager'),
@@ -119,56 +96,6 @@ final class EditorialDataBuilderTest extends KernelTestBase {
     $this->assertCount(1, $cards);
     $this->assertSame('Ana Silva', $cards[0]['name']);
     $this->assertSame('Editor', $cards[0]['role']);
-  }
-
-  /**
-   * Verifies search uses stored fields and bundle filters with real totals.
-   */
-  public function testSearchResultsCanBeCountedAndFilteredByBundle(): void {
-    Node::create([
-      'type' => 'recipe',
-      'title' => 'Spring Market Pasta',
-      'status' => 1,
-      'field_description' => 'Pasta for the Saturday market haul.',
-    ])->save();
-
-    Node::create([
-      'type' => 'article',
-      'title' => 'Market Notes',
-      'status' => 1,
-      'field_description' => 'A short deck.',
-      'field_content' => [
-        'value' => 'This story starts at the market and ends at dinner.',
-        'format' => 'plain_text',
-      ],
-    ])->save();
-
-    Node::create([
-      'type' => 'collection',
-      'title' => 'Spring suppers',
-      'status' => 1,
-      'field_description' => 'A deck without the keyword.',
-      'field_content' => [
-        'value' => 'A collection of market cooking ideas.',
-        'format' => 'plain_text',
-      ],
-    ])->save();
-
-    Node::create([
-      'type' => 'recipe',
-      'title' => 'Braised fennel',
-      'status' => 1,
-      'field_description' => 'No keyword here.',
-    ])->save();
-
-    $this->assertSame(3, $this->builder->countSearchResults('market', ''));
-    $this->assertSame(1, $this->builder->countSearchResults('market', 'article'));
-
-    $results = $this->builder->buildSearchResults('market', 'article', 10);
-
-    $this->assertCount(1, $results);
-    $this->assertSame('article', $results[0]['type']);
-    $this->assertSame('Market Notes', $results[0]['title']);
   }
 
   /**
@@ -220,27 +147,6 @@ final class EditorialDataBuilderTest extends KernelTestBase {
       'field_name' => $field_name,
       'entity_type' => 'user',
       'bundle' => 'user',
-      'label' => $field_name,
-    ])->save();
-  }
-
-  /**
-   * Creates a node field for the test bundles.
-   */
-  private function createNodeField(string $bundle, string $field_name, string $field_type): void {
-    if (!FieldStorageConfig::loadByName('node', $field_name)) {
-      FieldStorageConfig::create([
-        'field_name' => $field_name,
-        'entity_type' => 'node',
-        'type' => $field_type,
-        'cardinality' => 1,
-      ])->save();
-    }
-
-    FieldConfig::create([
-      'field_name' => $field_name,
-      'entity_type' => 'node',
-      'bundle' => $bundle,
       'label' => $field_name,
     ])->save();
   }

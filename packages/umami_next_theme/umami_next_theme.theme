@@ -24,7 +24,7 @@ function umami_next_theme_preprocess_page(array &$variables): void {
   $variables['site_name'] = $site_config->get('name');
   $variables['site_slogan'] = $site_config->get('slogan');
   $variables['umami_main_menu'] = _umami_next_menu_items('main');
-  $variables['umami_search_url'] = Url::fromRoute('umami_next.search')->toString();
+  $variables['umami_search_url'] = Url::fromRoute('view.search.page')->toString();
   $variables['umami_contact_url'] = Url::fromRoute('umami_next.contact')->toString();
   $variables['umami_front_path'] = $front_path;
   $variables['#cache']['tags'] = Cache::mergeTags($variables['#cache']['tags'] ?? [], [

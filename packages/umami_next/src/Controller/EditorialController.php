@@ -174,29 +174,6 @@ final class EditorialController extends ControllerBase {
   }
 
   /**
-   * Builds the search page.
-   */
-  public function search(Request $request): array {
-    $query = trim((string) $request->query->get('q', ''));
-    $type = (string) $request->query->get('type', '');
-    $result_count = $this->editorialData->countSearchResults($query, $type);
-    $results = $this->editorialData->buildSearchResults($query, $type);
-
-    return [
-      '#theme' => 'umami_next_search',
-      '#query' => $query,
-      '#type' => $type,
-      '#results' => $results,
-      '#result_count' => $result_count,
-      '#pager' => ['#type' => 'pager'],
-      '#cache' => [
-        'tags' => ['node_list'],
-        'contexts' => ['url.query_args', 'user.node_grants:view', 'user.permissions'],
-      ],
-    ];
-  }
-
-  /**
    * Builds the contact page.
    */
   public function contact(): array {
