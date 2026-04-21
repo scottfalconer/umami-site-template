@@ -7,7 +7,6 @@ namespace Drupal\umami_next;
 use Drupal\Core\Cache\CacheableMetadata;
 use Drupal\Core\Datetime\DateFormatterInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
-use Drupal\Core\Entity\Query\QueryInterface;
 use Drupal\Core\File\FileUrlGeneratorInterface;
 use Drupal\Core\Menu\MenuLinkTreeInterface;
 use Drupal\Core\Menu\MenuTreeParameters;
@@ -32,7 +31,6 @@ final class EditorialDataBuilder {
     'avatar' => '1_1_300x300_focal_point_webp',
     'card' => '4_3_500x375_focal_point_webp',
     'hero' => '3_4_708x944_focal_point_webp',
-    'search' => '1_1_300x300_focal_point_webp',
     'split' => '3_4_708x944_focal_point_webp',
   ];
 
@@ -400,85 +398,6 @@ final class EditorialDataBuilder {
   }
 
   /**
-   * Builds search results from supported node bundles.
-   *
-   * @return array<int, array<string, mixed>>
-   *   Search results.
-   */
-  public function countSearchResults(string $query, string $type): int {
-    return (int) $this->buildSearchQuery($query, $type)
-      ->count()
-      ->execute();
-  }
-
-  /**
-   * Builds search results from supported node bundles.
-   *
-   * @return array<int, array<string, mixed>>
-   *   Search results.
-   */
-  public function buildSearchResults(string $query, string $type, int $page_size = 12): array {
-    $storage = $this->entityTypeManager->getStorage('node');
-    $ids = $this->buildSearchQuery($query, $type)
-      ->sort('created', 'DESC')
-      ->pager($page_size)
-      ->execute();
-
-    if (!$ids) {
-      return [];
-    }
-
-    $nodes = $storage->loadMultiple($ids);
-    $results = [];
-    $needle = mb_strtolower($query);
-    foreach ($ids as $id) {
-      $node = $nodes[$id] ?? NULL;
-      if (!$node instanceof NodeInterface) {
-        continue;
-      }
-      $summary = $this->fieldString($node, 'field_description');
-      $title = $node->label();
-      $results[] = [
-        'type' => $node->bundle(),
-        'title' => $title,
-        'summary' => $summary,
-        'url' => $node->toUrl()->toString(),
-        'image' => $this->buildImageData($node, 'search'),
-        '_score' => $needle === '' ? [] : [
-          str_starts_with(mb_strtolower($title), $needle) ? 3 : 0,
-          str_contains(mb_strtolower($title), $needle) ? 2 : 0,
-          str_contains(mb_strtolower($summary), $needle) ? 1 : 0,
-          match ($node->bundle()) {
-            'article' => 3,
-            'collection' => 2,
-            default => 1,
-          },
-          $node->getCreatedTime(),
-        ],
-      ];
-    }
-
-    if ($needle !== '') {
-      usort($results, static function (array $a, array $b): int {
-        foreach ($a['_score'] as $index => $score) {
-          $comparison = ($b['_score'][$index] ?? 0) <=> $score;
-          if ($comparison !== 0) {
-            return $comparison;
-          }
-        }
-        return 0;
-      });
-    }
-
-    foreach ($results as &$result) {
-      unset($result['_score']);
-    }
-    unset($result);
-
-    return $results;
-  }
-
-  /**
    * Builds an image style URL with an original-file fallback.
    */
   private function buildStyledImageUrl(string $uri, string $variant): string {
@@ -586,34 +505,6 @@ final class EditorialDataBuilder {
       return '';
     }
     return (string) $node->get($field_name)->value;
-  }
-
-  /**
-   * Builds a query for the supported content search bundles.
-   */
-  private function buildSearchQuery(string $query, string $type): QueryInterface {
-    $bundles = match ($type) {
-      'recipe' => ['recipe'],
-      'article' => ['article'],
-      'collection' => ['collection'],
-      default => ['recipe', 'article', 'collection'],
-    };
-
-    $query_builder = $this->entityTypeManager->getStorage('node')->getQuery()
-      ->accessCheck(TRUE)
-      ->condition('type', $bundles, 'IN')
-      ->condition('status', 1);
-
-    if ($query !== '') {
-      $query_builder->condition(
-        $query_builder->orConditionGroup()
-          ->condition('title', $query, 'CONTAINS')
-          ->condition('field_description', $query, 'CONTAINS')
-          ->condition('field_content', $query, 'CONTAINS')
-      );
-    }
-
-    return $query_builder;
   }
 
   /**

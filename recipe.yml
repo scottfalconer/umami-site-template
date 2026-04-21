@@ -1,5 +1,7 @@
 name: Umami
 type: Site
+recipes:
+  - drupal_cms_search
 install:
   - announcements_feed
   - automated_cron
