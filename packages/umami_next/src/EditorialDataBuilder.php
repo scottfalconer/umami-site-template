@@ -4,10 +4,13 @@ declare(strict_types=1);
 
 namespace Drupal\umami_next;
 
+use Drupal\Core\Cache\CacheableMetadata;
 use Drupal\Core\Datetime\DateFormatterInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Entity\Query\QueryInterface;
 use Drupal\Core\File\FileUrlGeneratorInterface;
+use Drupal\Core\Menu\MenuLinkTreeInterface;
+use Drupal\Core\Menu\MenuTreeParameters;
 use Drupal\Core\StringTranslation\TranslatableMarkup;
 use Drupal\Core\Url;
 use Drupal\image\ImageStyleInterface;
@@ -47,6 +50,7 @@ final class EditorialDataBuilder {
     private readonly EntityTypeManagerInterface $entityTypeManager,
     private readonly FileUrlGeneratorInterface $fileUrlGenerator,
     private readonly DateFormatterInterface $dateFormatter,
+    private readonly MenuLinkTreeInterface $menuLinkTree,
   ) {}
 
   /**
@@ -363,6 +367,36 @@ final class EditorialDataBuilder {
       '#type' => 'webform',
       '#webform' => $webform->id(),
     ];
+  }
+
+  /**
+   * Builds editable menu links for simple template lists.
+   *
+   * @return array<int, array{title: string, url: string, external: bool}>
+   *   Menu link data sorted by the menu tree.
+   */
+  public function buildMenuLinks(string $menu_name, ?CacheableMetadata $cacheability = NULL): array {
+    $parameters = (new MenuTreeParameters())->onlyEnabledLinks();
+    $tree = $this->menuLinkTree->load($menu_name, $parameters);
+    $tree = $this->menuLinkTree->transform($tree, [
+      ['callable' => 'menu.default_tree_manipulators:checkAccess'],
+      ['callable' => 'menu.default_tree_manipulators:generateIndexAndSort'],
+    ]);
+    $cacheability?->addCacheableDependency(CacheableMetadata::createFromRenderArray($this->menuLinkTree->build($tree)));
+
+    $links = [];
+    foreach ($tree as $element) {
+      if ($element->access !== NULL && !$element->access->isAllowed()) {
+        continue;
+      }
+      $url = $element->link->getUrlObject();
+      $links[] = [
+        'title' => $element->link->getTitle(),
+        'url' => $url->toString(),
+        'external' => $url->isExternal(),
+      ];
+    }
+    return $links;
   }
 
   /**

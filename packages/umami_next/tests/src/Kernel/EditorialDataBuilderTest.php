@@ -7,8 +7,10 @@ namespace Drupal\Tests\umami_next\Kernel;
 use Drupal\field\Entity\FieldConfig;
 use Drupal\field\Entity\FieldStorageConfig;
 use Drupal\KernelTests\KernelTestBase;
+use Drupal\menu_link_content\Entity\MenuLinkContent;
 use Drupal\node\Entity\Node;
 use Drupal\node\Entity\NodeType;
+use Drupal\system\Entity\Menu;
 use Drupal\umami_next\EditorialDataBuilder;
 use Drupal\user\Entity\User;
 use PHPUnit\Framework\Attributes\RunTestsInSeparateProcesses;
@@ -29,7 +31,9 @@ final class EditorialDataBuilderTest extends KernelTestBase {
     'file',
     'filter',
     'image',
+    'link',
     'media',
+    'menu_link_content',
     'node',
     'options',
     'system',
@@ -50,6 +54,7 @@ final class EditorialDataBuilderTest extends KernelTestBase {
 
     $this->installEntitySchema('user');
     $this->installEntitySchema('file');
+    $this->installEntitySchema('menu_link_content');
     $this->installEntitySchema('media');
     $this->installEntitySchema('node');
     $this->installSchema('node', ['node_access']);
@@ -80,6 +85,7 @@ final class EditorialDataBuilderTest extends KernelTestBase {
       $this->container->get('entity_type.manager'),
       $this->container->get('file_url_generator'),
       $this->container->get('date.formatter'),
+      $this->container->get('menu.link_tree'),
     );
   }
 
@@ -163,6 +169,40 @@ final class EditorialDataBuilderTest extends KernelTestBase {
     $this->assertCount(1, $results);
     $this->assertSame('article', $results[0]['type']);
     $this->assertSame('Market Notes', $results[0]['title']);
+  }
+
+  /**
+   * Verifies simple template links come from editable Drupal menus.
+   */
+  public function testBuildMenuLinksUsesMenuContent(): void {
+    Menu::create([
+      'id' => 'social',
+      'label' => 'Social',
+    ])->save();
+
+    MenuLinkContent::create([
+      'title' => 'Substack',
+      'link' => ['uri' => 'https://substack.com'],
+      'menu_name' => 'social',
+      'weight' => 1,
+    ])->save();
+    MenuLinkContent::create([
+      'title' => 'Instagram',
+      'link' => ['uri' => 'https://instagram.com'],
+      'menu_name' => 'social',
+      'weight' => 0,
+    ])->save();
+    MenuLinkContent::create([
+      'title' => 'RSS',
+      'link' => ['uri' => 'internal:/feed'],
+      'menu_name' => 'social',
+      'weight' => 2,
+    ])->save();
+
+    $links = $this->builder->buildMenuLinks('social');
+
+    $this->assertSame(['Instagram', 'Substack', 'RSS'], array_column($links, 'title'));
+    $this->assertSame('/feed', $links[2]['url']);
   }
 
   /**

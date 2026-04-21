@@ -501,21 +501,9 @@ config:
         status: true
         is_admin: false
         permissions:
-          - 'access administration pages'
-          - 'access coffee'
           - 'access content'
-          - 'access contextual links'
-          - 'access navigation'
-          - 'bypass honeypot protection'
-          - 'delete own files'
-          - 'mark as hidden in editoria11y'
-          - 'skip CAPTCHA'
           - 'use klaro'
-          - 'use text format webform_default'
-          - 'view editoria11y checker'
           - 'view media'
-          - 'view own unpublished content'
-          - 'view the administration theme'
     user.settings:
       simpleConfigUpdate:
         langcode: en
