@@ -24,6 +24,10 @@ default:
       inputs:
         label: '404 recovery'
         label_display: '0'
+        headline: 'This page has gone to the market.'
+        description: 'It will be back Sunday with basil. In the meantime, here are a few recipes to stand in.'
+        home_label: Home
+        recipes_label: 'Browse recipes'
   path:
     -
       alias: /404

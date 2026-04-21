@@ -49,19 +49,26 @@ default:
   field_featured_image:
   - entity: 1cbaf4ec-13e2-483c-b03c-2ac54273cb9f
   field_ingredients:
-  - value: '500 g|shishito or padron peppers
-
-      2 tbsp|neutral oil
-
-      1 tbsp|honey
-
-      1 tbsp|sherry vinegar
-
-      to taste|flaky salt'
+  - group_label: ''
+    quantity: 500 g
+    ingredient: shishito or padron peppers
+  - group_label: ''
+    quantity: 2 tbsp
+    ingredient: neutral oil
+  - group_label: ''
+    quantity: 1 tbsp
+    ingredient: honey
+  - group_label: ''
+    quantity: 1 tbsp
+    ingredient: sherry vinegar
+  - group_label: ''
+    quantity: to taste
+    ingredient: flaky salt
   field_method:
-  - value: 'Blister|Heat oil in a cast iron until shimmering. Add peppers and leave undisturbed for 2 min. Toss and cook until charred in patches.
-
-      Dress|Off heat, add honey and vinegar. Swirl to glaze. Salt heavily.'
+  - step_title: Blister
+    instruction: Heat oil in a cast iron until shimmering. Add peppers and leave undisturbed for 2 min. Toss and cook until charred in patches.
+  - step_title: Dress
+    instruction: Off heat, add honey and vinegar. Swirl to glaze. Salt heavily.
   field_prep_minutes:
   - value: 5
   field_recipe_category:

@@ -50,31 +50,42 @@ default:
   field_featured_image:
   - entity: aa028afd-ec78-4502-8040-02411e43502d
   field_ingredients:
-  - value: '2 × 400 g|tins chickpeas, drained
-
-      1|large onion, diced
-
-      4 cloves|garlic, sliced
-
-      1|preserved lemon, rind only, chopped
-
-      1 pinch|saffron threads
-
-      1 tsp|smoked paprika
-
-      1 × 400 g|tin tomatoes
-
-      500 ml|vegetable stock
-
-      to serve|yogurt, dill, flatbread'
+  - group_label: ''
+    quantity: 2 × 400 g
+    ingredient: tins chickpeas, drained
+  - group_label: ''
+    quantity: '1'
+    ingredient: large onion, diced
+  - group_label: ''
+    quantity: 4 cloves
+    ingredient: garlic, sliced
+  - group_label: ''
+    quantity: '1'
+    ingredient: preserved lemon, rind only, chopped
+  - group_label: ''
+    quantity: 1 pinch
+    ingredient: saffron threads
+  - group_label: ''
+    quantity: 1 tsp
+    ingredient: smoked paprika
+  - group_label: ''
+    quantity: 1 × 400 g
+    ingredient: tin tomatoes
+  - group_label: ''
+    quantity: 500 ml
+    ingredient: vegetable stock
+  - group_label: ''
+    quantity: to serve
+    ingredient: yogurt, dill, flatbread
   field_method:
-  - value: 'Soften|Sweat the onion in olive oil with salt until deeply soft, 12 min. Add garlic and paprika for 1 min.
-
-      Bloom|Crumble in saffron with a splash of warm water. Add tomatoes and stock and simmer 10 min.
-
-      Simmer|Add chickpeas and preserved lemon. Cook gently 30–40 min until the liquid reduces to a glossy sauce.
-
-      Finish|Taste. Serve with yogurt, dill, and warm flatbread.'
+  - step_title: Soften
+    instruction: Sweat the onion in olive oil with salt until deeply soft, 12 min. Add garlic and paprika for 1 min.
+  - step_title: Bloom
+    instruction: Crumble in saffron with a splash of warm water. Add tomatoes and stock and simmer 10 min.
+  - step_title: Simmer
+    instruction: Add chickpeas and preserved lemon. Cook gently 30–40 min until the liquid reduces to a glossy sauce.
+  - step_title: Finish
+    instruction: Taste. Serve with yogurt, dill, and warm flatbread.
   field_notes:
   - value: Better the next day. Freezes well.
   field_prep_minutes:

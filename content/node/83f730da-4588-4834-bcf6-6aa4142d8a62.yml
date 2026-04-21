@@ -49,33 +49,45 @@ default:
   field_featured_image:
   - entity: 9daf3ddd-caff-41cc-8193-e1c58116e750
   field_ingredients:
-  - value: '500 g|long-grain rice, rinsed
-
-      3|red peppers
-
-      2|onions
-
-      4|tomatoes
-
-      2 tbsp|tomato purée
-
-      2 tsp|smoked paprika
-
-      1 tsp|thyme
-
-      2|bay leaves
-
-      500 ml|stock
-
-      60 ml|neutral oil'
+  - group_label: ''
+    quantity: 500 g
+    ingredient: long-grain rice, rinsed
+  - group_label: ''
+    quantity: '3'
+    ingredient: red peppers
+  - group_label: ''
+    quantity: '2'
+    ingredient: onions
+  - group_label: ''
+    quantity: '4'
+    ingredient: tomatoes
+  - group_label: ''
+    quantity: 2 tbsp
+    ingredient: tomato purée
+  - group_label: ''
+    quantity: 2 tsp
+    ingredient: smoked paprika
+  - group_label: ''
+    quantity: 1 tsp
+    ingredient: thyme
+  - group_label: ''
+    quantity: '2'
+    ingredient: bay leaves
+  - group_label: ''
+    quantity: 500 ml
+    ingredient: stock
+  - group_label: ''
+    quantity: 60 ml
+    ingredient: neutral oil
   field_method:
-  - value: 'Blend|Blend peppers, one onion, tomatoes until smooth.
-
-      Fry base|Dice the other onion, fry in oil. Add purée and spices, cook 2 min. Add blended mix, reduce 15 min.
-
-      Steam|Stir in rice and stock. Cover and cook on low 25 min without lifting the lid.
-
-      Rest|Off heat, rest 10 min. Fluff gently.'
+  - step_title: Blend
+    instruction: Blend peppers, one onion, tomatoes until smooth.
+  - step_title: Fry base
+    instruction: Dice the other onion, fry in oil. Add purée and spices, cook 2 min. Add blended mix, reduce 15 min.
+  - step_title: Steam
+    instruction: Stir in rice and stock. Cover and cook on low 25 min without lifting the lid.
+  - step_title: Rest
+    instruction: Off heat, rest 10 min. Fluff gently.
   field_prep_minutes:
   - value: 20
   field_recipe_category:

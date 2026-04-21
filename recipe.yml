@@ -192,6 +192,30 @@ config:
             parent: system.admin
             weight: 10
             expanded: false
+    canvas.component.block.umami_next_featured_recipes:
+      setProperties:
+        status: true
+    canvas.component.block.umami_next_home_hero:
+      setProperties:
+        status: true
+    canvas.component.block.umami_next_latest_stories:
+      setProperties:
+        status: true
+    canvas.component.block.umami_next_newsletter:
+      setProperties:
+        status: true
+    canvas.component.block.umami_next_not_found:
+      setProperties:
+        status: true
+    canvas.component.block.umami_next_spotlight_collection:
+      setProperties:
+        status: true
+    canvas.component.block.umami_next_topic_browse:
+      setProperties:
+        status: true
+    canvas.content_template.node.page.full:
+      setProperties:
+        status: true
     system.action.user_block_user_action:
       setProperties:
         status: true

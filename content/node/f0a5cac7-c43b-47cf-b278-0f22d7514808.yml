@@ -47,29 +47,40 @@ default:
   field_featured_image:
   - entity: 80c45d4b-7ee0-4449-8e43-d467b912f9be
   field_ingredients:
-  - value: '200 g|plain flour
-
-      200 g|sugar
-
-      1.5 tsp|baking powder
-
-      0.5 tsp|salt
-
-      3|eggs
-
-      180 ml|good olive oil
-
-      180 ml|milk or yogurt
-
-      zest of 2|lemons or 1 orange
-
-      2 tbsp|lemon juice'
+  - group_label: ''
+    quantity: 200 g
+    ingredient: plain flour
+  - group_label: ''
+    quantity: 200 g
+    ingredient: sugar
+  - group_label: ''
+    quantity: 1.5 tsp
+    ingredient: baking powder
+  - group_label: ''
+    quantity: 0.5 tsp
+    ingredient: salt
+  - group_label: ''
+    quantity: '3'
+    ingredient: eggs
+  - group_label: ''
+    quantity: 180 ml
+    ingredient: good olive oil
+  - group_label: ''
+    quantity: 180 ml
+    ingredient: milk or yogurt
+  - group_label: ''
+    quantity: zest of 2
+    ingredient: lemons or 1 orange
+  - group_label: ''
+    quantity: 2 tbsp
+    ingredient: lemon juice
   field_method:
-  - value: 'Mix|Heat oven to 175°C. Whisk dry. Whisk wet. Fold together.
-
-      Bake|Pour into a lined 22 cm tin. Bake 40–50 min until a skewer comes clean.
-
-      Cool|Brush with lemon juice while warm.'
+  - step_title: Mix
+    instruction: Heat oven to 175°C. Whisk dry. Whisk wet. Fold together.
+  - step_title: Bake
+    instruction: Pour into a lined 22 cm tin. Bake 40–50 min until a skewer comes clean.
+  - step_title: Cool
+    instruction: Brush with lemon juice while warm.
   field_prep_minutes:
   - value: 15
   field_recipe_category:

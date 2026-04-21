@@ -1,6 +1,8 @@
 block.settings.umami_next_home_hero:
   type: block_settings
   label: 'Umami Next home hero settings'
+  constraints:
+    FullyValidatable: ~
   mapping:
     issue_label:
       type: label
@@ -24,6 +26,8 @@ block.settings.umami_next_home_hero:
 block.settings.umami_next_featured_recipes:
   type: block_settings
   label: 'Umami Next featured recipes settings'
+  constraints:
+    FullyValidatable: ~
   mapping:
     eyebrow:
       type: label
@@ -38,6 +42,8 @@ block.settings.umami_next_featured_recipes:
 block.settings.umami_next_spotlight_collection:
   type: block_settings
   label: 'Umami Next spotlight collection settings'
+  constraints:
+    FullyValidatable: ~
   mapping:
     eyebrow:
       type: label
@@ -49,6 +55,8 @@ block.settings.umami_next_spotlight_collection:
 block.settings.umami_next_topic_browse:
   type: block_settings
   label: 'Umami Next topic browse settings'
+  constraints:
+    FullyValidatable: ~
   mapping:
     eyebrow:
       type: label
@@ -60,6 +68,8 @@ block.settings.umami_next_topic_browse:
 block.settings.umami_next_latest_stories:
   type: block_settings
   label: 'Umami Next latest stories settings'
+  constraints:
+    FullyValidatable: ~
   mapping:
     stories_eyebrow:
       type: label
@@ -80,6 +90,8 @@ block.settings.umami_next_latest_stories:
 block.settings.umami_next_newsletter:
   type: block_settings
   label: 'Umami Next newsletter settings'
+  constraints:
+    FullyValidatable: ~
   mapping:
     eyebrow:
       type: label
@@ -94,6 +106,8 @@ block.settings.umami_next_newsletter:
 block.settings.umami_next_not_found:
   type: block_settings
   label: 'Umami Next not found settings'
+  constraints:
+    FullyValidatable: ~
   mapping:
     headline:
       type: label

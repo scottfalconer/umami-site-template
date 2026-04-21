@@ -51,23 +51,31 @@ default:
   field_featured_image:
   - entity: e06fb558-3109-4975-b2a2-9b05b776fa53
   field_ingredients:
-  - value: '2 × 400 g|tins cannellini or butter beans, with their liquid
-
-      3 stalks|celery, thinly sliced (leaves reserved)
-
-      3 tbsp|good olive oil
-
-      1|lemon (zest and juice)
-
-      1 tsp|fennel seeds
-
-      to taste|flaky salt, black pepper'
+  - group_label: ''
+    quantity: 2 × 400 g
+    ingredient: tins cannellini or butter beans, with their liquid
+  - group_label: ''
+    quantity: 3 stalks
+    ingredient: celery, thinly sliced (leaves reserved)
+  - group_label: ''
+    quantity: 3 tbsp
+    ingredient: good olive oil
+  - group_label: ''
+    quantity: '1'
+    ingredient: lemon (zest and juice)
+  - group_label: ''
+    quantity: 1 tsp
+    ingredient: fennel seeds
+  - group_label: ''
+    quantity: to taste
+    ingredient: flaky salt, black pepper
   field_method:
-  - value: 'Warm|Warm the beans and their liquid gently with the oil, fennel, and a pinch of salt.
-
-      Dress|Off heat, stir in celery and lemon juice. Taste for salt.
-
-      Finish|Spoon into bowls. Top with celery leaves, zest, more oil, and a crack of pepper.'
+  - step_title: Warm
+    instruction: Warm the beans and their liquid gently with the oil, fennel, and a pinch of salt.
+  - step_title: Dress
+    instruction: Off heat, stir in celery and lemon juice. Taste for salt.
+  - step_title: Finish
+    instruction: Spoon into bowls. Top with celery leaves, zest, more oil, and a crack of pepper.
   field_notes:
   - value: Good over thick toast, or with a poached egg.
   field_prep_minutes:

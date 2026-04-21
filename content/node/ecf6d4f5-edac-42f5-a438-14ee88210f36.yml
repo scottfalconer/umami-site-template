@@ -47,25 +47,34 @@ default:
   field_featured_image:
   - entity: d58cbcc1-00fb-456c-8b2d-0659d28cf5e6
   field_ingredients:
-  - value: '350 g|rye flour
-
-      150 g|strong white flour
-
-      1 tbsp|caraway or fennel seeds
-
-      1 tsp|baking soda
-
-      1.5 tsp|salt
-
-      2 tbsp|molasses or dark honey
-
-      450 ml|buttermilk'
+  - group_label: ''
+    quantity: 350 g
+    ingredient: rye flour
+  - group_label: ''
+    quantity: 150 g
+    ingredient: strong white flour
+  - group_label: ''
+    quantity: 1 tbsp
+    ingredient: caraway or fennel seeds
+  - group_label: ''
+    quantity: 1 tsp
+    ingredient: baking soda
+  - group_label: ''
+    quantity: 1.5 tsp
+    ingredient: salt
+  - group_label: ''
+    quantity: 2 tbsp
+    ingredient: molasses or dark honey
+  - group_label: ''
+    quantity: 450 ml
+    ingredient: buttermilk
   field_method:
-  - value: 'Mix|Heat oven to 200°C. Whisk dry. Stir in molasses and buttermilk until a heavy dough.
-
-      Bake|Scrape into an oiled loaf tin. Bake 50–60 min until deep and hollow-sounding.
-
-      Cool|Turn out. Rest at least 30 min before slicing.'
+  - step_title: Mix
+    instruction: Heat oven to 200°C. Whisk dry. Stir in molasses and buttermilk until a heavy dough.
+  - step_title: Bake
+    instruction: Scrape into an oiled loaf tin. Bake 50–60 min until deep and hollow-sounding.
+  - step_title: Cool
+    instruction: Turn out. Rest at least 30 min before slicing.
   field_prep_minutes:
   - value: 20
   field_recipe_category:

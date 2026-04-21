@@ -48,37 +48,42 @@ default:
   field_featured_image:
   - entity: e72a825a-6b52-449b-900a-109b1bfdeec0
   field_ingredients:
-  - value: '## For the tomatoes
-
-      1.2 kg|mixed ripe tomatoes, halved
-
-      4 tbsp|olive oil
-
-      6|garlic cloves, smashed
-
-      1 tsp|flaky salt
-
-      a pinch|chili flakes
-
-      ## To serve
-
-      400 g|pappardelle
-
-      1 large|bunch basil
-
-      80 g|aged pecorino, grated
-
-      to taste|black pepper'
-  field_media_credit:
-  - value: Jun Watanabe
+  - group_label: For the tomatoes
+    quantity: 1.2 kg
+    ingredient: mixed ripe tomatoes, halved
+  - group_label: For the tomatoes
+    quantity: 4 tbsp
+    ingredient: olive oil
+  - group_label: For the tomatoes
+    quantity: '6'
+    ingredient: garlic cloves, smashed
+  - group_label: For the tomatoes
+    quantity: 1 tsp
+    ingredient: flaky salt
+  - group_label: For the tomatoes
+    quantity: a pinch
+    ingredient: chili flakes
+  - group_label: To serve
+    quantity: 400 g
+    ingredient: pappardelle
+  - group_label: To serve
+    quantity: 1 large
+    ingredient: bunch basil
+  - group_label: To serve
+    quantity: 80 g
+    ingredient: aged pecorino, grated
+  - group_label: To serve
+    quantity: to taste
+    ingredient: black pepper
   field_method:
-  - value: 'Slump the tomatoes|Heat the oven to 140°C. Lay the tomatoes cut-side up on a tray with the oil, garlic, salt, and chili. Roast for 75–90 minutes until slumped and jammy.
-
-      Cook the pasta|Bring a wide pot of salted water to a boil. Cook the pappardelle until just shy of al dente. Reserve a cup of pasta water before draining.
-
-      Bring it together|Tip the tomatoes and their oil into a wide pan over low heat. Add the pasta and a splash of the water, and toss gently until the sauce clings.
-
-      Finish|Tear in the basil, shower with pecorino, crack over pepper, and serve straight from the pan.'
+  - step_title: Slump the tomatoes
+    instruction: Heat the oven to 140°C. Lay the tomatoes cut-side up on a tray with the oil, garlic, salt, and chili. Roast for 75–90 minutes until slumped and jammy.
+  - step_title: Cook the pasta
+    instruction: Bring a wide pot of salted water to a boil. Cook the pappardelle until just shy of al dente. Reserve a cup of pasta water before draining.
+  - step_title: Bring it together
+    instruction: Tip the tomatoes and their oil into a wide pan over low heat. Add the pasta and a splash of the water, and toss gently until the sauce clings.
+  - step_title: Finish
+    instruction: Tear in the basil, shower with pecorino, crack over pepper, and serve straight from the pan.
   field_notes:
   - value: The tomatoes improve overnight. Keep half back for tomorrow's toast.
   field_prep_minutes:
