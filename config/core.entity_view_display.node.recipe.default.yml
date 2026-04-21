@@ -44,14 +44,14 @@ content:
     weight: 0
     region: content
   field_ingredients:
-    type: basic_string
+    type: umami_ingredient
     label: hidden
     settings: {  }
     third_party_settings: {  }
     weight: 4
     region: content
   field_method:
-    type: basic_string
+    type: umami_method_step
     label: hidden
     settings: {  }
     third_party_settings: {  }

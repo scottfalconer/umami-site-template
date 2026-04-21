@@ -48,33 +48,45 @@ default:
   field_featured_image:
   - entity: ca5dfc5b-337c-4a17-bbe8-22c7c1e5beff
   field_ingredients:
-  - value: '1|onion, diced
-
-      2|carrots, diced
-
-      3 stalks|celery, diced
-
-      4 cloves|garlic
-
-      1 × 400 g|tin tomatoes
-
-      2 × 400 g|tins cannellini (one smashed)
-
-      1 bunch|cavolo nero, stems in
-
-      2 l|stock
-
-      200 g|stale sourdough, torn
-
-      a pour|red wine'
+  - group_label: ''
+    quantity: '1'
+    ingredient: onion, diced
+  - group_label: ''
+    quantity: '2'
+    ingredient: carrots, diced
+  - group_label: ''
+    quantity: 3 stalks
+    ingredient: celery, diced
+  - group_label: ''
+    quantity: 4 cloves
+    ingredient: garlic
+  - group_label: ''
+    quantity: 1 × 400 g
+    ingredient: tin tomatoes
+  - group_label: ''
+    quantity: 2 × 400 g
+    ingredient: tins cannellini (one smashed)
+  - group_label: ''
+    quantity: 1 bunch
+    ingredient: cavolo nero, stems in
+  - group_label: ''
+    quantity: 2 l
+    ingredient: stock
+  - group_label: ''
+    quantity: 200 g
+    ingredient: stale sourdough, torn
+  - group_label: ''
+    quantity: a pour
+    ingredient: red wine
   field_method:
-  - value: 'Sofritto|Sweat the onion, carrot, celery, garlic in olive oil 15 min until sweet.
-
-      Build|Add wine, tomatoes, stock. Simmer 20 min. Add beans and cavolo, another 20 min.
-
-      Thicken|Stir in the bread, cook a further 20 min. It should be a loose porridge.
-
-      Rest|Cover, off heat, 15 min. Drizzle with new oil.'
+  - step_title: Sofritto
+    instruction: Sweat the onion, carrot, celery, garlic in olive oil 15 min until sweet.
+  - step_title: Build
+    instruction: Add wine, tomatoes, stock. Simmer 20 min. Add beans and cavolo, another 20 min.
+  - step_title: Thicken
+    instruction: Stir in the bread, cook a further 20 min. It should be a loose porridge.
+  - step_title: Rest
+    instruction: Cover, off heat, 15 min. Drizzle with new oil.
   field_prep_minutes:
   - value: 20
   field_recipe_category:

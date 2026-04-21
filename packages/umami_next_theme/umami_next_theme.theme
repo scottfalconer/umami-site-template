@@ -71,8 +71,8 @@ function umami_next_theme_preprocess_node(array &$variables): void {
       'category' => _umami_next_term_label($node, 'field_recipe_category'),
       'cuisine' => _umami_next_term_label($node, 'field_cuisine'),
       'topics' => _umami_next_term_links($node, 'field_topics', 'umami_next.topic'),
-      'ingredients' => _umami_next_parse_groups((string) $node->get('field_ingredients')->value),
-      'steps' => _umami_next_parse_steps((string) $node->get('field_method')->value),
+      'ingredients' => _umami_next_ingredient_groups($node),
+      'steps' => _umami_next_method_steps($node),
       'prep' => (int) $node->get('field_prep_minutes')->value,
       'cook' => (int) $node->get('field_cook_minutes')->value,
       'total' => (int) $node->get('field_total_minutes')->value,
@@ -186,13 +186,89 @@ function _umami_next_menu_items(string $menu_name): array {
 }
 
 /**
- * Parses grouped recipe ingredient text.
+ * Builds grouped recipe ingredients from structured field data.
+ *
+ * Supports the previous pipe-delimited text format as a fallback so existing
+ * development installs keep rendering until they are rebuilt from the recipe.
+ */
+function _umami_next_ingredient_groups(NodeInterface $node): array {
+  if (!$node->hasField('field_ingredients') || $node->get('field_ingredients')->isEmpty()) {
+    return [];
+  }
+
+  $first = $node->get('field_ingredients')->first()?->getValue() ?? [];
+  if (array_key_exists('ingredient', $first)) {
+    return _umami_next_group_structured_ingredients($node);
+  }
+
+  return _umami_next_parse_legacy_ingredients((string) ($first['value'] ?? ''));
+}
+
+/**
+ * Builds recipe method steps from structured field data.
+ *
+ * Supports the previous pipe-delimited text format as a fallback so existing
+ * development installs keep rendering until they are rebuilt from the recipe.
+ */
+function _umami_next_method_steps(NodeInterface $node): array {
+  if (!$node->hasField('field_method') || $node->get('field_method')->isEmpty()) {
+    return [];
+  }
+
+  $first = $node->get('field_method')->first()?->getValue() ?? [];
+  if (array_key_exists('instruction', $first)) {
+    $steps = [];
+    foreach ($node->get('field_method') as $item) {
+      $values = $item->getValue();
+      $title = trim((string) ($values['step_title'] ?? ''));
+      $body = trim((string) ($values['instruction'] ?? ''));
+      if ($title !== '' || $body !== '') {
+        $steps[] = ['title' => $title, 'body' => $body];
+      }
+    }
+    return $steps;
+  }
+
+  return _umami_next_parse_legacy_steps((string) ($first['value'] ?? ''));
+}
+
+/**
+ * Groups structured ingredient field items for the recipe detail template.
+ */
+function _umami_next_group_structured_ingredients(NodeInterface $node): array {
+  $groups = [];
+  $group_index = [];
+
+  foreach ($node->get('field_ingredients') as $item) {
+    $values = $item->getValue();
+    $name = trim((string) ($values['ingredient'] ?? ''));
+    if ($name === '') {
+      continue;
+    }
+
+    $label = trim((string) ($values['group_label'] ?? ''));
+    if (!array_key_exists($label, $group_index)) {
+      $group_index[$label] = count($groups);
+      $groups[] = ['label' => $label, 'items' => []];
+    }
+
+    $groups[$group_index[$label]]['items'][] = [
+      'qty' => trim((string) ($values['quantity'] ?? '')),
+      'name' => $name,
+    ];
+  }
+
+  return $groups;
+}
+
+/**
+ * Parses legacy grouped recipe ingredient text.
  *
  * Format:
  *   ## Group title
  *   qty|ingredient.
  */
-function _umami_next_parse_groups(string $raw): array {
+function _umami_next_parse_legacy_ingredients(string $raw): array {
   $groups = [];
   $current = ['label' => '', 'items' => []];
 
@@ -220,9 +296,9 @@ function _umami_next_parse_groups(string $raw): array {
 }
 
 /**
- * Parses recipe steps in title|body format.
+ * Parses legacy recipe steps in title|body format.
  */
-function _umami_next_parse_steps(string $raw): array {
+function _umami_next_parse_legacy_steps(string $raw): array {
   $steps = [];
   foreach (preg_split('/\R/', trim($raw)) ?: [] as $line) {
     $line = trim($line);

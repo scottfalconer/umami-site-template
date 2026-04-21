@@ -83,12 +83,10 @@ content:
       media_types: {  }
     third_party_settings: {  }
   field_ingredients:
-    type: string_textarea
+    type: umami_ingredient
     weight: 13
     region: content
-    settings:
-      rows: 14
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_media_credit:
     type: string_textfield
@@ -99,12 +97,10 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_method:
-    type: string_textarea
+    type: umami_method_step
     weight: 14
     region: content
-    settings:
-      rows: 14
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_notes:
     type: string_textarea

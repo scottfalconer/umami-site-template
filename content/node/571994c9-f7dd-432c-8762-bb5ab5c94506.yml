@@ -51,33 +51,46 @@ default:
   field_featured_image:
   - entity: e9bc9176-0bfc-4431-9b43-4d9e2b08f260
   field_ingredients:
-  - value: '250 g|red lentils, rinsed
-
-      1|onion, diced
-
-      1 thumb|ginger, grated
-
-      3 cloves|garlic, minced
-
-      1 tsp|turmeric
-
-      1 tsp|salt
-
-      1 l|water
-
-      60 g|butter or ghee
-
-      1 tsp|cumin seeds
-
-      2|dried chilies
-
-      10|curry leaves (if you can find them)'
+  - group_label: ''
+    quantity: 250 g
+    ingredient: red lentils, rinsed
+  - group_label: ''
+    quantity: '1'
+    ingredient: onion, diced
+  - group_label: ''
+    quantity: 1 thumb
+    ingredient: ginger, grated
+  - group_label: ''
+    quantity: 3 cloves
+    ingredient: garlic, minced
+  - group_label: ''
+    quantity: 1 tsp
+    ingredient: turmeric
+  - group_label: ''
+    quantity: 1 tsp
+    ingredient: salt
+  - group_label: ''
+    quantity: 1 l
+    ingredient: water
+  - group_label: ''
+    quantity: 60 g
+    ingredient: butter or ghee
+  - group_label: ''
+    quantity: 1 tsp
+    ingredient: cumin seeds
+  - group_label: ''
+    quantity: '2'
+    ingredient: dried chilies
+  - group_label: ''
+    quantity: '10'
+    ingredient: curry leaves (if you can find them)
   field_method:
-  - value: 'Simmer|Combine lentils, onion, ginger, garlic, turmeric, salt, water. Simmer 25–30 min until creamy. Whisk to smooth.
-
-      Tarka|Melt the butter until foaming and brown. Add cumin, chilies, curry leaves. Sizzle 20 seconds.
-
-      Finish|Pour tarka over the dal. Serve with rice, yogurt, lime.'
+  - step_title: Simmer
+    instruction: Combine lentils, onion, ginger, garlic, turmeric, salt, water. Simmer 25–30 min until creamy. Whisk to smooth.
+  - step_title: Tarka
+    instruction: Melt the butter until foaming and brown. Add cumin, chilies, curry leaves. Sizzle 20 seconds.
+  - step_title: Finish
+    instruction: Pour tarka over the dal. Serve with rice, yogurt, lime.
   field_prep_minutes:
   - value: 10
   field_recipe_category:

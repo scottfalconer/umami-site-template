@@ -46,23 +46,31 @@ default:
   field_difficulty:
   - value: Easy
   field_ingredients:
-  - value: '6|medium leeks, white and pale green
-
-      4 tbsp|olive oil
-
-      2 tbsp|sherry vinegar
-
-      1 tsp|Dijon mustard
-
-      1 tbsp|capers, chopped
-
-      1|soft-boiled egg, grated (optional)'
+  - group_label: ''
+    quantity: '6'
+    ingredient: medium leeks, white and pale green
+  - group_label: ''
+    quantity: 4 tbsp
+    ingredient: olive oil
+  - group_label: ''
+    quantity: 2 tbsp
+    ingredient: sherry vinegar
+  - group_label: ''
+    quantity: 1 tsp
+    ingredient: Dijon mustard
+  - group_label: ''
+    quantity: 1 tbsp
+    ingredient: capers, chopped
+  - group_label: ''
+    quantity: '1'
+    ingredient: soft-boiled egg, grated (optional)
   field_method:
-  - value: 'Braise|Halve leeks lengthwise. Lay in a pan, add 1 cm water and salt. Cover and cook 20 min until tender.
-
-      Dress|Whisk oil, vinegar, mustard, capers. Spoon over leeks while still warm.
-
-      Serve|Room temp is best. Grate egg over just before serving.'
+  - step_title: Braise
+    instruction: Halve leeks lengthwise. Lay in a pan, add 1 cm water and salt. Cover and cook 20 min until tender.
+  - step_title: Dress
+    instruction: Whisk oil, vinegar, mustard, capers. Spoon over leeks while still warm.
+  - step_title: Serve
+    instruction: Room temp is best. Grate egg over just before serving.
   field_prep_minutes:
   - value: 10
   field_recipe_category:

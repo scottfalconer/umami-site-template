@@ -46,27 +46,38 @@ default:
   field_featured_image:
   - entity: 9a2496f4-f887-4ec7-b688-77677b931157
   field_ingredients:
-  - value: '120 g|buckwheat flour
-
-      80 g|plain flour
-
-      1 tsp|baking soda
-
-      1 tsp|salt
-
-      2 tbsp|sugar
-
-      2|eggs
-
-      400 ml|buttermilk
-
-      40 g|melted butter
-
-      to serve|maple, yogurt, fruit'
+  - group_label: ''
+    quantity: 120 g
+    ingredient: buckwheat flour
+  - group_label: ''
+    quantity: 80 g
+    ingredient: plain flour
+  - group_label: ''
+    quantity: 1 tsp
+    ingredient: baking soda
+  - group_label: ''
+    quantity: 1 tsp
+    ingredient: salt
+  - group_label: ''
+    quantity: 2 tbsp
+    ingredient: sugar
+  - group_label: ''
+    quantity: '2'
+    ingredient: eggs
+  - group_label: ''
+    quantity: 400 ml
+    ingredient: buttermilk
+  - group_label: ''
+    quantity: 40 g
+    ingredient: melted butter
+  - group_label: ''
+    quantity: to serve
+    ingredient: maple, yogurt, fruit
   field_method:
-  - value: 'Mix|Whisk dry. Whisk wet. Fold together just until combined; a few lumps are fine.
-
-      Cook|Ladle onto a medium cast iron. Flip when the top bubbles and the edges look set.'
+  - step_title: Mix
+    instruction: Whisk dry. Whisk wet. Fold together just until combined; a few lumps are fine.
+  - step_title: Cook
+    instruction: Ladle onto a medium cast iron. Flip when the top bubbles and the edges look set.
   field_prep_minutes:
   - value: 10
   field_recipe_category:

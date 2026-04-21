@@ -9,10 +9,10 @@ field_name: field_ingredients
 entity_type: node
 bundle: recipe
 label: Ingredients
-description: 'Use one item per line in the format quantity|ingredient. Prefix groups with ## Group name.'
+description: 'Add one ingredient per item. Use Group for optional sections such as Dough or Filling, Quantity for the amount, and Ingredient for the ingredient text.'
 required: false
 translatable: true
 default_value: {  }
 default_value_callback: ''
 settings: {  }
-field_type: string_long
+field_type: umami_ingredient

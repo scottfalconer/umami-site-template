@@ -34,7 +34,7 @@
 
   <div class="recipe-columns">
     <aside class="ingredients">
-      <h3>{{ 'Ingredients'|t }}</h3>
+      <h2>{{ 'Ingredients'|t }}</h2>
       {% for group in umami_recipe.ingredients %}
         <div class="ingredients__group">
           {% if group.label %}
@@ -59,7 +59,7 @@
       {% endif %}
     </aside>
     <div class="steps">
-      <h3>{{ 'Method'|t }}</h3>
+      <h2>{{ 'Method'|t }}</h2>
       <ol>
         {% for step in umami_recipe.steps %}
           <li>
@@ -91,7 +91,7 @@
         {% for card in umami_recipe.related_recipes %}
           <a href="{{ card.url }}" class="card">
             {% if card.image.url %}
-          <div class="card-media"><img src="{{ card.image.url }}" alt="{{ card.image.alt }}"></div>
+          <div class="card-media"><img src="{{ card.image.url }}" alt=""></div>
         {% else %}
           <div class="card-media card-media--placeholder" aria-hidden="true"></div>
         {% endif %}

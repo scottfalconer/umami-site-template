@@ -2,16 +2,15 @@ langcode: en
 status: true
 dependencies:
   module:
-    - node
+    - umami_next
 id: node.field_method
 field_name: field_method
 entity_type: node
-type: string_long
-settings:
-  case_sensitive: false
-module: core
+type: umami_method_step
+settings: {  }
+module: umami_next
 locked: false
-cardinality: 1
+cardinality: -1
 translatable: true
 indexes: {  }
 persist_with_no_fields: false

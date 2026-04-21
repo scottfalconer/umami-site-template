@@ -47,21 +47,28 @@ default:
   field_featured_image:
   - entity: 353c8630-2876-435d-94ae-c027b7438946
   field_ingredients:
-  - value: '300 g|plain flour
-
-      1 tsp|baking powder
-
-      1 tsp|salt
-
-      250 g|thick yogurt
-
-      2 tbsp|olive oil'
+  - group_label: ''
+    quantity: 300 g
+    ingredient: plain flour
+  - group_label: ''
+    quantity: 1 tsp
+    ingredient: baking powder
+  - group_label: ''
+    quantity: 1 tsp
+    ingredient: salt
+  - group_label: ''
+    quantity: 250 g
+    ingredient: thick yogurt
+  - group_label: ''
+    quantity: 2 tbsp
+    ingredient: olive oil
   field_method:
-  - value: 'Mix|Stir into a shaggy dough. Knead briefly until smooth. Rest 10 min.
-
-      Roll|Divide into six, roll each to a thin oval.
-
-      Cook|Dry cast iron on high. 1–2 min per side, until blistered.'
+  - step_title: Mix
+    instruction: Stir into a shaggy dough. Knead briefly until smooth. Rest 10 min.
+  - step_title: Roll
+    instruction: Divide into six, roll each to a thin oval.
+  - step_title: Cook
+    instruction: Dry cast iron on high. 1–2 min per side, until blistered.
   field_prep_minutes:
   - value: 10
   field_recipe_category:

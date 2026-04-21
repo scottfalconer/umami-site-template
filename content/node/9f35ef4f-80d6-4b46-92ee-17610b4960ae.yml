@@ -47,37 +47,46 @@ default:
   field_featured_image:
   - entity: 8c7412da-71af-41c9-8838-1e66dd3506ee
   field_ingredients:
-  - value: '## Fritters
-
-      200 g|mixed soft herbs (parsley, dill, cilantro, mint)
-
-      4|spring onions, thinly sliced
-
-      3|eggs
-
-      60 g|flour
-
-      1 tsp|baking powder
-
-      1 tsp|cumin, toasted
-
-      to taste|salt and pepper
-
-      to fry|olive oil
-
-      ## Yogurt
-
-      250 g|thick yogurt
-
-      1 clove|garlic, grated
-
-      zest of 1|lemon'
+  - group_label: Fritters
+    quantity: 200 g
+    ingredient: mixed soft herbs (parsley, dill, cilantro, mint)
+  - group_label: Fritters
+    quantity: '4'
+    ingredient: spring onions, thinly sliced
+  - group_label: Fritters
+    quantity: '3'
+    ingredient: eggs
+  - group_label: Fritters
+    quantity: 60 g
+    ingredient: flour
+  - group_label: Fritters
+    quantity: 1 tsp
+    ingredient: baking powder
+  - group_label: Fritters
+    quantity: 1 tsp
+    ingredient: cumin, toasted
+  - group_label: Fritters
+    quantity: to taste
+    ingredient: salt and pepper
+  - group_label: Fritters
+    quantity: to fry
+    ingredient: olive oil
+  - group_label: Yogurt
+    quantity: 250 g
+    ingredient: thick yogurt
+  - group_label: Yogurt
+    quantity: 1 clove
+    ingredient: garlic, grated
+  - group_label: Yogurt
+    quantity: zest of 1
+    ingredient: lemon
   field_method:
-  - value: 'Mix|Chop the herbs roughly. Whisk eggs, flour, baking powder, spices, salt and pepper, then fold in the herbs and onions.
-
-      Fry|Heat a good layer of oil in a wide pan. Drop spoonfuls of batter and press gently. Fry until the edges lace and brown, about 2 minutes a side.
-
-      Serve|Stir the yogurt with garlic and lemon. Pile the fritters on top, still warm.'
+  - step_title: Mix
+    instruction: Chop the herbs roughly. Whisk eggs, flour, baking powder, spices, salt and pepper, then fold in the herbs and onions.
+  - step_title: Fry
+    instruction: Heat a good layer of oil in a wide pan. Drop spoonfuls of batter and press gently. Fry until the edges lace and brown, about 2 minutes a side.
+  - step_title: Serve
+    instruction: Stir the yogurt with garlic and lemon. Pile the fritters on top, still warm.
   field_notes:
   - value: Any tired herbs work. Save the stems, chop finer.
   field_prep_minutes:

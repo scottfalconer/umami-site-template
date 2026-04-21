@@ -47,33 +47,40 @@ default:
   field_featured_image:
   - entity: bdbc50fd-159e-4db1-b7f5-10f7eaf5a2fe
   field_ingredients:
-  - value: '## Pastry
-
-      200 g|plain flour
-
-      140 g|cold butter, cubed
-
-      1 tbsp|sugar
-
-      pinch|salt
-
-      4–5 tbsp|ice water
-
-      ## Filling
-
-      60 g|ground almonds
-
-      2 tbsp|sugar
-
-      500 g|plums, halved and pitted
-
-      1 tbsp|turbinado sugar for the edge'
+  - group_label: Pastry
+    quantity: 200 g
+    ingredient: plain flour
+  - group_label: Pastry
+    quantity: 140 g
+    ingredient: cold butter, cubed
+  - group_label: Pastry
+    quantity: 1 tbsp
+    ingredient: sugar
+  - group_label: Pastry
+    quantity: pinch
+    ingredient: salt
+  - group_label: Pastry
+    quantity: 4–5 tbsp
+    ingredient: ice water
+  - group_label: Filling
+    quantity: 60 g
+    ingredient: ground almonds
+  - group_label: Filling
+    quantity: 2 tbsp
+    ingredient: sugar
+  - group_label: Filling
+    quantity: 500 g
+    ingredient: plums, halved and pitted
+  - group_label: Filling
+    quantity: 1 tbsp
+    ingredient: turbinado sugar for the edge
   field_method:
-  - value: 'Pastry|Rub butter into flour until pea-sized. Stir in water until it just holds. Chill 30 min.
-
-      Assemble|Roll to a rough 30 cm round. Scatter almonds and sugar, pile on plums, fold in the edges.
-
-      Bake|220°C for 15 min, then 190°C for 25 min until golden.'
+  - step_title: Pastry
+    instruction: Rub butter into flour until pea-sized. Stir in water until it just holds. Chill 30 min.
+  - step_title: Assemble
+    instruction: Roll to a rough 30 cm round. Scatter almonds and sugar, pile on plums, fold in the edges.
+  - step_title: Bake
+    instruction: 220°C for 15 min, then 190°C for 25 min until golden.
   field_prep_minutes:
   - value: 30
   field_recipe_category:

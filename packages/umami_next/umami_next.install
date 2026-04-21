@@ -1,0 +1,149 @@
+<?php
+
+/**
+ * @file
+ * Install and update hooks for Umami Next.
+ */
+
+declare(strict_types=1);
+
+/**
+ * Repairs Umami's Canvas components after earlier installs disabled them.
+ */
+function umami_next_update_10001(): void {
+  $component_defaults = [
+    'block.umami_next_featured_recipes' => [
+      'config' => 'canvas.component.block.umami_next_featured_recipes',
+      'version' => 'f1feacc80cb5a854',
+      'inputs' => [
+        'label' => 'Featured recipes',
+        'label_display' => '0',
+        'eyebrow' => 'From the test kitchen',
+        'section_title' => "Recipes we're cooking this week",
+        'cta_label' => 'All recipes',
+      ],
+    ],
+    'block.umami_next_home_hero' => [
+      'config' => 'canvas.component.block.umami_next_home_hero',
+      'version' => '771532fc661f6fa6',
+      'inputs' => [
+        'label' => 'Home hero',
+        'label_display' => '0',
+        'issue_label' => 'Issue No. 14 - April 2026',
+        'headline_prefix' => 'A letter from the',
+        'headline_emphasis' => 'spring',
+        'headline_suffix' => 'market.',
+        'cta_label' => 'Read the letter',
+        'image_caption' => 'Photographed by Jun Watanabe, Saturday market, 04.2026',
+      ],
+    ],
+    'block.umami_next_latest_stories' => [
+      'config' => 'canvas.component.block.umami_next_latest_stories',
+      'version' => '5a824df54cb1149d',
+      'inputs' => [
+        'label' => 'Latest stories',
+        'label_display' => '0',
+        'stories_eyebrow' => 'Stories',
+        'stories_title' => 'Essays from the kitchen',
+        'stories_cta_label' => 'All stories',
+        'picks_eyebrow' => "Editor's picks",
+        'picks_title' => 'Three we keep coming back to',
+      ],
+    ],
+    'block.umami_next_newsletter' => [
+      'config' => 'canvas.component.block.umami_next_newsletter',
+      'version' => '470a3551f2c2ed52',
+      'inputs' => [
+        'label' => 'Newsletter',
+        'label_display' => '0',
+        'eyebrow' => 'The weekly dispatch',
+        'section_title' => 'A small, useful letter on cooking and the season.',
+        'description' => 'Sent Sunday mornings. One recipe, one short essay, and a few things we have been eating.',
+      ],
+    ],
+    'block.umami_next_not_found' => [
+      'config' => 'canvas.component.block.umami_next_not_found',
+      'version' => '8fb310e2a777071a',
+      'inputs' => [
+        'label' => '404 recovery',
+        'label_display' => '0',
+        'headline' => 'This page has gone to the market.',
+        'description' => 'It will be back Sunday with basil. In the meantime, here are a few recipes to stand in.',
+        'home_label' => 'Home',
+        'recipes_label' => 'Browse recipes',
+      ],
+    ],
+    'block.umami_next_spotlight_collection' => [
+      'config' => 'canvas.component.block.umami_next_spotlight_collection',
+      'version' => '5aa7e8e9fd1de341',
+      'inputs' => [
+        'label' => 'Spotlight collection',
+        'label_display' => '0',
+        'eyebrow' => 'Collection',
+        'cta_label' => 'Open the collection',
+      ],
+    ],
+    'block.umami_next_topic_browse' => [
+      'config' => 'canvas.component.block.umami_next_topic_browse',
+      'version' => 'd953c1574487967a',
+      'inputs' => [
+        'label' => 'Topic browse',
+        'label_display' => '0',
+        'eyebrow' => 'Browse',
+        'section_title' => 'By way of the kitchen',
+      ],
+    ],
+  ];
+
+  $config_factory = \Drupal::configFactory();
+  foreach ($component_defaults as $defaults) {
+    $config = $config_factory->getEditable($defaults['config']);
+    if (!$config->isNew()) {
+      $config
+        ->set('status', TRUE)
+        ->set('active_version', $defaults['version'])
+        ->save();
+    }
+  }
+
+  $content_template = $config_factory->getEditable('canvas.content_template.node.page.full');
+  if (!$content_template->isNew()) {
+    $content_template->set('status', TRUE)->save();
+  }
+
+  $storage = \Drupal::entityTypeManager()->getStorage('canvas_page');
+  foreach (['bb5bbbb1-4a16-4b86-bbea-b215ab8096cf', 'a0066ec6-3c7a-4656-9e5f-acad781a2f6b'] as $uuid) {
+    $pages = $storage->loadByProperties(['uuid' => $uuid]);
+    $page = reset($pages);
+    if (!$page) {
+      continue;
+    }
+
+    $changed = FALSE;
+    $components = $page->get('components')->getValue();
+    foreach ($components as &$component) {
+      $component_id = $component['component_id'] ?? '';
+      if (!isset($component_defaults[$component_id])) {
+        continue;
+      }
+
+      $defaults = $component_defaults[$component_id];
+      $existing_inputs = [];
+      if (!empty($component['inputs'])) {
+        $decoded = json_decode((string) $component['inputs'], TRUE);
+        $existing_inputs = is_array($decoded) ? $decoded : [];
+      }
+      $component['inputs'] = json_encode($existing_inputs + $defaults['inputs'], JSON_THROW_ON_ERROR);
+      $component['component_version'] = $defaults['version'];
+      $changed = TRUE;
+    }
+    unset($component);
+
+    if ($changed) {
+      $page->set('components', $components);
+      $page->setNewRevision(TRUE);
+      $page->setRevisionLogMessage('Repair Umami Canvas component inputs for strict validation.');
+      $page->save();
+    }
+  }
+}

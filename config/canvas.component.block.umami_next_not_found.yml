@@ -3,7 +3,7 @@ status: true
 dependencies:
   module:
     - umami_next
-active_version: ace2ad8a6451520d
+active_version: 8fb310e2a777071a
 versioned_properties:
   active:
     settings:

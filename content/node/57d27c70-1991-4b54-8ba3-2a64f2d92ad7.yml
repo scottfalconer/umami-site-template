@@ -45,23 +45,31 @@ default:
   field_difficulty:
   - value: Easy
   field_ingredients:
-  - value: '800 g|small carrots, halved lengthwise
-
-      3 tbsp|olive oil
-
-      2 tbsp|harissa
-
-      2 tbsp|date syrup (or honey)
-
-      1 tbsp|red wine vinegar
-
-      to serve|cilantro, yogurt, toasted seeds'
+  - group_label: ''
+    quantity: 800 g
+    ingredient: small carrots, halved lengthwise
+  - group_label: ''
+    quantity: 3 tbsp
+    ingredient: olive oil
+  - group_label: ''
+    quantity: 2 tbsp
+    ingredient: harissa
+  - group_label: ''
+    quantity: 2 tbsp
+    ingredient: date syrup (or honey)
+  - group_label: ''
+    quantity: 1 tbsp
+    ingredient: red wine vinegar
+  - group_label: ''
+    quantity: to serve
+    ingredient: cilantro, yogurt, toasted seeds
   field_method:
-  - value: 'Roast|Heat oven to 220°C. Toss carrots with oil, salt. Roast 20 min.
-
-      Glaze|Whisk harissa, date syrup, vinegar. Toss with the hot carrots and return to oven 5 min.
-
-      Finish|Spoon over yogurt, scatter herbs and seeds.'
+  - step_title: Roast
+    instruction: Heat oven to 220°C. Toss carrots with oil, salt. Roast 20 min.
+  - step_title: Glaze
+    instruction: Whisk harissa, date syrup, vinegar. Toss with the hot carrots and return to oven 5 min.
+  - step_title: Finish
+    instruction: Spoon over yogurt, scatter herbs and seeds.
   field_prep_minutes:
   - value: 10
   field_recipe_category:

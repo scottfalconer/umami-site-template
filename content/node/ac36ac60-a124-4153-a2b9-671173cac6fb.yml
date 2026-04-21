@@ -49,29 +49,40 @@ default:
   field_featured_image:
   - entity: 49dcfeb1-76c7-4260-92d3-1037eec1f583
   field_ingredients:
-  - value: '3|medium aubergines, cut in wedges
-
-      4 tbsp|neutral oil
-
-      2 tbsp|white miso
-
-      2 tbsp|honey or maple syrup
-
-      1 tbsp|rice vinegar
-
-      1 tbsp|soy sauce
-
-      1 thumb|ginger, grated
-
-      2 tbsp|sesame seeds, toasted
-
-      to serve|rice, sliced spring onion'
+  - group_label: ''
+    quantity: '3'
+    ingredient: medium aubergines, cut in wedges
+  - group_label: ''
+    quantity: 4 tbsp
+    ingredient: neutral oil
+  - group_label: ''
+    quantity: 2 tbsp
+    ingredient: white miso
+  - group_label: ''
+    quantity: 2 tbsp
+    ingredient: honey or maple syrup
+  - group_label: ''
+    quantity: 1 tbsp
+    ingredient: rice vinegar
+  - group_label: ''
+    quantity: 1 tbsp
+    ingredient: soy sauce
+  - group_label: ''
+    quantity: 1 thumb
+    ingredient: ginger, grated
+  - group_label: ''
+    quantity: 2 tbsp
+    ingredient: sesame seeds, toasted
+  - group_label: ''
+    quantity: to serve
+    ingredient: rice, sliced spring onion
   field_method:
-  - value: 'Roast|Heat oven to 220°C. Toss aubergine with half the oil and roast for 25–30 min until deep and tender.
-
-      Glaze|Whisk miso, honey, vinegar, soy, ginger. In a wide pan over medium, add the aubergine with the glaze. Toss for 2–3 min until clinging.
-
-      Serve|Over rice, with sesame seeds and spring onions.'
+  - step_title: Roast
+    instruction: Heat oven to 220°C. Toss aubergine with half the oil and roast for 25–30 min until deep and tender.
+  - step_title: Glaze
+    instruction: Whisk miso, honey, vinegar, soy, ginger. In a wide pan over medium, add the aubergine with the glaze. Toss for 2–3 min until clinging.
+  - step_title: Serve
+    instruction: Over rice, with sesame seeds and spring onions.
   field_notes:
   - value: The glaze also works on roasted squash.
   field_prep_minutes:

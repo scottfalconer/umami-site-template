@@ -44,33 +44,39 @@ default:
   field_featured_image:
   - entity: 99dce755-9606-4d57-b231-5f586c625c0f
   field_ingredients:
-  - value: '## Cabbage
-
-      1 head|savoy or pointed cabbage
-
-      3 tbsp|neutral oil
-
-      to taste|sea salt
-
-      ## Anchovy butter
-
-      80 g|cold butter, cubed
-
-      6|anchovy fillets, minced
-
-      1|small shallot, finely chopped
-
-      1 tbsp|lemon juice
-
-      1 tbsp|parsley, chopped'
+  - group_label: Cabbage
+    quantity: 1 head
+    ingredient: savoy or pointed cabbage
+  - group_label: Cabbage
+    quantity: 3 tbsp
+    ingredient: neutral oil
+  - group_label: Cabbage
+    quantity: to taste
+    ingredient: sea salt
+  - group_label: Anchovy butter
+    quantity: 80 g
+    ingredient: cold butter, cubed
+  - group_label: Anchovy butter
+    quantity: '6'
+    ingredient: anchovy fillets, minced
+  - group_label: Anchovy butter
+    quantity: '1'
+    ingredient: small shallot, finely chopped
+  - group_label: Anchovy butter
+    quantity: 1 tbsp
+    ingredient: lemon juice
+  - group_label: Anchovy butter
+    quantity: 1 tbsp
+    ingredient: parsley, chopped
   field_method:
-  - value: 'Wedge and season|Cut the cabbage through the core into six wedges. Rub with oil and salt.
-
-      Sear|In a very hot cast iron pan, sear the wedges on both cut sides until deeply charred, about 4 minutes per side.
-
-      Finish|Lower the heat. Scatter in the anchovy, shallot, butter. Swirl until melted and glossy, spooning over the cabbage.
-
-      Serve|Brighten with lemon and parsley. Eat with bread or spooned over rice.'
+  - step_title: Wedge and season
+    instruction: Cut the cabbage through the core into six wedges. Rub with oil and salt.
+  - step_title: Sear
+    instruction: In a very hot cast iron pan, sear the wedges on both cut sides until deeply charred, about 4 minutes per side.
+  - step_title: Finish
+    instruction: Lower the heat. Scatter in the anchovy, shallot, butter. Swirl until melted and glossy, spooning over the cabbage.
+  - step_title: Serve
+    instruction: Brighten with lemon and parsley. Eat with bread or spooned over rice.
   field_notes:
   - value: Also excellent with radicchio or wedges of kohlrabi.
   field_prep_minutes:

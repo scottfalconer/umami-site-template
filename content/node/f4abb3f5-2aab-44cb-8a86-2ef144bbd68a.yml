@@ -48,23 +48,31 @@ default:
   field_featured_image:
   - entity: c94f0a95-b425-4e2b-9f74-da00769375af
   field_ingredients:
-  - value: '2 × 150 g|salmon fillets
-
-      2 tbsp|white miso
-
-      1 tbsp|mirin
-
-      1 tbsp|soy
-
-      1 tsp|rice vinegar
-
-      to serve|short-grain rice, pickled ginger, cucumber, nori'
+  - group_label: ''
+    quantity: 2 × 150 g
+    ingredient: salmon fillets
+  - group_label: ''
+    quantity: 2 tbsp
+    ingredient: white miso
+  - group_label: ''
+    quantity: 1 tbsp
+    ingredient: mirin
+  - group_label: ''
+    quantity: 1 tbsp
+    ingredient: soy
+  - group_label: ''
+    quantity: 1 tsp
+    ingredient: rice vinegar
+  - group_label: ''
+    quantity: to serve
+    ingredient: short-grain rice, pickled ginger, cucumber, nori
   field_method:
-  - value: 'Marinate|Whisk miso, mirin, soy, vinegar. Coat salmon; rest 20 min.
-
-      Grill|Broil skin-side down for 4–5 min, glaze bubbling and dark in spots.
-
-      Bowl|Rice, salmon, pickles, nori torn over the top.'
+  - step_title: Marinate
+    instruction: Whisk miso, mirin, soy, vinegar. Coat salmon; rest 20 min.
+  - step_title: Grill
+    instruction: Broil skin-side down for 4–5 min, glaze bubbling and dark in spots.
+  - step_title: Bowl
+    instruction: Rice, salmon, pickles, nori torn over the top.
   field_prep_minutes:
   - value: 15
   field_recipe_category:
