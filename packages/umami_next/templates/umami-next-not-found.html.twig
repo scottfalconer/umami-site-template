@@ -1,10 +1,10 @@
 <section class="container not-found">
   <div class="not-found__code">404</div>
-  <h1>{{ 'This page has gone to the market.'|t }}</h1>
-  <p>{{ "It will be back Sunday with basil. In the meantime, here are a few recipes to stand in."|t }}</p>
+  <h1>{{ headline }}</h1>
+  <p>{{ description }}</p>
   <div class="not-found__actions">
-    <a href="{{ path('<front>') }}" class="btn">{{ 'Home'|t }}</a>
-    <a href="{{ path('umami_next.recipes') }}" class="btn btn--ghost">{{ 'Browse recipes'|t }}</a>
+    <a href="{{ path('<front>') }}" class="btn">{{ home_label }}</a>
+    <a href="{{ path('umami_next.recipes') }}" class="btn btn--ghost">{{ recipes_label }}</a>
   </div>
 </section>
 

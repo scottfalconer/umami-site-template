@@ -12,6 +12,11 @@ versioned_properties:
         label: 'Umami Next latest stories'
         label_display: '0'
         provider: umami_next
+        stories_eyebrow: Stories
+        stories_title: 'Essays from the kitchen'
+        stories_cta_label: 'All stories'
+        picks_eyebrow: "Editor's picks"
+        picks_title: 'Three we keep coming back to'
     fallback_metadata:
       slot_definitions: null
 label: 'Umami Next latest stories'

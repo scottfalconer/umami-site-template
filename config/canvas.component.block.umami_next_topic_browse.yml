@@ -12,6 +12,8 @@ versioned_properties:
         label: 'Umami Next topic browse'
         label_display: '0'
         provider: umami_next
+        eyebrow: Browse
+        section_title: 'By way of the kitchen'
     fallback_metadata:
       slot_definitions: null
 label: 'Umami Next topic browse'

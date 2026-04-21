@@ -20,12 +20,32 @@ final class SpotlightCollectionBlock extends EditorialDataBlockBase {
   /**
    * {@inheritdoc}
    */
+  protected function editableSettingDefinitions(): array {
+    return [
+      'eyebrow' => [
+        'title' => $this->t('Eyebrow'),
+        'default' => 'Collection',
+        'maxlength' => 80,
+      ],
+      'cta_label' => [
+        'title' => $this->t('Call-to-action label'),
+        'default' => 'Open the collection',
+        'maxlength' => 80,
+      ],
+    ];
+  }
+
+  /**
+   * {@inheritdoc}
+   */
   public function build(): array {
     $spotlight = $this->editorialData->loadFeaturedNode('collection');
 
     return [
       '#theme' => 'umami_next_spotlight_collection_block',
       '#spotlight' => $spotlight ? $this->editorialData->buildCollectionCard($spotlight) : NULL,
+      '#eyebrow' => $this->configuration['eyebrow'],
+      '#cta_label' => $this->configuration['cta_label'],
       '#cache' => $this->editorialCache(['node_list']),
     ];
   }

@@ -12,6 +12,8 @@ versioned_properties:
         label: 'Umami Next spotlight collection'
         label_display: '0'
         provider: umami_next
+        eyebrow: Collection
+        cta_label: 'Open the collection'
     fallback_metadata:
       slot_definitions: null
 label: 'Umami Next spotlight collection'

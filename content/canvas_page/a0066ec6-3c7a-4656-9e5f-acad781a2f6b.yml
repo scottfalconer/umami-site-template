@@ -20,8 +20,9 @@ default:
     -
       uuid: 46453773-8c83-4207-8116-0118ac4c64a6
       component_id: block.umami_next_not_found
+      label: '404 recovery'
       inputs:
-        label: ''
+        label: '404 recovery'
         label_display: '0'
   path:
     -

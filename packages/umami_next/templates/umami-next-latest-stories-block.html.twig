@@ -1,10 +1,10 @@
 <section class="container section-space">
   <div class="section-heading">
     <div>
-      <div class="eyebrow">{{ 'Stories'|t }}</div>
-      <h2 class="section-heading__title">{{ 'Essays from the kitchen'|t }}</h2>
+      <div class="eyebrow">{{ stories_eyebrow }}</div>
+      <h2 class="section-heading__title">{{ stories_title }}</h2>
     </div>
-    <div class="section-heading__right"><a href="{{ path('umami_next.stories') }}">{{ 'All stories'|t }} &rarr;</a></div>
+    <div class="section-heading__right"><a href="{{ path('umami_next.stories') }}">{{ stories_cta_label }} &rarr;</a></div>
   </div>
 
   {% if latest_stories %}
@@ -42,8 +42,8 @@
   <section class="container section-space">
     <div class="section-heading">
       <div>
-        <div class="eyebrow">{{ "Editor's picks"|t }}</div>
-        <h2 class="section-heading__title">{{ 'Three we keep coming back to'|t }}</h2>
+        <div class="eyebrow">{{ picks_eyebrow }}</div>
+        <h2 class="section-heading__title">{{ picks_title }}</h2>
       </div>
     </div>
     <div class="grid-3">

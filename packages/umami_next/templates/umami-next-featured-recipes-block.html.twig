@@ -1,10 +1,10 @@
 <section class="container section-space">
   <div class="section-heading">
     <div>
-      <div class="eyebrow">{{ 'From the test kitchen'|t }}</div>
-      <h2 class="section-heading__title">{{ "Recipes we're cooking this week"|t }}</h2>
+      <div class="eyebrow">{{ eyebrow }}</div>
+      <h2 class="section-heading__title">{{ section_title }}</h2>
     </div>
-    <div class="section-heading__right"><a href="{{ path('umami_next.recipes') }}">{{ 'All recipes'|t }} &rarr;</a></div>
+    <div class="section-heading__right"><a href="{{ path('umami_next.recipes') }}">{{ cta_label }} &rarr;</a></div>
   </div>
   <div class="grid-4">
     {% for card in featured_recipes %}

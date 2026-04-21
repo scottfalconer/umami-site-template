@@ -8,6 +8,7 @@
 declare(strict_types=1);
 
 use Drupal\Core\Cache\Cache;
+use Drupal\Core\Menu\MenuTreeParameters;
 use Drupal\Core\Url;
 use Drupal\node\NodeInterface;
 use Drupal\taxonomy\TermInterface;
@@ -22,15 +23,18 @@ function umami_next_theme_preprocess_page(array &$variables): void {
 
   $variables['site_name'] = $site_config->get('name');
   $variables['site_slogan'] = $site_config->get('slogan');
+  $variables['umami_main_menu'] = _umami_next_menu_items('main');
   $variables['umami_search_url'] = Url::fromRoute('umami_next.search')->toString();
   $variables['umami_contact_url'] = Url::fromRoute('umami_next.contact')->toString();
   $variables['umami_front_path'] = $front_path;
   $variables['#cache']['tags'] = Cache::mergeTags($variables['#cache']['tags'] ?? [], [
     'config:system.site',
+    'config:system.menu.main',
     'node_list',
   ]);
   $variables['#cache']['contexts'] = Cache::mergeContexts($variables['#cache']['contexts'] ?? [], [
     'route',
+    'route.menu_active_trails:main',
     'user.node_grants:view',
     'user.permissions',
   ]);
@@ -136,6 +140,49 @@ function umami_next_theme_preprocess_node(array &$variables): void {
     'user.node_grants:view',
     'user.permissions',
   ]);
+}
+
+/**
+ * Builds menu items for a named menu.
+ *
+ * @return array<int, array<string, mixed>>
+ *   Menu link items.
+ */
+function _umami_next_menu_items(string $menu_name): array {
+  $menu_tree = \Drupal::menuTree();
+  $site_config = \Drupal::config('system.site');
+  $front_path = (string) $site_config->get('page.front');
+  $parameters = (new MenuTreeParameters())
+    ->onlyEnabledLinks()
+    ->setMaxDepth(1);
+
+  $tree = $menu_tree->load($menu_name, $parameters);
+  $tree = $menu_tree->transform($tree, [
+    ['callable' => 'menu.default_tree_manipulators:checkAccess'],
+    ['callable' => 'menu.default_tree_manipulators:generateIndexAndSort'],
+  ]);
+
+  $items = [];
+  foreach ($tree as $element) {
+    if ($element->access && method_exists($element->access, 'isAllowed') && !$element->access->isAllowed()) {
+      continue;
+    }
+
+    $link = $element->link;
+    $url = $link->getUrlObject();
+    $url_string = $url->toString();
+    if ($url_string === '#' || $url_string === $front_path || mb_strtolower($link->getTitle()) === 'home') {
+      continue;
+    }
+
+    $items[] = [
+      'title' => $link->getTitle(),
+      'url' => $url_string,
+      'active' => !empty($element->inActiveTrail),
+    ];
+  }
+
+  return $items;
 }
 
 /**

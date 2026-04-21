@@ -12,6 +12,10 @@ versioned_properties:
         label: 'Umami Next not found'
         label_display: '0'
         provider: umami_next
+        headline: 'This page has gone to the market.'
+        description: 'It will be back Sunday with basil. In the meantime, here are a few recipes to stand in.'
+        home_label: Home
+        recipes_label: 'Browse recipes'
     fallback_metadata:
       slot_definitions: null
 label: 'Umami Next not found'

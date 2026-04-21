@@ -79,6 +79,10 @@ function umami_next_theme(): array {
     'umami_next_not_found' => [
       'variables' => [
         'recipe_cards' => [],
+        'headline' => '',
+        'description' => '',
+        'home_label' => '',
+        'recipes_label' => '',
       ],
       'template' => 'umami-next-not-found',
     ],
@@ -86,24 +90,37 @@ function umami_next_theme(): array {
       'variables' => [
         'hero' => NULL,
         'hero_author' => NULL,
+        'issue_label' => '',
+        'headline_prefix' => '',
+        'headline_emphasis' => '',
+        'headline_suffix' => '',
+        'cta_label' => '',
+        'image_caption' => '',
       ],
       'template' => 'umami-next-home-hero-block',
     ],
     'umami_next_featured_recipes_block' => [
       'variables' => [
         'featured_recipes' => [],
+        'eyebrow' => '',
+        'section_title' => '',
+        'cta_label' => '',
       ],
       'template' => 'umami-next-featured-recipes-block',
     ],
     'umami_next_spotlight_collection_block' => [
       'variables' => [
         'spotlight' => NULL,
+        'eyebrow' => '',
+        'cta_label' => '',
       ],
       'template' => 'umami-next-spotlight-collection-block',
     ],
     'umami_next_topic_browse_block' => [
       'variables' => [
         'topics' => [],
+        'eyebrow' => '',
+        'section_title' => '',
       ],
       'template' => 'umami-next-topic-browse-block',
     ],
@@ -111,12 +128,20 @@ function umami_next_theme(): array {
       'variables' => [
         'latest_stories' => [],
         'editors_picks' => [],
+        'stories_eyebrow' => '',
+        'stories_title' => '',
+        'stories_cta_label' => '',
+        'picks_eyebrow' => '',
+        'picks_title' => '',
       ],
       'template' => 'umami-next-latest-stories-block',
     ],
     'umami_next_newsletter_block' => [
       'variables' => [
         'newsletter' => NULL,
+        'eyebrow' => '',
+        'section_title' => '',
+        'description' => '',
       ],
       'template' => 'umami-next-newsletter-block',
     ],
