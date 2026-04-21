@@ -12,6 +12,12 @@ versioned_properties:
         label: 'Umami Next home hero'
         label_display: '0'
         provider: umami_next
+        issue_label: 'Issue No. 14 - April 2026'
+        headline_prefix: 'A letter from the'
+        headline_emphasis: spring
+        headline_suffix: market.
+        cta_label: 'Read the letter'
+        image_caption: 'Photographed by Jun Watanabe, Saturday market, 04.2026'
     fallback_metadata:
       slot_definitions: null
 label: 'Umami Next home hero'

@@ -12,6 +12,9 @@ versioned_properties:
         label: 'Umami Next featured recipes'
         label_display: '0'
         provider: umami_next
+        eyebrow: 'From the test kitchen'
+        section_title: "Recipes we're cooking this week"
+        cta_label: 'All recipes'
     fallback_metadata:
       slot_definitions: null
 label: 'Umami Next featured recipes'

@@ -12,6 +12,9 @@ versioned_properties:
         label: 'Umami Next newsletter'
         label_display: '0'
         provider: umami_next
+        eyebrow: 'The weekly dispatch'
+        section_title: 'A small, useful letter on cooking and the season.'
+        description: 'Sent Sunday mornings. One recipe, one short essay, and a few things we have been eating.'
     fallback_metadata:
       slot_definitions: null
 label: 'Umami Next newsletter'

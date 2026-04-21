@@ -8,11 +8,25 @@
       </div>
     {% endif %}
     <div class="container site-header__inner">
-      {{ page.header }}
-      <a href="{{ umami_search_url }}" class="icon-btn site-header__search" aria-label="{{ 'Search'|t }}">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>
-        {{ 'Search'|t }}
+      <nav class="site-header__nav" aria-label="{{ 'Primary'|t }}">
+        {% for item in umami_main_menu|slice(0, 3) %}
+          <a href="{{ item.url }}" class="{{ item.active ? 'is-active' : '' }}">{{ item.title }}</a>
+        {% endfor %}
+      </nav>
+      <a href="{{ path('<front>') }}" class="site-header__logo">
+        <span>{{ site_name }}</span><span class="dot"></span>
       </a>
+      <div class="site-header__tools">
+        {% for item in umami_main_menu|slice(3) %}
+          {% if item.title != 'Contact' %}
+            <a href="{{ item.url }}" class="site-header__tool {{ item.active ? 'is-active' : '' }}">{{ item.title }}</a>
+          {% endif %}
+        {% endfor %}
+        <a href="{{ umami_search_url }}" class="icon-btn" aria-label="{{ 'Search'|t }}">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>
+          {{ 'Search'|t }}
+        </a>
+      </div>
     </div>
   </header>
 

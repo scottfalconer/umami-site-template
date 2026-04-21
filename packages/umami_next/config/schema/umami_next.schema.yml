@@ -1,30 +1,112 @@
 block.settings.umami_next_home_hero:
   type: block_settings
   label: 'Umami Next home hero settings'
+  mapping:
+    issue_label:
+      type: label
+      label: 'Issue label'
+    headline_prefix:
+      type: label
+      label: 'Headline prefix'
+    headline_emphasis:
+      type: label
+      label: 'Headline emphasized word'
+    headline_suffix:
+      type: label
+      label: 'Headline suffix'
+    cta_label:
+      type: label
+      label: 'Call-to-action label'
+    image_caption:
+      type: label
+      label: 'Image caption'
 
 block.settings.umami_next_featured_recipes:
   type: block_settings
   label: 'Umami Next featured recipes settings'
+  mapping:
+    eyebrow:
+      type: label
+      label: 'Eyebrow'
+    section_title:
+      type: label
+      label: 'Section title'
+    cta_label:
+      type: label
+      label: 'Call-to-action label'
 
 block.settings.umami_next_spotlight_collection:
   type: block_settings
   label: 'Umami Next spotlight collection settings'
+  mapping:
+    eyebrow:
+      type: label
+      label: 'Eyebrow'
+    cta_label:
+      type: label
+      label: 'Call-to-action label'
 
 block.settings.umami_next_topic_browse:
   type: block_settings
   label: 'Umami Next topic browse settings'
+  mapping:
+    eyebrow:
+      type: label
+      label: 'Eyebrow'
+    section_title:
+      type: label
+      label: 'Section title'
 
 block.settings.umami_next_latest_stories:
   type: block_settings
   label: 'Umami Next latest stories settings'
+  mapping:
+    stories_eyebrow:
+      type: label
+      label: 'Stories eyebrow'
+    stories_title:
+      type: label
+      label: 'Stories title'
+    stories_cta_label:
+      type: label
+      label: 'Stories call-to-action label'
+    picks_eyebrow:
+      type: label
+      label: 'Editor picks eyebrow'
+    picks_title:
+      type: label
+      label: 'Editor picks title'
 
 block.settings.umami_next_newsletter:
   type: block_settings
   label: 'Umami Next newsletter settings'
+  mapping:
+    eyebrow:
+      type: label
+      label: 'Eyebrow'
+    section_title:
+      type: label
+      label: 'Section title'
+    description:
+      type: text
+      label: 'Description'
 
 block.settings.umami_next_not_found:
   type: block_settings
   label: 'Umami Next not found settings'
+  mapping:
+    headline:
+      type: label
+      label: 'Headline'
+    description:
+      type: text
+      label: 'Description'
+    home_label:
+      type: label
+      label: 'Home link label'
+    recipes_label:
+      type: label
+      label: 'Recipes link label'
 
 umami_next.default_content_references:
   type: config_object

@@ -23,38 +23,44 @@ default:
     -
       uuid: 76a14830-021c-4533-a519-a9cfa7255a14
       component_id: block.umami_next_home_hero
+      label: 'Home hero'
       inputs:
-        label: ''
+        label: 'Home hero'
         label_display: '0'
     -
       uuid: 42b5bddb-57ad-4f13-a0c8-fd55afec4b86
       component_id: block.umami_next_featured_recipes
+      label: 'Featured recipes'
       inputs:
-        label: ''
+        label: 'Featured recipes'
         label_display: '0'
     -
       uuid: 37f3638c-fef6-4a3e-afca-cb5286e33c0b
       component_id: block.umami_next_spotlight_collection
+      label: 'Spotlight collection'
       inputs:
-        label: ''
+        label: 'Spotlight collection'
         label_display: '0'
     -
       uuid: bae01ce6-64e1-4580-bd3a-4309540cf3bd
       component_id: block.umami_next_topic_browse
+      label: 'Topic browse'
       inputs:
-        label: ''
+        label: 'Topic browse'
         label_display: '0'
     -
       uuid: 7264cf06-db3c-406a-bf76-3eac29f1e2cc
       component_id: block.umami_next_latest_stories
+      label: 'Latest stories'
       inputs:
-        label: ''
+        label: 'Latest stories'
         label_display: '0'
     -
       uuid: 216d3d2d-fe72-4c6c-a742-6933a03f6d85
       component_id: block.umami_next_newsletter
+      label: Newsletter
       inputs:
-        label: ''
+        label: Newsletter
         label_display: '0'
   path:
     -
