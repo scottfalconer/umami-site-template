@@ -1,0 +1,17 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+    - path
+    - redirect
+    - system
+id: site_builder
+label: 'Site builder'
+weight: 3
+is_admin: false
+permissions:
+  - 'access administration pages'
+  - 'administer menu'
+  - 'administer redirects'
+  - 'administer url aliases'

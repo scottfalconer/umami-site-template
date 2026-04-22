@@ -24,7 +24,6 @@ dependencies:
     - media_library_bulk_upload
     - node
     - path
-    - redirect
     - scheduler
     - system
     - trash
@@ -37,9 +36,6 @@ permissions:
   - 'access content overview'
   - 'access media overview'
   - 'access trash'
-  - 'administer menu'
-  - 'administer redirects'
-  - 'administer url aliases'
   - 'create article content'
   - 'create canvas_page'
   - 'create collection content'
