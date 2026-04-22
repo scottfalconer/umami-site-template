@@ -33,6 +33,8 @@ default:
   - value: true
   revision_translation_affected:
   - value: true
+  moderation_state:
+  - value: published
   path:
   - alias: /recipe/weeknight-dal-with-burnt-butter
     langcode: en

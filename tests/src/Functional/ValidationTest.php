@@ -65,6 +65,7 @@ class ValidationTest extends BrowserTestBase {
       \Drupal::config('system.site')->get('slogan'),
     );
     $this->assertNotSame('America/Costa_Rica', \Drupal::config('system.date')->get('timezone.default'));
+    $this->assertEditorialWorkflowCoversPrimaryBundles();
 
     $routes = [
       '/' => NULL,
@@ -155,6 +156,27 @@ class ValidationTest extends BrowserTestBase {
       'Ribollita, in an Honest Mood',
       'Plum and Almond Galette',
     ], array_column($featured_cards, 'title'));
+  }
+
+  /**
+   * Checks that editorial workflow config governs all primary node bundles.
+   */
+  protected function assertEditorialWorkflowCoversPrimaryBundles(): void {
+    $workflow_config = \Drupal::config('workflows.workflow.basic_editorial')
+      ->get('type_settings.entity_types.node');
+    $this->assertSame(['article', 'collection', 'page', 'recipe'], $workflow_config);
+
+    $node_storage = \Drupal::entityTypeManager()->getStorage('node');
+    $node_ids = \Drupal::entityQuery('node')
+      ->condition('type', ['article', 'collection', 'recipe'], 'IN')
+      ->condition('status', 1)
+      ->accessCheck(FALSE)
+      ->execute();
+    $this->assertNotEmpty($node_ids);
+
+    foreach ($node_storage->loadMultiple($node_ids) as $node) {
+      $this->assertSame('published', $node->get('moderation_state')->value);
+    }
   }
 
   /**

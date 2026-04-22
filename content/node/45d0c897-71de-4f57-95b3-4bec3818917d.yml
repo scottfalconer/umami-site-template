@@ -33,6 +33,8 @@ default:
   - value: false
   revision_translation_affected:
   - value: true
+  moderation_state:
+  - value: published
   path:
   - alias: /recipe/white-beans-with-celery-and-lemon
     langcode: en
