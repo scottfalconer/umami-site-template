@@ -3,16 +3,6 @@ type: Site
 description: 'A Drupal CMS food magazine template with recipes, stories, collections, Canvas pages, and editorial workflows.'
 recipes:
   - drupal_cms_search
-input:
-  site_slogan:
-    data_type: string
-    description: 'Short text displayed near the Umami site name.'
-    form:
-      '#type': textfield
-      '#title': 'Site slogan'
-    default:
-      source: value
-      value: 'A food magazine with recipes, stories, and collections.'
 install:
   - announcements_feed
   - automated_cron
@@ -314,7 +304,7 @@ config:
     system.site:
       simpleConfigUpdate:
         langcode: en
-        slogan: ${site_slogan}
+        slogan: 'A food magazine with recipes, stories, and collections.'
         page:
           403: /user/login
           404: /404
@@ -323,6 +313,9 @@ config:
         weight_select_max: 100
         default_langcode: en
         mail_notification: null
+    system.date:
+      simpleConfigUpdate:
+        timezone.default: UTC
     system.theme.global:
       simpleConfigUpdate:
         favicon:

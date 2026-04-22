@@ -60,6 +60,12 @@ class ValidationTest extends BrowserTestBase {
    * Tests that the public discovery routes load after a recipe install.
    */
   public function testPublicRoutesLoad(): void {
+    $this->assertSame(
+      'A food magazine with recipes, stories, and collections.',
+      \Drupal::config('system.site')->get('slogan'),
+    );
+    $this->assertNotSame('America/Costa_Rica', \Drupal::config('system.date')->get('timezone.default'));
+
     $routes = [
       '/' => NULL,
       '/recipes' => 'Recipes',

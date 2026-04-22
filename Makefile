@@ -2,7 +2,24 @@ TESTER_DIR ?= ../umami-site-template-test
 TESTER_NAME ?= umami-site-template-test
 RECIPE ?= umami
 
-.PHONY: dev-sync-source dev-test-install
+.PHONY: dev-normalize-ddev-config dev-sync-source dev-test-install
+
+# Drupal CMS scaffolding can rewrite DDEV config during create-project. Keep the
+# reusable tester stable on the DDEV version used by this workspace.
+dev-normalize-ddev-config:
+	@config="$(TESTER_DIR)/.ddev/config.yaml"; \
+	if [ -f "$$config" ]; then \
+		if grep -q '^name:' "$$config"; then \
+			perl -0pi -e 's/^name:.*$$/name: $(TESTER_NAME)/m' "$$config"; \
+		else \
+			awk 'NR == 1 { print; print "name: $(TESTER_NAME)"; next } { print }' "$$config" > "$$config.tmp" && mv "$$config.tmp" "$$config"; \
+		fi; \
+		if grep -q '^ddev_version_constraint:' "$$config"; then \
+			perl -0pi -e "s/^ddev_version_constraint:.*\$$/ddev_version_constraint: '>= 1.24.0'/m" "$$config"; \
+		else \
+			printf "%s\n" "ddev_version_constraint: '>= 1.24.0'" >> "$$config"; \
+		fi; \
+	fi
 
 dev-sync-source:
 	@mkdir -p "$(TESTER_DIR)/source"
@@ -26,6 +43,7 @@ dev-test-install:
 	@if [ ! -f "$(TESTER_DIR)/composer.json" ]; then \
 		cd "$(TESTER_DIR)" && ddev composer create-project drupal/cms .; \
 	fi
+	$(MAKE) dev-normalize-ddev-config TESTER_DIR="$(TESTER_DIR)" TESTER_NAME="$(TESTER_NAME)"
 	$(MAKE) dev-sync-source TESTER_DIR="$(TESTER_DIR)"
 	cd "$(TESTER_DIR)" && ddev composer config repositories.umami path source
 	cd "$(TESTER_DIR)" && ddev composer config repositories.umami_next path source/packages/umami_next
