@@ -28,6 +28,8 @@ default:
   - value: true
   revision_translation_affected:
   - value: true
+  moderation_state:
+  - value: published
   path:
   - alias: /article/spring-market-letter
     langcode: en

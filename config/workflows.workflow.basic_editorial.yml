@@ -2,7 +2,10 @@ langcode: en
 status: true
 dependencies:
   config:
+    - node.type.article
+    - node.type.collection
     - node.type.page
+    - node.type.recipe
   module:
     - content_moderation
 id: basic_editorial
@@ -50,5 +53,8 @@ type_settings:
       weight: 1
   entity_types:
     node:
+      - article
+      - collection
       - page
+      - recipe
   default_moderation_state: draft
