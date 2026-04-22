@@ -26,7 +26,7 @@ ddev composer config repositories.umami path source
 ddev composer config repositories.umami_next path source/packages/umami_next
 ddev composer config repositories.umami_next_theme path source/packages/umami_next_theme
 ddev composer require drupal/umami:^1@dev drupal/umami_next:^1@dev drupal/umami_next_theme:^1@dev --with-all-dependencies
-ddev drush site:install recipes/umami --account-name=admin --account-pass=admin -y
+ddev drush site:install recipes/umami --site-name=Umami --account-name=admin --account-pass=admin -y
 ```
 
 After changing this repository, refresh the tester copy and reinstall:
@@ -39,7 +39,7 @@ Or, from inside the tester:
 
 ```sh
 rsync -a --delete /path/to/umami-site-template/. source/
-ddev drush site:install recipes/umami --account-name=admin --account-pass=admin -y
+ddev drush site:install recipes/umami --site-name=Umami --account-name=admin --account-pass=admin -y
 ```
 
 ## What This Template Demonstrates
