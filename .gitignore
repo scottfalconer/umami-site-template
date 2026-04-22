@@ -10,3 +10,4 @@
 
 # Local peer-agent review packets and transcripts.
 .peer/
+.gstack/

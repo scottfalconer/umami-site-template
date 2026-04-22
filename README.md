@@ -5,6 +5,8 @@ currently targeting Drupal CMS 2.1+ and Drupal core 11.3+. It is intentionally
 structured so the recipe can be installed and tested from a fresh Drupal CMS
 checkout before any Drupal.org project split happens.
 
+![Umami homepage screenshot](screenshot.webp)
+
 ## Package Layout
 
 ```text
