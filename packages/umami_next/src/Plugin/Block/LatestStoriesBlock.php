@@ -57,11 +57,7 @@ final class LatestStoriesBlock extends EditorialDataBlockBase {
     return [
       '#theme' => 'umami_next_latest_stories_block',
       '#latest_stories' => $this->editorialData->loadLatestCards('article', 4),
-      '#editors_picks' => $this->editorialData->loadRecipeCardsByUuids([
-        'e832f942-2282-4dd3-b804-1d85255a0f99',
-        'be17db54-41fe-481a-8e2b-88673f537aa3',
-        'f0a5cac7-c43b-47cf-b278-0f22d7514808',
-      ]),
+      '#editors_picks' => $this->editorialData->loadFeaturedCards('recipe', 3, 3),
       '#stories_eyebrow' => $this->configuration['stories_eyebrow'],
       '#stories_title' => $this->configuration['stories_title'],
       '#stories_cta_label' => $this->configuration['stories_cta_label'],

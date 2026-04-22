@@ -26,9 +26,9 @@ default:
   title:
   - value: Sticky Sesame Aubergine
   promote:
-  - value: false
+  - value: true
   sticky:
-  - value: false
+  - value: true
   revision_translation_affected:
   - value: true
   path:

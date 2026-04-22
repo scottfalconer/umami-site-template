@@ -21,10 +21,22 @@ use Symfony\Component\Finder\Finder;
 final class RequirementsTest extends KernelTestBase {
 
   /**
+   * Returns the absolute path of the recipe this test is for.
+   *
+   * @return string
+   *   The absolute path of the recipe.
+   */
+  protected static function getRecipePath(): string {
+    $path = dirname(__FILE__, 4);
+    $installed_path = dirname($path) . '/recipes/umami';
+    return is_file($installed_path . '/recipe.yml') ? $installed_path : $path;
+  }
+
+  /**
    * Tests that the site template conforms to basic requirements.
    */
   public function testSiteTemplateRequirements(): void {
-    $path = dirname(__FILE__, 4);
+    $path = self::getRecipePath();
 
     // The site template cannot include any code (i.e., modules or themes).
     $finder = Finder::create()->in($path)->exclude('packages')->files()->name('*.info.yml');

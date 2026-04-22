@@ -25,7 +25,7 @@ default:
   title:
   - value: Green Herb Fritters with Yogurt
   promote:
-  - value: true
+  - value: false
   sticky:
   - value: false
   revision_translation_affected:

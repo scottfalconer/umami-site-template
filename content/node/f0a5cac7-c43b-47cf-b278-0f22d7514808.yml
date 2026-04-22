@@ -25,7 +25,7 @@ default:
   title:
   - value: Olive Oil Citrus Cake
   promote:
-  - value: false
+  - value: true
   sticky:
   - value: false
   revision_translation_affected:

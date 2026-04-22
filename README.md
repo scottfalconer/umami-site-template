@@ -111,5 +111,5 @@ Drupal CMS site. The remaining cleanup passes should:
 - Keep recipes, stories, topic archives, search, and contact on Drupal-native foundations: Views, taxonomy term pages, Search API/View from `drupal_cms_search`, Webform, and editable menus.
 - Keep the custom module limited to code that cannot be expressed as recipe/config/theme.
 - Move editorial structure into fields, Views, menus, media, and Canvas templates instead of Twig/PHP hardcoding.
-- Replace hardcoded homepage/editorial UUID curation with fields, Views block displays, or Canvas-editable page composition.
+- Keep homepage recipe curation driven by Drupal's editable node flags: `promote` includes recipes in homepage curation and `sticky` pins the first row unless a future Canvas-native curation model replaces it.
 - Preserve installability evidence for every cleanup pass.

@@ -24,7 +24,7 @@ default:
   title:
   - value: Roasted Carrots with Harissa and Date
   promote:
-  - value: true
+  - value: false
   sticky:
   - value: false
   revision_translation_affected:
