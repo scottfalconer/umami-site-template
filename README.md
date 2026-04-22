@@ -144,13 +144,19 @@ Environment-specific settings are intentionally not shipped in the recipe:
 ## Current State
 
 This package started from a `drush site:export` baseline from the working
-Drupal CMS site. The remaining cleanup passes should:
+Drupal CMS site. Several cleanup passes have already moved public discovery and
+site services onto Drupal-native foundations: recipe and story archives are
+Views, topics are taxonomy term pages with aliases, search uses the Drupal CMS
+Search API/View, contact uses Webform and editable social menu links, and
+metadata/sitemap discovery uses Metatag and Simple XML Sitemap.
+
+The remaining cleanup passes should:
 
 - Reduce the flattened recipe export toward Drupal CMS recipe dependencies where possible.
 - Remove config inherited from the `drush site:export` baseline when an upstream Drupal CMS/core/contrib recipe owns it.
-- Keep recipes, stories, topic archives, search, SEO metadata, XML sitemaps, and contact on Drupal-native foundations: Views, taxonomy term pages, Search API/View from `drupal_cms_search`, Metatag/Schema Metatag/Simple XML Sitemap, Webform, and editable menus.
+- Add per-bundle Schema.org JSON-LD mappings with Schema Metatag, especially for recipe structured data.
 - Keep the custom module limited to code that cannot be expressed as recipe/config/theme.
-- Move editorial structure into fields, Views, menus, media, and Canvas templates instead of Twig/PHP hardcoding.
+- Continue moving presentation structure into fields, Views, menus, media, Canvas templates, and components instead of Twig/PHP hardcoding.
 - Keep homepage recipe curation driven by Drupal's editable node flags: `promote` includes recipes in homepage curation and `sticky` pins the first row unless a future Canvas-native curation model replaces it.
 - Preserve installability evidence for every cleanup pass.
 

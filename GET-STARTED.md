@@ -50,7 +50,8 @@ ddev drush site:install recipes/umami --site-name=Umami --account-name=admin --a
 - Structured content for recipes, stories, collections, media, topics, cuisine, dietary categories, and recipe categories.
 - Views-driven public recipe and story archives.
 - Drupal CMS Search API/View for search.
-- Metatag, Schema Metatag, and Simple XML Sitemap defaults for basic metadata and sitemap discovery.
+- Metatag Open Graph/Twitter Card defaults and Simple XML Sitemap discovery.
+- Schema Metatag installed for future per-bundle JSON-LD mappings.
 - Webform-driven contact and newsletter forms.
 - Menu-driven header, footer, and social links.
 
@@ -88,6 +89,7 @@ recipe.
 
 - Reduce the flattened `install:` list by composing more Drupal CMS recipes directly, after comparing the installed config delta against the current export.
 - Remove exported upstream defaults from `config/` when they are owned by Drupal CMS, core, or contrib recipes rather than Umami.
+- Add per-bundle Schema.org JSON-LD mappings with Schema Metatag, especially for recipe structured data.
 - Keep homepage recipe curation driven by Drupal's editable node flags: `promote` includes recipes in homepage curation and `sticky` pins the first row unless a future Canvas-native curation model replaces it.
 - Continue reducing theme preprocess code as more rendering moves into content templates and components.
 - Reduce default-content reference backfill glue where exported config/content can own the final state directly.
