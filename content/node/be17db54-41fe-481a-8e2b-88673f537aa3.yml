@@ -25,7 +25,7 @@ default:
   title:
   - value: Plum and Almond Galette
   promote:
-  - value: false
+  - value: true
   sticky:
   - value: false
   revision_translation_affected:

@@ -62,6 +62,6 @@ Before publishing beyond development:
 
 ## Current Follow-Ups
 
-- Move homepage/editorial curation away from hardcoded UUIDs and into fields, Views block displays, or Canvas-editable composition.
+- Keep homepage recipe curation driven by Drupal's editable node flags: `promote` includes recipes in homepage curation and `sticky` pins the first row unless a future Canvas-native curation model replaces it.
 - Continue reducing theme preprocess code as more rendering moves into content templates and components.
 - Reduce install/update repair glue where exported config/content can own the final state.

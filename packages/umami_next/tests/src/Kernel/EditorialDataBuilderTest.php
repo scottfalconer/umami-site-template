@@ -8,6 +8,8 @@ use Drupal\field\Entity\FieldConfig;
 use Drupal\field\Entity\FieldStorageConfig;
 use Drupal\KernelTests\KernelTestBase;
 use Drupal\menu_link_content\Entity\MenuLinkContent;
+use Drupal\node\Entity\Node;
+use Drupal\node\Entity\NodeType;
 use Drupal\system\Entity\Menu;
 use Drupal\umami_next\EditorialDataBuilder;
 use Drupal\user\Entity\User;
@@ -32,6 +34,7 @@ final class EditorialDataBuilderTest extends KernelTestBase {
     'link',
     'media',
     'menu_link_content',
+    'node',
     'options',
     'system',
     'text',
@@ -53,7 +56,16 @@ final class EditorialDataBuilderTest extends KernelTestBase {
     $this->installEntitySchema('file');
     $this->installEntitySchema('menu_link_content');
     $this->installEntitySchema('media');
+    $this->installEntitySchema('node');
+    $this->installSchema('node', ['node_access']);
     $this->installConfig(['filter']);
+
+    $admin = User::create([
+      'name' => 'Root',
+      'status' => 1,
+    ]);
+    $admin->save();
+    $this->container->get('current_user')->setAccount($admin);
 
     $this->createUserField('field_role', 'string');
     $this->createUserField('field_bio', 'string_long');
@@ -133,6 +145,28 @@ final class EditorialDataBuilderTest extends KernelTestBase {
   }
 
   /**
+   * Verifies featured cards come from editorial node flags, not fixed UUIDs.
+   */
+  public function testLoadFeaturedCardsUsesPromotedContentOrder(): void {
+    NodeType::create([
+      'type' => 'recipe',
+      'name' => 'Recipe',
+    ])->save();
+
+    $this->createNode('recipe', 'Older promoted', 100, TRUE, FALSE);
+    $this->createNode('recipe', 'Pinned promoted', 50, TRUE, TRUE);
+    $this->createNode('recipe', 'Newer promoted', 200, TRUE, FALSE);
+    $this->createNode('recipe', 'Newest unpromoted', 300, FALSE, FALSE);
+
+    $cards = $this->builder->loadFeaturedCards('recipe', 2);
+
+    $this->assertSame(
+      ['Pinned promoted', 'Newer promoted'],
+      array_column($cards, 'title'),
+    );
+  }
+
+  /**
    * Creates a user field for the test site.
    */
   private function createUserField(string $field_name, string $field_type): void {
@@ -148,6 +182,27 @@ final class EditorialDataBuilderTest extends KernelTestBase {
       'entity_type' => 'user',
       'bundle' => 'user',
       'label' => $field_name,
+    ])->save();
+  }
+
+  /**
+   * Creates a published node for editorial query tests.
+   */
+  private function createNode(
+    string $bundle,
+    string $title,
+    int $created,
+    bool $promoted,
+    bool $sticky,
+  ): void {
+    Node::create([
+      'type' => $bundle,
+      'title' => $title,
+      'status' => 1,
+      'uid' => 1,
+      'created' => $created,
+      'promote' => $promoted,
+      'sticky' => $sticky,
     ])->save();
   }
 

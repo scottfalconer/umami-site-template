@@ -46,11 +46,7 @@ final class FeaturedRecipesBlock extends EditorialDataBlockBase {
   public function build(): array {
     return [
       '#theme' => 'umami_next_featured_recipes_block',
-      '#featured_recipes' => $this->editorialData->loadRecipeCardsByUuids([
-        '36a35a55-76f6-4e39-baf8-31798f2db0aa',
-        'ac36ac60-a124-4153-a2b9-671173cac6fb',
-        '571994c9-f7dd-432c-8762-bb5ab5c94506',
-      ]),
+      '#featured_recipes' => $this->editorialData->loadFeaturedCards('recipe', 3),
       '#eyebrow' => $this->configuration['eyebrow'],
       '#section_title' => $this->configuration['section_title'],
       '#cta_label' => $this->configuration['cta_label'],

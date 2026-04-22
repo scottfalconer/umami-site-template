@@ -30,7 +30,9 @@ class ValidationTest extends BrowserTestBase {
    *   The absolute path of the recipe.
    */
   protected static function getRecipePath(): string {
-    return dirname(__FILE__, 4);
+    $path = dirname(__FILE__, 4);
+    $installed_path = dirname($path) . '/recipes/umami';
+    return is_file($installed_path . '/recipe.yml') ? $installed_path : $path;
   }
 
   /**
@@ -51,6 +53,7 @@ class ValidationTest extends BrowserTestBase {
     // in content templates, page regions, patterns, landing pages, etc. This
     // method checks for that.
     $this->assertCanvasComponentsAreIncluded();
+    $this->assertHomepageUsesEditorialRecipeCuration();
   }
 
   /**
@@ -83,6 +86,32 @@ class ValidationTest extends BrowserTestBase {
         }
       }
     }
+  }
+
+  /**
+   * Checks that homepage recipe curation comes from installed content flags.
+   */
+  protected function assertHomepageUsesEditorialRecipeCuration(): void {
+    $front_page = \Drupal::config('system.site')->get('page.front');
+    if ($front_page === '/home') {
+      $front_alias = $front_page;
+    }
+    else {
+      $front_alias = \Drupal::service('path_alias.repository')
+        ->lookupBySystemPath($front_page, 'en')['alias'] ?? NULL;
+    }
+    $this->assertSame('/home', $front_alias);
+
+    $featured_cards = \Drupal::service('umami_next.editorial_data')
+      ->loadFeaturedCards('recipe', 6);
+    $this->assertSame([
+      'Slow-Roasted Tomato Pappardelle',
+      'Sticky Sesame Aubergine',
+      'Weeknight Dal with Burnt Butter',
+      'Olive Oil Citrus Cake',
+      'Ribollita, in an Honest Mood',
+      'Plum and Almond Galette',
+    ], array_column($featured_cards, 'title'));
   }
 
   /**

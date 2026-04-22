@@ -57,7 +57,7 @@ final class EditorialDataBuilder {
    * @return \Drupal\node\NodeInterface[]
    *   Featured nodes.
    */
-  public function loadFeaturedNodes(string $bundle, int $limit): array {
+  public function loadFeaturedNodes(string $bundle, int $limit, int $offset = 0): array {
     $storage = $this->entityTypeManager->getStorage('node');
     $ids = $storage->getQuery()
       ->accessCheck(TRUE)
@@ -66,10 +66,10 @@ final class EditorialDataBuilder {
       ->condition('promote', 1)
       ->sort('sticky', 'DESC')
       ->sort('created', 'DESC')
-      ->range(0, $limit)
+      ->range($offset, $limit)
       ->execute();
 
-    return $ids ? array_values($storage->loadMultiple($ids)) : [];
+    return $this->loadNodesByIds($ids);
   }
 
   /**
@@ -77,6 +77,24 @@ final class EditorialDataBuilder {
    */
   public function loadFeaturedNode(string $bundle): ?NodeInterface {
     return $this->loadFeaturedNodes($bundle, 1)[0] ?? NULL;
+  }
+
+  /**
+   * Loads featured cards for a bundle.
+   *
+   * @return array<int, array<string, mixed>>
+   *   Featured card data.
+   */
+  public function loadFeaturedCards(string $bundle, int $limit, int $offset = 0): array {
+    $cards = [];
+    foreach ($this->loadFeaturedNodes($bundle, $limit, $offset) as $node) {
+      $cards[] = match ($bundle) {
+        'article' => $this->buildArticleCard($node),
+        'collection' => $this->buildCollectionCard($node),
+        default => $this->buildRecipeCard($node),
+      };
+    }
+    return $cards;
   }
 
   /**
@@ -93,32 +111,10 @@ final class EditorialDataBuilder {
       ->execute();
 
     $cards = [];
-    foreach ($ids ? $storage->loadMultiple($ids) : [] as $node) {
-      if (!$node instanceof NodeInterface) {
-        continue;
-      }
+    foreach ($this->loadNodesByIds($ids) as $node) {
       $cards[] = $bundle === 'article'
         ? $this->buildArticleCard($node)
         : $this->buildRecipeCard($node);
-    }
-    return $cards;
-  }
-
-  /**
-   * Loads specific recipe cards by UUID order.
-   *
-   * @param string[] $uuids
-   *   Node UUIDs.
-   *
-   * @return array<int, array<string, mixed>>
-   *   Recipe cards.
-   */
-  public function loadRecipeCardsByUuids(array $uuids): array {
-    $cards = [];
-    foreach ($this->loadNodesByUuids($uuids) as $node) {
-      if ($node instanceof NodeInterface && $node->bundle() === 'recipe') {
-        $cards[] = $this->buildRecipeCard($node);
-      }
     }
     return $cards;
   }
@@ -424,10 +420,8 @@ final class EditorialDataBuilder {
       ->execute();
 
     $cards = [];
-    foreach ($ids ? $storage->loadMultiple($ids) : [] as $related) {
-      if ($related instanceof NodeInterface) {
-        $cards[] = $this->buildArticleCard($related);
-      }
+    foreach ($this->loadNodesByIds($ids) as $related) {
+      $cards[] = $this->buildArticleCard($related);
     }
     return $cards;
   }
@@ -474,40 +468,25 @@ final class EditorialDataBuilder {
   }
 
   /**
-   * Loads nodes by ordered UUIDs.
+   * Loads nodes while preserving the query result order.
    *
-   * @param string[] $uuids
-   *   Node UUIDs.
+   * @param int[] $ids
+   *   Node IDs in query order.
    *
-   * @return array<int, \Drupal\node\NodeInterface>
-   *   Loaded nodes.
+   * @return \Drupal\node\NodeInterface[]
+   *   Loaded nodes in query order.
    */
-  private function loadNodesByUuids(array $uuids): array {
-    if (!$uuids) {
+  private function loadNodesByIds(array $ids): array {
+    if (!$ids) {
       return [];
     }
 
     $storage = $this->entityTypeManager->getStorage('node');
-    $ids = $storage->getQuery()
-      ->accessCheck(TRUE)
-      ->condition('uuid', $uuids, 'IN')
-      ->condition('status', 1)
-      ->execute();
-
-    $nodes_by_uuid = [];
-    foreach ($ids ? $storage->loadMultiple($ids) : [] as $node) {
-      if ($node instanceof NodeInterface && $node->access('view')) {
-        $nodes_by_uuid[$node->uuid()] = $node;
-      }
-    }
-
-    $nodes = [];
-    foreach ($uuids as $uuid) {
-      if (isset($nodes_by_uuid[$uuid])) {
-        $nodes[] = $nodes_by_uuid[$uuid];
-      }
-    }
-    return $nodes;
+    $nodes = $storage->loadMultiple($ids);
+    return array_values(array_filter(array_map(
+      static fn ($id): ?NodeInterface => $nodes[$id] ?? NULL,
+      $ids,
+    )));
   }
 
 }
