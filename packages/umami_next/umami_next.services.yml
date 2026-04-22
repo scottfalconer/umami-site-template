@@ -6,3 +6,9 @@ services:
       - '@file_url_generator'
       - '@date.formatter'
       - '@menu.link_tree'
+  umami_next.unpublished_node_not_found_subscriber:
+    class: Drupal\umami_next\EventSubscriber\UnpublishedNodeNotFoundSubscriber
+    arguments:
+      - '@entity_type.manager'
+    tags:
+      - { name: event_subscriber }

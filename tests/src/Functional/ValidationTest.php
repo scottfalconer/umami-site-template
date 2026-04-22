@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 use Drupal\Core\Config\FileStorage;
+use Drupal\Core\Logger\RfcLogLevel;
 use Drupal\canvas\Entity\ComponentTreeEntityInterface;
 use Drupal\canvas\JsonSchemaDefinitionsStreamwrapper;
 use Drupal\Tests\BrowserTestBase;
@@ -99,6 +100,8 @@ class ValidationTest extends BrowserTestBase {
     $this->drupalGet($alias);
     $this->assertSession()->statusCodeEquals(200);
     $this->assertSession()->pageTextContains('Weeknight');
+
+    $this->assertUnpublishedContentReturns404WithoutEcaError();
   }
 
   /**
@@ -178,6 +181,24 @@ class ValidationTest extends BrowserTestBase {
     foreach ($node_storage->loadMultiple($node_ids) as $node) {
       $this->assertSame('published', $node->get('moderation_state')->value);
     }
+  }
+
+  /**
+   * Checks that unpublished public requests stay quiet in operational logs.
+   */
+  protected function assertUnpublishedContentReturns404WithoutEcaError(): void {
+    $this->drupalGet('/privacy-policy');
+    $this->assertSession()->statusCodeEquals(404);
+
+    $eca_errors = (int) \Drupal::database()
+      ->select('watchdog', 'w')
+      ->condition('type', 'eca')
+      ->condition('severity', RfcLogLevel::ERROR)
+      ->condition('message', '%unpublished_404%', 'LIKE')
+      ->countQuery()
+      ->execute()
+      ->fetchField();
+    $this->assertSame(0, $eca_errors);
   }
 
   /**

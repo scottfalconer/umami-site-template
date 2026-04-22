@@ -7,5 +7,6 @@ dependencies:
   - drupal:canvas
   - drupal:field
   - drupal:image
+  - drupal:node
   - drupal:pathauto
   - drupal:webform
