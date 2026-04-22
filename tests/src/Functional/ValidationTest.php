@@ -73,13 +73,14 @@ class ValidationTest extends BrowserTestBase {
       '/stories' => 'Stories',
       '/search' => 'Search',
       '/contact' => 'Contact',
+      '/sitemap.xml' => '<urlset',
     ];
 
     foreach ($routes as $path => $expected_text) {
       $this->drupalGet($path);
       $this->assertSession()->statusCodeEquals(200);
       if ($expected_text) {
-        $this->assertSession()->pageTextContains($expected_text);
+        $this->assertSession()->responseContains($expected_text);
       }
     }
 

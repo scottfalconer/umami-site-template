@@ -199,8 +199,37 @@ function _umami_next_backfill_default_content_node_references(): void {
     }
 
     \Drupal::state()->set('umami_next.default_content_references_backfilled', TRUE);
+    _umami_next_generate_initial_sitemap();
   }
   finally {
     $running = FALSE;
+  }
+}
+
+/**
+ * Generates the first XML sitemap after Umami default content is available.
+ */
+function _umami_next_generate_initial_sitemap(): void {
+  if (\Drupal::state()->get('umami_next.initial_sitemap_generated')) {
+    return;
+  }
+  if (!\Drupal::moduleHandler()->moduleExists('simple_sitemap')) {
+    return;
+  }
+
+  $container = \Drupal::getContainer();
+  if (!$container->has('simple_sitemap.generator')) {
+    return;
+  }
+
+  try {
+    // Use backend mode to generate synchronously during the small demo import.
+    $container->get('simple_sitemap.generator')->generate('backend');
+    \Drupal::state()->set('umami_next.initial_sitemap_generated', TRUE);
+  }
+  catch (\Throwable $exception) {
+    \Drupal::logger('umami_next')->warning('Unable to generate the initial XML sitemap: @message', [
+      '@message' => $exception->getMessage(),
+    ]);
   }
 }
