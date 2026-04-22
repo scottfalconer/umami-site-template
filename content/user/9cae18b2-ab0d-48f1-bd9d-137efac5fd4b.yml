@@ -13,7 +13,7 @@ default:
   mail:
   - value: ines@example.com
   timezone:
-  - value: America/Costa_Rica
+  - value: UTC
   status:
   - value: true
   path:

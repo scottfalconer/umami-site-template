@@ -23,10 +23,22 @@ the exported recipe currently depends on.
 
 ## Development Install Test
 
-Create a separate Drupal CMS tester and register this repository plus the local
-custom packages as path repositories. The path repositories must be visible
-inside the DDEV web container; copying this source package into the tester as
-`source/` is the most repeatable local workflow.
+Use the local DDEV helper to create or refresh a separate Drupal CMS tester,
+mirror this source package into `source/`, require the local path repositories,
+and reinstall the recipe:
+
+```sh
+make dev-test-install
+```
+
+By default this uses `../umami-site-template-test`. Override `TESTER_DIR` and
+`TESTER_NAME` if you need a different local tester:
+
+```sh
+make dev-test-install TESTER_DIR=../umami-release-smoke TESTER_NAME=umami-release-smoke
+```
+
+Manual equivalent:
 
 ```sh
 mkdir umami-site-template-test
@@ -46,7 +58,7 @@ After local source changes, refresh the tester copy before rerunning Composer or
 install checks:
 
 ```sh
-cp -R /path/to/umami-site-template-codex/. source/
+make dev-sync-source
 ```
 
 The acceptance gate is a fresh DDEV install that reaches the Umami site without
@@ -108,6 +120,7 @@ This package started from a `drush site:export` baseline from the working
 Drupal CMS site. The remaining cleanup passes should:
 
 - Reduce the flattened recipe export toward Drupal CMS recipe dependencies where possible.
+- Remove config inherited from the `drush site:export` baseline when an upstream Drupal CMS/core/contrib recipe owns it.
 - Keep recipes, stories, topic archives, search, and contact on Drupal-native foundations: Views, taxonomy term pages, Search API/View from `drupal_cms_search`, Webform, and editable menus.
 - Keep the custom module limited to code that cannot be expressed as recipe/config/theme.
 - Move editorial structure into fields, Views, menus, media, and Canvas templates instead of Twig/PHP hardcoding.
