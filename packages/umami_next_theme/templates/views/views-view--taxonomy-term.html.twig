@@ -1,0 +1,20 @@
+{#
+/**
+ * @file
+ * Public taxonomy term archive view.
+ */
+#}
+{{ header }}
+
+<section class="container section-space">
+  {% if rows %}
+    <div class="grid-3 views-card-grid">
+      {{ rows }}
+    </div>
+    {{ pager }}
+  {% elseif empty %}
+    <div class="empty">
+      {{ empty }}
+    </div>
+  {% endif %}
+</section>

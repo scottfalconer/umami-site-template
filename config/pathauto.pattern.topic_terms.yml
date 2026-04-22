@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: topic_terms
+label: 'Topic terms'
+type: 'canonical_entities:taxonomy_term'
+pattern: '/topic/[term:field_slug]'
+selection_criteria:
+  de2f4a67-6f73-4aaf-a545-afc28ab4fcc3:
+    id: 'entity_bundle:taxonomy_term'
+    negate: false
+    uuid: de2f4a67-6f73-4aaf-a545-afc28ab4fcc3
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    bundles:
+      topic: topic
+selection_logic: and
+weight: 0
+relationships: {  }

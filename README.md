@@ -104,12 +104,11 @@ Environment-specific settings are intentionally not shipped in the recipe:
 
 ## Current State
 
-This is the first raw `drush site:export` baseline from the working Drupal CMS
-site. The next cleanup passes should:
+This package started from a `drush site:export` baseline from the working
+Drupal CMS site. The remaining cleanup passes should:
 
 - Reduce the flattened recipe export toward Drupal CMS recipe dependencies where possible.
-- Keep recipes, stories, search, and contact on Drupal-native foundations: Views, Search API/View from `drupal_cms_search`, Webform, and editable menus.
-- Replace the remaining custom topic archive route with taxonomy-native pages or a term-driven View once URL aliases/default content can be moved cleanly.
+- Keep recipes, stories, topic archives, search, and contact on Drupal-native foundations: Views, taxonomy term pages, Search API/View from `drupal_cms_search`, Webform, and editable menus.
 - Keep the custom module limited to code that cannot be expressed as recipe/config/theme.
 - Move editorial structure into fields, Views, menus, media, and Canvas templates instead of Twig/PHP hardcoding.
 - Replace hardcoded homepage/editorial UUID curation with fields, Views block displays, or Canvas-editable page composition.

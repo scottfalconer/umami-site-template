@@ -62,7 +62,6 @@ Before publishing beyond development:
 
 ## Current Follow-Ups
 
-- Replace `/topic/{slug}` with taxonomy-native pages or a term-driven View once aliases and default content links are migrated.
 - Move homepage/editorial curation away from hardcoded UUIDs and into fields, Views block displays, or Canvas-editable composition.
 - Continue reducing theme preprocess code as more rendering moves into content templates and components.
 - Reduce install/update repair glue where exported config/content can own the final state.

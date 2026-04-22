@@ -70,7 +70,7 @@ function umami_next_theme_preprocess_node(array &$variables): void {
     $variables['umami_recipe'] = [
       'category' => _umami_next_term_label($node, 'field_recipe_category'),
       'cuisine' => _umami_next_term_label($node, 'field_cuisine'),
-      'topics' => _umami_next_term_links($node, 'field_topics', 'umami_next.topic'),
+      'topics' => _umami_next_term_links($node, 'field_topics'),
       'ingredients' => _umami_next_ingredient_groups($node),
       'steps' => _umami_next_method_steps($node),
       'prep' => (int) $node->get('field_prep_minutes')->value,
@@ -88,7 +88,7 @@ function umami_next_theme_preprocess_node(array &$variables): void {
 
   if ($node->bundle() === 'article') {
     $variables['umami_article'] = [
-      'topics' => _umami_next_term_links($node, 'field_topics', 'umami_next.topic'),
+      'topics' => _umami_next_term_links($node, 'field_topics'),
       'read_minutes' => (int) $node->get('field_read_minutes')->value,
       'pull_quote' => (string) $node->get('field_pull_quote')->value,
       'related_recipes' => $builder->buildReferencedRecipeCards($node, 'field_related_recipes'),
@@ -100,7 +100,7 @@ function umami_next_theme_preprocess_node(array &$variables): void {
 
   if ($node->bundle() === 'collection') {
     $variables['umami_collection'] = [
-      'topics' => _umami_next_term_links($node, 'field_topics', 'umami_next.topic'),
+      'topics' => _umami_next_term_links($node, 'field_topics'),
       'cta_links' => _umami_next_link_items($node, 'field_cta_links'),
       'intro' => $node->get('field_content')->view(['label' => 'hidden']),
       'featured_recipes' => $builder->buildReferencedRecipeCards($node, 'field_featured_recipes'),
@@ -325,7 +325,7 @@ function _umami_next_term_label(NodeInterface $node, string $field_name): string
  * @return array<int, array<string, string>>
  *   Linked term data.
  */
-function _umami_next_term_links(NodeInterface $node, string $field_name, string $route_name): array {
+function _umami_next_term_links(NodeInterface $node, string $field_name): array {
   $items = [];
   foreach ($node->get($field_name)->referencedEntities() as $term) {
     if (!$term instanceof TermInterface) {
@@ -333,7 +333,7 @@ function _umami_next_term_links(NodeInterface $node, string $field_name, string 
     }
     $items[] = [
       'label' => $term->label(),
-      'url' => Url::fromRoute($route_name, ['slug' => $term->get('field_slug')->value ?: $term->id()])->toString(),
+      'url' => $term->toUrl()->toString(),
     ];
   }
   return $items;

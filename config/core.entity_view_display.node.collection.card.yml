@@ -1,0 +1,42 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.4_3_medium
+    - core.entity_view_mode.node.card
+    - field.field.node.collection.field_content
+    - field.field.node.collection.field_cta_links
+    - field.field.node.collection.field_description
+    - field.field.node.collection.field_featured_image
+    - field.field.node.collection.field_featured_recipes
+    - field.field.node.collection.field_related_articles
+    - field.field.node.collection.field_secondary_recipes
+    - field.field.node.collection.field_topics
+    - node.type.collection
+  module:
+    - user
+id: node.collection.card
+targetEntityType: node
+bundle: collection
+mode: card
+content:
+  field_featured_image:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: 4_3_medium
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  content_moderation_control: true
+  field_content: true
+  field_cta_links: true
+  field_description: true
+  field_featured_recipes: true
+  field_related_articles: true
+  field_secondary_recipes: true
+  field_topics: true
+  links: true
+  search_api_excerpt: true
