@@ -57,6 +57,43 @@ class ValidationTest extends BrowserTestBase {
   }
 
   /**
+   * Tests that the public discovery routes load after a recipe install.
+   */
+  public function testPublicRoutesLoad(): void {
+    $routes = [
+      '/' => NULL,
+      '/recipes' => 'Recipes',
+      '/stories' => 'Stories',
+      '/search' => 'Search',
+      '/contact' => 'Contact',
+    ];
+
+    foreach ($routes as $path => $expected_text) {
+      $this->drupalGet($path);
+      $this->assertSession()->statusCodeEquals(200);
+      if ($expected_text) {
+        $this->assertSession()->pageTextContains($expected_text);
+      }
+    }
+
+    $term_ids = \Drupal::entityQuery('taxonomy_term')
+      ->condition('vid', 'topic')
+      ->condition('field_slug', 'weeknight')
+      ->accessCheck(FALSE)
+      ->execute();
+    $this->assertNotEmpty($term_ids);
+    $term_id = (int) reset($term_ids);
+
+    $alias = \Drupal::service('path_alias.repository')
+      ->lookupBySystemPath('/taxonomy/term/' . $term_id, 'en')['alias'] ?? NULL;
+    $this->assertSame('/topic/weeknight', $alias);
+
+    $this->drupalGet($alias);
+    $this->assertSession()->statusCodeEquals(200);
+    $this->assertSession()->pageTextContains('Weeknight');
+  }
+
+  /**
    * Checks that the site template includes all Canvas components that it uses.
    */
   protected function assertCanvasComponentsAreIncluded(): void {

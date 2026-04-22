@@ -10,6 +10,12 @@ Use a separate Drupal CMS tester so recipe installs are always validated from a
 clean site.
 
 ```sh
+make dev-test-install
+```
+
+Manual equivalent:
+
+```sh
 mkdir umami-site-template-test
 cd umami-site-template-test
 ddev config --project-type=drupal11 --docroot=web --project-name=umami-site-template-test
@@ -26,7 +32,13 @@ ddev drush site:install recipes/umami --account-name=admin --account-pass=admin 
 After changing this repository, refresh the tester copy and reinstall:
 
 ```sh
-cp -R /path/to/umami-site-template/. source/
+make dev-test-install
+```
+
+Or, from inside the tester:
+
+```sh
+rsync -a --delete /path/to/umami-site-template/. source/
 ddev drush site:install recipes/umami --account-name=admin --account-pass=admin -y
 ```
 
@@ -62,6 +74,8 @@ Before publishing beyond development:
 
 ## Current Follow-Ups
 
+- Reduce the flattened `install:` list by composing more Drupal CMS recipes directly, after comparing the installed config delta against the current export.
+- Remove exported upstream defaults from `config/` when they are owned by Drupal CMS, core, or contrib recipes rather than Umami.
 - Keep homepage recipe curation driven by Drupal's editable node flags: `promote` includes recipes in homepage curation and `sticky` pins the first row unless a future Canvas-native curation model replaces it.
 - Continue reducing theme preprocess code as more rendering moves into content templates and components.
 - Reduce install/update repair glue where exported config/content can own the final state.

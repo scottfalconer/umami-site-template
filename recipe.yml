@@ -1,7 +1,18 @@
 name: Umami
 type: Site
+description: 'A Drupal CMS food magazine template with recipes, stories, collections, Canvas pages, and editorial workflows.'
 recipes:
   - drupal_cms_search
+input:
+  site_slogan:
+    data_type: string
+    description: 'Short text displayed near the Umami site name.'
+    form:
+      '#type': textfield
+      '#title': 'Site slogan'
+    default:
+      source: value
+      value: 'A food magazine with recipes, stories, and collections.'
 install:
   - announcements_feed
   - automated_cron
@@ -194,30 +205,6 @@ config:
             parent: system.admin
             weight: 10
             expanded: false
-    canvas.component.block.umami_next_featured_recipes:
-      setProperties:
-        status: true
-    canvas.component.block.umami_next_home_hero:
-      setProperties:
-        status: true
-    canvas.component.block.umami_next_latest_stories:
-      setProperties:
-        status: true
-    canvas.component.block.umami_next_newsletter:
-      setProperties:
-        status: true
-    canvas.component.block.umami_next_not_found:
-      setProperties:
-        status: true
-    canvas.component.block.umami_next_spotlight_collection:
-      setProperties:
-        status: true
-    canvas.component.block.umami_next_topic_browse:
-      setProperties:
-        status: true
-    canvas.content_template.node.page.full:
-      setProperties:
-        status: true
     system.action.user_block_user_action:
       setProperties:
         status: true
@@ -246,17 +233,6 @@ config:
           requirements_warning: 172800
           requirements_error: 1209600
         logging: true
-    system.date:
-      simpleConfigUpdate:
-        first_day: 0
-        country:
-          default: null
-        timezone:
-          default: America/Costa_Rica
-          user:
-            configurable: true
-            default: 0
-            warn: false
     system.diff:
       simpleConfigUpdate:
         context:
@@ -338,7 +314,7 @@ config:
     system.site:
       simpleConfigUpdate:
         langcode: en
-        slogan: 'A kitchen journal. Recipes, essays, and small opinions about dinner. Published from a small home kitchen in no particular hurry.'
+        slogan: ${site_slogan}
         page:
           403: /user/login
           404: /404
