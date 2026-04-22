@@ -27,26 +27,6 @@ function umami_next_theme(): array {
       ],
       'template' => 'umami-next-home',
     ],
-    'umami_next_recipe_archive' => [
-      'variables' => [
-        'cards' => [],
-        'filters' => [],
-        'active_filters' => [],
-        'pager' => [],
-        'total' => 0,
-      ],
-      'template' => 'umami-next-recipe-archive',
-    ],
-    'umami_next_story_archive' => [
-      'variables' => [
-        'cards' => [],
-        'topics' => [],
-        'active_topic' => '',
-        'pager' => [],
-        'total' => 0,
-      ],
-      'template' => 'umami-next-story-archive',
-    ],
     'umami_next_topic_archive' => [
       'variables' => [
         'topic' => NULL,

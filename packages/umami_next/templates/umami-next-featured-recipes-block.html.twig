@@ -4,7 +4,7 @@
       <div class="eyebrow">{{ eyebrow }}</div>
       <h2 class="section-heading__title">{{ section_title }}</h2>
     </div>
-    <div class="section-heading__right"><a href="{{ path('umami_next.recipes') }}">{{ cta_label }} &rarr;</a></div>
+    <div class="section-heading__right"><a href="{{ path('view.umami_recipes.page') }}">{{ cta_label }} &rarr;</a></div>
   </div>
   <div class="grid-4">
     {% for card in featured_recipes %}

@@ -34,7 +34,7 @@
       <div class="eyebrow">{{ 'From the test kitchen'|t }}</div>
       <h2 class="section-heading__title">{{ "Recipes we're cooking this week"|t }}</h2>
     </div>
-    <div class="section-heading__right"><a href="{{ path('umami_next.recipes') }}">{{ 'All recipes'|t }} &rarr;</a></div>
+    <div class="section-heading__right"><a href="{{ path('view.umami_recipes.page') }}">{{ 'All recipes'|t }} &rarr;</a></div>
   </div>
   <div class="grid-4">
     {% for card in featured_recipes %}
@@ -102,7 +102,7 @@
       <div class="eyebrow">{{ 'Stories'|t }}</div>
       <h2 class="section-heading__title">{{ 'Essays from the kitchen'|t }}</h2>
     </div>
-    <div class="section-heading__right"><a href="{{ path('umami_next.stories') }}">{{ 'All stories'|t }} &rarr;</a></div>
+    <div class="section-heading__right"><a href="{{ path('view.umami_stories.page') }}">{{ 'All stories'|t }} &rarr;</a></div>
   </div>
   <div class="grid-3">
     {% for card in latest_stories %}

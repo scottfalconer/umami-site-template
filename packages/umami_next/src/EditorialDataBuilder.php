@@ -218,7 +218,7 @@ final class EditorialDataBuilder {
       return [
         'eyebrow' => new TranslatableMarkup('New this week'),
         'title' => new TranslatableMarkup('Browse the latest collections'),
-        'url' => Url::fromRoute('umami_next.recipes')->toString(),
+        'url' => Url::fromRoute('view.umami_recipes.page')->toString(),
       ];
     }
 
