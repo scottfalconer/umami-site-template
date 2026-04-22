@@ -1,0 +1,29 @@
+{#
+/**
+ * @file
+ * Public story archive view.
+ */
+#}
+<section class="container archive-hero">
+  <div class="eyebrow with-rule">{{ 'Essays'|t }}</div>
+  <h1 class="archive-title">{{ 'Stories from the'|t }} <em>{{ 'kitchen'|t }}</em>.</h1>
+  <p class="archive-deck">{{ 'Short essays on technique, ingredients, heritage, and the small politics of dinner.'|t }}</p>
+</section>
+
+<section class="container">
+  {% if exposed %}
+    <div class="filter-bar">
+      {{ exposed }}
+    </div>
+  {% endif %}
+  {% if rows %}
+    <div class="grid-3 views-card-grid">
+      {{ rows }}
+    </div>
+    {{ pager }}
+  {% elseif empty %}
+    <div class="empty">
+      {{ empty }}
+    </div>
+  {% endif %}
+</section>

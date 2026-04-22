@@ -1,0 +1,42 @@
+{#
+/**
+ * @file
+ * Card view mode for recipe nodes.
+ */
+#}
+{% set card_image = content.field_featured_image|render %}
+<article{{ attributes.addClass('card') }}>
+  {% if card_image %}
+    <a href="{{ url }}" class="card-media" aria-label="{{ node.label }}">
+      {{ card_image }}
+    </a>
+  {% else %}
+    <a href="{{ url }}" class="card-media card-media--placeholder" aria-label="{{ node.label }}"></a>
+  {% endif %}
+  <div class="card__meta">
+    {% if umami_recipe.category %}
+      <span>{{ umami_recipe.category }}</span>
+    {% endif %}
+    {% if umami_recipe.category and umami_recipe.cuisine %}
+      <span class="dot">•</span>
+    {% endif %}
+    {% if umami_recipe.cuisine %}
+      <span>{{ umami_recipe.cuisine }}</span>
+    {% endif %}
+  </div>
+  <h3 class="card__title"><a href="{{ url }}">{{ label }}</a></h3>
+  {% if node.field_description.value %}
+    <p class="card__deck">{{ node.field_description.value }}</p>
+  {% endif %}
+  <div class="card__meta">
+    {% if umami_recipe.total %}
+      <span>{{ umami_recipe.total }} {{ 'min'|t }}</span>
+    {% endif %}
+    {% if umami_recipe.total and umami_recipe.difficulty %}
+      <span class="dot">•</span>
+    {% endif %}
+    {% if umami_recipe.difficulty %}
+      <span>{{ umami_recipe.difficulty }}</span>
+    {% endif %}
+  </div>
+</article>

@@ -1,0 +1,29 @@
+{#
+/**
+ * @file
+ * Public recipe archive view.
+ */
+#}
+<section class="container archive-hero">
+  <div class="eyebrow with-rule">{{ 'Recipe index'|t }}</div>
+  <h1 class="archive-title">{{ 'Recipes, by'|t }} <em>{{ 'season'|t }}</em> {{ 'and'|t }} <em>{{ 'supper'|t }}</em>.</h1>
+  <p class="archive-deck">{{ 'Filter by course, dietary, or cuisine. All recipes are tested in a real home kitchen.'|t }}</p>
+</section>
+
+<section class="container">
+  {% if exposed %}
+    <div class="filter-bar">
+      {{ exposed }}
+    </div>
+  {% endif %}
+  {% if rows %}
+    <div class="grid-4 views-card-grid">
+      {{ rows }}
+    </div>
+    {{ pager }}
+  {% elseif empty %}
+    <div class="empty">
+      {{ empty }}
+    </div>
+  {% endif %}
+</section>
