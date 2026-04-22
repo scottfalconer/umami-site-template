@@ -51,7 +51,7 @@ ddev composer config repositories.umami path source
 ddev composer config repositories.umami_next path source/packages/umami_next
 ddev composer config repositories.umami_next_theme path source/packages/umami_next_theme
 ddev composer require drupal/umami:^1@dev drupal/umami_next:^1@dev drupal/umami_next_theme:^1@dev --with-all-dependencies
-ddev drush site:install recipes/umami --account-name=admin --account-pass=admin -y
+ddev drush site:install recipes/umami --site-name=Umami --account-name=admin --account-pass=admin -y
 ```
 
 After local source changes, refresh the tester copy before rerunning Composer or
@@ -86,7 +86,7 @@ Release order:
 
    ```sh
    ddev composer require drupal/umami:^1.0@alpha --with-all-dependencies
-   ddev drush site:install recipes/umami --account-name=admin --account-pass=admin -y
+   ddev drush site:install recipes/umami --site-name=Umami --account-name=admin --account-pass=admin -y
    ```
 
 The `^1@dev` constraints and path repositories are local development mechanics

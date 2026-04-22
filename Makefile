@@ -49,5 +49,5 @@ dev-test-install:
 	cd "$(TESTER_DIR)" && ddev composer config repositories.umami_next path source/packages/umami_next
 	cd "$(TESTER_DIR)" && ddev composer config repositories.umami_next_theme path source/packages/umami_next_theme
 	cd "$(TESTER_DIR)" && ddev composer require drupal/umami:^1@dev drupal/umami_next:^1@dev drupal/umami_next_theme:^1@dev --with-all-dependencies
-	cd "$(TESTER_DIR)" && ddev drush site:install "recipes/$(RECIPE)" --account-name=admin --account-pass=admin -y
+	cd "$(TESTER_DIR)" && ddev drush site:install "recipes/$(RECIPE)" --site-name=Umami --account-name=admin --account-pass=admin -y
 	cd "$(TESTER_DIR)" && ddev drush cr
