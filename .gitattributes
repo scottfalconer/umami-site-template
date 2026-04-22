@@ -1,15 +1,10 @@
-#
-# If you want to use this file for your site template, rename it to `.gitattributes`.
-# Otherwise, you can delete it. The format of this file is documented at
-# https://git-scm.com/docs/gitattributes.
-#
-# Exclude the following files and directories from packaged, ready-to-download versions
-# of this site template:
-#
+# Exclude development-only files and directories from packaged,
+# ready-to-download versions of this site template.
+
 # A list of words that are legitimate, but not recognized by the spell checker used in CI.
 /.cspell-project-words.txt export-ignore
 
-# The starter kit documentation, which is irrelevant to the final site template.
+# Development install notes are useful in source control, not in release archives.
 /GET-STARTED.md export-ignore
 
 # Local development path repositories for the split module/theme projects. The
@@ -21,6 +16,6 @@
 /.gitlab-ci.yml export-ignore
 /tests export-ignore
 
-# Tugboat configuration is used to generate live previews of the site template, but isn't needed
-# by end users.
+# Tugboat configuration is used to generate live previews of the site template,
+# but isn't needed by end users.
 /.tugboat export-ignore

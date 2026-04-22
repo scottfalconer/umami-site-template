@@ -1,8 +1,8 @@
 # Getting Started With Umami
 
-Umami is a Drupal CMS site template. Install it into a fresh Drupal CMS project
-as a recipe, then treat the resulting site as the owner of any post-install
-configuration changes.
+Umami is a Drupal CMS 2.1+ site template. Install it into a fresh Drupal CMS
+project as a recipe, then treat the resulting site as the owner of any
+post-install configuration changes.
 
 ## Local Development Install
 
@@ -50,6 +50,7 @@ ddev drush site:install recipes/umami --site-name=Umami --account-name=admin --a
 - Structured content for recipes, stories, collections, media, topics, cuisine, dietary categories, and recipe categories.
 - Views-driven public recipe and story archives.
 - Drupal CMS Search API/View for search.
+- Metatag, Schema Metatag, and Simple XML Sitemap defaults for basic metadata and sitemap discovery.
 - Webform-driven contact and newsletter forms.
 - Menu-driven header, footer, and social links.
 
@@ -71,6 +72,17 @@ Before publishing beyond development:
 4. Run a fresh Drupal CMS install using only the released recipe package.
 5. Update `recommended.yml` if Umami should curate Project Browser add-ons.
 6. Verify that environment-specific settings, including trusted hosts, private files, CAPTCHA keys, and mail transport, are documented but not committed as defaults.
+7. Confirm the final Drupal.org namespace and Composer package names before tagging `drupal/umami`.
+
+The root recipe release archive intentionally excludes `packages/`. The released
+recipe must depend on tagged module and theme packages, not on local path
+repositories.
+
+## Validation Notes
+
+See `docs/VALIDATION.md` in the source repository for the latest clean-install
+validation notes and upstream findings that should not be patched in the Umami
+recipe.
 
 ## Current Follow-Ups
 
@@ -78,4 +90,4 @@ Before publishing beyond development:
 - Remove exported upstream defaults from `config/` when they are owned by Drupal CMS, core, or contrib recipes rather than Umami.
 - Keep homepage recipe curation driven by Drupal's editable node flags: `promote` includes recipes in homepage curation and `sticky` pins the first row unless a future Canvas-native curation model replaces it.
 - Continue reducing theme preprocess code as more rendering moves into content templates and components.
-- Reduce install/update repair glue where exported config/content can own the final state.
+- Reduce default-content reference backfill glue where exported config/content can own the final state directly.

@@ -1,8 +1,9 @@
 # Umami Drupal CMS Site Template
 
-This repository is the working package for the Umami Drupal CMS site template.
-It is intentionally structured so the recipe can be installed and tested from a
-fresh Drupal CMS checkout before any Drupal.org project split happens.
+This repository is the working package for the Umami Drupal CMS site template,
+currently targeting Drupal CMS 2.1+ and Drupal core 11.3+. It is intentionally
+structured so the recipe can be installed and tested from a fresh Drupal CMS
+checkout before any Drupal.org project split happens.
 
 ## Package Layout
 
@@ -12,6 +13,7 @@ fresh Drupal CMS checkout before any Drupal.org project split happens.
 ├── recipe.yml
 ├── config/
 ├── content/
+├── docs/
 └── packages/
     ├── umami_next/
     └── umami_next_theme/
@@ -92,6 +94,29 @@ Release order:
 The `^1@dev` constraints and path repositories are local development mechanics
 only. Do not ship a public release that depends on them.
 
+The release archive excludes `packages/`, tests, CI configuration, and local
+development install notes via `.gitattributes`. Public releases should depend on
+tagged `drupal/umami_next` and `drupal/umami_next_theme` packages instead of
+bundling those development path repositories.
+
+Before publishing to Drupal.org, confirm the final project namespace and package
+names. This source currently uses `drupal/umami`, but the Drupal.org `umami`
+namespace has existing history and may require maintainer coordination.
+
+## Validation
+
+The fast local install gate is:
+
+```sh
+make dev-test-install
+```
+
+The repository also ships PHPUnit coverage for recipe requirements,
+installability, public routes, Canvas component references, editorial workflow
+coverage, sitemap output, and homepage curation. Those tests should be run in a
+fresh Drupal CMS project with the local recipe, module, and theme required as
+path repositories before tagging a release.
+
 ## Configuration Ownership
 
 This package is install-time source of truth for a new Drupal CMS site. Site
@@ -121,8 +146,11 @@ Drupal CMS site. The remaining cleanup passes should:
 
 - Reduce the flattened recipe export toward Drupal CMS recipe dependencies where possible.
 - Remove config inherited from the `drush site:export` baseline when an upstream Drupal CMS/core/contrib recipe owns it.
-- Keep recipes, stories, topic archives, search, and contact on Drupal-native foundations: Views, taxonomy term pages, Search API/View from `drupal_cms_search`, Webform, and editable menus.
+- Keep recipes, stories, topic archives, search, SEO metadata, XML sitemaps, and contact on Drupal-native foundations: Views, taxonomy term pages, Search API/View from `drupal_cms_search`, Metatag/Schema Metatag/Simple XML Sitemap, Webform, and editable menus.
 - Keep the custom module limited to code that cannot be expressed as recipe/config/theme.
 - Move editorial structure into fields, Views, menus, media, and Canvas templates instead of Twig/PHP hardcoding.
 - Keep homepage recipe curation driven by Drupal's editable node flags: `promote` includes recipes in homepage curation and `sticky` pins the first row unless a future Canvas-native curation model replaces it.
 - Preserve installability evidence for every cleanup pass.
+
+See `docs/VALIDATION.md` for source-maintainer validation notes and upstream
+findings discovered during clean-install intent testing.

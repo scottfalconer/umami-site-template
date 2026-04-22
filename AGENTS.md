@@ -1,8 +1,12 @@
-# Agent guidance for this Drupal site
+# Agent guidance for Umami Drupal CMS sites
 
-This codebase is a Composer-managed Drupal site. Local development uses `ddev`.
+This file is copied into sites created from the Umami Drupal CMS site template.
+Those downstream sites are Composer-managed Drupal sites and local development
+uses `ddev`.
 
-This file is meant to be copied into sites created from a site template. Site template authors should customize the "Template-specific notes" section below.
+If you are working in the site-template source repository instead of an
+installed site, use the source repository's `README.md` and `Makefile` for the
+recipe install workflow.
 
 ## Local environment (DDEV)
 
@@ -33,11 +37,47 @@ DDEV project config lives in `.ddev/config.yaml`. Use `.ddev/config.local.yaml` 
 
 ### Content model
 
+Umami ships four primary node bundles: `recipe`, `article`, `collection`, and
+`page` ("Utility page"). Recipes use custom structured field types for
+ingredients and method steps; do not replace those with free-form text fields.
+Topics, cuisines, dietary categories, recipe categories, and tags are taxonomy
+vocabularies.
+
+The homepage and 404 are Canvas pages. Repeatable public discovery surfaces use
+Drupal-native structures: Views for recipes and stories, taxonomy term pages
+with aliases for topics, Drupal CMS Search API/View for search, and Webform for
+contact/newsletter forms.
+
 ### Editorial workflow and roles
+
+The `basic_editorial` workflow applies to recipe, article, collection, and page
+nodes with Draft, Published, and Unpublished states. The `content_editor` role
+owns editorial CRUD, media handling, Canvas page editing, scheduling, and
+workflow transitions. The `site_builder` role owns menus, redirects, and URL
+alias administration. Anonymous and authenticated users should remain public
+reader roles.
 
 ### Theme notes
 
+The active public theme is `umami_next_theme`. It is an Umami-specific theme,
+not a Mercury sub-theme, but Mercury remains available as the Canvas component
+library. Keep visible editorial copy in fields, menus, Webforms, or Canvas page
+content rather than hardcoding it in Twig or PHP.
+
+Do not patch upstream Canvas editor UI issues in this theme unless an upstream
+Canvas issue confirms a project-level workaround is required.
+
 ### Deployment notes
+
+The recipe does not ship environment-specific settings. Configure trusted host
+patterns, private file paths, CAPTCHA keys, and mail transport per environment.
+After install, the downstream site owns normal Drupal configuration management.
+
+For template maintainers:
+
+The Umami source repository uses local `packages/` directories for development.
+Public releases should depend on tagged `drupal/umami_next` and
+`drupal/umami_next_theme` packages instead.
 
 ## References
 

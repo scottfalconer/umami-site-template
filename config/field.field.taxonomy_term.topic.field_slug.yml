@@ -9,8 +9,8 @@ field_name: field_slug
 entity_type: taxonomy_term
 bundle: topic
 label: Slug
-description: 'URL slug used by Umami Next archive routes.'
-required: false
+description: 'Required URL slug used for the topic archive alias, for example "weeknight" in /topic/weeknight.'
+required: true
 translatable: true
 default_value: {  }
 default_value_callback: ''

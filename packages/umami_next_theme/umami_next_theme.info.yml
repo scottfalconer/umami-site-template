@@ -5,6 +5,8 @@ core_version_requirement: ^11
 base theme: false
 libraries:
   - umami_next_theme/global
+dependencies:
+  - umami_next:umami_next
 regions:
   pre_header: Pre-header
   header: Header

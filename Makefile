@@ -24,9 +24,12 @@ dev-normalize-ddev-config:
 dev-sync-source:
 	@mkdir -p "$(TESTER_DIR)/source"
 	rsync -a --delete \
+		--delete-excluded \
 		--exclude='.git/' \
 		--exclude='.ddev/' \
 		--exclude='.DS_Store' \
+		--exclude='.drupal-contribute-fix/' \
+		--exclude='.peer/' \
 		--exclude='vendor/' \
 		--exclude='web/core/' \
 		--exclude='web/modules/contrib/' \
