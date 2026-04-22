@@ -16,6 +16,9 @@
         "drupal/drupal_cms_seo_basic": "^2.1",
         "drupal/easy_email_express": "^1",
         "drupal/mercury": "^1",
+        "drupal/metatag": "^2.1",
+        "drupal/schema_metatag": "^3.0",
+        "drupal/simple_sitemap": "^4.2",
         "drupal/site_template_helper": "^1.0",
         "drupal/umami_next": "^1@dev",
         "drupal/umami_next_theme": "^1@dev"
