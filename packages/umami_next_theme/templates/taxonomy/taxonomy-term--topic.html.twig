@@ -1,0 +1,15 @@
+{#
+/**
+ * @file
+ * Topic taxonomy term header.
+ */
+#}
+<section{{ attributes.addClass('container', 'topic-hero') }}>
+  <div class="eyebrow">{{ 'Topic'|t }}</div>
+  <h1 class="topic-hero__title">{{ term.label }}</h1>
+  {% if content.description %}
+    <div class="topic-hero__intro">
+      {{ content.description }}
+    </div>
+  {% endif %}
+</section>

@@ -1,11 +1,3 @@
-umami_next.topic:
-  path: '/topic/{slug}'
-  defaults:
-    _controller: '\Drupal\umami_next\Controller\EditorialController::topic'
-    _title: 'Topic'
-  requirements:
-    _permission: 'access content'
-
 umami_next.contact:
   path: '/contact'
   defaults:

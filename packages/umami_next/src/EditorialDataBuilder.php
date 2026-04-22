@@ -144,38 +144,6 @@ final class EditorialDataBuilder {
   }
 
   /**
-   * Builds simple term options.
-   */
-  public function buildTermOptions(string $vocabulary, int $limit = 0): array {
-    $options = [];
-    foreach ($this->loadTerms($vocabulary, $limit) as $term) {
-      $options[] = [
-        'label' => $term->label(),
-        'slug' => (string) $term->get('field_slug')->value,
-      ];
-    }
-    return $options;
-  }
-
-  /**
-   * Loads a taxonomy term by custom slug.
-   */
-  public function loadTermBySlug(string $vocabulary, string $slug): ?TermInterface {
-    $storage = $this->entityTypeManager->getStorage('taxonomy_term');
-    $ids = $storage->getQuery()
-      ->accessCheck(TRUE)
-      ->condition('vid', $vocabulary)
-      ->condition('field_slug', $slug)
-      ->range(0, 1)
-      ->execute();
-    if (!$ids) {
-      return NULL;
-    }
-    $term = $storage->load(reset($ids));
-    return $term instanceof TermInterface ? $term : NULL;
-  }
-
-  /**
    * Counts usage of a topic term.
    */
   public function countTopicUsage(TermInterface $term): int {
@@ -198,9 +166,7 @@ final class EditorialDataBuilder {
       $topics[] = [
         'label' => $term->label(),
         'count' => $this->countTopicUsage($term),
-        'url' => Url::fromRoute('umami_next.topic', [
-          'slug' => (string) $term->get('field_slug')->value,
-        ])->toString(),
+        'url' => $term->toUrl()->toString(),
       ];
     }
     return $topics;
