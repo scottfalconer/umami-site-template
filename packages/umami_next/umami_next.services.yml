@@ -6,6 +6,19 @@ services:
       - '@file_url_generator'
       - '@date.formatter'
       - '@menu.link_tree'
+  umami_next.initial_sitemap_generator:
+    class: Drupal\umami_next\InitialSitemapGenerator
+    arguments:
+      - '@state'
+      - '@module_handler'
+      - '@service_container'
+      - '@logger.factory'
+  umami_next.initial_sitemap_subscriber:
+    class: Drupal\umami_next\EventSubscriber\InitialSitemapSubscriber
+    arguments:
+      - '@umami_next.initial_sitemap_generator'
+    tags:
+      - { name: event_subscriber }
   umami_next.unpublished_node_not_found_subscriber:
     class: Drupal\umami_next\EventSubscriber\UnpublishedNodeNotFoundSubscriber
     arguments:

@@ -74,6 +74,7 @@ class ValidationTest extends BrowserTestBase {
       '/stories' => 'Stories',
       '/search' => 'Search',
       '/contact' => 'Contact',
+      '/collections/spring-market' => 'The Spring Market',
       '/sitemap.xml' => '<urlset',
     ];
 
@@ -102,6 +103,8 @@ class ValidationTest extends BrowserTestBase {
     $this->assertSession()->pageTextContains('Weeknight');
 
     $this->assertUnpublishedContentReturns404WithoutEcaError();
+    $this->assertSitemapIncludesPublicLandingPages();
+    $this->assertSearchPageExposesSearchForm();
   }
 
   /**
@@ -199,6 +202,29 @@ class ValidationTest extends BrowserTestBase {
       ->execute()
       ->fetchField();
     $this->assertSame(0, $eca_errors);
+  }
+
+  /**
+   * Checks that review-facing landing pages are included in the sitemap.
+   */
+  protected function assertSitemapIncludesPublicLandingPages(): void {
+    $this->drupalGet('/sitemap.xml');
+    $this->assertSession()->statusCodeEquals(200);
+
+    foreach (['/', '/recipes', '/stories', '/contact'] as $path) {
+      $this->assertSession()->responseContains('http://localhost' . $path);
+    }
+  }
+
+  /**
+   * Checks that the public search page is usable after recipe install.
+   */
+  protected function assertSearchPageExposesSearchForm(): void {
+    $this->drupalGet('/search');
+    $this->assertSession()->statusCodeEquals(200);
+    $this->assertSession()->elementExists('css', 'h1');
+    $this->assertSession()->fieldExists('keywords');
+    $this->assertSession()->buttonExists('Search');
   }
 
   /**

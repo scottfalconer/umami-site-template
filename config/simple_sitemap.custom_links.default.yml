@@ -1,0 +1,17 @@
+links:
+  -
+    path: /
+    priority: '1.0'
+    changefreq: daily
+  -
+    path: /recipes
+    priority: '0.8'
+    changefreq: weekly
+  -
+    path: /stories
+    priority: '0.7'
+    changefreq: weekly
+  -
+    path: /contact
+    priority: '0.3'
+    changefreq: monthly
