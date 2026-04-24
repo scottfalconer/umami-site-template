@@ -5,6 +5,11 @@ currently targeting Drupal CMS 2.1+ and Drupal core 11.3+. It is intentionally
 structured so the recipe can be installed and tested from a fresh Drupal CMS
 checkout before any Drupal.org project split happens.
 
+> **Status:** Public preview. This repository is ready to share and test from
+> GitHub, but it is not an official Drupal.org release. Normal downstream use
+> still depends on tagged `drupal/umami_next` and `drupal/umami_next_theme`
+> releases instead of the local path packages in `packages/`.
+
 ![Umami homepage screenshot](screenshot.webp)
 
 ## Package Layout
