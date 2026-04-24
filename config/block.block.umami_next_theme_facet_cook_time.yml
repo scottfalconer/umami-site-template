@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.cook_time
+  module:
+    - facets
+    - system
+  theme:
+    - umami_next_theme
+id: umami_next_theme_facet_cook_time
+theme: umami_next_theme
+region: content
+weight: -14
+provider: facets
+plugin: 'facet_block:cook_time'
+settings:
+  id: 'facet_block:cook_time'
+  label: 'Cook time'
+  label_display: visible
+  provider: facets
+  block_id: umami_next_theme_facet_cook_time
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /search

@@ -1,0 +1,94 @@
+name: 'Umami search index fields'
+type: Recipe
+description: 'Adds Umami-owned facet fields to the Drupal CMS Search content index before facet configuration is imported.'
+install:
+  - search_api
+config:
+  actions:
+    search_api.index.content:
+      simpleConfigUpdate:
+        dependencies:
+          config:
+            - core.entity_view_mode.node.search_index
+            - field.storage.node.field_cook_minutes
+            - field.storage.node.field_cuisine
+            - field.storage.node.field_dietary
+            - field.storage.node.field_recipe_category
+            - field.storage.node.field_topics
+            - search_api.server.database
+          module:
+            - canvas
+            - node
+            - search_api_exclude
+        field_settings:
+          field_cook_minutes:
+            label: 'Cook minutes'
+            datasource_id: 'entity:node'
+            property_path: field_cook_minutes
+            type: integer
+            dependencies:
+              config:
+                - field.storage.node.field_cook_minutes
+          field_cuisine:
+            label: Cuisine
+            datasource_id: 'entity:node'
+            property_path: field_cuisine
+            type: integer
+            dependencies:
+              config:
+                - field.storage.node.field_cuisine
+          field_dietary:
+            label: Dietary
+            datasource_id: 'entity:node'
+            property_path: field_dietary
+            type: integer
+            dependencies:
+              config:
+                - field.storage.node.field_dietary
+          field_recipe_category:
+            label: 'Recipe category'
+            datasource_id: 'entity:node'
+            property_path: field_recipe_category
+            type: integer
+            dependencies:
+              config:
+                - field.storage.node.field_recipe_category
+          field_topics:
+            label: Topics
+            datasource_id: 'entity:node'
+            property_path: field_topics
+            type: integer
+            dependencies:
+              config:
+                - field.storage.node.field_topics
+          rendered_item:
+            label: 'Rendered HTML output'
+            property_path: rendered_item
+            type: text
+            configuration:
+              roles:
+                - anonymous
+              view_mode:
+                'entity:canvas_page':
+                  ':default': default
+                  canvas_page: ':default'
+                'entity:node':
+                  ':default': search_index
+          title:
+            label: Title
+            datasource_id: 'entity:node'
+            property_path: title
+            type: text
+            boost: 3.0
+            dependencies:
+              module:
+                - node
+          title_1:
+            label: Title
+            datasource_id: 'entity:canvas_page'
+            property_path: title
+            type: text
+            boost: 3.0
+            dependencies:
+              module:
+                - canvas

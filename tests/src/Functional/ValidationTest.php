@@ -22,7 +22,7 @@ class ValidationTest extends BrowserTestBase {
   /**
    * {@inheritdoc}
    */
-  protected $defaultTheme = 'stark';
+  protected $defaultTheme = 'umami_next_theme';
 
   /**
    * Returns the absolute path of the recipe this test is for.
@@ -296,11 +296,78 @@ class ValidationTest extends BrowserTestBase {
     $this->assertSame('views_exposed_filter_block:search-page', $search_block->get('plugin'));
     $this->assertSame('/search', $search_block->get('visibility.request_path.pages'));
 
+    $index = \Drupal::config('search_api.index.content');
+    $facet_fields = [
+      'field_cuisine' => 'Cuisine',
+      'field_dietary' => 'Dietary',
+      'field_recipe_category' => 'Recipe category',
+      'field_topics' => 'Topics',
+      'field_cook_minutes' => 'Cook minutes',
+    ];
+    foreach ($facet_fields as $field => $label) {
+      $this->assertSame($label, $index->get("field_settings.$field.label"));
+    }
+
+    $facets = [
+      'cuisine' => 'Cuisine',
+      'dietary' => 'Dietary',
+      'recipe_category' => 'Recipe category',
+      'topics' => 'Topics',
+      'cook_time' => 'Cook time',
+    ];
+    foreach ($facets as $id => $label) {
+      $facet = \Drupal::config("facets.facet.$id");
+      $this->assertSame($label, $facet->get('name'));
+      $this->assertSame('search_api:views_page__search__page', $facet->get('facet_source_id'));
+
+      $block = \Drupal::config("block.block.umami_next_theme_facet_$id");
+      $this->assertSame("facet_block:$id", $block->get('plugin'));
+      $this->assertSame('/search', $block->get('visibility.request_path.pages'));
+    }
+
+    /** @var \Drupal\search_api\IndexInterface $content_index */
+    $content_index = \Drupal::entityTypeManager()
+      ->getStorage('search_api_index')
+      ->load('content');
+    $this->assertNotNull($content_index);
+    $item_ids = [];
+    foreach ($content_index->getDatasourceIds() as $datasource_id) {
+      foreach ($content_index->getDatasource($datasource_id)->getItemIds() ?? [] as $raw_id) {
+        $item_ids[] = \Drupal\search_api\Utility\Utility::createCombinedId($datasource_id, $raw_id);
+      }
+    }
+    $items = $content_index->loadItemsMultiple($item_ids);
+    $this->assertNotEmpty($items);
+    $this->assertNotEmpty($content_index->indexSpecificItems($items));
+
     $this->drupalGet('/search', ['query' => ['keywords' => 'tomato']]);
     $this->assertSession()->statusCodeEquals(200);
+    foreach ($facets as $label) {
+      $this->assertSession()->pageTextContains($label);
+    }
+    $this->assertSession()->elementExists('css', '#block-umami-next-theme-facet-cuisine [data-drupal-facet-filter-value^="cuisine:"]');
+    $this->assertSession()->elementExists('css', '#block-umami-next-theme-facet-cook-time [data-drupal-facet-filter-value^="cook_time:"]');
     $this->assertSession()->pageTextContains('Slow-Roasted Tomato Pappardelle');
     $this->assertSession()->pageTextNotContains('Not Found');
     $this->assertSession()->responseNotContains('href="/404"');
+
+    $italian_term_ids = \Drupal::entityQuery('taxonomy_term')
+      ->condition('vid', 'cuisine')
+      ->condition('name', 'Italian')
+      ->accessCheck(FALSE)
+      ->execute();
+    $this->assertNotEmpty($italian_term_ids);
+
+    $this->drupalGet('/search', [
+      'query' => [
+        'keywords' => 'tomato',
+        'f' => ['cuisine:' . reset($italian_term_ids)],
+      ],
+    ]);
+    $this->assertSession()->statusCodeEquals(200);
+    $this->assertSession()->elementExists('css', '#block-umami-next-theme-facet-cuisine.facet-active');
+    $this->assertSession()->pageTextContains('Slow-Roasted Tomato Pappardelle');
+    $this->assertSession()->elementNotExists('css', 'a[href="/recipe/jollof-rice"]');
   }
 
   /**

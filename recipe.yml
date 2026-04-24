@@ -10,6 +10,7 @@ recipes:
   - drupal_cms_forms
   - drupal_cms_media
   - drupal_cms_search
+  - ../recipes/umami/recipes/search_index_fields
   - drupal_cms_seo_basic
   - easy_email_express
 install:
@@ -53,6 +54,7 @@ install:
   - cva
   - eca
   - editoria11y
+  - facets
   - jquery_ui
   - jquery_ui_resizable
   - metatag

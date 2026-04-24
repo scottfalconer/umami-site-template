@@ -925,7 +925,12 @@ textarea {
 
 #block-umami-next-theme-search-title,
 #block-umami-next-theme-search-exposed-form,
-#block-umami-next-theme-search-exposed-form + .views-element-container {
+#block-umami-next-theme-search-exposed-form ~ .views-element-container,
+#block-umami-next-theme-facet-cuisine,
+#block-umami-next-theme-facet-dietary,
+#block-umami-next-theme-facet-recipe-category,
+#block-umami-next-theme-facet-topics,
+#block-umami-next-theme-facet-cook-time {
   width: 100%;
   max-width: var(--maxw);
   margin-right: auto;
@@ -996,12 +1001,96 @@ textarea {
   color: var(--ink);
 }
 
-#block-umami-next-theme-search-exposed-form + .views-element-container {
+#block-umami-next-theme-facet-cuisine {
+  margin-top: var(--sp-5);
+  padding-top: var(--sp-4);
+  border-top: 1px solid var(--line);
+}
+
+#block-umami-next-theme-facet-cook-time {
+  padding-bottom: var(--sp-4);
+  border-bottom: 1px solid var(--line);
+}
+
+#block-umami-next-theme-facet-cuisine,
+#block-umami-next-theme-facet-dietary,
+#block-umami-next-theme-facet-recipe-category,
+#block-umami-next-theme-facet-topics,
+#block-umami-next-theme-facet-cook-time {
+  padding-top: var(--sp-3);
+}
+
+#block-umami-next-theme-facet-cuisine h2,
+#block-umami-next-theme-facet-dietary h2,
+#block-umami-next-theme-facet-recipe-category h2,
+#block-umami-next-theme-facet-topics h2,
+#block-umami-next-theme-facet-cook-time h2 {
+  margin: 0;
+  color: var(--ink-3);
+  font-size: 0.6875rem;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+#block-umami-next-theme-facet-cuisine .item-list__checkbox,
+#block-umami-next-theme-facet-dietary .item-list__checkbox,
+#block-umami-next-theme-facet-recipe-category .item-list__checkbox,
+#block-umami-next-theme-facet-topics .item-list__checkbox,
+#block-umami-next-theme-facet-cook-time .item-list__checkbox {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0.75rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+#block-umami-next-theme-facet-cuisine .facet-item,
+#block-umami-next-theme-facet-dietary .facet-item,
+#block-umami-next-theme-facet-recipe-category .facet-item,
+#block-umami-next-theme-facet-topics .facet-item,
+#block-umami-next-theme-facet-cook-time .facet-item {
+  margin: 0;
+}
+
+#block-umami-next-theme-facet-cuisine .facet-item a,
+#block-umami-next-theme-facet-dietary .facet-item a,
+#block-umami-next-theme-facet-recipe-category .facet-item a,
+#block-umami-next-theme-facet-topics .facet-item a,
+#block-umami-next-theme-facet-cook-time .facet-item a {
+  display: inline-flex;
+  gap: 0.35rem;
+  align-items: center;
+  min-height: 2.25rem;
+  padding: 0.45rem 0.8rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--ink-2);
+  font-size: 0.8125rem;
+  text-decoration: none;
+}
+
+#block-umami-next-theme-facet-cuisine .facet-item a:hover,
+#block-umami-next-theme-facet-dietary .facet-item a:hover,
+#block-umami-next-theme-facet-recipe-category .facet-item a:hover,
+#block-umami-next-theme-facet-topics .facet-item a:hover,
+#block-umami-next-theme-facet-cook-time .facet-item a:hover,
+#block-umami-next-theme-facet-cuisine .facet-item a.is-active,
+#block-umami-next-theme-facet-dietary .facet-item a.is-active,
+#block-umami-next-theme-facet-recipe-category .facet-item a.is-active,
+#block-umami-next-theme-facet-topics .facet-item a.is-active,
+#block-umami-next-theme-facet-cook-time .facet-item a.is-active {
+  border-color: var(--terracotta);
+  background: var(--terracotta-soft);
+  color: var(--terracotta-ink);
+}
+
+#block-umami-next-theme-search-exposed-form ~ .views-element-container {
   padding-top: var(--sp-7);
   padding-bottom: var(--sp-8);
 }
 
-#block-umami-next-theme-search-exposed-form + .views-element-container header {
+#block-umami-next-theme-search-exposed-form ~ .views-element-container header {
   margin-bottom: var(--sp-4);
   font-size: 0.6875rem;
   letter-spacing: 0.12em;
@@ -1009,7 +1098,7 @@ textarea {
   color: var(--ink-3);
 }
 
-#block-umami-next-theme-search-exposed-form + .views-element-container .views-row {
+#block-umami-next-theme-search-exposed-form ~ .views-element-container .views-row {
   display: grid;
   gap: 0.65rem;
   max-width: var(--maxw-reading);
@@ -1017,29 +1106,29 @@ textarea {
   border-top: 1px solid var(--line);
 }
 
-#block-umami-next-theme-search-exposed-form + .views-element-container .views-row:last-child {
+#block-umami-next-theme-search-exposed-form ~ .views-element-container .views-row:last-child {
   border-bottom: 1px solid var(--line);
 }
 
-#block-umami-next-theme-search-exposed-form + .views-element-container .views-field-title h2,
-#block-umami-next-theme-search-exposed-form + .views-element-container .views-field-title-1 h2 {
+#block-umami-next-theme-search-exposed-form ~ .views-element-container .views-field-title h2,
+#block-umami-next-theme-search-exposed-form ~ .views-element-container .views-field-title-1 h2 {
   font-size: var(--fs-xl);
 }
 
-#block-umami-next-theme-search-exposed-form + .views-element-container .views-field-title a:hover,
-#block-umami-next-theme-search-exposed-form + .views-element-container .views-field-title-1 a:hover {
+#block-umami-next-theme-search-exposed-form ~ .views-element-container .views-field-title a:hover,
+#block-umami-next-theme-search-exposed-form ~ .views-element-container .views-field-title-1 a:hover {
   color: var(--terracotta-ink);
 }
 
-#block-umami-next-theme-search-exposed-form + .views-element-container .views-field-title-1:has(.field-content:empty) {
+#block-umami-next-theme-search-exposed-form ~ .views-element-container .views-field-title-1:has(.field-content:empty) {
   display: none;
 }
 
-#block-umami-next-theme-search-exposed-form + .views-element-container .views-field-search-api-excerpt {
+#block-umami-next-theme-search-exposed-form ~ .views-element-container .views-field-search-api-excerpt {
   color: var(--ink-2);
 }
 
-#block-umami-next-theme-search-exposed-form + .views-element-container .views-field-search-api-excerpt strong {
+#block-umami-next-theme-search-exposed-form ~ .views-element-container .views-field-search-api-excerpt strong {
   color: var(--terracotta-ink);
 }
 

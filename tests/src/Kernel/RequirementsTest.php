@@ -96,6 +96,7 @@ final class RequirementsTest extends KernelTestBase {
       $this->assertDoesNotMatchRegularExpression('/^v?[0-9]+\./i', $constraint, "The site template cannot pin a specific version of $name.");
     }
     $this->assertArrayNotHasKey('patches', $data['extra'] ?? [], 'Site templates cannot supply or specify patches for dependencies.');
+    $this->assertArrayHasKey('drupal/facets', $data['require'] ?? [], 'The site template should explicitly require Facets because Umami owns its search facet configuration.');
 
     // The site template must identify itself as a recipe.
     $this->assertSame(Recipe::COMPOSER_PROJECT_TYPE, $data['type'], sprintf('The project type must be "%s".', Recipe::COMPOSER_PROJECT_TYPE));
@@ -136,6 +137,7 @@ final class RequirementsTest extends KernelTestBase {
       'drupal_cms_forms',
       'drupal_cms_media',
       'drupal_cms_search',
+      '../recipes/umami/recipes/search_index_fields',
       'drupal_cms_seo_basic',
       'easy_email_express',
     ];
@@ -151,6 +153,7 @@ final class RequirementsTest extends KernelTestBase {
     $this->assertNotContains('webform', $install, 'Webform should be installed by the Drupal CMS Forms recipe, not duplicated in the flat install list.');
     $this->assertNotContains('gin', $install, 'Gin should be installed by the Drupal CMS Admin UI recipe, not duplicated in the flat install list.');
     $this->assertContains('canvas', $install, 'Canvas should stay explicit because Umami owns Canvas pages, templates, and components.');
+    $this->assertContains('facets', $install, 'Facets should stay explicit because Umami owns the public search facet configuration.');
     $this->assertSame(array_values(array_unique($install)), $install, 'The flat install list should not contain duplicates.');
   }
 

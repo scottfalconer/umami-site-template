@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.recipe_category
+  module:
+    - facets
+active_version: 0d1373e5601d0eaf
+versioned_properties:
+  active:
+    settings:
+      default_settings:
+        id: 'facet_block:recipe_category'
+        label: 'Recipe category'
+        label_display: '0'
+        provider: facets
+    fallback_metadata:
+      slot_definitions: null
+label: 'Recipe category'
+id: block.facet_block.recipe_category
+provider: facets
+source: block
+source_local_id: 'facet_block:recipe_category'

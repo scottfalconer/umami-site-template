@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.topics
+  module:
+    - facets
+active_version: 16ce4c6be455825a
+versioned_properties:
+  active:
+    settings:
+      default_settings:
+        id: 'facet_block:topics'
+        label: Topics
+        label_display: '0'
+        provider: facets
+    fallback_metadata:
+      slot_definitions: null
+label: Topics
+id: block.facet_block.topics
+provider: facets
+source: block
+source_local_id: 'facet_block:topics'
