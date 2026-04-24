@@ -36,6 +36,40 @@ Runtime checks confirmed:
 - `/search?keywords=tomato` returns Deep mediterranean quiche after indexing.
 - No Drupal watchdog errors were present after install and indexing.
 
+## April 24, 2026 Core Umami Attribution Alignment
+
+Checked against the Drupal core Umami profile installed with Drupal 11.3.8. Core
+Umami imports recipe nodes with `Umami` as the author and keeps photographer
+credits in `default_content/LICENCE.txt`; it does not render a visible
+provenance sentence on recipe pages.
+
+Validation commands run:
+
+```sh
+ruby --disable-gems -e 'require "yaml"; Dir["{config,content,packages}/**/*.{yml,yaml}"].sort.each { |f| YAML.load_file(f) }; puts "yaml_ok"'
+docker run --rm -v "$PWD":/app -w /app php:8.3-cli php -l packages/umami_next_theme/umami_next_theme.theme
+docker run --rm -v "$PWD":/app -w /app php:8.3-cli php -l tests/src/Functional/ValidationTest.php
+make dev-test-install TESTER_DIR=../umami-attribution-test TESTER_NAME=umami-attribution-test
+ddev drush ev '$storage=\Drupal::entityTypeManager()->getStorage("node"); $ids=\Drupal::entityQuery("node")->accessCheck(FALSE)->condition("type","recipe")->execute(); $nodes=$storage->loadMultiple($ids); print "recipe_count=" . count($nodes) . "\n"; foreach ($nodes as $node) { print $node->label() . " | " . $node->getOwner()->getAccountName() . "\n"; } $defs=\Drupal::service("entity_field.manager")->getFieldDefinitions("node","recipe"); print "field_recipe_credit=" . (isset($defs["field_recipe_credit"]) ? "present" : "absent") . "\n"; print "field_media_credit=" . (isset($defs["field_media_credit"]) ? "present" : "absent") . "\n";'
+ddev drush search-api:index
+ddev drush search-api:status
+ddev drush watchdog:show --count=20 --severity=Error --format=table
+```
+
+Runtime checks confirmed:
+
+- Clean install completed and cache rebuild succeeded.
+- Installed recipe count is 10.
+- All installed recipe nodes are authored by `Umami`.
+- `field_recipe_credit` and `field_media_credit` are absent from the recipe
+  field definitions.
+- `/recipe/deep-mediterranean-quiche` renders `By Umami` and does not render the
+  custom provenance sentence or a `Photo:` caption.
+- `/`, `/recipes`, `/recipe/deep-mediterranean-quiche`, and `/search` return
+  HTTP 200 inside the DDEV web container.
+- Search index is 100%, with 26 of 26 items indexed.
+- No Drupal watchdog errors were present after install and indexing.
+
 ## April 24, 2026 Recipe-Composition Audit
 
 Covered on a clean DDEV install at `../umami-ownership-clean-20260424` after

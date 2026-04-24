@@ -9,12 +9,10 @@ dependencies:
     - field.field.node.recipe.field_difficulty
     - field.field.node.recipe.field_featured_image
     - field.field.node.recipe.field_ingredients
-    - field.field.node.recipe.field_media_credit
     - field.field.node.recipe.field_method
     - field.field.node.recipe.field_notes
     - field.field.node.recipe.field_prep_minutes
     - field.field.node.recipe.field_recipe_category
-    - field.field.node.recipe.field_recipe_credit
     - field.field.node.recipe.field_related_recipes
     - field.field.node.recipe.field_servings
     - field.field.node.recipe.field_topics
@@ -84,10 +82,8 @@ hidden:
   field_cuisine: true
   field_dietary: true
   field_difficulty: true
-  field_media_credit: true
   field_notes: true
   field_prep_minutes: true
-  field_recipe_credit: true
   field_related_recipes: true
   field_servings: true
   field_total_minutes: true

@@ -120,9 +120,4 @@ default:
   - value: 1776844800
   changed:
   - value: 1776844800
-  field_media_credit:
-  - value: Keith Jay, CC BY-SA 4.0
   field_notes: []
-  field_recipe_credit:
-  - value: Original Umami demo recipe by Drupal community contributors; preserved
-      from Drupal core demo content.

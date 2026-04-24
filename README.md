@@ -132,8 +132,8 @@ owned by the recipe export in `config/` and `content/`.
 
 The recipe content intentionally keeps the original Drupal core Umami demo
 recipes and photography contributed by Drupal community members. Future content
-expansion should preserve that provenance pattern instead of replacing the
-community corpus with synthetic filler.
+expansion should preserve that source and licensing pattern instead of replacing
+the community corpus with synthetic filler.
 
 After installation, the downstream site owns normal Drupal configuration
 management. A production site should set its own config sync directory outside

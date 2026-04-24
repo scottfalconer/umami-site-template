@@ -165,8 +165,3 @@ default:
   - value: 1776240000
   changed:
   - value: 1776240000
-  field_media_credit:
-  - value: Umami demo content
-  field_recipe_credit:
-  - value: Original Umami demo recipe by Drupal community contributors; preserved
-      from Drupal core demo content.

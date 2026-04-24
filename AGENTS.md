@@ -46,7 +46,7 @@ vocabularies.
 The recipe exports intentionally preserve the original Drupal core Umami demo
 recipes and photography contributed by Drupal community members. Do not replace
 those with generic stock, AI-generated, or synthetic food content; add new demo
-recipes alongside the same provenance and media-credit pattern.
+recipes alongside the same source and licensing documentation pattern.
 
 The homepage and 404 are Canvas pages. Repeatable public discovery surfaces use
 Drupal-native structures: Views for recipes and stories, taxonomy term pages

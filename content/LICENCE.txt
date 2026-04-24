@@ -1,0 +1,24 @@
+Creative Commons Attribution-ShareAlike 4.0 International License
+================================================================================
+
+The original Drupal core Umami demo recipe images in this content export are
+licensed under a Creative Commons Attribution-ShareAlike 4.0 International
+License.
+
+The following source image credits are preserved from Drupal core Umami:
+
+chili-sauce-umami.jpg by Elliot Ward
+crema-catalana-umami.jpg by Cristina Chumillas
+mediterranean-quiche-umami.jpg by Keith Jay
+pizza-umami.jpg by Keith Jay
+thai-green-curry-umami.jpg by Keith Jay
+vegan-chocolate-nut-brownies.jpg by Keith Jay
+veggie-pasta-bake-umami.jpg by Keith Jay
+victoria-sponge-umami.jpg by Keith Jay
+watercress-soup-umami.jpg by Keith Jay
+
+borscht-with-pork-ribs-umami.jpg is included from Drupal core Umami demo
+content; no individual credit is present for that image in the upstream Drupal
+11.3.8 LICENCE.txt.
+
+================================================================================
