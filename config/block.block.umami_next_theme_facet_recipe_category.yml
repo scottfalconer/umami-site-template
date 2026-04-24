@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.recipe_category
+  module:
+    - facets
+    - system
+  theme:
+    - umami_next_theme
+id: umami_next_theme_facet_recipe_category
+theme: umami_next_theme
+region: content
+weight: -16
+provider: facets
+plugin: 'facet_block:recipe_category'
+settings:
+  id: 'facet_block:recipe_category'
+  label: 'Recipe category'
+  label_display: visible
+  provider: facets
+  block_id: umami_next_theme_facet_recipe_category
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /search

@@ -15,6 +15,7 @@
         "drupal/drupal_cms_search": "^2.1",
         "drupal/drupal_cms_seo_basic": "^2.1",
         "drupal/easy_email_express": "^1",
+        "drupal/facets": "^3.0",
         "drupal/mercury": "^1",
         "drupal/metatag": "^2.1",
         "drupal/schema_metatag": "^3.0",

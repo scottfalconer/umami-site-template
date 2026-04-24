@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_cook_minutes
+    - node.type.recipe
+id: node.recipe.field_cook_minutes
+field_name: field_cook_minutes
+entity_type: node
+bundle: recipe
+label: 'Cook Minutes'
+description: 'Cook time in minutes.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

@@ -21,6 +21,7 @@ If upstream recipes are unavailable, the script still reports the current flat i
 - `drupal_cms_forms` (currently applied)
 - `drupal_cms_media` (currently applied)
 - `drupal_cms_search` (currently applied)
+- `../recipes/umami/recipes/search_index_fields` (currently applied)
 - `drupal_cms_seo_basic` (currently applied)
 - `easy_email_express` (currently applied)
 
@@ -75,6 +76,7 @@ If upstream recipes are unavailable, the script still reports the current flat i
 | `cva` | yes | - | no | no | keep flat: no candidate upstream owner |
 | `eca` | yes | - | yes (1: `eca.settings`) | yes (1: `eca.settings`) | keep flat: no candidate upstream owner |
 | `editoria11y` | yes | - | yes (1: `editoria11y.settings`) | yes (1: `editoria11y.settings`) | keep flat: no candidate upstream owner |
+| `facets` | yes | - | no | no | keep flat: Umami-owned public search facet configuration |
 | `jquery_ui` | yes | - | no | no | keep flat: no candidate upstream owner |
 | `jquery_ui_resizable` | yes | - | no | no | keep flat: no candidate upstream owner |
 | `metatag` | yes | - | yes (8: `metatag.metatag_defaults.403`, `metatag.metatag_defaults.404`, `metatag.metatag_defaults.front`, ...) | no | keep flat with config.import |
@@ -89,3 +91,12 @@ If upstream recipes are unavailable, the script still reports the current flat i
 | `stark` | yes | - | no | no | keep flat: Umami structural dependency |
 | `mercury` | yes | - | yes (1: `mercury.settings`) | no | keep flat: no candidate upstream owner |
 | `umami_next_theme` | yes | - | no | no | keep flat: Umami custom package |
+
+## Search Index Override
+
+Umami applies `../recipes/umami/recipes/search_index_fields` immediately after
+`drupal_cms_search` because Facets validates each configured field while facet
+config is imported. The internal recipe raw-updates the cuisine, dietary,
+recipe category, topic, and cook-time field settings before the parent recipe
+imports `facets.facet.*` config, without replacing the full upstream Drupal CMS
+Search index entity.

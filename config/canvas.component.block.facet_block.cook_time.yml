@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.cook_time
+  module:
+    - facets
+active_version: 8a2cbdb47899639a
+versioned_properties:
+  active:
+    settings:
+      default_settings:
+        id: 'facet_block:cook_time'
+        label: 'Cook time'
+        label_display: '0'
+        provider: facets
+    fallback_metadata:
+      slot_definitions: null
+label: 'Cook time'
+id: block.facet_block.cook_time
+provider: facets
+source: block
+source_local_id: 'facet_block:cook_time'

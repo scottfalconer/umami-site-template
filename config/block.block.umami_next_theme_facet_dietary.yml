@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.dietary
+  module:
+    - facets
+    - system
+  theme:
+    - umami_next_theme
+id: umami_next_theme_facet_dietary
+theme: umami_next_theme
+region: content
+weight: -17
+provider: facets
+plugin: 'facet_block:dietary'
+settings:
+  id: 'facet_block:dietary'
+  label: Dietary
+  label_display: visible
+  provider: facets
+  block_id: umami_next_theme_facet_dietary
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /search

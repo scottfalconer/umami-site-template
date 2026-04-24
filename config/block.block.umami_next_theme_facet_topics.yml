@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.topics
+  module:
+    - facets
+    - system
+  theme:
+    - umami_next_theme
+id: umami_next_theme_facet_topics
+theme: umami_next_theme
+region: content
+weight: -15
+provider: facets
+plugin: 'facet_block:topics'
+settings:
+  id: 'facet_block:topics'
+  label: Topics
+  label_display: visible
+  provider: facets
+  block_id: umami_next_theme_facet_topics
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /search

@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.cuisine
+  module:
+    - facets
+    - system
+  theme:
+    - umami_next_theme
+id: umami_next_theme_facet_cuisine
+theme: umami_next_theme
+region: content
+weight: -18
+provider: facets
+plugin: 'facet_block:cuisine'
+settings:
+  id: 'facet_block:cuisine'
+  label: Cuisine
+  label_display: visible
+  provider: facets
+  block_id: umami_next_theme_facet_cuisine
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /search

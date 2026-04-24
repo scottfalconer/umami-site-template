@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.cuisine
+  module:
+    - facets
+active_version: 5a993448d3d8cc74
+versioned_properties:
+  active:
+    settings:
+      default_settings:
+        id: 'facet_block:cuisine'
+        label: Cuisine
+        label_display: '0'
+        provider: facets
+    fallback_metadata:
+      slot_definitions: null
+label: Cuisine
+id: block.facet_block.cuisine
+provider: facets
+source: block
+source_local_id: 'facet_block:cuisine'

@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.dietary
+  module:
+    - facets
+active_version: c58252fbf21207bc
+versioned_properties:
+  active:
+    settings:
+      default_settings:
+        id: 'facet_block:dietary'
+        label: Dietary
+        label_display: '0'
+        provider: facets
+    fallback_metadata:
+      slot_definitions: null
+label: Dietary
+id: block.facet_block.dietary
+provider: facets
+source: block
+source_local_id: 'facet_block:dietary'

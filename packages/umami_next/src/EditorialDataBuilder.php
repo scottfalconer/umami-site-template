@@ -326,6 +326,7 @@ final class EditorialDataBuilder {
     return [
       '#type' => 'webform',
       '#webform' => $webform->id(),
+      '#lazy' => TRUE,
     ];
   }
 
