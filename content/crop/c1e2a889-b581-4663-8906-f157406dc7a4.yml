@@ -8,23 +8,16 @@ _meta:
     69f08732-430e-4437-a2f1-15adf53b6dda: file
 default:
   entity_id:
-    -
-      uuid: 69f08732-430e-4437-a2f1-15adf53b6dda
+  - uuid: 69f08732-430e-4437-a2f1-15adf53b6dda
   entity_type:
-    -
-      value: file
+  - value: file
   uri:
-    -
-      value: 'public://umami-next/saffron-chickpea-stew.jpg'
+  - value: public://umami-next/borscht-with-pork-ribs-umami.jpg
   x:
-    -
-      value: 800
-  'y':
-    -
-      value: 550
+  - value: 384
+  y:
+  - value: 256
   revision_uid:
-    -
-      target_id: 0
+  - target_id: 0
   revision_translation_affected:
-    -
-      value: true
+  - value: true

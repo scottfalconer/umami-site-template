@@ -5,26 +5,23 @@ _meta:
   bundle: recipe
   default_langcode: en
   depends:
-    f2055c45-d739-46c4-8e56-ada172f1f9d8: user
-    dad86604-0666-486c-a6c6-dbbb22882482: taxonomy_term
-    3ce6cd35-e603-4716-8056-28c655260f25: taxonomy_term
+    1fbe9f2b-2df9-4f7d-8454-f5a7d095c6d1: user
+    cb4a8631-0c17-4f01-a961-d1b22e8e23d6: taxonomy_term
     ca5dfc5b-337c-4a17-bbe8-22c7c1e5beff: media
-    c338f17b-b1ef-490e-abb6-88f1280c0e4c: taxonomy_term
+    92f4f4e0-7ee7-4328-8e56-0ae7c6d2c628: taxonomy_term
+    be17db54-41fe-481a-8e2b-88673f537aa3: node
+    f4abb3f5-2aab-44cb-8a86-2ef144bbd68a: node
     45d0c897-71de-4f57-95b3-4bec3818917d: node
-    553198ce-abe4-448e-89f8-70cca32c43db: node
-    36a35a55-76f6-4e39-baf8-31798f2db0aa: node
-    2eeac9a1-779b-4c68-af7b-7b86cdf74d78: taxonomy_term
-    598caa2a-4022-4978-abff-996ea50ba66d: taxonomy_term
-    6aaee7b7-099a-4ea0-85b8-bbf33fed76d1: taxonomy_term
+    32021bd1-adb6-43e3-be1b-62671c2ffac6: taxonomy_term
 default:
   revision_uid:
-  - entity: f2055c45-d739-46c4-8e56-ada172f1f9d8
+  - entity: 1fbe9f2b-2df9-4f7d-8454-f5a7d095c6d1
   status:
   - value: true
   uid:
-  - entity: f2055c45-d739-46c4-8e56-ada172f1f9d8
+  - entity: 1fbe9f2b-2df9-4f7d-8454-f5a7d095c6d1
   title:
-  - value: Ribollita, in an Honest Mood
+  - value: Victoria sponge cake
   promote:
   - value: true
   sticky:
@@ -34,78 +31,83 @@ default:
   moderation_state:
   - value: published
   path:
-  - alias: /recipe/ribollita
+  - alias: "/recipe/victoria-sponge-cake"
     langcode: en
     pathauto: 0
   field_cook_minutes:
-  - value: 90
+  - value: 20
   field_cuisine:
-  - entity: dad86604-0666-486c-a6c6-dbbb22882482
+  - entity: cb4a8631-0c17-4f01-a961-d1b22e8e23d6
   field_description:
-  - value: Stale bread, tired greens, the end of a bottle of red. The resulting soup is the opposite of tired.
-  field_dietary:
-  - entity: 3ce6cd35-e603-4716-8056-28c655260f25
+  - value: A traditional Victoria sponge cake, perfect for any afternoon with a cup
+      of tea.
+  field_dietary: []
   field_difficulty:
-  - value: Medium
+  - value: Easy
   field_featured_image:
   - entity: ca5dfc5b-337c-4a17-bbe8-22c7c1e5beff
   field_ingredients:
-  - group_label: ''
-    quantity: '1'
-    ingredient: onion, diced
-  - group_label: ''
-    quantity: '2'
-    ingredient: carrots, diced
-  - group_label: ''
-    quantity: 3 stalks
-    ingredient: celery, diced
-  - group_label: ''
-    quantity: 4 cloves
-    ingredient: garlic
-  - group_label: ''
-    quantity: 1 × 400 g
-    ingredient: tin tomatoes
-  - group_label: ''
-    quantity: 2 × 400 g
-    ingredient: tins cannellini (one smashed)
-  - group_label: ''
-    quantity: 1 bunch
-    ingredient: cavolo nero, stems in
-  - group_label: ''
-    quantity: 2 l
-    ingredient: stock
-  - group_label: ''
-    quantity: 200 g
-    ingredient: stale sourdough, torn
-  - group_label: ''
-    quantity: a pour
-    ingredient: red wine
+  - group_label: Ingredients
+    quantity: 225g
+    ingredient: butter or margarine
+  - group_label: Ingredients
+    quantity: 225g
+    ingredient: caster sugar
+  - group_label: Ingredients
+    quantity: 225g
+    ingredient: self-raising flour
+  - group_label: Ingredients
+    quantity: '4'
+    ingredient: eggs
+  - group_label: Ingredients
+    quantity: 1 tsp
+    ingredient: baking powder
+  - group_label: Ingredients
+    quantity: 3 tbsp
+    ingredient: of jam for the filling
+  - group_label: Ingredients
+    quantity: ''
+    ingredient: Icing sugar to dust the top
+  - group_label: Ingredients
+    quantity: ''
+    ingredient: Cream to serve
   field_method:
-  - step_title: Sofritto
-    instruction: Sweat the onion, carrot, celery, garlic in olive oil 15 min until sweet.
-  - step_title: Build
-    instruction: Add wine, tomatoes, stock. Simmer 20 min. Add beans and cavolo, another 20 min.
-  - step_title: Thicken
-    instruction: Stir in the bread, cook a further 20 min. It should be a loose porridge.
-  - step_title: Rest
-    instruction: Cover, off heat, 15 min. Drizzle with new oil.
+  - step_title: Step 1
+    instruction: Preheat the oven to 350°F/180°C and grease two 8 inch cake tins.
+  - step_title: Step 2
+    instruction: In a large bowl, mix the butter and sugar together, then add the
+      eggs, flour and baking powder.
+  - step_title: Step 3
+    instruction: Spread the mix evenly between the 2 cake tins.
+  - step_title: Step 4
+    instruction: Place both tins in the middle of the preheated oven for 20 minutes,
+      before checking with a knife. When the knife comes out clean, it's ready!
+  - step_title: Step 5
+    instruction: Allow to cool in the tins before moving them onto a cooling rack.
+  - step_title: Step 6
+    instruction: Add the jam, stack, dust with icing sugar and serve with a big dollop
+      of cream. Enjoy!
   field_prep_minutes:
   - value: 20
   field_recipe_category:
-  - entity: c338f17b-b1ef-490e-abb6-88f1280c0e4c
+  - entity: 92f4f4e0-7ee7-4328-8e56-0ae7c6d2c628
   field_related_recipes:
+  - entity: be17db54-41fe-481a-8e2b-88673f537aa3
+  - entity: f4abb3f5-2aab-44cb-8a86-2ef144bbd68a
   - entity: 45d0c897-71de-4f57-95b3-4bec3818917d
-  - entity: 553198ce-abe4-448e-89f8-70cca32c43db
-  - entity: 36a35a55-76f6-4e39-baf8-31798f2db0aa
   field_servings:
-  - value: 6
+  - value: 10
   field_topics:
-  - entity: 2eeac9a1-779b-4c68-af7b-7b86cdf74d78
-  - entity: 598caa2a-4022-4978-abff-996ea50ba66d
-  - entity: 6aaee7b7-099a-4ea0-85b8-bbf33fed76d1
+  - entity: 32021bd1-adb6-43e3-be1b-62671c2ffac6
   field_total_minutes:
-  - value: 110
+  - value: 40
   created:
-  - value: 1765713600
+  - value: 1776672000
   changed:
-  - value: 1776631111
+  - value: 1776672000
+  field_media_credit:
+  - value: Keith Jay, CC BY-SA 4.0
+  field_notes: []
+  field_recipe_credit:
+  - value: Original Umami demo recipe by Drupal community contributors; preserved
+      from Drupal core demo content.

@@ -43,6 +43,11 @@ ingredients and method steps; do not replace those with free-form text fields.
 Topics, cuisines, dietary categories, recipe categories, and tags are taxonomy
 vocabularies.
 
+The recipe exports intentionally preserve the original Drupal core Umami demo
+recipes and photography contributed by Drupal community members. Do not replace
+those with generic stock, AI-generated, or synthetic food content; add new demo
+recipes alongside the same provenance and media-credit pattern.
+
 The homepage and 404 are Canvas pages. Repeatable public discovery surfaces use
 Drupal-native structures: Views for recipes and stories, taxonomy term pages
 with aliases for topics, Drupal CMS Search API/View for search, and Webform for

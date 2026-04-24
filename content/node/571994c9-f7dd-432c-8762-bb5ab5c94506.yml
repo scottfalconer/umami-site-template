@@ -5,28 +5,24 @@ _meta:
   bundle: recipe
   default_langcode: en
   depends:
-    5ea1013c-2709-4c23-84e8-19e9789b1dd2: user
-    e911ca70-b016-40d5-af23-7e5b1d82007e: user
-    59494b59-d9d1-418c-80ce-b6c14ab0f5e0: taxonomy_term
+    1fbe9f2b-2df9-4f7d-8454-f5a7d095c6d1: user
+    dad86604-0666-486c-a6c6-dbbb22882482: taxonomy_term
     3ce6cd35-e603-4716-8056-28c655260f25: taxonomy_term
-    9e7771fb-6acb-45f9-87f0-72ddf70eb4b1: taxonomy_term
     e9bc9176-0bfc-4431-9b43-4d9e2b08f260: media
     c338f17b-b1ef-490e-abb6-88f1280c0e4c: taxonomy_term
-    ac36ac60-a124-4153-a2b9-671173cac6fb: node
-    553198ce-abe4-448e-89f8-70cca32c43db: node
+    f0a5cac7-c43b-47cf-b278-0f22d7514808: node
     e832f942-2282-4dd3-b804-1d85255a0f99: node
+    be17db54-41fe-481a-8e2b-88673f537aa3: node
     26735ffd-6e41-4263-b276-f9ce28e7bb5c: taxonomy_term
-    a27aab93-f454-4cb1-882a-306d7af5eee6: taxonomy_term
-    598caa2a-4022-4978-abff-996ea50ba66d: taxonomy_term
 default:
   revision_uid:
-  - entity: 5ea1013c-2709-4c23-84e8-19e9789b1dd2
+  - entity: 1fbe9f2b-2df9-4f7d-8454-f5a7d095c6d1
   status:
   - value: true
   uid:
-  - entity: e911ca70-b016-40d5-af23-7e5b1d82007e
+  - entity: 1fbe9f2b-2df9-4f7d-8454-f5a7d095c6d1
   title:
-  - value: Weeknight Dal with Burnt Butter
+  - value: Super easy vegetarian pasta bake
   promote:
   - value: true
   sticky:
@@ -36,80 +32,97 @@ default:
   moderation_state:
   - value: published
   path:
-  - alias: /recipe/weeknight-dal-with-burnt-butter
+  - alias: "/recipe/super-easy-vegetarian-pasta-bake"
     langcode: en
     pathauto: 0
   field_cook_minutes:
-  - value: 40
+  - value: 20
   field_cuisine:
-  - entity: 59494b59-d9d1-418c-80ce-b6c14ab0f5e0
+  - entity: dad86604-0666-486c-a6c6-dbbb22882482
   field_description:
-  - value: The kind of thing you put on when you come home tired. Unremarkable until the butter hits the pan.
+  - value: A wholesome pasta bake is the ultimate comfort food. This delicious bake
+      is super quick to prepare and an ideal midweek meal for all the family.
   field_dietary:
   - entity: 3ce6cd35-e603-4716-8056-28c655260f25
-  - entity: 9e7771fb-6acb-45f9-87f0-72ddf70eb4b1
   field_difficulty:
   - value: Easy
   field_featured_image:
   - entity: e9bc9176-0bfc-4431-9b43-4d9e2b08f260
   field_ingredients:
-  - group_label: ''
-    quantity: 250 g
-    ingredient: red lentils, rinsed
-  - group_label: ''
+  - group_label: Ingredients
+    quantity: 400g
+    ingredient: wholewheat pasta
+  - group_label: Ingredients
     quantity: '1'
-    ingredient: onion, diced
-  - group_label: ''
-    quantity: 1 thumb
-    ingredient: ginger, grated
-  - group_label: ''
-    quantity: 3 cloves
-    ingredient: garlic, minced
-  - group_label: ''
-    quantity: 1 tsp
-    ingredient: turmeric
-  - group_label: ''
-    quantity: 1 tsp
-    ingredient: salt
-  - group_label: ''
-    quantity: 1 l
-    ingredient: water
-  - group_label: ''
-    quantity: 60 g
-    ingredient: butter or ghee
-  - group_label: ''
-    quantity: 1 tsp
-    ingredient: cumin seeds
-  - group_label: ''
+    ingredient: onion
+  - group_label: Ingredients
     quantity: '2'
-    ingredient: dried chilies
-  - group_label: ''
-    quantity: '10'
-    ingredient: curry leaves (if you can find them)
+    ingredient: garlic cloves
+  - group_label: Ingredients
+    quantity: '1'
+    ingredient: pack vegetarian sausages
+  - group_label: Ingredients
+    quantity: 400g
+    ingredient: chopped tomatoes
+  - group_label: Ingredients
+    quantity: 50g
+    ingredient: sliced sun dried tomatoes
+  - group_label: Ingredients
+    quantity: '1'
+    ingredient: pinch sugar
+  - group_label: Ingredients
+    quantity: 3 tbsp red
+    ingredient: pesto
+  - group_label: Ingredients
+    quantity: 50g
+    ingredient: cheddar cheese
+  - group_label: Ingredients
+    quantity: ''
+    ingredient: Basil or mixed herbs
+  - group_label: Ingredients
+    quantity: 100g
+    ingredient: mozzarella
   field_method:
-  - step_title: Simmer
-    instruction: Combine lentils, onion, ginger, garlic, turmeric, salt, water. Simmer 25–30 min until creamy. Whisk to smooth.
-  - step_title: Tarka
-    instruction: Melt the butter until foaming and brown. Add cumin, chilies, curry leaves. Sizzle 20 seconds.
-  - step_title: Finish
-    instruction: Pour tarka over the dal. Serve with rice, yogurt, lime.
+  - step_title: Step 1
+    instruction: In a large pan, boil the pasta in plenty of water until cooked.
+  - step_title: Step 2
+    instruction: Whilst the pasta is cooking, chop the onion and gently fry it with
+      the garlic in a little oil until soft and the onion looks clear.
+  - step_title: Step 3
+    instruction: Add the vegetarian sausages. Once browned, remove and chop into chunky
+      bites.
+  - step_title: Step 4
+    instruction: Pop the sausages back into the pan and add the tomatoes, sugar, pesto
+      and sun dried tomatoes. Season to taste. Simmer until most of the water from
+      the chopped tomatoes has gone.
+  - step_title: Step 5
+    instruction: Drain the pasta and add to the pan with the sausages and tomatoes.
+      Stir in half of the cheddar and transfer to a shallow dish. Sprinkle with the
+      rest of the cheddar and dot the sliced mozzarella over the top.
+  - step_title: Step 6
+    instruction: Grill for 10 minutes or until the cheese has melted and started to
+      brown. Serve with basil leaves.
   field_prep_minutes:
-  - value: 10
+  - value: 5
   field_recipe_category:
   - entity: c338f17b-b1ef-490e-abb6-88f1280c0e4c
   field_related_recipes:
-  - entity: ac36ac60-a124-4153-a2b9-671173cac6fb
-  - entity: 553198ce-abe4-448e-89f8-70cca32c43db
+  - entity: f0a5cac7-c43b-47cf-b278-0f22d7514808
   - entity: e832f942-2282-4dd3-b804-1d85255a0f99
+  - entity: be17db54-41fe-481a-8e2b-88673f537aa3
   field_servings:
   - value: 4
   field_topics:
   - entity: 26735ffd-6e41-4263-b276-f9ce28e7bb5c
-  - entity: a27aab93-f454-4cb1-882a-306d7af5eee6
-  - entity: 598caa2a-4022-4978-abff-996ea50ba66d
   field_total_minutes:
-  - value: 50
+  - value: 25
   created:
-  - value: 1771416000
+  - value: 1776844800
   changed:
-  - value: 1776631111
+  - value: 1776844800
+  field_media_credit:
+  - value: Keith Jay, CC BY-SA 4.0
+  field_notes: []
+  field_recipe_credit:
+  - value: Original Umami demo recipe by Drupal community contributors; preserved
+      from Drupal core demo content.

@@ -8,25 +8,20 @@ _meta:
     898289be-bb99-4f21-bae1-5b8b8be135b2: file
 default:
   status:
-    -
-      value: true
+  - value: true
   uid:
-    -
-      target_id: 0
+  - target_id: 0
   name:
-    -
-      value: miso-glazed-salmon-bowls
+  - value: thai-green-curry
   revision_translation_affected:
-    -
-      value: true
+  - value: true
   path:
-    -
-      langcode: en
-      alias: null
+  - langcode: en
+    alias:
   field_media_image:
-    -
-      alt: 'Miso-Glazed Salmon Bowls'
-      title: ''
-      width: 1600
-      height: 1100
-      entity: 898289be-bb99-4f21-bae1-5b8b8be135b2
+  - alt: A traditional bowl of creamy, aromatic Thai green curry with chunks of chicken
+      in a small bowl with jasmine rice
+    title: ''
+    width: 768
+    height: 512
+    entity: 898289be-bb99-4f21-bae1-5b8b8be135b2

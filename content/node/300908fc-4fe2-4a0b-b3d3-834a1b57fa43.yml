@@ -5,28 +5,27 @@ _meta:
   bundle: recipe
   default_langcode: en
   depends:
-    5546aa05-f2e6-4d2f-a71f-7ef234eec0c6: user
+    1fbe9f2b-2df9-4f7d-8454-f5a7d095c6d1: user
     599ebf46-e71a-4216-bae3-3032c4038120: taxonomy_term
-    d89e63b8-2e59-4a10-9bf1-7def54e1922d: taxonomy_term
-    9e7771fb-6acb-45f9-87f0-72ddf70eb4b1: taxonomy_term
+    3ce6cd35-e603-4716-8056-28c655260f25: taxonomy_term
     1cbaf4ec-13e2-483c-b03c-2ac54273cb9f: media
     4c4f90c3-8086-4fd4-9c31-fc3e824fc60e: taxonomy_term
-    a9d319bf-864a-4496-8dba-82dc1652f2aa: node
-    57d27c70-1991-4b54-8ba3-2a64f2d92ad7: node
-    be17db54-41fe-481a-8e2b-88673f537aa3: node
-    26735ffd-6e41-4263-b276-f9ce28e7bb5c: taxonomy_term
-    e745ac5c-96c1-405c-8a27-b55ebc9054a0: taxonomy_term
+    553198ce-abe4-448e-89f8-70cca32c43db: node
+    36a35a55-76f6-4e39-baf8-31798f2db0aa: node
+    ac36ac60-a124-4153-a2b9-671173cac6fb: node
+    21cdb39c-e55d-4d81-848f-49fad9a1d8b0: taxonomy_term
+    6aaee7b7-099a-4ea0-85b8-bbf33fed76d1: taxonomy_term
 default:
   revision_uid:
-  - entity: 5546aa05-f2e6-4d2f-a71f-7ef234eec0c6
+  - entity: 1fbe9f2b-2df9-4f7d-8454-f5a7d095c6d1
   status:
   - value: true
   uid:
-  - entity: 5546aa05-f2e6-4d2f-a71f-7ef234eec0c6
+  - entity: 1fbe9f2b-2df9-4f7d-8454-f5a7d095c6d1
   title:
-  - value: Blistered Peppers with Honey and Vinegar
+  - value: Fiery chili sauce
   promote:
-  - value: false
+  - value: true
   sticky:
   - value: false
   revision_translation_affected:
@@ -34,59 +33,112 @@ default:
   moderation_state:
   - value: published
   path:
-  - alias: /recipe/blistered-peppers-with-honey
+  - alias: "/recipe/fiery-chili-sauce"
     langcode: en
     pathauto: 0
   field_cook_minutes:
-  - value: 15
+  - value: 50
   field_cuisine:
   - entity: 599ebf46-e71a-4216-bae3-3032c4038120
   field_description:
-  - value: Sweet peppers blistered hard, then dressed in the pan with honey and sherry vinegar.
+  - value: A rich and fiery chili sauce. Take care when handling chili peppers. And
+      serve sparingly!
   field_dietary:
-  - entity: d89e63b8-2e59-4a10-9bf1-7def54e1922d
-  - entity: 9e7771fb-6acb-45f9-87f0-72ddf70eb4b1
+  - entity: 3ce6cd35-e603-4716-8056-28c655260f25
   field_difficulty:
   - value: Easy
   field_featured_image:
   - entity: 1cbaf4ec-13e2-483c-b03c-2ac54273cb9f
   field_ingredients:
-  - group_label: ''
-    quantity: 500 g
-    ingredient: shishito or padron peppers
-  - group_label: ''
-    quantity: 2 tbsp
-    ingredient: neutral oil
-  - group_label: ''
+  - group_label: Ingredients
+    quantity: 2 red
+    ingredient: onions
+  - group_label: Ingredients
+    quantity: '1'
+    ingredient: lemon
+  - group_label: Ingredients
+    quantity: '2'
+    ingredient: limes
+  - group_label: Ingredients
+    quantity: 250ml
+    ingredient: malt vinegar
+  - group_label: Ingredients
+    quantity: '7'
+    ingredient: garlic cloves
+  - group_label: Ingredients
+    quantity: 1 green
+    ingredient: bell pepper
+  - group_label: Ingredients
+    quantity: 1 red
+    ingredient: bell pepper
+  - group_label: Ingredients
+    quantity: 800g
+    ingredient: cherry tomatoes
+  - group_label: Ingredients
+    quantity: '30'
+    ingredient: mixed chilies
+  - group_label: Ingredients
+    quantity: ''
+    ingredient: Olive oil
+  - group_label: Ingredients
     quantity: 1 tbsp
-    ingredient: honey
-  - group_label: ''
+    ingredient: ground black pepper
+  - group_label: Ingredients
     quantity: 1 tbsp
-    ingredient: sherry vinegar
-  - group_label: ''
-    quantity: to taste
-    ingredient: flaky salt
+    ingredient: brown sugar
   field_method:
-  - step_title: Blister
-    instruction: Heat oil in a cast iron until shimmering. Add peppers and leave undisturbed for 2 min. Toss and cook until charred in patches.
-  - step_title: Dress
-    instruction: Off heat, add honey and vinegar. Swirl to glaze. Salt heavily.
+  - step_title: Step 1
+    instruction: Preheat the oven to 400°F/200°C.
+  - step_title: Step 2
+    instruction: Finely chop the red onions and sweat gently on a low heat in olive
+      oil for 5 minutes.
+  - step_title: Step 3
+    instruction: Peel the garlic and add it to the onions.
+  - step_title: Step 4
+    instruction: Meanwhile, chop the bell peppers to 1 inch pieces. Add the bell peppers
+      and tomatoes to a roasting dish, and rub with lemon juice, olive oil and black
+      pepper. Transfer to the oven and roast for 30 minutes.
+  - step_title: Step 5
+    instruction: Once the onions and garlic have softened, chop and add the chilies,
+      seeds and all. Mix well and continue to gently fry.
+  - step_title: Step 6
+    instruction: Thoroughly wash your hands following handling raw chilies.
+  - step_title: Step 7
+    instruction: Once the tomatoes and bell peppers have finished roasting, add them
+      to the pan. Cook for at least 10 minutes, breaking them up with a masher or
+      a hand blender as they simmer. Once broken up, mix in the sugar.
+  - step_title: Step 8
+    instruction: Transfer the sauce to a blender and blend until smooth.
+  - step_title: Step 9
+    instruction: Return to the pan and add the vinegar and juice of the limes.
+  - step_title: Step 10
+    instruction: Cook through for a further 10 minutes, then leave to cool.
+  - step_title: Step 11
+    instruction: Transfer to sterilized jars and keep refrigerated.
+  - step_title: Step 12
+    instruction: Leave for at least two weeks before tasting.
   field_prep_minutes:
-  - value: 5
+  - value: 10
   field_recipe_category:
   - entity: 4c4f90c3-8086-4fd4-9c31-fc3e824fc60e
   field_related_recipes:
-  - entity: a9d319bf-864a-4496-8dba-82dc1652f2aa
-  - entity: 57d27c70-1991-4b54-8ba3-2a64f2d92ad7
-  - entity: be17db54-41fe-481a-8e2b-88673f537aa3
+  - entity: 553198ce-abe4-448e-89f8-70cca32c43db
+  - entity: 36a35a55-76f6-4e39-baf8-31798f2db0aa
+  - entity: ac36ac60-a124-4153-a2b9-671173cac6fb
   field_servings:
-  - value: 4
+  - value: 60
   field_topics:
-  - entity: 26735ffd-6e41-4263-b276-f9ce28e7bb5c
-  - entity: e745ac5c-96c1-405c-8a27-b55ebc9054a0
+  - entity: 21cdb39c-e55d-4d81-848f-49fad9a1d8b0
+  - entity: 6aaee7b7-099a-4ea0-85b8-bbf33fed76d1
   field_total_minutes:
-  - value: 20
+  - value: 60
   created:
-  - value: 1772280000
+  - value: 1776326400
   changed:
-  - value: 1776631111
+  - value: 1776326400
+  field_media_credit:
+  - value: Elliot Ward, CC BY-SA 4.0
+  field_notes: []
+  field_recipe_credit:
+  - value: Original Umami demo recipe by Drupal community contributors; preserved
+      from Drupal core demo content.

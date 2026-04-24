@@ -5,20 +5,14 @@ _meta:
   default_langcode: en
 default:
   uid:
-    -
-      target_id: 0
+  - target_id: 0
   filename:
-    -
-      value: ribollita.jpg
+  - value: victoria-sponge-umami.jpg
   uri:
-    -
-      value: 'public://umami-next/ribollita.jpg'
+  - value: public://umami-next/victoria-sponge-umami.jpg
   filemime:
-    -
-      value: image/jpeg
+  - value: image/jpeg
   filesize:
-    -
-      value: 394494
+  - value: 65418
   status:
-    -
-      value: true
+  - value: true

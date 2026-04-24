@@ -8,25 +8,20 @@ _meta:
     1336ee81-514a-48ba-ad66-5ff5270404b1: file
 default:
   status:
-    -
-      value: true
+  - value: true
   uid:
-    -
-      target_id: 0
+  - target_id: 0
   name:
-    -
-      value: olive-oil-citrus-cake
+  - value: watercress-soup
   revision_translation_affected:
-    -
-      value: true
+  - value: true
   path:
-    -
-      langcode: en
-      alias: null
+  - langcode: en
+    alias:
   field_media_image:
-    -
-      alt: 'Olive Oil Citrus Cake'
-      title: ''
-      width: 1600
-      height: 1100
-      entity: 1336ee81-514a-48ba-ad66-5ff5270404b1
+  - alt: Watercress soup with a sprig of coriander as garnish in a white bowl with
+      green trim
+    title: ''
+    width: 768
+    height: 512
+    entity: 1336ee81-514a-48ba-ad66-5ff5270404b1

@@ -8,23 +8,16 @@ _meta:
     1336ee81-514a-48ba-ad66-5ff5270404b1: file
 default:
   entity_id:
-    -
-      uuid: 1336ee81-514a-48ba-ad66-5ff5270404b1
+  - uuid: 1336ee81-514a-48ba-ad66-5ff5270404b1
   entity_type:
-    -
-      value: file
+  - value: file
   uri:
-    -
-      value: 'public://umami-next/olive-oil-citrus-cake.jpg'
+  - value: public://umami-next/watercress-soup-umami.jpg
   x:
-    -
-      value: 800
-  'y':
-    -
-      value: 550
+  - value: 384
+  y:
+  - value: 256
   revision_uid:
-    -
-      target_id: 0
+  - target_id: 0
   revision_translation_affected:
-    -
-      value: true
+  - value: true

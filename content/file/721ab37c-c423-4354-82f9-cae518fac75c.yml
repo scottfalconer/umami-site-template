@@ -5,20 +5,14 @@ _meta:
   default_langcode: en
 default:
   uid:
-    -
-      target_id: 0
+  - target_id: 0
   filename:
-    -
-      value: weeknight-dal-with-burnt-butter.jpg
+  - value: veggie-pasta-bake-umami.jpg
   uri:
-    -
-      value: 'public://umami-next/weeknight-dal-with-burnt-butter.jpg'
+  - value: public://umami-next/veggie-pasta-bake-umami.jpg
   filemime:
-    -
-      value: image/jpeg
+  - value: image/jpeg
   filesize:
-    -
-      value: 402234
+  - value: 102082
   status:
-    -
-      value: true
+  - value: true

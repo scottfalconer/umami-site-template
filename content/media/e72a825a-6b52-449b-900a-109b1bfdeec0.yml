@@ -8,25 +8,19 @@ _meta:
     0e172613-3ccd-4f16-9030-28a0b250cb3d: file
 default:
   status:
-    -
-      value: true
+  - value: true
   uid:
-    -
-      target_id: 0
+  - target_id: 0
   name:
-    -
-      value: slow-roasted-tomato-pappardelle
+  - value: deep-mediterranean-quiche
   revision_translation_affected:
-    -
-      value: true
+  - value: true
   path:
-    -
-      langcode: en
-      alias: null
+  - langcode: en
+    alias:
   field_media_image:
-    -
-      alt: 'Slow-Roasted Tomato Pappardelle'
-      title: ''
-      width: 1600
-      height: 1100
-      entity: 0e172613-3ccd-4f16-9030-28a0b250cb3d
+  - alt: A delicious deep layered Mediterranean quiche with basil garnish
+    title: ''
+    width: 768
+    height: 511
+    entity: 0e172613-3ccd-4f16-9030-28a0b250cb3d

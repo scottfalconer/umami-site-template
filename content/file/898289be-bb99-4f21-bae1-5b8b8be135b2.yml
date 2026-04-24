@@ -5,20 +5,14 @@ _meta:
   default_langcode: en
 default:
   uid:
-    -
-      target_id: 0
+  - target_id: 0
   filename:
-    -
-      value: miso-glazed-salmon-bowls.jpg
+  - value: thai-green-curry-umami.jpg
   uri:
-    -
-      value: 'public://umami-next/miso-glazed-salmon-bowls.jpg'
+  - value: public://umami-next/thai-green-curry-umami.jpg
   filemime:
-    -
-      value: image/jpeg
+  - value: image/jpeg
   filesize:
-    -
-      value: 240643
+  - value: 38674
   status:
-    -
-      value: true
+  - value: true

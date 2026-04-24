@@ -8,23 +8,16 @@ _meta:
     898289be-bb99-4f21-bae1-5b8b8be135b2: file
 default:
   entity_id:
-    -
-      uuid: 898289be-bb99-4f21-bae1-5b8b8be135b2
+  - uuid: 898289be-bb99-4f21-bae1-5b8b8be135b2
   entity_type:
-    -
-      value: file
+  - value: file
   uri:
-    -
-      value: 'public://umami-next/miso-glazed-salmon-bowls.jpg'
+  - value: public://umami-next/thai-green-curry-umami.jpg
   x:
-    -
-      value: 800
-  'y':
-    -
-      value: 550
+  - value: 384
+  y:
+  - value: 256
   revision_uid:
-    -
-      target_id: 0
+  - target_id: 0
   revision_translation_affected:
-    -
-      value: true
+  - value: true

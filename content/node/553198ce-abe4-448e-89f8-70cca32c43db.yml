@@ -5,29 +5,26 @@ _meta:
   bundle: recipe
   default_langcode: en
   depends:
-    b3ec0ba2-c460-4d0c-9841-82b1d105a505: user
-    18931610-20d6-41c7-9a05-3e25201bf501: taxonomy_term
-    3ce6cd35-e603-4716-8056-28c655260f25: taxonomy_term
-    9e7771fb-6acb-45f9-87f0-72ddf70eb4b1: taxonomy_term
+    1fbe9f2b-2df9-4f7d-8454-f5a7d095c6d1: user
+    946815a9-7d5e-44f2-b0f7-32ad31f098c0: taxonomy_term
     aa028afd-ec78-4502-8040-02411e43502d: media
     c338f17b-b1ef-490e-abb6-88f1280c0e4c: taxonomy_term
-    45d0c897-71de-4f57-95b3-4bec3818917d: node
-    fd7a4f69-f783-4ead-9e08-dd9d899fddb2: node
-    83f730da-4588-4834-bcf6-6aa4142d8a62: node
+    36a35a55-76f6-4e39-baf8-31798f2db0aa: node
+    ac36ac60-a124-4153-a2b9-671173cac6fb: node
+    571994c9-f7dd-432c-8762-bb5ab5c94506: node
     2eeac9a1-779b-4c68-af7b-7b86cdf74d78: taxonomy_term
-    a27aab93-f454-4cb1-882a-306d7af5eee6: taxonomy_term
-    6aaee7b7-099a-4ea0-85b8-bbf33fed76d1: taxonomy_term
+    598caa2a-4022-4978-abff-996ea50ba66d: taxonomy_term
 default:
   revision_uid:
-  - entity: b3ec0ba2-c460-4d0c-9841-82b1d105a505
+  - entity: 1fbe9f2b-2df9-4f7d-8454-f5a7d095c6d1
   status:
   - value: true
   uid:
-  - entity: b3ec0ba2-c460-4d0c-9841-82b1d105a505
+  - entity: 1fbe9f2b-2df9-4f7d-8454-f5a7d095c6d1
   title:
-  - value: Saffron Chickpea Stew
+  - value: Borscht with pork ribs
   promote:
-  - value: false
+  - value: true
   sticky:
   - value: false
   revision_translation_affected:
@@ -35,78 +32,141 @@ default:
   moderation_state:
   - value: published
   path:
-  - alias: /recipe/saffron-chickpea-stew
+  - alias: "/recipe/borscht-with-pork-ribs"
     langcode: en
     pathauto: 0
   field_cook_minutes:
   - value: 60
   field_cuisine:
-  - entity: 18931610-20d6-41c7-9a05-3e25201bf501
+  - entity: 946815a9-7d5e-44f2-b0f7-32ad31f098c0
   field_description:
-  - value: 'A stew that leans on the good stuff in the pantry: saffron, preserved lemon, and a generous pour of olive oil.'
-  field_dietary:
-  - entity: 3ce6cd35-e603-4716-8056-28c655260f25
-  - entity: 9e7771fb-6acb-45f9-87f0-72ddf70eb4b1
+  - value: Every Ukrainian family has a modification; with beans, without cabbage,
+      etc. They are all valid though, there’s no unified ‘correct’ recipe. The one
+      you are about to read and cook is borscht with pork ribs. You’ll appreciate
+      its taste and flavor. You’ll connect and feel a true Ukrainian soul while savoring!
+  field_dietary: []
   field_difficulty:
   - value: Medium
   field_featured_image:
   - entity: aa028afd-ec78-4502-8040-02411e43502d
   field_ingredients:
-  - group_label: ''
-    quantity: 2 × 400 g
-    ingredient: tins chickpeas, drained
-  - group_label: ''
+  - group_label: Ingredients
+    quantity: 400-500g
+    ingredient: pork ribs
+  - group_label: Ingredients
+    quantity: '2'
+    ingredient: beets
+  - group_label: Ingredients
+    quantity: '2'
+    ingredient: tomatoes
+  - group_label: Ingredients
+    quantity: "¼"
+    ingredient: celery root
+  - group_label: Ingredients
+    quantity: "¼"
+    ingredient: cabbage
+  - group_label: Ingredients
+    quantity: 3-4 medium
+    ingredient: potatoes
+  - group_label: Ingredients
     quantity: '1'
-    ingredient: large onion, diced
-  - group_label: ''
-    quantity: 4 cloves
-    ingredient: garlic, sliced
-  - group_label: ''
+    ingredient: carrot
+  - group_label: Ingredients
     quantity: '1'
-    ingredient: preserved lemon, rind only, chopped
-  - group_label: ''
-    quantity: 1 pinch
-    ingredient: saffron threads
-  - group_label: ''
-    quantity: 1 tsp
-    ingredient: smoked paprika
-  - group_label: ''
-    quantity: 1 × 400 g
-    ingredient: tin tomatoes
-  - group_label: ''
-    quantity: 500 ml
-    ingredient: vegetable stock
-  - group_label: ''
-    quantity: to serve
-    ingredient: yogurt, dill, flatbread
+    ingredient: onion
+  - group_label: Ingredients
+    quantity: 1-2 smoked
+    ingredient: pears
+  - group_label: Ingredients
+    quantity: '2'
+    ingredient: bay leaves
+  - group_label: Ingredients
+    quantity: '3'
+    ingredient: allspice berries
+  - group_label: Ingredients
+    quantity: '1'
+    ingredient: bulb garlic
+  - group_label: Ingredients
+    quantity: 1 bell
+    ingredient: pepper
+  - group_label: Ingredients
+    quantity: 200ml
+    ingredient: tomato juice
+  - group_label: Ingredients
+    quantity: 30g
+    ingredient: butter
+  - group_label: Ingredients
+    quantity: 2 tbsp
+    ingredient: tomato paste
+  - group_label: Ingredients
+    quantity: 3l
+    ingredient: water
+  - group_label: Ingredients
+    quantity: ''
+    ingredient: Sour cream
+  - group_label: Ingredients
+    quantity: '1'
+    ingredient: can beans (optional)
+  - group_label: Ingredients
+    quantity: ''
+    ingredient: Salt to taste
   field_method:
-  - step_title: Soften
-    instruction: Sweat the onion in olive oil with salt until deeply soft, 12 min. Add garlic and paprika for 1 min.
-  - step_title: Bloom
-    instruction: Crumble in saffron with a splash of warm water. Add tomatoes and stock and simmer 10 min.
-  - step_title: Simmer
-    instruction: Add chickpeas and preserved lemon. Cook gently 30–40 min until the liquid reduces to a glossy sauce.
-  - step_title: Finish
-    instruction: Taste. Serve with yogurt, dill, and warm flatbread.
-  field_notes:
-  - value: Better the next day. Freezes well.
+  - step_title: Step 1
+    instruction: Preheat the oven to 400°F/200°C. Put pork ribs on the baking dish
+      and bake them for 30 minutes. Wash but don’t peel the celery root. Dice the
+      carrot.
+  - step_title: Step 2
+    instruction: Put the baked pork ribs in a pot and add 3 liters of water. Chop
+      the celery root and carrot and add them to the pot, along with half the unpeeled
+      onion. Bring the pot to the boil and simmer for 30 minutes.
+  - step_title: Step 3
+    instruction: The heart of the borscht is sautéed vegetables. Dice the bell pepper,
+      tomatoes, and remainder of the onion. Place the butter in a saucepan and add
+      the vegetables. Cook them over a moderate heat until soft. Add the tomato paste,
+      reduce the heat, and simmer for 5-7 minutes. Grate a beet, add it to the saucepan,
+      and stew for a further 3-4 minutes.
+  - step_title: Step 4
+    instruction: Cut a garlic bulb in a half and add it to the pot. Shred the cabbage
+      and put it aside.
+  - step_title: Step 5
+    instruction: Take the second beet and squeeze all the juice out. If you don’t
+      have a juice squeezer, you can grate a beet and pass it through the sieve. Add
+      the juice together with the allspice, bay leaves, and several pinches of salt
+      to taste.
+  - step_title: Step 6
+    instruction: Optionally add the canned beans.
+  - step_title: Step 7
+    instruction: Add the smoked pears to the pot. They will make your dish smell smoky.
+  - step_title: Step 8
+    instruction: Add the shredded cabbage and cook for a further 5 minutes.
+  - step_title: Step 9
+    instruction: Take the borscht off the heat and let it stand for 30 minutes.
+  - step_title: To serve
+    instruction: Serve the borscht with a spoon of sour cream and chopped dill. Put
+      the leftover borscht in the fridge, and remember that it tastes better the next
+      day!
+  field_notes: []
   field_prep_minutes:
-  - value: 15
+  - value: 30
   field_recipe_category:
   - entity: c338f17b-b1ef-490e-abb6-88f1280c0e4c
   field_related_recipes:
-  - entity: 45d0c897-71de-4f57-95b3-4bec3818917d
-  - entity: fd7a4f69-f783-4ead-9e08-dd9d899fddb2
-  - entity: 83f730da-4588-4834-bcf6-6aa4142d8a62
+  - entity: 36a35a55-76f6-4e39-baf8-31798f2db0aa
+  - entity: ac36ac60-a124-4153-a2b9-671173cac6fb
+  - entity: 571994c9-f7dd-432c-8762-bb5ab5c94506
   field_servings:
-  - value: 4
+  - value: 8
   field_topics:
   - entity: 2eeac9a1-779b-4c68-af7b-7b86cdf74d78
-  - entity: a27aab93-f454-4cb1-882a-306d7af5eee6
-  - entity: 6aaee7b7-099a-4ea0-85b8-bbf33fed76d1
+  - entity: 598caa2a-4022-4978-abff-996ea50ba66d
   field_total_minutes:
-  - value: 75
+  - value: 90
   created:
-  - value: 1772798400
+  - value: 1776240000
   changed:
-  - value: 1776631111
+  - value: 1776240000
+  field_media_credit:
+  - value: Umami demo content
+  field_recipe_credit:
+  - value: Original Umami demo recipe by Drupal community contributors; preserved
+      from Drupal core demo content.

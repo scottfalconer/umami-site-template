@@ -6,12 +6,13 @@ _meta:
   default_langcode: en
   depends:
     5546aa05-f2e6-4d2f-a71f-7ef234eec0c6: user
-    d0727fd3-e008-4573-9db8-a8437f1aadbb: node
     2c2229b8-c0e2-490f-b52c-0aec7ef603ad: media
     300908fc-4fe2-4a0b-b3d3-834a1b57fa43: node
-    57d27c70-1991-4b54-8ba3-2a64f2d92ad7: node
+    be17db54-41fe-481a-8e2b-88673f537aa3: node
     f4abb3f5-2aab-44cb-8a86-2ef144bbd68a: node
-    a9d319bf-864a-4496-8dba-82dc1652f2aa: node
+    d0727fd3-e008-4573-9db8-a8437f1aadbb: node
+    36a35a55-76f6-4e39-baf8-31798f2db0aa: node
+    553198ce-abe4-448e-89f8-70cca32c43db: node
     ac36ac60-a124-4153-a2b9-671173cac6fb: node
     e745ac5c-96c1-405c-8a27-b55ebc9054a0: taxonomy_term
 default:
@@ -32,11 +33,12 @@ default:
   moderation_state:
   - value: published
   path:
-  - alias: /collections/fire-and-grill
+  - alias: "/collections/fire-and-grill"
     langcode: en
     pathauto: 0
   field_content:
-  - value: <p>Live-fire cooking, for people who do not take themselves too seriously but take the grill very seriously indeed.</p>
+  - value: "<p>Live-fire cooking, for people who do not take themselves too seriously
+      but take the grill very seriously indeed.</p>"
     format: content_format
   field_cta_links:
   - title: 'Read: fire and patience'
@@ -48,12 +50,13 @@ default:
   - entity: 2c2229b8-c0e2-490f-b52c-0aec7ef603ad
   field_featured_recipes:
   - entity: 300908fc-4fe2-4a0b-b3d3-834a1b57fa43
-  - entity: 57d27c70-1991-4b54-8ba3-2a64f2d92ad7
+  - entity: be17db54-41fe-481a-8e2b-88673f537aa3
   - entity: f4abb3f5-2aab-44cb-8a86-2ef144bbd68a
   field_related_articles:
   - entity: d0727fd3-e008-4573-9db8-a8437f1aadbb
   field_secondary_recipes:
-  - entity: a9d319bf-864a-4496-8dba-82dc1652f2aa
+  - entity: 36a35a55-76f6-4e39-baf8-31798f2db0aa
+  - entity: 553198ce-abe4-448e-89f8-70cca32c43db
   - entity: ac36ac60-a124-4153-a2b9-671173cac6fb
   field_topics:
   - entity: e745ac5c-96c1-405c-8a27-b55ebc9054a0

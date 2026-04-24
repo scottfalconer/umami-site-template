@@ -8,9 +8,9 @@ _meta:
     93f246ad-5565-41d3-a025-1089871bc8dc: user
     5546aa05-f2e6-4d2f-a71f-7ef234eec0c6: user
     21b47df2-13d8-41dd-bb95-c8877142b514: media
-    9f35ef4f-80d6-4b46-92ee-17610b4960ae: node
-    fd7a4f69-f783-4ead-9e08-dd9d899fddb2: node
-    45d0c897-71de-4f57-95b3-4bec3818917d: node
+    571994c9-f7dd-432c-8762-bb5ab5c94506: node
+    f0a5cac7-c43b-47cf-b278-0f22d7514808: node
+    e832f942-2282-4dd3-b804-1d85255a0f99: node
     57651b5c-628a-4b5b-bd93-68b3d97c0f4c: taxonomy_term
     598caa2a-4022-4978-abff-996ea50ba66d: taxonomy_term
 default:
@@ -31,24 +31,35 @@ default:
   moderation_state:
   - value: published
   path:
-  - alias: /article/spring-market-letter
+  - alias: "/article/spring-market-letter"
     langcode: en
     pathauto: 0
   field_content:
-  - value: '<p>The first spring market of the year is always, in part, a letter to your future self. You write it in bags: three bunches of dill, a kilo of radishes that will only be radishes for another week, a softened lemon with leaves on.</p><p>We came back with: a bouquet of green garlic, one early strawberry (a scout, on behalf of its friends), nettles still with their sting, and a wedge of fresh cheese from a stand that only opens when the wind is right.</p><h3>What to do with all of it</h3><p>This week we&#039;re cooking our way through the haul. The green herb fritters will use every last drooping stem. The braised leeks will sit on the counter in a shallow dish for two days and improve each time we walk past them.</p>'
+  - value: "<p>The first spring market of the year is always, in part, a letter to
+      your future self. You write it in bags: three bunches of dill, a kilo of radishes
+      that will only be radishes for another week, a softened lemon with leaves on.</p><p>We
+      came back with: a bouquet of green garlic, one early strawberry (a scout, on
+      behalf of its friends), nettles still with their sting, and a wedge of fresh
+      cheese from a stand that only opens when the wind is right.</p><h3>What to do
+      with all of it</h3><p>This week we&#039;re cooking our way through the haul.
+      The green herb fritters will use every last drooping stem. The braised leeks
+      will sit on the counter in a shallow dish for two days and improve each time
+      we walk past them.</p>"
     format: content_format
   field_description:
-  - value: Notes on a wet April, the first real radishes, and why you should buy three more bunches of herbs than you think you need.
+  - value: Notes on a wet April, the first real radishes, and why you should buy three
+      more bunches of herbs than you think you need.
   field_featured_image:
   - entity: 21b47df2-13d8-41dd-bb95-c8877142b514
   field_pull_quote:
-  - value: You cannot buy too many herbs in April. The impossible idea is that you will have leftovers.
+  - value: You cannot buy too many herbs in April. The impossible idea is that you
+      will have leftovers.
   field_read_minutes:
   - value: 4
   field_related_recipes:
-  - entity: 9f35ef4f-80d6-4b46-92ee-17610b4960ae
-  - entity: fd7a4f69-f783-4ead-9e08-dd9d899fddb2
-  - entity: 45d0c897-71de-4f57-95b3-4bec3818917d
+  - entity: 571994c9-f7dd-432c-8762-bb5ab5c94506
+  - entity: f0a5cac7-c43b-47cf-b278-0f22d7514808
+  - entity: e832f942-2282-4dd3-b804-1d85255a0f99
   field_topics:
   - entity: 57651b5c-628a-4b5b-bd93-68b3d97c0f4c
   - entity: 598caa2a-4022-4978-abff-996ea50ba66d

@@ -7,8 +7,9 @@ _meta:
   depends:
     b3ec0ba2-c460-4d0c-9841-82b1d105a505: user
     87fd51bb-8259-4ab1-9fac-ab3b954c55dc: media
-    f0a5cac7-c43b-47cf-b278-0f22d7514808: node
-    be17db54-41fe-481a-8e2b-88673f537aa3: node
+    300908fc-4fe2-4a0b-b3d3-834a1b57fa43: node
+    553198ce-abe4-448e-89f8-70cca32c43db: node
+    36a35a55-76f6-4e39-baf8-31798f2db0aa: node
     32021bd1-adb6-43e3-be1b-62671c2ffac6: taxonomy_term
 default:
   revision_uid:
@@ -28,11 +29,16 @@ default:
   moderation_state:
   - value: published
   path:
-  - alias: /article/the-quiet-dessert
+  - alias: "/article/the-quiet-dessert"
     langcode: en
     pathauto: 0
   field_content:
-  - value: '<p>Loud desserts are a trap. The meringue towers, the sauces that arrive with their own geography — they are showing off, which is to say, they are announcing that the rest of the dinner was not quite enough on its own.</p><p>A quiet dessert is a vote of confidence in the dinner. A plain olive oil cake after a pasta is a way of saying: that was a full meal, you can sit with it, and here is a little something to sit with it.</p>'
+  - value: "<p>Loud desserts are a trap. The meringue towers, the sauces that arrive
+      with their own geography — they are showing off, which is to say, they are announcing
+      that the rest of the dinner was not quite enough on its own.</p><p>A quiet dessert
+      is a vote of confidence in the dinner. A plain olive oil cake after a pasta
+      is a way of saying: that was a full meal, you can sit with it, and here is a
+      little something to sit with it.</p>"
     format: content_format
   field_description:
   - value: An argument for olive oil cake, and other desserts that do not shout.
@@ -41,8 +47,9 @@ default:
   field_read_minutes:
   - value: 5
   field_related_recipes:
-  - entity: f0a5cac7-c43b-47cf-b278-0f22d7514808
-  - entity: be17db54-41fe-481a-8e2b-88673f537aa3
+  - entity: 300908fc-4fe2-4a0b-b3d3-834a1b57fa43
+  - entity: 553198ce-abe4-448e-89f8-70cca32c43db
+  - entity: 36a35a55-76f6-4e39-baf8-31798f2db0aa
   field_topics:
   - entity: 32021bd1-adb6-43e3-be1b-62671c2ffac6
   created:

@@ -158,12 +158,12 @@ class ValidationTest extends BrowserTestBase {
     $featured_cards = \Drupal::service('umami_next.editorial_data')
       ->loadFeaturedCards('recipe', 6);
     $this->assertSame([
-      'Slow-Roasted Tomato Pappardelle',
-      'Sticky Sesame Aubergine',
-      'Weeknight Dal with Burnt Butter',
-      'Olive Oil Citrus Cake',
-      'Ribollita, in an Honest Mood',
-      'Plum and Almond Galette',
+      'Deep mediterranean quiche',
+      'Vegan chocolate and nut brownies',
+      'Super easy vegetarian pasta bake',
+      'Watercress soup',
+      'Victoria sponge cake',
+      'Gluten free pizza',
     ], array_column($featured_cards, 'title'));
   }
 
@@ -347,7 +347,7 @@ class ValidationTest extends BrowserTestBase {
     }
     $this->assertSession()->elementExists('css', '#block-umami-next-theme-facet-cuisine [data-drupal-facet-filter-value^="cuisine:"]');
     $this->assertSession()->elementExists('css', '#block-umami-next-theme-facet-cook-time [data-drupal-facet-filter-value^="cook_time:"]');
-    $this->assertSession()->pageTextContains('Slow-Roasted Tomato Pappardelle');
+    $this->assertSession()->pageTextContains('Deep mediterranean quiche');
     $this->assertSession()->pageTextNotContains('Not Found');
     $this->assertSession()->responseNotContains('href="/404"');
 
@@ -366,8 +366,8 @@ class ValidationTest extends BrowserTestBase {
     ]);
     $this->assertSession()->statusCodeEquals(200);
     $this->assertSession()->elementExists('css', '#block-umami-next-theme-facet-cuisine.facet-active');
-    $this->assertSession()->pageTextContains('Slow-Roasted Tomato Pappardelle');
-    $this->assertSession()->elementNotExists('css', 'a[href="/recipe/jollof-rice"]');
+    $this->assertSession()->pageTextContains('Deep mediterranean quiche');
+    $this->assertSession()->elementNotExists('css', 'a[href="/recipe/thai-green-curry"]');
   }
 
   /**

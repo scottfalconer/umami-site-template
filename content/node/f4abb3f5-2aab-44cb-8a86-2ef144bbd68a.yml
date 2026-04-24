@@ -5,27 +5,25 @@ _meta:
   bundle: recipe
   default_langcode: en
   depends:
-    5218ff5d-09d4-4416-84d9-43ccd4ca7526: user
-    b912a47e-a3ab-4926-8439-c04bb5bc0afe: taxonomy_term
-    803d86ca-1b91-4edb-a354-aaa627d58780: taxonomy_term
-    398f91ca-1021-4a4a-b2c9-526b36dd5469: taxonomy_term
+    1fbe9f2b-2df9-4f7d-8454-f5a7d095c6d1: user
+    26d310bb-312d-44e7-943d-7dbcd990eb61: taxonomy_term
     c94f0a95-b425-4e2b-9f74-da00769375af: media
     c338f17b-b1ef-490e-abb6-88f1280c0e4c: taxonomy_term
-    ac36ac60-a124-4153-a2b9-671173cac6fb: node
-    571994c9-f7dd-432c-8762-bb5ab5c94506: node
-    83f730da-4588-4834-bcf6-6aa4142d8a62: node
+    45d0c897-71de-4f57-95b3-4bec3818917d: node
+    300908fc-4fe2-4a0b-b3d3-834a1b57fa43: node
+    553198ce-abe4-448e-89f8-70cca32c43db: node
     26735ffd-6e41-4263-b276-f9ce28e7bb5c: taxonomy_term
 default:
   revision_uid:
-  - entity: 5218ff5d-09d4-4416-84d9-43ccd4ca7526
+  - entity: 1fbe9f2b-2df9-4f7d-8454-f5a7d095c6d1
   status:
   - value: true
   uid:
-  - entity: 5218ff5d-09d4-4416-84d9-43ccd4ca7526
+  - entity: 1fbe9f2b-2df9-4f7d-8454-f5a7d095c6d1
   title:
-  - value: Miso-Glazed Salmon Bowls
+  - value: Thai green curry
   promote:
-  - value: false
+  - value: true
   sticky:
   - value: false
   revision_translation_affected:
@@ -33,63 +31,82 @@ default:
   moderation_state:
   - value: published
   path:
-  - alias: /recipe/miso-glazed-salmon-bowls
+  - alias: "/recipe/thai-green-curry"
     langcode: en
     pathauto: 0
   field_cook_minutes:
-  - value: 10
+  - value: 15
   field_cuisine:
-  - entity: b912a47e-a3ab-4926-8439-c04bb5bc0afe
+  - entity: 26d310bb-312d-44e7-943d-7dbcd990eb61
   field_description:
-  - value: A quick marinade, a hot grill, and a bowl built around rice and pickles.
-  field_dietary:
-  - entity: 803d86ca-1b91-4edb-a354-aaa627d58780
-  - entity: 398f91ca-1021-4a4a-b2c9-526b36dd5469
+  - value: A quick and easy version of the classic Thai green curry. Perfect for a
+      midweek meal!
+  field_dietary: []
   field_difficulty:
   - value: Easy
   field_featured_image:
   - entity: c94f0a95-b425-4e2b-9f74-da00769375af
   field_ingredients:
-  - group_label: ''
-    quantity: 2 × 150 g
-    ingredient: salmon fillets
-  - group_label: ''
-    quantity: 2 tbsp
-    ingredient: white miso
-  - group_label: ''
+  - group_label: Ingredients
+    quantity: 400g
+    ingredient: coconut milk
+  - group_label: Ingredients
+    quantity: 400g
+    ingredient: chicken or tofu
+  - group_label: Ingredients
     quantity: 1 tbsp
-    ingredient: mirin
-  - group_label: ''
-    quantity: 1 tbsp
-    ingredient: soy
-  - group_label: ''
-    quantity: 1 tsp
-    ingredient: rice vinegar
-  - group_label: ''
-    quantity: to serve
-    ingredient: short-grain rice, pickled ginger, cucumber, nori
+    ingredient: Thai green curry paste
+  - group_label: Ingredients
+    quantity: '1'
+    ingredient: garlic clove
+  - group_label: Ingredients
+    quantity: 2 tsp
+    ingredient: fish sauce
+  - group_label: Ingredients
+    quantity: 400g
+    ingredient: mushrooms
+  - group_label: Ingredients
+    quantity: 200g green
+    ingredient: beans
+  - group_label: Ingredients
+    quantity: ''
+    ingredient: Fresh coriander leaves
+  - group_label: Ingredients
+    quantity: ''
+    ingredient: Jasmine rice
   field_method:
-  - step_title: Marinate
-    instruction: Whisk miso, mirin, soy, vinegar. Coat salmon; rest 20 min.
-  - step_title: Grill
-    instruction: Broil skin-side down for 4–5 min, glaze bubbling and dark in spots.
-  - step_title: Bowl
-    instruction: Rice, salmon, pickles, nori torn over the top.
+  - step_title: Step 1
+    instruction: In a large wok, brown the chicken until golden, then turn the heat
+      down and gently cook the garlic. Add the chopped green beans and stir.
+  - step_title: Step 2
+    instruction: Add the coconut milk, green curry paste and fish sauce. Mix well
+      and slowly simmer.
+  - step_title: Step 3
+    instruction: Add the chopped mushrooms and simmer until the chicken (or tofu)
+      is cooked.
+  - step_title: Step 4
+    instruction: Serve with jasmine rice and a sprinkle of coriander.
   field_prep_minutes:
-  - value: 15
+  - value: 10
   field_recipe_category:
   - entity: c338f17b-b1ef-490e-abb6-88f1280c0e4c
   field_related_recipes:
-  - entity: ac36ac60-a124-4153-a2b9-671173cac6fb
-  - entity: 571994c9-f7dd-432c-8762-bb5ab5c94506
-  - entity: 83f730da-4588-4834-bcf6-6aa4142d8a62
+  - entity: 45d0c897-71de-4f57-95b3-4bec3818917d
+  - entity: 300908fc-4fe2-4a0b-b3d3-834a1b57fa43
+  - entity: 553198ce-abe4-448e-89f8-70cca32c43db
   field_servings:
-  - value: 2
+  - value: 4
   field_topics:
   - entity: 26735ffd-6e41-4263-b276-f9ce28e7bb5c
   field_total_minutes:
   - value: 25
   created:
-  - value: 1770206400
+  - value: 1776499200
   changed:
-  - value: 1776631111
+  - value: 1776499200
+  field_media_credit:
+  - value: Keith Jay, CC BY-SA 4.0
+  field_notes: []
+  field_recipe_credit:
+  - value: Original Umami demo recipe by Drupal community contributors; preserved
+      from Drupal core demo content.
