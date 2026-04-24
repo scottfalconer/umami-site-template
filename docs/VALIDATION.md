@@ -3,6 +3,48 @@
 This file records clean-install findings that affect how the Umami site
 template should be evaluated or released.
 
+## April 24, 2026 Recipe-Composition Audit
+
+Covered on a clean DDEV install at `../umami-ownership-clean-20260424` after
+composing the lower-level Drupal CMS recipes and reducing the flattened
+`install:` and `config/` exports.
+
+Validation commands run:
+
+```sh
+make dev-sync-source TESTER_DIR=../umami-ownership-clean-20260424
+ddev drush site:install "recipes/umami" --site-name=Umami --account-name=admin --account-pass=admin -y
+ddev drush cr
+ddev drush search-api:index
+ddev drush search-api:status
+ddev drush watchdog:show --count=20 --severity=Error --format=table
+```
+
+Runtime checks confirmed:
+
+- `/`, `/recipes`, `/stories`, `/topic/weeknight`, `/search`, `/contact`,
+  `/collections/spring-market`, and `/sitemap.xml` return HTTP 200 inside the
+  DDEV web container.
+- `/search?keywords=tomato` returns indexed recipe/content results and no
+  longer returns the Canvas `/404` utility page.
+- `/contact` renders the Umami contact form with subject choices plus the
+  newsletter signup, while retaining Honeypot protection from
+  `drupal_cms_forms`.
+- Homepage, search, and contact browser snapshots had the expected headings,
+  links, and form controls, with no browser page errors or console errors.
+- The installed Canvas pages are `/home` and `/404`, and the functional test
+  guards that all referenced Canvas components are shipped as config.
+
+Known remaining status-report warnings:
+
+- `settings.php` is writable in DDEV. Production must protect configuration
+  files.
+- Package Manager is experimental and also emits its early-testing warning via
+  the Drupal CMS Admin UI stack.
+- Webform private files are not configured in local DDEV settings.
+- Webform external-library warnings remain for optional admin/UI libraries that
+  are not required by the public contact/newsletter forms.
+
 ## Latest Clean-Site Intent Coverage
 
 Covered on a standalone Drupal CMS install created from the recipe on April 22,

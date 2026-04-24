@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 use Composer\InstalledVersions;
 use Drupal\Component\Serialization\Json;
+use Drupal\Component\Serialization\Yaml;
 use Drupal\Core\Config\FileStorage;
 use Drupal\Core\Recipe\Recipe;
 use Drupal\KernelTests\KernelTestBase;
@@ -117,6 +118,40 @@ final class RequirementsTest extends KernelTestBase {
       }
       $this->assertArrayNotHasKey('_core', $data, "The $name config should not include a `_core` key.");
     }
+  }
+
+  /**
+   * Tests guardrails for upstream Drupal CMS recipe composition.
+   */
+  public function testRecipeCompositionGuardrails(): void {
+    $recipe = Yaml::decode(file_get_contents(self::getRecipePath() . '/recipe.yml'));
+    $recipes = $recipe['recipes'] ?? [];
+    $install = $recipe['install'] ?? [];
+    $expected_recipes = [
+      'core/recipes/administrator_role',
+      'core/recipes/core_recommended_maintenance',
+      'core/recipes/core_recommended_performance',
+      'drupal_cms_admin_ui',
+      'drupal_cms_authentication',
+      'drupal_cms_forms',
+      'drupal_cms_media',
+      'drupal_cms_search',
+      'drupal_cms_seo_basic',
+      'easy_email_express',
+    ];
+
+    $this->assertSame($expected_recipes, $recipes, 'Umami should compose the lower-level Drupal CMS feature recipes it depends on.');
+    $this->assertNotContains('drupal_cms_starter', $recipes, 'Site templates should compose lower-level Drupal CMS recipes directly, not another site template.');
+    $this->assertNotContains('drupal_cms_helper', $recipes, 'Drupal CMS Helper is a module dependency, not a top-level feature recipe.');
+    $this->assertSame(array_values(array_unique($recipes)), $recipes, 'Recipe composition should not list duplicate recipes.');
+    $this->assertNotContains('search_api', $install, 'Search API should be installed by the Drupal CMS Search recipe, not duplicated in the flat install list.');
+    $this->assertNotContains('search_api_db', $install, 'Search API DB should be installed by the Drupal CMS Search recipe, not duplicated in the flat install list.');
+    $this->assertNotContains('search_api_exclude', $install, 'Search API Exclude should be installed by the Drupal CMS Search recipe, not duplicated in the flat install list.');
+    $this->assertNotContains('canvas_stark', $install, 'Canvas Stark should be installed by the Drupal CMS Search recipe, not duplicated in the flat install list.');
+    $this->assertNotContains('webform', $install, 'Webform should be installed by the Drupal CMS Forms recipe, not duplicated in the flat install list.');
+    $this->assertNotContains('gin', $install, 'Gin should be installed by the Drupal CMS Admin UI recipe, not duplicated in the flat install list.');
+    $this->assertContains('canvas', $install, 'Canvas should stay explicit because Umami owns Canvas pages, templates, and components.');
+    $this->assertSame(array_values(array_unique($install)), $install, 'The flat install list should not contain duplicates.');
   }
 
 }

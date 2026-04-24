@@ -25,3 +25,7 @@ services:
       - '@entity_type.manager'
     tags:
       - { name: event_subscriber }
+  umami_next.search_index_subscriber:
+    class: Drupal\umami_next\EventSubscriber\SearchIndexSubscriber
+    tags:
+      - { name: event_subscriber }

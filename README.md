@@ -160,5 +160,6 @@ The remaining cleanup passes should:
 - Keep homepage recipe curation driven by Drupal's editable node flags: `promote` includes recipes in homepage curation and `sticky` pins the first row unless a future Canvas-native curation model replaces it.
 - Preserve installability evidence for every cleanup pass.
 
-See `docs/VALIDATION.md` for source-maintainer validation notes and upstream
+See `docs/RECIPE_OWNERSHIP.md` for the current recipe ownership matrix and
+`docs/VALIDATION.md` for source-maintainer validation notes and upstream
 findings discovered during clean-install intent testing.
