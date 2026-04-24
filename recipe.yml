@@ -2,9 +2,17 @@ name: Umami
 type: Site
 description: 'A Drupal CMS food magazine template with recipes, stories, collections, Canvas pages, and editorial workflows.'
 recipes:
+  - core/recipes/administrator_role
+  - core/recipes/core_recommended_maintenance
+  - core/recipes/core_recommended_performance
+  - drupal_cms_admin_ui
+  - drupal_cms_authentication
+  - drupal_cms_forms
+  - drupal_cms_media
   - drupal_cms_search
+  - drupal_cms_seo_basic
+  - easy_email_express
 install:
-  - announcements_feed
   - automated_cron
   - big_pipe
   - block
@@ -12,9 +20,7 @@ install:
   - ckeditor5
   - config
   - content_moderation
-  - contextual
   - datetime
-  - dblog
   - dynamic_page_cache
   - editor
   - field
@@ -29,94 +35,36 @@ install:
   - media
   - media_library
   - menu_link_content
-  - menu_ui
   - mysql
-  - navigation
   - node
   - options
   - package_manager
   - page_cache
   - path
   - path_alias
-  - responsive_image
   - system
   - taxonomy
   - text
-  - update
   - user
   - views
-  - views_ui
   - workflows
-  - automatic_updates
-  - autosave_form
-  - bpmn_io
   - canvas
-  - captcha
-  - coffee
   - crop
   - cva
-  - dashboard
-  - drupal_cms_helper
-  - drupical
-  - easy_breadcrumb
-  - easy_email
-  - easy_email_override
   - eca
-  - eca_base
-  - eca_config
-  - eca_content
-  - eca_misc
-  - eca_render
-  - eca_ui
-  - eca_user
   - editoria11y
-  - focal_point
-  - friendlycaptcha
-  - gin_login
-  - gin_toolbar
-  - honeypot
   - jquery_ui
   - jquery_ui_resizable
-  - klaro
-  - linkit
-  - login_emailusername
-  - mailsystem
-  - media_file_delete
-  - media_library_bulk_upload
-  - menu_link_attributes
   - metatag
   - metatag_open_graph
   - metatag_twitter_cards
-  - modeler_api
-  - navigation_extra_tools
-  - pathauto
-  - project_browser
   - redirect_404
-  - redirect
-  - sam
-  - scheduler
-  - scheduler_content_moderation_integration
   - schema_article
   - schema_metatag
-  - search_api_db
-  - search_api
-  - search_api_exclude
   - simple_sitemap
-  - svg_image
-  - symfony_mailer_lite
-  - tagify_user_list
-  - tagify
-  - token
-  - trash
-  - view_password
-  - webform_ui
-  - webform
   - umami_next
   - claro
   - stark
-  - canvas_stark
-  - easy_email_theme
-  - gin
   - mercury
   - umami_next_theme
 config:
@@ -360,6 +308,55 @@ config:
       simpleConfigUpdate:
         admin: gin
         default: umami_next_theme
+    friendlycaptcha.settings:
+      simpleConfigUpdate:
+        site_key: umami-local-friendlycaptcha
+        api_key: umami-local-friendlycaptcha
+        api_endpoint: local
+        enable_validation_logging: false
+    webform.webform.contact_form:
+      setProperties:
+        title: 'Contact form'
+        description: null
+        third_party_settings.honeypot.honeypot: true
+        elements: |-
+          name:
+            '#type': textfield
+            '#title': Your name
+            '#required': true
+          email:
+            '#type': email
+            '#title': Email
+            '#required': true
+          subject:
+            '#type': select
+            '#title': Subject
+            '#default_value': general
+            '#options':
+              general: General
+              recipe: Recipe question
+              tip: A tip from my kitchen
+          message:
+            '#type': textarea
+            '#title': Message
+            '#required': true
+          actions:
+            '#type': webform_actions
+            '#submit__label': Send message
+        settings.page: false
+        settings.form_title: both
+        settings.form_previous_submissions: true
+        settings.confirmation_message: '<p>Thank you. We read everything and answer what we can.</p>'
+        access.create.roles:
+          - anonymous
+          - authenticated
+        handlers: {  }
+        variants: {  }
+    workflows.workflow.basic_editorial:
+      addNodeTypes:
+        - article
+        - collection
+        - recipe
     user.flood:
       simpleConfigUpdate:
         uid_only: false
@@ -499,6 +496,68 @@ config:
           - 'access content'
           - 'use klaro'
           - 'view media'
+    user.role.content_editor:
+      setProperties:
+        status: true
+        is_admin: false
+        permissions:
+          - 'access administration pages'
+          - 'access content overview'
+          - 'access media overview'
+          - 'access trash'
+          - 'create article content'
+          - 'create canvas_page'
+          - 'create collection content'
+          - 'create document media'
+          - 'create image media'
+          - 'create page content'
+          - 'create recipe content'
+          - 'create remote_video media'
+          - 'create svg_image media'
+          - 'create url aliases'
+          - 'create video media'
+          - 'delete any article content'
+          - 'delete any collection content'
+          - 'delete any document media'
+          - 'delete any image media'
+          - 'delete any page content'
+          - 'delete any recipe content'
+          - 'delete any remote_video media'
+          - 'delete any svg_image media'
+          - 'delete any video media'
+          - 'delete article revisions'
+          - 'delete canvas_page'
+          - 'delete collection revisions'
+          - 'delete page revisions'
+          - 'delete recipe revisions'
+          - 'edit any article content'
+          - 'edit any collection content'
+          - 'edit any image media'
+          - 'edit any page content'
+          - 'edit any recipe content'
+          - 'edit any remote_video media'
+          - 'edit any svg_image media'
+          - 'edit any video media'
+          - 'edit canvas_page'
+          - 'mark as hidden in editoria11y'
+          - 'revert all revisions'
+          - 'schedule publishing of nodes'
+          - 'use basic_editorial transition create_new_draft'
+          - 'use basic_editorial transition publish'
+          - 'use basic_editorial transition unpublish'
+          - 'use media document bulk upload form'
+          - 'use media image bulk upload form'
+          - 'use media remote_video bulk upload form'
+          - 'use media svg_image bulk upload form'
+          - 'use media video bulk upload form'
+          - 'use text format content_format'
+          - 'view all revisions'
+          - 'view any unpublished content'
+          - 'view editoria11y checker'
+          - 'view own unpublished content'
+          - 'view own unpublished media'
+          - 'view scheduled content'
+          - 'view welcome dashboard'
     user.settings:
       simpleConfigUpdate:
         langcode: en

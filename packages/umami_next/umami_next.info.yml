@@ -10,3 +10,4 @@ dependencies:
   - drupal:node
   - drupal:pathauto
   - drupal:webform
+  - search_api:search_api

@@ -67,6 +67,7 @@ class ValidationTest extends BrowserTestBase {
     );
     $this->assertNotSame('America/Costa_Rica', \Drupal::config('system.date')->get('timezone.default'));
     $this->assertEditorialWorkflowCoversPrimaryBundles();
+    $this->assertEditorialRolesAreScoped();
 
     $routes = [
       '/' => NULL,
@@ -102,6 +103,7 @@ class ValidationTest extends BrowserTestBase {
     $this->assertSession()->statusCodeEquals(200);
     $this->assertSession()->pageTextContains('Weeknight');
 
+    $this->assertContactFormsRenderConfiguredElements();
     $this->assertUnpublishedContentReturns404WithoutEcaError();
     $this->assertSitemapIncludesPublicLandingPages();
     $this->assertSearchPageExposesSearchForm();
@@ -187,6 +189,68 @@ class ValidationTest extends BrowserTestBase {
   }
 
   /**
+   * Checks that editorial and site-building permissions stay separated.
+   */
+  protected function assertEditorialRolesAreScoped(): void {
+    $content_editor = \Drupal\user\Entity\Role::load('content_editor');
+    $this->assertNotNull($content_editor);
+    $this->assertFalse($content_editor->isAdmin());
+
+    foreach ([
+      'create article content',
+      'create collection content',
+      'create page content',
+      'create recipe content',
+      'edit any article content',
+      'edit any collection content',
+      'edit any page content',
+      'edit any recipe content',
+      'create canvas_page',
+      'edit canvas_page',
+      'use basic_editorial transition publish',
+    ] as $permission) {
+      $this->assertTrue($content_editor->hasPermission($permission), "Content editors should have `$permission`.");
+    }
+
+    foreach ([
+      'administer menu',
+      'administer redirects',
+      'administer url aliases',
+    ] as $permission) {
+      $this->assertFalse($content_editor->hasPermission($permission), "Content editors should not have site-builder permission `$permission`.");
+    }
+
+    $site_builder = \Drupal\user\Entity\Role::load('site_builder');
+    $this->assertNotNull($site_builder);
+    $this->assertFalse($site_builder->isAdmin());
+
+    foreach ([
+      'administer menu',
+      'administer redirects',
+      'administer url aliases',
+    ] as $permission) {
+      $this->assertTrue($site_builder->hasPermission($permission), "Site builders should have `$permission`.");
+    }
+  }
+
+  /**
+   * Checks that the public contact page uses Umami's form shape.
+   */
+  protected function assertContactFormsRenderConfiguredElements(): void {
+    $this->drupalGet('/contact');
+    $this->assertSession()->statusCodeEquals(200);
+
+    foreach (['name', 'email', 'subject', 'message'] as $field_name) {
+      $this->assertSession()->fieldExists($field_name);
+    }
+    $this->assertSession()->buttonExists('Send message');
+    $this->assertSession()->buttonExists('Subscribe');
+    $this->assertSession()->pageTextNotContains('CAPTCHA');
+    $this->assertSession()->responseNotContains('${site_uuid}');
+    $this->assertSession()->responseNotContains('frc-captcha');
+  }
+
+  /**
    * Checks that unpublished public requests stay quiet in operational logs.
    */
   protected function assertUnpublishedContentReturns404WithoutEcaError(): void {
@@ -212,7 +276,7 @@ class ValidationTest extends BrowserTestBase {
     $this->assertSession()->statusCodeEquals(200);
 
     foreach (['/', '/recipes', '/stories', '/contact'] as $path) {
-      $this->assertSession()->responseContains('http://localhost' . $path);
+      $this->assertSession()->responseMatches('#<loc>https?://[^<]+' . preg_quote($path, '#') . '</loc>#');
     }
   }
 
@@ -223,8 +287,20 @@ class ValidationTest extends BrowserTestBase {
     $this->drupalGet('/search');
     $this->assertSession()->statusCodeEquals(200);
     $this->assertSession()->elementExists('css', 'h1');
-    $this->assertSession()->fieldExists('keywords');
-    $this->assertSession()->buttonExists('Search');
+
+    $search_view = \Drupal::config('views.view.search');
+    $this->assertSame('keywords', $search_view->get('display.default.display_options.filters.search_api_fulltext.expose.identifier'));
+    $this->assertTrue($search_view->get('display.page.display_options.exposed_block'));
+
+    $search_block = \Drupal::config('block.block.umami_next_theme_search_exposed_form');
+    $this->assertSame('views_exposed_filter_block:search-page', $search_block->get('plugin'));
+    $this->assertSame('/search', $search_block->get('visibility.request_path.pages'));
+
+    $this->drupalGet('/search', ['query' => ['keywords' => 'tomato']]);
+    $this->assertSession()->statusCodeEquals(200);
+    $this->assertSession()->pageTextContains('Slow-Roasted Tomato Pappardelle');
+    $this->assertSession()->pageTextNotContains('Not Found');
+    $this->assertSession()->responseNotContains('href="/404"');
   }
 
   /**
