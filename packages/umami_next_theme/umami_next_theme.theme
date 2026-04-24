@@ -79,8 +79,6 @@ function umami_next_theme_preprocess_node(array &$variables): void {
       'servings' => (int) $node->get('field_servings')->value,
       'difficulty' => (string) $node->get('field_difficulty')->value,
       'notes' => (string) $node->get('field_notes')->value,
-      'credit' => (string) $node->get('field_media_credit')->value,
-      'recipe_credit' => $node->hasField('field_recipe_credit') ? (string) $node->get('field_recipe_credit')->value : '',
       'related_recipes' => $builder->buildReferencedRecipeCards($node, 'field_related_recipes'),
       'newsletter_form' => $builder->buildWebform('newsletter_signup'),
     ];

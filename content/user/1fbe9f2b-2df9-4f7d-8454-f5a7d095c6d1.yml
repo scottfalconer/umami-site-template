@@ -7,9 +7,9 @@ default:
   preferred_langcode:
   - value: en
   name:
-  - value: Drupal community
+  - value: Umami
   mail:
-  - value: drupal-community@example.com
+  - value: umami@example.com
   timezone:
   - value: UTC
   status:
@@ -17,8 +17,3 @@ default:
   path:
   - langcode: en
     alias: 
-  field_bio:
-  - value: The original Umami demo recipes were written, cooked, and photographed
-      by Drupal community contributors.
-  field_role:
-  - value: Community contributors

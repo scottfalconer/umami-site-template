@@ -9,12 +9,10 @@ dependencies:
     - field.field.node.recipe.field_difficulty
     - field.field.node.recipe.field_featured_image
     - field.field.node.recipe.field_ingredients
-    - field.field.node.recipe.field_media_credit
     - field.field.node.recipe.field_method
     - field.field.node.recipe.field_notes
     - field.field.node.recipe.field_prep_minutes
     - field.field.node.recipe.field_recipe_category
-    - field.field.node.recipe.field_recipe_credit
     - field.field.node.recipe.field_related_recipes
     - field.field.node.recipe.field_servings
     - field.field.node.recipe.field_topics
@@ -89,14 +87,6 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_media_credit:
-    type: string_textfield
-    weight: 17
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
   field_method:
     type: umami_method_step
     weight: 14
@@ -126,14 +116,6 @@ content:
       match_operator: CONTAINS
       match_limit: 10
       size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  field_recipe_credit:
-    type: string_textarea
-    weight: 16
-    region: content
-    settings:
-      rows: 3
       placeholder: ''
     third_party_settings: {  }
   field_related_recipes:

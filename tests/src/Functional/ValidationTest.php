@@ -68,6 +68,7 @@ class ValidationTest extends BrowserTestBase {
     $this->assertNotSame('America/Costa_Rica', \Drupal::config('system.date')->get('timezone.default'));
     $this->assertEditorialWorkflowCoversPrimaryBundles();
     $this->assertEditorialRolesAreScoped();
+    $this->assertRecipeAttributionMatchesCoreUmami();
 
     $routes = [
       '/' => NULL,
@@ -107,6 +108,34 @@ class ValidationTest extends BrowserTestBase {
     $this->assertUnpublishedContentReturns404WithoutEcaError();
     $this->assertSitemapIncludesPublicLandingPages();
     $this->assertSearchPageExposesSearchForm();
+  }
+
+  /**
+   * Checks that recipe attribution stays close to Drupal core Umami.
+   */
+  protected function assertRecipeAttributionMatchesCoreUmami(): void {
+    $recipe_ids = \Drupal::entityQuery('node')
+      ->condition('type', 'recipe')
+      ->condition('status', 1)
+      ->accessCheck(FALSE)
+      ->execute();
+    $this->assertCount(10, $recipe_ids);
+
+    $field_definitions = \Drupal::service('entity_field.manager')
+      ->getFieldDefinitions('node', 'recipe');
+    $this->assertArrayNotHasKey('field_recipe_credit', $field_definitions);
+    $this->assertArrayNotHasKey('field_media_credit', $field_definitions);
+
+    $node_storage = \Drupal::entityTypeManager()->getStorage('node');
+    foreach ($node_storage->loadMultiple($recipe_ids) as $node) {
+      $this->assertSame('Umami', $node->getOwner()->getAccountName());
+    }
+
+    $this->drupalGet('/recipe/deep-mediterranean-quiche');
+    $this->assertSession()->statusCodeEquals(200);
+    $this->assertSession()->pageTextContains('By Umami');
+    $this->assertSession()->pageTextNotContains('Original Umami demo recipe');
+    $this->assertSession()->responseNotContains('Photo:');
   }
 
   /**
