@@ -1,0 +1,20 @@
+_meta:
+  version: '1.0'
+  entity_type: taxonomy_term
+  uuid: 946815a9-7d5e-44f2-b0f7-32ad31f098c0
+  bundle: cuisine
+  default_langcode: en
+default:
+  status:
+  - value: true
+  name:
+  - value: Ukrainian
+  weight:
+  - value: 0
+  revision_translation_affected:
+  - value: true
+  path:
+  - langcode: en
+    alias: 
+  field_slug:
+  - value: ukrainian

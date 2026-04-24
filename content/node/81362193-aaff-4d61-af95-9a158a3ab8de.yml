@@ -7,9 +7,9 @@ _meta:
   depends:
     f2055c45-d739-46c4-8e56-ada172f1f9d8: user
     8f01a75f-168f-4411-be23-86e78dc7785b: media
-    e832f942-2282-4dd3-b804-1d85255a0f99: node
-    553198ce-abe4-448e-89f8-70cca32c43db: node
-    45d0c897-71de-4f57-95b3-4bec3818917d: node
+    36a35a55-76f6-4e39-baf8-31798f2db0aa: node
+    ac36ac60-a124-4153-a2b9-671173cac6fb: node
+    571994c9-f7dd-432c-8762-bb5ab5c94506: node
     598caa2a-4022-4978-abff-996ea50ba66d: taxonomy_term
     2eeac9a1-779b-4c68-af7b-7b86cdf74d78: taxonomy_term
 default:
@@ -30,24 +30,31 @@ default:
   moderation_state:
   - value: published
   path:
-  - alias: /article/heritage-the-long-pot
+  - alias: "/article/heritage-the-long-pot"
     langcode: en
     pathauto: 0
   field_content:
-  - value: <p>Every cuisine has its long pot — the thing you make on Sunday, intending to eat it on Monday, and truly eat on Tuesday, when it has become itself.</p><p>In Tuscany it is ribollita. The name is not decorative; it means re-boiled, and the recipe is built around the idea that yesterday&#039;s soup is today&#039;s soup, plus some stale bread, plus a generous pour of new olive oil. The technique and the household are inseparable.</p>
+  - value: "<p>Every cuisine has its long pot — the thing you make on Sunday, intending
+      to eat it on Monday, and truly eat on Tuesday, when it has become itself.</p><p>In
+      Tuscany it is ribollita. The name is not decorative; it means re-boiled, and
+      the recipe is built around the idea that yesterday&#039;s soup is today&#039;s
+      soup, plus some stale bread, plus a generous pour of new olive oil. The technique
+      and the household are inseparable.</p>"
     format: content_format
   field_description:
-  - value: A small portrait of ribollita, the Tuscan soup that taught itself to live twice.
+  - value: A small portrait of ribollita, the Tuscan soup that taught itself to live
+      twice.
   field_featured_image:
   - entity: 8f01a75f-168f-4411-be23-86e78dc7785b
   field_pull_quote:
-  - value: The name means 're-boiled'. The great recipes know they are better the second time.
+  - value: The name means 're-boiled'. The great recipes know they are better the
+      second time.
   field_read_minutes:
   - value: 7
   field_related_recipes:
-  - entity: e832f942-2282-4dd3-b804-1d85255a0f99
-  - entity: 553198ce-abe4-448e-89f8-70cca32c43db
-  - entity: 45d0c897-71de-4f57-95b3-4bec3818917d
+  - entity: 36a35a55-76f6-4e39-baf8-31798f2db0aa
+  - entity: ac36ac60-a124-4153-a2b9-671173cac6fb
+  - entity: 571994c9-f7dd-432c-8762-bb5ab5c94506
   field_topics:
   - entity: 598caa2a-4022-4978-abff-996ea50ba66d
   - entity: 2eeac9a1-779b-4c68-af7b-7b86cdf74d78

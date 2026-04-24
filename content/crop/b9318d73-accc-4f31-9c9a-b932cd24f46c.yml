@@ -8,23 +8,16 @@ _meta:
     37c2cdc8-d174-4a4d-b42c-b02e0939945e: file
 default:
   entity_id:
-    -
-      uuid: 37c2cdc8-d174-4a4d-b42c-b02e0939945e
+  - uuid: 37c2cdc8-d174-4a4d-b42c-b02e0939945e
   entity_type:
-    -
-      value: file
+  - value: file
   uri:
-    -
-      value: 'public://umami-next/sticky-sesame-aubergine.jpg'
+  - value: public://umami-next/vegan-chocolate-nut-brownies.jpg
   x:
-    -
-      value: 800
-  'y':
-    -
-      value: 550
+  - value: 385
+  y:
+  - value: 256
   revision_uid:
-    -
-      target_id: 0
+  - target_id: 0
   revision_translation_affected:
-    -
-      value: true
+  - value: true

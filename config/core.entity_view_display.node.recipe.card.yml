@@ -16,6 +16,7 @@ dependencies:
     - field.field.node.recipe.field_notes
     - field.field.node.recipe.field_prep_minutes
     - field.field.node.recipe.field_recipe_category
+    - field.field.node.recipe.field_recipe_credit
     - field.field.node.recipe.field_related_recipes
     - field.field.node.recipe.field_servings
     - field.field.node.recipe.field_topics
@@ -50,6 +51,7 @@ hidden:
   field_notes: true
   field_prep_minutes: true
   field_recipe_category: true
+  field_recipe_credit: true
   field_related_recipes: true
   field_servings: true
   field_topics: true

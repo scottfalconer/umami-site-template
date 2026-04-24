@@ -5,20 +5,14 @@ _meta:
   default_langcode: en
 default:
   uid:
-    -
-      target_id: 0
+  - target_id: 0
   filename:
-    -
-      value: blistered-peppers-with-honey.jpg
+  - value: chili-sauce-umami.jpg
   uri:
-    -
-      value: 'public://umami-next/blistered-peppers-with-honey.jpg'
+  - value: public://umami-next/chili-sauce-umami.jpg
   filemime:
-    -
-      value: image/jpeg
+  - value: image/jpeg
   filesize:
-    -
-      value: 140879
+  - value: 100481
   status:
-    -
-      value: true
+  - value: true

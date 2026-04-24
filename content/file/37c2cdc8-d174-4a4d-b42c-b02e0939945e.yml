@@ -5,20 +5,14 @@ _meta:
   default_langcode: en
 default:
   uid:
-    -
-      target_id: 0
+  - target_id: 0
   filename:
-    -
-      value: sticky-sesame-aubergine.jpg
+  - value: vegan-chocolate-nut-brownies.jpg
   uri:
-    -
-      value: 'public://umami-next/sticky-sesame-aubergine.jpg'
+  - value: public://umami-next/vegan-chocolate-nut-brownies.jpg
   filemime:
-    -
-      value: image/jpeg
+  - value: image/jpeg
   filesize:
-    -
-      value: 555215
+  - value: 109982
   status:
-    -
-      value: true
+  - value: true

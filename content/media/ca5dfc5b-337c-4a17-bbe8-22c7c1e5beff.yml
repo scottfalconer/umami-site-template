@@ -8,25 +8,20 @@ _meta:
     ab847ef9-502e-43bc-8fec-cebf529f4d21: file
 default:
   status:
-    -
-      value: true
+  - value: true
   uid:
-    -
-      target_id: 0
+  - target_id: 0
   name:
-    -
-      value: ribollita
+  - value: victoria-sponge-cake
   revision_translation_affected:
-    -
-      value: true
+  - value: true
   path:
-    -
-      langcode: en
-      alias: null
+  - langcode: en
+    alias:
   field_media_image:
-    -
-      alt: 'Ribollita, in an Honest Mood'
-      title: ''
-      width: 1600
-      height: 1100
-      entity: ab847ef9-502e-43bc-8fec-cebf529f4d21
+  - alt: A classic, uncut Victoria sponge with a deep filling of butter cream and
+      jam
+    title: ''
+    width: 768
+    height: 512
+    entity: ab847ef9-502e-43bc-8fec-cebf529f4d21

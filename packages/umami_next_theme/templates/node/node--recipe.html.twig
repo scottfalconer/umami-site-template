@@ -19,9 +19,17 @@
           </div>
         {% endif %}
       </div>
+      {% if umami_recipe.recipe_credit %}
+        <p class="provenance-note">{{ umami_recipe.recipe_credit }}</p>
+      {% endif %}
     </div>
     {% if content.field_featured_image %}
-      <div class="detail-hero__image">{{ content.field_featured_image }}</div>
+      <figure class="detail-hero__figure">
+        <div class="detail-hero__image">{{ content.field_featured_image }}</div>
+        {% if umami_recipe.credit %}
+          <figcaption class="media-credit">{{ 'Photo:'|t }} {{ umami_recipe.credit }}</figcaption>
+        {% endif %}
+      </figure>
     {% endif %}
   </header>
 

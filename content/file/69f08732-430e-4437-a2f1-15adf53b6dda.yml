@@ -5,20 +5,14 @@ _meta:
   default_langcode: en
 default:
   uid:
-    -
-      target_id: 0
+  - target_id: 0
   filename:
-    -
-      value: saffron-chickpea-stew.jpg
+  - value: borscht-with-pork-ribs-umami.jpg
   uri:
-    -
-      value: 'public://umami-next/saffron-chickpea-stew.jpg'
+  - value: public://umami-next/borscht-with-pork-ribs-umami.jpg
   filemime:
-    -
-      value: image/jpeg
+  - value: image/jpeg
   filesize:
-    -
-      value: 492945
+  - value: 66852
   status:
-    -
-      value: true
+  - value: true

@@ -130,6 +130,11 @@ This package is install-time source of truth for a new Drupal CMS site. Site
 structure, sample content, Canvas templates, menus, and block placement are
 owned by the recipe export in `config/` and `content/`.
 
+The recipe content intentionally keeps the original Drupal core Umami demo
+recipes and photography contributed by Drupal community members. Future content
+expansion should preserve that provenance pattern instead of replacing the
+community corpus with synthetic filler.
+
 After installation, the downstream site owns normal Drupal configuration
 management. A production site should set its own config sync directory outside
 the web root and commit post-install site changes in that downstream project.

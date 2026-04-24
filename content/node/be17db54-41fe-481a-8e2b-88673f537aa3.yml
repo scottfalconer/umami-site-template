@@ -5,25 +5,24 @@ _meta:
   bundle: recipe
   default_langcode: en
   depends:
-    b3ec0ba2-c460-4d0c-9841-82b1d105a505: user
-    581004c8-63fb-48a5-9532-cadb0bb421b6: taxonomy_term
-    3ce6cd35-e603-4716-8056-28c655260f25: taxonomy_term
+    1fbe9f2b-2df9-4f7d-8454-f5a7d095c6d1: user
+    dad86604-0666-486c-a6c6-dbbb22882482: taxonomy_term
+    9e7771fb-6acb-45f9-87f0-72ddf70eb4b1: taxonomy_term
     bdbc50fd-159e-4db1-b7f5-10f7eaf5a2fe: media
-    92f4f4e0-7ee7-4328-8e56-0ae7c6d2c628: taxonomy_term
-    f0a5cac7-c43b-47cf-b278-0f22d7514808: node
-    097ae30f-fce3-45f6-9959-d7cc88b6c81d: node
-    ecf6d4f5-edac-42f5-a438-14ee88210f36: node
-    32021bd1-adb6-43e3-be1b-62671c2ffac6: taxonomy_term
-    57651b5c-628a-4b5b-bd93-68b3d97c0f4c: taxonomy_term
+    c338f17b-b1ef-490e-abb6-88f1280c0e4c: taxonomy_term
+    f4abb3f5-2aab-44cb-8a86-2ef144bbd68a: node
+    45d0c897-71de-4f57-95b3-4bec3818917d: node
+    300908fc-4fe2-4a0b-b3d3-834a1b57fa43: node
+    26735ffd-6e41-4263-b276-f9ce28e7bb5c: taxonomy_term
 default:
   revision_uid:
-  - entity: b3ec0ba2-c460-4d0c-9841-82b1d105a505
+  - entity: 1fbe9f2b-2df9-4f7d-8454-f5a7d095c6d1
   status:
   - value: true
   uid:
-  - entity: b3ec0ba2-c460-4d0c-9841-82b1d105a505
+  - entity: 1fbe9f2b-2df9-4f7d-8454-f5a7d095c6d1
   title:
-  - value: Plum and Almond Galette
+  - value: Gluten free pizza
   promote:
   - value: true
   sticky:
@@ -33,72 +32,101 @@ default:
   moderation_state:
   - value: published
   path:
-  - alias: /recipe/plum-and-almond-galette
+  - alias: "/recipe/gluten-free-pizza"
     langcode: en
     pathauto: 0
   field_cook_minutes:
-  - value: 40
+  - value: 15
   field_cuisine:
-  - entity: 581004c8-63fb-48a5-9532-cadb0bb421b6
+  - entity: dad86604-0666-486c-a6c6-dbbb22882482
   field_description:
-  - value: Forgiving pastry, deep red fruit, a slick of almond. Built for impatience.
+  - value: A gorgeous and simple gluten free pizza, with deliciously indulgent mozzarella
+      and Parma ham. Can easily be vegetarian by leaving out the ham.
   field_dietary:
-  - entity: 3ce6cd35-e603-4716-8056-28c655260f25
+  - entity: 9e7771fb-6acb-45f9-87f0-72ddf70eb4b1
   field_difficulty:
-  - value: Medium
+  - value: Easy
   field_featured_image:
   - entity: bdbc50fd-159e-4db1-b7f5-10f7eaf5a2fe
   field_ingredients:
-  - group_label: Pastry
-    quantity: 200 g
-    ingredient: plain flour
-  - group_label: Pastry
-    quantity: 140 g
-    ingredient: cold butter, cubed
-  - group_label: Pastry
-    quantity: 1 tbsp
+  - group_label: Ingredients
+    quantity: 400g gluten free
+    ingredient: flour
+  - group_label: Ingredients
+    quantity: 125ml
+    ingredient: warm water
+  - group_label: Ingredients
+    quantity: 125ml
+    ingredient: milk
+  - group_label: Ingredients
+    quantity: '1'
+    ingredient: sachet dried yeast
+  - group_label: Ingredients
+    quantity: 2 tsp
     ingredient: sugar
-  - group_label: Pastry
-    quantity: pinch
+  - group_label: Ingredients
+    quantity: 1 tsp
     ingredient: salt
-  - group_label: Pastry
-    quantity: 4–5 tbsp
-    ingredient: ice water
-  - group_label: Filling
-    quantity: 60 g
-    ingredient: ground almonds
-  - group_label: Filling
+  - group_label: Ingredients
     quantity: 2 tbsp
-    ingredient: sugar
-  - group_label: Filling
-    quantity: 500 g
-    ingredient: plums, halved and pitted
-  - group_label: Filling
-    quantity: 1 tbsp
-    ingredient: turbinado sugar for the edge
+    ingredient: olive oil
+  - group_label: Ingredients
+    quantity: 4 tbsp
+    ingredient: tomato puree
+  - group_label: Ingredients
+    quantity: '1'
+    ingredient: garlic clove
+  - group_label: Ingredients
+    quantity: ''
+    ingredient: Fresh basil
+  - group_label: Ingredients
+    quantity: 200g
+    ingredient: mozzarella
+  - group_label: Ingredients
+    quantity: 100g
+    ingredient: rocket
+  - group_label: Ingredients
+    quantity: '5'
+    ingredient: slices Parma ham
   field_method:
-  - step_title: Pastry
-    instruction: Rub butter into flour until pea-sized. Stir in water until it just holds. Chill 30 min.
-  - step_title: Assemble
-    instruction: Roll to a rough 30 cm round. Scatter almonds and sugar, pile on plums, fold in the edges.
-  - step_title: Bake
-    instruction: 220°C for 15 min, then 190°C for 25 min until golden.
+  - step_title: Step 1
+    instruction: Preheat the oven to 425°F/220°C. Mix some of the milk and water in
+      a jug, and add the yeast and sugar, then set aside.
+  - step_title: Step 2
+    instruction: In a bowl, mix the flour, salt and oil. Slowly add the liquid from
+      the jug and form into a dough.
+  - step_title: Step 3
+    instruction: Break the dough in half and shape into two pizza bases. Set aside
+      for about 15 minutes, whilst making the topping.
+  - step_title: Step 4
+    instruction: Spread the tomato puree over the pizza bases, chop the basil and
+      rocket and sprinkle over the tomato. Lay the chopped Parma ham on top and add
+      thick slices of mozzarella across the pizza.
+  - step_title: Step 5
+    instruction: Cook in the oven directly on the top shelf (with a tray underneath)
+      for 10-12 minutes until the mozzarella is bubbling. Season with salt and pepper
+      and serve.
   field_prep_minutes:
-  - value: 30
+  - value: 15
   field_recipe_category:
-  - entity: 92f4f4e0-7ee7-4328-8e56-0ae7c6d2c628
+  - entity: c338f17b-b1ef-490e-abb6-88f1280c0e4c
   field_related_recipes:
-  - entity: f0a5cac7-c43b-47cf-b278-0f22d7514808
-  - entity: 097ae30f-fce3-45f6-9959-d7cc88b6c81d
-  - entity: ecf6d4f5-edac-42f5-a438-14ee88210f36
+  - entity: f4abb3f5-2aab-44cb-8a86-2ef144bbd68a
+  - entity: 45d0c897-71de-4f57-95b3-4bec3818917d
+  - entity: 300908fc-4fe2-4a0b-b3d3-834a1b57fa43
   field_servings:
-  - value: 8
+  - value: 4
   field_topics:
-  - entity: 32021bd1-adb6-43e3-be1b-62671c2ffac6
-  - entity: 57651b5c-628a-4b5b-bd93-68b3d97c0f4c
+  - entity: 26735ffd-6e41-4263-b276-f9ce28e7bb5c
   field_total_minutes:
-  - value: 70
+  - value: 30
   created:
-  - value: 1763812800
+  - value: 1776585600
   changed:
-  - value: 1776631111
+  - value: 1776585600
+  field_media_credit:
+  - value: Keith Jay, CC BY-SA 4.0
+  field_notes: []
+  field_recipe_credit:
+  - value: Original Umami demo recipe by Drupal community contributors; preserved
+      from Drupal core demo content.

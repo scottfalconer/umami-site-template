@@ -8,23 +8,16 @@ _meta:
     0e172613-3ccd-4f16-9030-28a0b250cb3d: file
 default:
   entity_id:
-    -
-      uuid: 0e172613-3ccd-4f16-9030-28a0b250cb3d
+  - uuid: 0e172613-3ccd-4f16-9030-28a0b250cb3d
   entity_type:
-    -
-      value: file
+  - value: file
   uri:
-    -
-      value: 'public://umami-next/slow-roasted-tomato-pappardelle.jpg'
+  - value: public://umami-next/mediterranean-quiche-umami.jpg
   x:
-    -
-      value: 800
-  'y':
-    -
-      value: 550
+  - value: 384
+  y:
+  - value: 255
   revision_uid:
-    -
-      target_id: 0
+  - target_id: 0
   revision_translation_affected:
-    -
-      value: true
+  - value: true

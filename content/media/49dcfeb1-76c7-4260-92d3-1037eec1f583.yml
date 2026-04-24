@@ -8,25 +8,20 @@ _meta:
     37c2cdc8-d174-4a4d-b42c-b02e0939945e: file
 default:
   status:
-    -
-      value: true
+  - value: true
   uid:
-    -
-      target_id: 0
+  - target_id: 0
   name:
-    -
-      value: sticky-sesame-aubergine
+  - value: vegan-chocolate-and-nut-brownies
   revision_translation_affected:
-    -
-      value: true
+  - value: true
   path:
-    -
-      langcode: en
-      alias: null
+  - langcode: en
+    alias:
   field_media_image:
-    -
-      alt: 'Sticky Sesame Aubergine'
-      title: ''
-      width: 1600
-      height: 1100
-      entity: 37c2cdc8-d174-4a4d-b42c-b02e0939945e
+  - alt: A stack of chocolate and pecan brownies, sprinkled with pecan crumbs and
+      crushed walnut, fresh out of the oven
+    title: ''
+    width: 770
+    height: 512
+    entity: 37c2cdc8-d174-4a4d-b42c-b02e0939945e

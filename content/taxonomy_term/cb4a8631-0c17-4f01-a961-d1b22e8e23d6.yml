@@ -1,0 +1,20 @@
+_meta:
+  version: '1.0'
+  entity_type: taxonomy_term
+  uuid: cb4a8631-0c17-4f01-a961-d1b22e8e23d6
+  bundle: cuisine
+  default_langcode: en
+default:
+  status:
+  - value: true
+  name:
+  - value: British
+  weight:
+  - value: 0
+  revision_translation_affected:
+  - value: true
+  path:
+  - langcode: en
+    alias: 
+  field_slug:
+  - value: british

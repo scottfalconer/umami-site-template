@@ -5,20 +5,14 @@ _meta:
   default_langcode: en
 default:
   uid:
-    -
-      target_id: 0
+  - target_id: 0
   filename:
-    -
-      value: olive-oil-citrus-cake.jpg
+  - value: watercress-soup-umami.jpg
   uri:
-    -
-      value: 'public://umami-next/olive-oil-citrus-cake.jpg'
+  - value: public://umami-next/watercress-soup-umami.jpg
   filemime:
-    -
-      value: image/jpeg
+  - value: image/jpeg
   filesize:
-    -
-      value: 215595
+  - value: 31072
   status:
-    -
-      value: true
+  - value: true

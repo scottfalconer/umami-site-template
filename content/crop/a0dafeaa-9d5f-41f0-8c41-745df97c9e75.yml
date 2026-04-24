@@ -8,23 +8,16 @@ _meta:
     ab847ef9-502e-43bc-8fec-cebf529f4d21: file
 default:
   entity_id:
-    -
-      uuid: ab847ef9-502e-43bc-8fec-cebf529f4d21
+  - uuid: ab847ef9-502e-43bc-8fec-cebf529f4d21
   entity_type:
-    -
-      value: file
+  - value: file
   uri:
-    -
-      value: 'public://umami-next/ribollita.jpg'
+  - value: public://umami-next/victoria-sponge-umami.jpg
   x:
-    -
-      value: 800
-  'y':
-    -
-      value: 550
+  - value: 384
+  y:
+  - value: 256
   revision_uid:
-    -
-      target_id: 0
+  - target_id: 0
   revision_translation_affected:
-    -
-      value: true
+  - value: true

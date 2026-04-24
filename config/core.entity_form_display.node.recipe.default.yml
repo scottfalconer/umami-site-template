@@ -14,6 +14,7 @@ dependencies:
     - field.field.node.recipe.field_notes
     - field.field.node.recipe.field_prep_minutes
     - field.field.node.recipe.field_recipe_category
+    - field.field.node.recipe.field_recipe_credit
     - field.field.node.recipe.field_related_recipes
     - field.field.node.recipe.field_servings
     - field.field.node.recipe.field_topics
@@ -90,7 +91,7 @@ content:
     third_party_settings: {  }
   field_media_credit:
     type: string_textfield
-    weight: 16
+    weight: 17
     region: content
     settings:
       size: 60
@@ -127,9 +128,17 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  field_recipe_credit:
+    type: string_textarea
+    weight: 16
+    region: content
+    settings:
+      rows: 3
+      placeholder: ''
+    third_party_settings: {  }
   field_related_recipes:
     type: entity_reference_autocomplete_tags
-    weight: 17
+    weight: 18
     region: content
     settings:
       match_operator: CONTAINS

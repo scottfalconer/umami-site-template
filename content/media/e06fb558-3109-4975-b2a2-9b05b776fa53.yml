@@ -8,25 +8,20 @@ _meta:
     f51ffee1-c8b4-4ea0-a843-fa87edbbb9e7: file
 default:
   status:
-    -
-      value: true
+  - value: true
   uid:
-    -
-      target_id: 0
+  - target_id: 0
   name:
-    -
-      value: white-beans-with-celery-and-lemon
+  - value: crema-catalana
   revision_translation_affected:
-    -
-      value: true
+  - value: true
   path:
-    -
-      langcode: en
-      alias: null
+  - langcode: en
+    alias:
   field_media_image:
-    -
-      alt: 'White Beans with Celery and Lemon'
-      title: ''
-      width: 1600
-      height: 1100
-      entity: f51ffee1-c8b4-4ea0-a843-fa87edbbb9e7
+  - alt: Typical Catalan dessert made from cream and egg yolks, covered with a traditional
+      layer of caramelized sugar to provide a crispy contrast
+    title: ''
+    width: 768
+    height: 512
+    entity: f51ffee1-c8b4-4ea0-a843-fa87edbbb9e7

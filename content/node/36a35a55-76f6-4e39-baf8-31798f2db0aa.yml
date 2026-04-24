@@ -5,26 +5,25 @@ _meta:
   bundle: recipe
   default_langcode: en
   depends:
-    9cae18b2-ab0d-48f1-bd9d-137efac5fd4b: user
-    f2055c45-d739-46c4-8e56-ada172f1f9d8: user
+    1fbe9f2b-2df9-4f7d-8454-f5a7d095c6d1: user
     dad86604-0666-486c-a6c6-dbbb22882482: taxonomy_term
     3ce6cd35-e603-4716-8056-28c655260f25: taxonomy_term
     e72a825a-6b52-449b-900a-109b1bfdeec0: media
-    975bf823-bd8d-4605-9a04-7c92a68c1932: taxonomy_term
-    45d0c897-71de-4f57-95b3-4bec3818917d: node
-    ecf6d4f5-edac-42f5-a438-14ee88210f36: node
-    83f730da-4588-4834-bcf6-6aa4142d8a62: node
-    26735ffd-6e41-4263-b276-f9ce28e7bb5c: taxonomy_term
+    c338f17b-b1ef-490e-abb6-88f1280c0e4c: taxonomy_term
+    ac36ac60-a124-4153-a2b9-671173cac6fb: node
+    571994c9-f7dd-432c-8762-bb5ab5c94506: node
+    f0a5cac7-c43b-47cf-b278-0f22d7514808: node
     57651b5c-628a-4b5b-bd93-68b3d97c0f4c: taxonomy_term
+    dc165a3e-671b-4068-a4f1-bc093d205713: taxonomy_term
 default:
   revision_uid:
-  - entity: 9cae18b2-ab0d-48f1-bd9d-137efac5fd4b
+  - entity: 1fbe9f2b-2df9-4f7d-8454-f5a7d095c6d1
   status:
   - value: true
   uid:
-  - entity: f2055c45-d739-46c4-8e56-ada172f1f9d8
+  - entity: 1fbe9f2b-2df9-4f7d-8454-f5a7d095c6d1
   title:
-  - value: Slow-Roasted Tomato Pappardelle
+  - value: Deep mediterranean quiche
   promote:
   - value: true
   sticky:
@@ -34,76 +33,96 @@ default:
   moderation_state:
   - value: published
   path:
-  - alias: /recipe/slow-roasted-tomato-pappardelle
+  - alias: "/recipe/deep-mediterranean-quiche"
     langcode: en
     pathauto: 0
   field_cook_minutes:
-  - value: 90
+  - value: 30
   field_cuisine:
   - entity: dad86604-0666-486c-a6c6-dbbb22882482
   field_description:
-  - value: Tomatoes held in a low oven until they sweeten and slump, tossed with wide ribbons of pasta and torn basil.
+  - value: An Italian inspired quiche with sun dried tomatoes and courgette. A perfect
+      light meal for a summer's day.
   field_dietary:
   - entity: 3ce6cd35-e603-4716-8056-28c655260f25
   field_difficulty:
-  - value: Easy
+  - value: Medium
   field_featured_image:
   - entity: e72a825a-6b52-449b-900a-109b1bfdeec0
   field_ingredients:
-  - group_label: For the tomatoes
-    quantity: 1.2 kg
-    ingredient: mixed ripe tomatoes, halved
-  - group_label: For the tomatoes
-    quantity: 4 tbsp
-    ingredient: olive oil
-  - group_label: For the tomatoes
-    quantity: '6'
-    ingredient: garlic cloves, smashed
-  - group_label: For the tomatoes
-    quantity: 1 tsp
-    ingredient: flaky salt
-  - group_label: For the tomatoes
-    quantity: a pinch
-    ingredient: chili flakes
-  - group_label: To serve
-    quantity: 400 g
-    ingredient: pappardelle
-  - group_label: To serve
-    quantity: 1 large
-    ingredient: bunch basil
-  - group_label: To serve
-    quantity: 80 g
-    ingredient: aged pecorino, grated
-  - group_label: To serve
-    quantity: to taste
-    ingredient: black pepper
+  - group_label: For the pastry
+    quantity: 280g
+    ingredient: plain flour
+  - group_label: For the pastry
+    quantity: 140g
+    ingredient: butter
+  - group_label: For the pastry
+    quantity: ''
+    ingredient: Cold water
+  - group_label: For the filling
+    quantity: '1'
+    ingredient: onion
+  - group_label: For the filling
+    quantity: '2'
+    ingredient: garlic cloves
+  - group_label: For the filling
+    quantity: Half a
+    ingredient: courgette
+  - group_label: For the filling
+    quantity: 450ml
+    ingredient: soya milk
+  - group_label: For the filling
+    quantity: 500g
+    ingredient: grated parmesan
+  - group_label: For the filling
+    quantity: '2'
+    ingredient: eggs
+  - group_label: For the filling
+    quantity: 200g
+    ingredient: sun dried tomatoes
+  - group_label: For the filling
+    quantity: 100g
+    ingredient: feta
   field_method:
-  - step_title: Slump the tomatoes
-    instruction: Heat the oven to 140°C. Lay the tomatoes cut-side up on a tray with the oil, garlic, salt, and chili. Roast for 75–90 minutes until slumped and jammy.
-  - step_title: Cook the pasta
-    instruction: Bring a wide pot of salted water to a boil. Cook the pappardelle until just shy of al dente. Reserve a cup of pasta water before draining.
-  - step_title: Bring it together
-    instruction: Tip the tomatoes and their oil into a wide pan over low heat. Add the pasta and a splash of the water, and toss gently until the sauce clings.
-  - step_title: Finish
-    instruction: Tear in the basil, shower with pecorino, crack over pepper, and serve straight from the pan.
-  field_notes:
-  - value: The tomatoes improve overnight. Keep half back for tomorrow's toast.
+  - step_title: Step 1
+    instruction: Preheat the oven to 400°F/200°C. Starting with the pastry; rub the
+      flour and butter together in a bowl until crumbling like breadcrumbs. Add water,
+      a little at a time, until it forms a dough.
+  - step_title: Step 2
+    instruction: Roll out the pastry on a floured board and gently spread over your
+      tin. Place in the fridge for 20 minutes before blind baking for a further 10.
+  - step_title: Step 3
+    instruction: Whilst the pastry is cooling, chop and gently cook the onions, garlic
+      and courgette.
+  - step_title: Step 4
+    instruction: In a large bowl, add the soya milk, half the parmesan, and the eggs.
+      Gently mix.
+  - step_title: Step 5
+    instruction: Once the pastry is cooked, spread the onions, garlic and sun dried
+      tomatoes over the base and pour the eggs mix over. Sprinkle the remaining parmesan
+      and careful lay the feta over the top. Bake for 30 minutes or until golden brown.
+  field_notes: []
   field_prep_minutes:
-  - value: 15
+  - value: 40
   field_recipe_category:
-  - entity: 975bf823-bd8d-4605-9a04-7c92a68c1932
+  - entity: c338f17b-b1ef-490e-abb6-88f1280c0e4c
   field_related_recipes:
-  - entity: 45d0c897-71de-4f57-95b3-4bec3818917d
-  - entity: ecf6d4f5-edac-42f5-a438-14ee88210f36
-  - entity: 83f730da-4588-4834-bcf6-6aa4142d8a62
+  - entity: ac36ac60-a124-4153-a2b9-671173cac6fb
+  - entity: 571994c9-f7dd-432c-8762-bb5ab5c94506
+  - entity: f0a5cac7-c43b-47cf-b278-0f22d7514808
   field_servings:
-  - value: 4
+  - value: 8
   field_topics:
-  - entity: 26735ffd-6e41-4263-b276-f9ce28e7bb5c
   - entity: 57651b5c-628a-4b5b-bd93-68b3d97c0f4c
+  - entity: dc165a3e-671b-4068-a4f1-bc093d205713
   field_total_minutes:
-  - value: 105
+  - value: 70
   created:
-  - value: 1775736000
+  - value: 1777017600
   changed:
-  - value: 1776631111
+  - value: 1777017600
+  field_media_credit:
+  - value: Keith Jay, CC BY-SA 4.0
+  field_recipe_credit:
+  - value: Original Umami demo recipe by Drupal community contributors; preserved
+      from Drupal core demo content.

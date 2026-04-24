@@ -5,30 +5,26 @@ _meta:
   bundle: recipe
   default_langcode: en
   depends:
-    9cae18b2-ab0d-48f1-bd9d-137efac5fd4b: user
-    f2055c45-d739-46c4-8e56-ada172f1f9d8: user
-    dad86604-0666-486c-a6c6-dbbb22882482: taxonomy_term
-    d89e63b8-2e59-4a10-9bf1-7def54e1922d: taxonomy_term
-    9e7771fb-6acb-45f9-87f0-72ddf70eb4b1: taxonomy_term
+    1fbe9f2b-2df9-4f7d-8454-f5a7d095c6d1: user
+    70a477b3-3b30-4d2a-a816-7378e47b9dd6: taxonomy_term
+    3ce6cd35-e603-4716-8056-28c655260f25: taxonomy_term
     e06fb558-3109-4975-b2a2-9b05b776fa53: media
-    c338f17b-b1ef-490e-abb6-88f1280c0e4c: taxonomy_term
+    92f4f4e0-7ee7-4328-8e56-0ae7c6d2c628: taxonomy_term
+    300908fc-4fe2-4a0b-b3d3-834a1b57fa43: node
+    553198ce-abe4-448e-89f8-70cca32c43db: node
     36a35a55-76f6-4e39-baf8-31798f2db0aa: node
-    097ae30f-fce3-45f6-9959-d7cc88b6c81d: node
-    e832f942-2282-4dd3-b804-1d85255a0f99: node
-    6aaee7b7-099a-4ea0-85b8-bbf33fed76d1: taxonomy_term
-    26735ffd-6e41-4263-b276-f9ce28e7bb5c: taxonomy_term
-    a27aab93-f454-4cb1-882a-306d7af5eee6: taxonomy_term
+    32021bd1-adb6-43e3-be1b-62671c2ffac6: taxonomy_term
 default:
   revision_uid:
-  - entity: 9cae18b2-ab0d-48f1-bd9d-137efac5fd4b
+  - entity: 1fbe9f2b-2df9-4f7d-8454-f5a7d095c6d1
   status:
   - value: true
   uid:
-  - entity: f2055c45-d739-46c4-8e56-ada172f1f9d8
+  - entity: 1fbe9f2b-2df9-4f7d-8454-f5a7d095c6d1
   title:
-  - value: White Beans with Celery and Lemon
+  - value: Crema catalana
   promote:
-  - value: false
+  - value: true
   sticky:
   - value: false
   revision_translation_affected:
@@ -36,67 +32,81 @@ default:
   moderation_state:
   - value: published
   path:
-  - alias: /recipe/white-beans-with-celery-and-lemon
+  - alias: "/recipe/crema-catalana"
     langcode: en
     pathauto: 0
   field_cook_minutes:
-  - value: 15
+  - value: 20
   field_cuisine:
-  - entity: dad86604-0666-486c-a6c6-dbbb22882482
+  - entity: 70a477b3-3b30-4d2a-a816-7378e47b9dd6
   field_description:
-  - value: 'A pantry lunch that dresses up in under twenty minutes: creamy beans, a rain of celery leaves, and a slap of lemon.'
+  - value: Enjoy this sweet recipe for one of the oldest desserts in Europe. It requires
+      very few ingredients!
   field_dietary:
-  - entity: d89e63b8-2e59-4a10-9bf1-7def54e1922d
-  - entity: 9e7771fb-6acb-45f9-87f0-72ddf70eb4b1
+  - entity: 3ce6cd35-e603-4716-8056-28c655260f25
   field_difficulty:
   - value: Easy
   field_featured_image:
   - entity: e06fb558-3109-4975-b2a2-9b05b776fa53
   field_ingredients:
-  - group_label: ''
-    quantity: 2 × 400 g
-    ingredient: tins cannellini or butter beans, with their liquid
-  - group_label: ''
-    quantity: 3 stalks
-    ingredient: celery, thinly sliced (leaves reserved)
-  - group_label: ''
-    quantity: 3 tbsp
-    ingredient: good olive oil
-  - group_label: ''
+  - group_label: Ingredients
+    quantity: 1l
+    ingredient: milk
+  - group_label: Ingredients
+    quantity: 200g
+    ingredient: sugar
+  - group_label: Ingredients
+    quantity: '6'
+    ingredient: egg yolks
+  - group_label: Ingredients
+    quantity: 30g
+    ingredient: cornstarch
+  - group_label: Ingredients
     quantity: '1'
-    ingredient: lemon (zest and juice)
-  - group_label: ''
-    quantity: 1 tsp
-    ingredient: fennel seeds
-  - group_label: ''
-    quantity: to taste
-    ingredient: flaky salt, black pepper
+    ingredient: cinnamon stick
+  - group_label: Ingredients
+    quantity: '1'
+    ingredient: piece lemon peel
   field_method:
-  - step_title: Warm
-    instruction: Warm the beans and their liquid gently with the oil, fennel, and a pinch of salt.
-  - step_title: Dress
-    instruction: Off heat, stir in celery and lemon juice. Taste for salt.
-  - step_title: Finish
-    instruction: Spoon into bowls. Top with celery leaves, zest, more oil, and a crack of pepper.
-  field_notes:
-  - value: Good over thick toast, or with a poached egg.
+  - step_title: Step 1
+    instruction: Mix the egg yolks, sugar, and cornstarch with 1/3 of the milk.
+  - step_title: Step 2
+    instruction: In a saucepan, boil 2/3 of the milk with the lemon peel and cinnamon.
+  - step_title: Step 3
+    instruction: After 3 minutes, remove from the heat and take out the lemon and
+      cinnamon.
+  - step_title: Step 4
+    instruction: Slowly add the egg mixture to the hot milk through a strainer to
+      ensure there are no lumps.
+  - step_title: Step 5
+    instruction: Return it to the heat until it boils, stirring constantly.
+  - step_title: Step 6
+    instruction: Once the mixture has begun to thicken, remove from the heat and put
+      it into individual bowls to cool.
+  - step_title: Step 7
+    instruction: For an authentic finish, sprinkle with sugar and brown with a blowtorch
+      or under a preheated broiler to caramelize.
+  field_notes: []
   field_prep_minutes:
   - value: 10
   field_recipe_category:
-  - entity: c338f17b-b1ef-490e-abb6-88f1280c0e4c
+  - entity: 92f4f4e0-7ee7-4328-8e56-0ae7c6d2c628
   field_related_recipes:
+  - entity: 300908fc-4fe2-4a0b-b3d3-834a1b57fa43
+  - entity: 553198ce-abe4-448e-89f8-70cca32c43db
   - entity: 36a35a55-76f6-4e39-baf8-31798f2db0aa
-  - entity: 097ae30f-fce3-45f6-9959-d7cc88b6c81d
-  - entity: e832f942-2282-4dd3-b804-1d85255a0f99
   field_servings:
-  - value: 2
+  - value: 8
   field_topics:
-  - entity: 6aaee7b7-099a-4ea0-85b8-bbf33fed76d1
-  - entity: 26735ffd-6e41-4263-b276-f9ce28e7bb5c
-  - entity: a27aab93-f454-4cb1-882a-306d7af5eee6
+  - entity: 32021bd1-adb6-43e3-be1b-62671c2ffac6
   field_total_minutes:
-  - value: 25
+  - value: 30
   created:
-  - value: 1774094400
+  - value: 1776412800
   changed:
-  - value: 1776631111
+  - value: 1776412800
+  field_media_credit:
+  - value: Cristina Chumillas, CC BY-SA 4.0
+  field_recipe_credit:
+  - value: Original Umami demo recipe by Drupal community contributors; preserved
+      from Drupal core demo content.

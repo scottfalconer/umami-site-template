@@ -3,6 +3,39 @@
 This file records clean-install findings that affect how the Umami site
 template should be evaluated or released.
 
+## April 24, 2026 Community Recipe Content Preservation
+
+Covered on a clean DDEV install at `../umami-community-content-test` after
+replacing the synthetic recipe export with the original Drupal core Umami demo
+recipes and photography.
+
+Validation commands run:
+
+```sh
+make dev-test-install TESTER_DIR=../umami-community-content-test TESTER_NAME=umami-community-content-test
+ddev drush ev '$ids=\Drupal::entityQuery("node")->accessCheck(FALSE)->condition("type","recipe")->sort("created","DESC")->execute(); print "recipe_count=".count($ids)."\n";'
+ddev drush ev '$cards=\Drupal::service("umami_next.editorial_data")->loadFeaturedCards("recipe",6); print implode("\n", array_column($cards,"title"))."\n";'
+ddev drush search-api:index
+ddev drush search-api:status
+ddev drush watchdog:show --count=20 --severity=Error --format=table
+```
+
+Runtime checks confirmed:
+
+- Clean install completed and cache rebuild succeeded.
+- Installed recipe count is 10, matching the original Umami community recipe
+  corpus.
+- Featured recipe curation returns Deep mediterranean quiche, Vegan chocolate
+  and nut brownies, Super easy vegetarian pasta bake, Watercress soup, Victoria
+  sponge cake, and Gluten free pizza.
+- The previous synthetic recipe titles checked during validation, including
+  Slow-Roasted Tomato Pappardelle, Sticky Sesame Aubergine, and Jollof Rice
+  with Smoked Paprika, are no longer installed as recipe nodes.
+- `/`, `/recipes`, `/recipe/deep-mediterranean-quiche`, and `/search` return
+  HTTP 200 inside the DDEV web container.
+- `/search?keywords=tomato` returns Deep mediterranean quiche after indexing.
+- No Drupal watchdog errors were present after install and indexing.
+
 ## April 24, 2026 Recipe-Composition Audit
 
 Covered on a clean DDEV install at `../umami-ownership-clean-20260424` after

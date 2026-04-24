@@ -7,9 +7,9 @@ _meta:
   depends:
     f2055c45-d739-46c4-8e56-ada172f1f9d8: user
     286464b0-6d07-48dd-9c62-cc78c7226d60: media
-    45d0c897-71de-4f57-95b3-4bec3818917d: node
-    571994c9-f7dd-432c-8762-bb5ab5c94506: node
     e832f942-2282-4dd3-b804-1d85255a0f99: node
+    be17db54-41fe-481a-8e2b-88673f537aa3: node
+    f4abb3f5-2aab-44cb-8a86-2ef144bbd68a: node
     6aaee7b7-099a-4ea0-85b8-bbf33fed76d1: taxonomy_term
     26735ffd-6e41-4263-b276-f9ce28e7bb5c: taxonomy_term
 default:
@@ -30,22 +30,27 @@ default:
   moderation_state:
   - value: published
   path:
-  - alias: /article/the-week-in-the-pantry
+  - alias: "/article/the-week-in-the-pantry"
     langcode: en
     pathauto: 0
   field_content:
-  - value: <p>There is a particular week every couple of months where the fridge is bare and the pantry must come forward. It&#039;s not a sad week; it&#039;s a useful one. You learn, again, how much dinner lives on the shelf.</p><p>Beans plus lemon plus oil is dinner. Lentils plus butter is dinner. A tin of tomatoes with enough time in a pan is dinner. The rest is garnish.</p>
+  - value: "<p>There is a particular week every couple of months where the fridge
+      is bare and the pantry must come forward. It&#039;s not a sad week; it&#039;s
+      a useful one. You learn, again, how much dinner lives on the shelf.</p><p>Beans
+      plus lemon plus oil is dinner. Lentils plus butter is dinner. A tin of tomatoes
+      with enough time in a pan is dinner. The rest is garnish.</p>"
     format: content_format
   field_description:
-  - value: Five dinners out of a shelf's worth of tins, dried things, and the last onion.
+  - value: Five dinners out of a shelf's worth of tins, dried things, and the last
+      onion.
   field_featured_image:
   - entity: 286464b0-6d07-48dd-9c62-cc78c7226d60
   field_read_minutes:
   - value: 5
   field_related_recipes:
-  - entity: 45d0c897-71de-4f57-95b3-4bec3818917d
-  - entity: 571994c9-f7dd-432c-8762-bb5ab5c94506
   - entity: e832f942-2282-4dd3-b804-1d85255a0f99
+  - entity: be17db54-41fe-481a-8e2b-88673f537aa3
+  - entity: f4abb3f5-2aab-44cb-8a86-2ef144bbd68a
   field_topics:
   - entity: 6aaee7b7-099a-4ea0-85b8-bbf33fed76d1
   - entity: 26735ffd-6e41-4263-b276-f9ce28e7bb5c
